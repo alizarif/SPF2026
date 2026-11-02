@@ -1,56 +1,49 @@
 #!/usr/bin/env python3
-"""Reproduce or verify the archived research outputs without external APIs."""
-from pathlib import Path
-import argparse
+"""Recompute all 15 tables and rebuild the report in one command."""
+import csv
 import os
-import subprocess
+from pathlib import Path
 import sys
 
 ROOT = Path(__file__).resolve().parent
-RUN = ROOT / 'replication_2026-10-31'
+sys.path.insert(0, str(ROOT / 'code'))
+sys.dont_write_bytecode = True
+os.environ.setdefault('MPLCONFIGDIR', str(ROOT / '.runtime' / 'matplotlib'))
 
-def execute(relative_path, *arguments):
-    script = RUN / relative_path
-    environment = os.environ.copy()
-    environment.setdefault('MPLCONFIGDIR', str(ROOT / '.runtime' / 'matplotlib'))
-    environment.setdefault('PYTHONDONTWRITEBYTECODE', '1')
-    print(f'Running {relative_path}', flush=True)
-    subprocess.run([sys.executable, str(script), *arguments], cwd=ROOT,
-                   env=environment, check=True)
+from additional_tables import calculate as additional_tables
+from core_tables import calculate as core_tables
+from investigated_tables import calculate as investigated_tables
+from report import build_tables, render
 
-def verify():
-    execute('tables_review/verify_investigation_results.py')
-    execute('tables_review/verify_clean_tables_pdf.py')
-
-def tables():
-    execute('table11_investigation/investigate_ai.py')
-    execute('table11_investigation/recompute_declared_method.py')
-    execute('tableB14_investigation/investigate_table_b14.py')
-    execute('scripts/build_annotated_tables.py', '--data-only')
-    execute('tables_review/audit_rounding.py')
-    execute('scripts/build_annotated_tables.py')
-    verify()
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    mode = parser.add_mutually_exclusive_group()
-    mode.add_argument('--verify', action='store_true', help='Check saved numeric results and the annotated PDF (default).')
-    mode.add_argument('--tables', action='store_true', help='Recompute Tables 11/B.14 and rebuild the latest annotated PDF.')
-    mode.add_argument('--legacy', action='store_true', help='Rebuild the earlier full figure/table comparison using the numerical caches.')
-    mode.add_argument('--rebuild-cache', action='store_true', help='Rebuild and validate the numerical caches from the included source files.')
-    arguments = parser.parse_args()
-    if sys.version_info < (3, 11):
-        parser.error('Python 3.11 or newer is required; Python 3.11 was used for the supplied results.')
-    if arguments.tables:
-        tables()
-    elif arguments.legacy:
-        execute('scripts/run_replication.py')
-    elif arguments.rebuild_cache:
-        execute('scripts/build_data_cache.py')
-        execute('scripts/validate_data_cache.py')
-    else:
-        verify()
-    print('Requested workflow completed. See README.md for interpretation and limitations.')
+    print('Calculating all statistical tables from the main data...', flush=True)
+    cells = core_tables() + additional_tables() + investigated_tables()
+    keys = [(cell['item'], cell['row'], cell['column']) for cell in cells]
+    if len(set(keys)) != len(keys):
+        raise ValueError('Duplicate calculated cells')
+    destination = ROOT / 'report'
+    destination.mkdir(exist_ok=True)
+    tables = build_tables(cells)
+    summary = render(tables, destination / 'tables.pdf')
+    fields = ['table', 'title', 'numeric_cells', 'matching_cells', 'different_cells',
+              'rounding_only', 'header_corrections', 'interpretation']
+    with (destination / 'comparison.csv').open('w', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        for item, table in tables.items():
+            numeric = [cell for row in table['rows'] for cell in row.get('cells', [])
+                       if cell['kind'] == 'numeric']
+            differences = sum(cell['mismatch'] for cell in numeric)
+            writer.writerow(dict(table=item, title=table['title'], numeric_cells=len(numeric),
+                matching_cells=len(numeric) - differences, different_cells=differences,
+                rounding_only=sum(cell['annotation_color'] == 'blue' for cell in numeric),
+                header_corrections=sum(bool(group.get('correction')) for group in table['column_groups']),
+                interpretation=table['calculation_note']))
+    print(f"Rebuilt {summary['pages']} tables and checked {summary['numeric_cells_rendered']:,} numeric cells.")
+    print('Outputs: report/tables.pdf and report/comparison.csv', flush=True)
+    return summary
+
 
 if __name__ == '__main__':
     main()

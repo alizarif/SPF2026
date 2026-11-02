@@ -1,8 +1,0 @@
-Figure 4: Distribution of Forecaster Fixed Effects
-Notes: The figure shows the distribution of forecaster-specific fixed effects for four macroeconomic variables. Fixed
-effects are calculated as the average deviation of each forecaster’s prediction from the quarterly cross-sectional
-mean. Each panel displays a histogram of fixed effects across 194 forecasters, with vertical lines indicating zero
-(red dashed) and the sample mean (black solid). RGDP and NGDP are measured in billions of 2012 dollars; CPI
-and UNEMP are measured in percentage points. Forecasters are restricted to those with at least 10 observations
-across the sample period (1999–2023).
-41

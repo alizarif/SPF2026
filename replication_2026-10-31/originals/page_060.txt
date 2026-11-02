@@ -1,5 +1,0 @@
-Online Appendix for
-“Simulating the Survey of Professional Forecasters”
-This Internet Appendix provides additional material on the data, methodology, and some robustness
-exercises related to the main text.
-A1
