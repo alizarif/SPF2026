@@ -1,0 +1,2209 @@
+=== PDF PAGE 1 ===
+Simulating the Survey of Professional Forecasters1
+Anne Lundgaard Hansena, John J. Hortonb, Sophia Kazinnikc,
+Daniela Puzzellod, and Ali Zarifhonarvard
+aCorrespondingauthor: FederalReserveBankofRichmondandFederalReserveBoard(anne.hansen@rich.frb.org)
+bMIT Sloan School of Management (jjhorton@mit.edu)
+cStanford HAI (kazinnik@stanford.edu)
+dIndiana University Bloomington (dpuzzell@iu.edu; alizarif@iu.edu)
+This Draft: June 2026
+First Draft: April 2024
+We develop a framework for simulating professional expectations formation using large
+language models (LLMs). Combining novel hand-collected data on Survey of Professional
+Forecasters(SPF)participantcharacteristicswithreal-timemacroeconomicdataandlagged
+SPF median forecasts, we prompt LLMs to generate quarterly forecastsfor 23 variables over
+1999-2023. Theresultingsyntheticpanelapproximateskeypropertiesofthehumansurvey,
+including forecast accuracy, median forecast levels, revision dynamics, and cross-sectional
+dispersion. Ablation exercises show that performance is largely driven by information
+conditioning: removing forecaster characteristics modestly worsens performance, whereas
+removing real-time data and especially lagged SPF medians leads to substantial error in-
+creases. Ourframeworkoffersascalablecomplementtotraditionalsurveys,enablingcoun-
+terfactualanalysisunderalternativeinformationsets, retrospective“as-of”forecasting, and
+rapid prototyping of survey designs.
+Keywords: Generative Artificial Intelligence; Survey of Professional Forecasters; Expecta-
+tions Formation; Simulated Economic Agents.
+JEL Codes: C53, C55, E37, C45, D84.
+1 ThispaperdoesnotnecessarilyreflecttheviewsoftheFederalReserveBankofRichmond,theBoardofGovernorsoftheFederal
+Reserve System, or the Federal Reserve System. We thank Thomas Stark for his time and highly valuable input. We thank the
+Stanford Digital Economy Lab 2024, Indiana University, George Washington University, Federal Reserve Board, Stanford Data
+Science, VIMM February 2025, and AMLEDS seminar participants along with participants at the ECB Transformative Power of
+AI Conference, the Society of Government Economists 2025 Annual Conference, Workshop on Frontiers in Measurement and
+Survey Methods 2025, AI Frontiers in Finance, 2025 Imperial College London Hedge Fund Conference, Spring 2025 Midwest
+MacroeconomicsMeeting,GoogleEconomicsSeminar,ECONDAT2025,2025BSESummerForumWorkshoponTheoreticaland
+Experimental Macroeconomics, AI and the Future of Work at Wharton, Amazon’s Forecasting, Macroeconomics and Finance
+(FMF) seminar, Artificial Intelligence and the Macroeconomy Conference, Bank of Spain Economics of AI conference, 2026
+ESIF Economics and AI+ML Meeting, the 2026 Behavioral Macro Workshop, and NBER SI 2026 for valuable comments. We
+thankErikBrynjolfsson,JonathanBenchimol,LelandBybee,LelandCrane,MichaelEhrmann (discussant),MiguelFaria-eCastro
+(discussant), Francesco Furno, Dragos Gorduza(discussant), Yuriy Gorodnichenko, Robin Horton, Seung J. Lee, Huiyu Li, Peter
+Meyer(discussant), Joan Paredes(discussant), Alexander W. Richter, Sascha Steffen, Eric Zivot, and in particular Tara Sinclair for
+valuable feedback. Last, but not least, we thank Bryson Alexander and Nicole Lindsay for excellent research assistance. All
+remaining errors are our own.
+1
+
+=== PDF PAGE 2 ===
+1 Introduction
+Expectationsareacentralobjectinmonetaryeconomics. Theyshapepolicytransmission,disci-
+pline models of information rigidity, and provide real-time measures of beliefs about inflation,
+output, and interest rates. Recognizing this, economists and policymakers rely on surveys as
+a measurement tool to capture expectations about future economic variables and conditions
+(e.g., Rudebusch, 2002; Orphanides and Williams, 2002, 2007; Patton and Timmermann, 2010;
+Manzan,2011,2021;Almåsetal.,2024;Caplin,2025). However,traditionalsurveysfaceinherent
+limitations.
+Surveys are costly to administer, constraining both sampling frequency and sample size.
+They lack flexibility, e.g., it is difficult to revise existing questions or add new ones, and new
+questions lack historical responses, limiting their value for time series analysis. Beyond that,
+most macroeconomic surveys solicit numeric answers with little insight into the reasoning
+behind them. Finally, surveys depend heavily on institutional infrastructure and funding, the
+stability of which has come under stress in recent years. These limitations have prompted
+calls for methodological innovation (Caplin, 2025). At the same time, a growing literature is
+exploring whether LLMs can serve as useful models of human behavior and expectations, and
+whether they can become a valuable new research tool in economics (e.g., see Jackson et al.,
+2025). Although recent studies suggest that LLMs can reproduce aspects of human decision-
+making and expectations, we still know relatively little about which dimensions of behavior
+they capture well, where they systematically differ from humans, and for which applications
+they are most useful. We contribute to this emerging literature by focusing on professional
+macroeconomic forecasters, using the Survey of Professional Forecasters (SPF) as a laboratory
+for evaluating the promise and limitations of LLM-based synthetic agents, and show that they
+can help mitigate some of these limitations.
+We develop a framework that uses LLMs to simulate individual participants in the SPF.
+Because LLMs are trained on large-scale text data, they can capture systematic patterns in how
+peopledescribe,interpret,andjustifydecisions,whichcanbeleveragedtoapproximatehuman
+reasoning in structured tasks (Suri et al., 2024; Niu et al., 2024). Recent work further shows
+thatLLMscanreproducebehavioralpatternsofeconomicagentsinexperimentalcontexts(e.g.,
+Horton, 2023; Hansen and Lee, 2025; Kazinnik, 2026; Zarifhonarvar, 2026). In our setting, this
+2
+
+=== PDF PAGE 3 ===
+allows us to construct synthetic forecasters whose responses can be studied under different
+informational and institutional environments.
+To build our simulation framework, we combine three inputs: (1) a novel dataset of hand-
+collected SPF participant characteristics (e.g., education, affiliation, experience), (2) real-time
+macroeconomic data available at each survey date, and (3) lagged median SPF forecasts. Us-
+ing these inputs, we prompt an LLM to generate individual forecasts for 23 macroeconomic
+variables across 100 quarterly surveys from 1999Q1 to 2023Q4, creating a synthetic panel of
+professional forecasters. We use this setting to study three questions about professional ex-
+pectations formation. First, to what extent can professional expectations be reproduced from
+common real-time information and lagged consensus forecasts? Second, can synthetic fore-
+castersreproduceeconomicallyrelevantfeaturesofsurveyexpectations,suchasdisagreement,
+horizoneffects,andforecastrevisions? Third,wheredosyntheticforecastersdifferfromhuman
+professionals, and what do these differences reveal about the role of independent judgment in
+expectations formation?
+To address these questions, we validate this synthetic panel against the human SPF along
+several dimensions. The two panels share important similarities. Their forecasts are broadly
+comparable. Both undershoot and overshoot the same variables in the same survey quarters
+(e.g., CPI inflation is highly overshot in 2008:Q3 and undershot in 2020:Q2). The two panels
+also show similar patterns of forecast dispersion: disagreement among forecasters is greater
+at longer horizons than at shorter ones. Despite broad similarities, AI-generated and human
+forecasts differ in statistically and economically meaningful ways. AI forecasters exhibit lower
+disagreement,updatetheirforecastsmorestronglytowardconsensus,andplacelessweighton
+correctingpastforecasterrorsthanhumanprofessionals. Thesefindingssuggestthatsynthetic
+forecasters reproduce the common component of professional expectations more readily than
+the independent judgment embodied in the SPF. These differences likely reflect the distinct
+information environments, decision processes, and constraints faced by human and AI fore-
+casters. Human forecasters face attention costs, reputation concerns, strategic considerations,
+and heterogeneous judgment, while AI agents generate forecasts under standardized prompts
+andcontrolledinformationsets. Giventhesedifferencesandthelimitedinputdataweprovide,
+exact alignment at the level of point forecasts should not be expected. Taken together, our
+3
+
+=== PDF PAGE 4 ===
+resultssuggestthatLLM-basedpanelsareusefulformeasuringandstress-testingexpectations
+under controlled information sets, but they are complements to, not substitutes for, human
+surveys.
+Wenextisolatethecontributionofeachinputandmodelingchoicebyrunningasetofablation
+exercises. We show that removing individual characteristics increases mean absolute errors in
+predicting real GDP by about 3-39%, further excluding real time data raises errors by up to
+44%, and by also omitting past SPF median forecasts produces much larger errors, exceeding
+70%. These patterns indicate that our AI forecasters respond systematically to the same types
+ofinputdataandinformationthatmatterforhumanforecasters,andthattheirinformationsets
+andheterogeneitycanbemanipulatedinwaysthatareinformativebutinfeasibleinreal-world
+survey panels.
+We interpret our results through a simple framework of human and AI expectations forma-
+tion inspired by Mullainathan and Spiess (2017) and Agrawal et al. (2019). Human forecasters
+combine observable variables (e.g., labor market data) with difficult-to-observe inputs such as
+experience, judgment, and narrative context. Their forecasts reflect both cognitive constraints
+and informational advantages. In contrast, traditional prediction algorithms can process ob-
+servabledataveryefficientlybutcannotaccesstheselatentcomponents. GenerativeAImodels
+bridge this gap. By training on massive text corpora, LLMs internalize regularities in how
+humans transform information into verbal judgments and numerical forecasts, allowing them
+to approximate aspects of human expectations formation without direct access to individual
+forecasters’latentstates. Inoursetting,weusethiscapabilitytoconstructLLM-basedforecaster
+personas, which map real-time macroeconomic data, forecaster characteristics, and past SPF
+forecasts into survey responses. This design allowsLLMs to combine the statistical advantages
+of algorithms with a stylized representation of human judgment, generating synthetic survey
+forecasts that both resemble human panel behavior and can be used to study how expectations
+would change under alternative information sets or forecaster characteristics.
+In addition, by incorporating individual characteristics, our framework shifts attention from
+a single aggregate forecast to the cross-sectional distribution of expectations across forecasters.
+Althoughmanybenchmarkmodelsofexpectations(e.g.,fullinformationrationalexpectations)
+treatagentsashomogeneousandfullyrational,alargeempiricalliteraturedocumentssubstan-
+4
+
+=== PDF PAGE 5 ===
+tial and persistent heterogeneity in both household and professional forecasts (e.g., Mankiw
+and Reis, 2002; Mankiw et al., 2003; Coibion and Gorodnichenko, 2015; Manzan, 2011; Gabaix,
+2020; Andre et al., 2022; Huang et al., 2022; Benchimol et al., 2022; Stark, 2013, among many
+others).
+This heterogeneity is often attributed to differences in information sets, interpretation of
+information, attention, behavioral biases, forecasting methods, and subjective models of the
+economy. We capture some of these features by explicitly mapping observed forecaster char-
+acteristics into distinct LLM-based personas, and by studying how these personas translate a
+common real-time information set into different survey responses. And, because our AI fore-
+casters provide narrative justifications for every prediction, we shed light on the “black box”
+of expectations formation. We show that the simulated forecasters exhibit substantial hetero-
+geneityintheirreasoning,drawingonpolicyconsiderations,mechanicalupdatingrules,recent
+events, and theoretical models. These findings are broadly consistent with evidence from sur-
+veys of professional forecasters, which show that forecasters combine model-based projections
+with judgment, with judgment playing a more prominent role during periods of heightened
+economic uncertainty (European Central Bank, 2024). While not a direct validation exercise,
+this consistency lends credibility to our interpretation of the synthetic panel as an informative
+model for studying professional expectations formation.
+AnimportantandcommonlycitedconcernwithmodelslikeLLMsistemporaldatacontami-
+nation,whichoccurswhenthemodelhasbeentrainedoninformationthatwaspublishedafter
+theforecastdate,potentiallybiasingitspredictions(e.g.,Lopez-Liraetal.,2025;Heetal.,2025).
+This issue is relevant for us because we interpret the LLM as approximating an SPF forecaster
+who only has access to information available at the time of the survey. If the model heavily
+relies onex postrealizations, its forecasts risk reflecting knowledge of the future rather than
+expectations formed in real time. While individual-level SPF forecasts are unlikely to appear
+in training data, the model may have access to realized macroeconomic outcomes that the SPF
+aims to predict.
+We address this concern in four ways. First, we instruct the model to use only information
+available prior to each survey deadline. However, we recognize that simply instructing the
+modeltoignorepost-surveyinformationmaynotbesufficienttoeliminatetheriskoftemporal
+5
+
+=== PDF PAGE 6 ===
+data contamination. Second, we therefore test whether the model is simply recalling specific
+forecast values from its training set. The model’s performance deteriorates sharply under this
+test, indicating that the model is not merely retrieving memorized numbers when generating
+responses. Third, we show that AI forecasters struggle with predicting unexpected economic
+eventsthatoccurredaftersurveysubmissiondeadlines,whichservesasfurtherevidenceagainst
+thelook-aheadbiasconcern. Finally,weconductanout-of-samplevalidationexerciseusingdata
+from 2024, which lies strictly beyond the model’s October 2023 training cutoff and is therefore
+unavailable to the model. We find no evidence of structural breaks in forecast accuracy or
+behavior around this cutoff, suggesting that temporal data contamination is not driving our
+results and does not affect the interpretation of our framework as amodel of SPF forecasters.
+Takentogether,ourresultssuggestthatLLM-basedforecasterscanserveasascalablecomple-
+ment to traditional expectations surveys, rather than as a replacement for existing forecasting
+surveys and tools. Because synthetic panels can be run continuously at negligible marginal
+cost, they allow high-frequency tracking of the cross-sectional distribution of beliefs, including
+disagreement and tail risks, which is especially valuable in periods of heightened uncertainty.
+By flexibly varying the information set and combining structured real-time macro data with
+unstructured inputs (e.g., news, policy statements, scenario descriptions), researchers and pol-
+icymakers can study how modeled forecasters would revise expectations across alternative
+information environments. The same framework can prototype and test new survey questions,
+fill in historical responses under consistent information sets, and assess counterfactual scenar-
+ios. In this sense, the LLM-based panel functions as a laboratory for expectations formation
+and survey design that augments existing survey infrastructure.
+The use of computational techniques to represent individual behavior is not a new idea in
+economics. Atthesametime,ourapproachdiffersfromtraditionalmethodssuchasagentbased
+modeling (ABM).2 In standard ABM applications, agents follow relatively simple, explicitly
+specified rules. By contrast, our AI forecasters embed high-dimensional decision rules learned
+from large text corpora, enabling them to make nuanced, context-dependent predictions that
+respondtocomplexinformationsets. 3 Thisadditionalflexibilitycanimprovethefitofsimulated
+2 See Axtell and Farmer (2025) for a comprehensive review of agent based modeling in economics and finance.
+3 Chopra et al. (2024) discuss the performance of heuristic (ABM) agents versus LLM agents in predicting disease
+6
+
+=== PDF PAGE 7 ===
+behavior to observed data, but it also raises concerns about consistency and robustness.
+Toaddresstheseconcerns,wesystematicallyvalidateourforecastermodel. Wereplicateour
+simulations across multiple LLM architectures (GPT, Llama, and DeepSeek) and under both
+deterministic and stochastic decoding in order to assess how model choice and randomness
+affect the distribution of forecasts and panel behavior, and to ensure that our findings are not
+driven by a particular model. We also vary the definition of the forecaster persona within a
+fixed prompt structure to isolate the effect of role framing on the expectations formation rules
+inferred by the model.
+Our approach complements recent research on LLMs as economic agents, which suggests
+that language models, and their biases, are significantly influenced by the roles they are asked
+to play. In particular, Bybee (2025) demonstrates that LLMs not only simulate expectations but
+also systematically replicate certain types of errors. A growing set of studies (e.g., Kazinnik,
+2026; Cook and Kazinnik, 2025; Fedyk et al., 2024; Zarifhonarvar, 2026) similarly explores how
+assigning specific roles to LLMs affects their expectations, decisions and behavior in economic
+environments. We extend this line of research in a different direction: rather than studying
+how role prompts shift behavior or expectations in stylized or single-wave environments, we
+constructaninstitutionallygroundedsynthetic panelofprofessionalforecastersthatmirrorsthe
+SPF’s repeated, multi-horizon forecasting environment.
+This work also relates to the emerging literature on the application of LLMs in economic
+forecasting. Forexample, Faria-eCastroandLeibovici(2023)showthatLLMssuchasGoogle’s
+PaLM can generate inflation forecasts that often outperform the SPF. In contrast, our primary
+objective is not to develop a superior forecasting tool, but to model the behavior of SPF partic-
+ipants.4 The paper is the first, to our knowledge, to construct and validate an institutionally
+grounded synthetic panel of individual professional macroeconomic forecasters, designed to
+mirror the SPF’s repeated, multi-variable, multi-horizon survey environment. By combining
+a novel, hand-collected dataset of professional forecaster characteristics with forecasts for 23
+waves and unemployment.
+4 While our goal is not to develop a superior forecasting model, we note that several studies have shown that the
+Survey of Professional Forecasters tends to outperform standard model-based forecasts for key macroeconomic
+variables, such as inflation and GDP (e.g., Ang et al., 2007 and Stark, 2010, among others). This underscores the
+value of using SPF as the basis for evaluating simulated forecaster behavior.
+7
+
+=== PDF PAGE 8 ===
+macroeconomic variables over a 24-year period, our setting provides a rich environment for
+evaluating LLMs as behavioral models of professional forecasters rather than merely as fore-
+casting algorithms. This distinction changes the object of validation. We do not evaluate the
+LLM only by asking whether it minimizes forecast errors. Instead, we ask whether it can
+reproduce survey-relevant moments of professional expectations: median forecasts, disagree-
+ment, revisionbehavior, andreasoningpatterns. Thismovestheexercisefrommacroeconomic
+forecasting to expectations measurement. Multiple papers have subsequently followed our ap-
+proachandcorroboratesomeofourresultsinothercontexts, e.g., Wuetal.(2025)andGraham
+et al. (2026).
+Our paper is also related to Ghysels and Wright (2009), who use asset-price data, MIDAS re-
+gressions, and Kalman filtering to infer higher-frequency measures of professional forecasters’
+expectations. Theirapproachaddressesthestalenessofsurveyreleasesbypredictingupcoming
+SPF releases and estimating what forecasters would report if surveyed at a higher frequency.
+Although our validation focuses on the quarterly SPF, our framework shares the broader ob-
+jective of increasing the temporal resolution of expectations measurement. The key difference
+is that we simulate the survey respondents themselves. This individual-level structure allows
+us to generate not only synthetic aggregate forecasts, but also disagreement, reasoning, and
+counterfactual responses under controlled information sets. This work also intersects with
+recent efforts to use machine learning to replicate or complement expert judgment in financial
+domains. Murray et al. (2024) use deep learning to mimic technical chartists. Cao et al. (2024)
+develop an AI equity analyst that processes corporate disclosures, quantitative fundamentals,
+and macro indicators; its price targets outperform those of most human analysts, and a com-
+bined manplus machine forecast performs best. This work differs from this line of literature in
+two ways: our domain is macroeconomic surveys rather than securities analysis, and we treat
+the LLM as an object of study, rather than as a forecasting tool.
+The rest of the paper is organized as follows. Section 2 outlines our framework for under-
+standingAIandhumanexpectationformation. Section3detailsthestructureandinstitutional
+context of the SPF. We describe how we extract information on the participants in the SPF
+panel and outline our methodology for generating synthetic forecasts using LLMs in Section 4.
+Section 5 describes the results, and Section 6 concludes.
+8
+
+=== PDF PAGE 9 ===
+2 A Framework for Human and AI Expectation Formation
+Wepresentastylizedframeworkthatfocusesontheformationofexpectations. Supposeagents
+form expectations on the state of a variable,y, H periods into the future, denoted byyt+H. We
+assume that the true data generating process is governed by a functionf plus an errorεt+H:
+yt+H = f
+ 
+xt, zt
+
++ εt+H . (1)
+The function f depends on two types of information available at timet: observable data
+xt and unobservable factorszt. The unobservable factors represent soft information such as
+private insights, tacit domain knowledge, internalized heuristics, and intuition. For simplicity,
+we assume that the forecasting error,εt+H, is unpredictable with zero mean.
+Humans can access both observable and unobservable information.5 However, they process
+informationimperfectly,whichintroducesanerrorterm ∆i,t,varyingoverindividuals iandtime
+t. The error term∆i,t is not assumed to have zero mean and hence may incorporate systematic
+biases. By defining∆i,t as the difference betweenf(xt, zt) and a subjective expectationEHi of
+f(xt, zt), the human expectations can be described as:
+hi,t = EHi
+h
+f
+ 
+xt, zt
+
+| xt, zt
+i
+. (2)
+Note that the human subjective expectation varies with individualsi, reflecting that humans
+do not necessarily agree on expectations, even given the same set of information. The human
+error term is thus given by:
+∆i,t = hi,t − f(xt, zt). (3)
+Traditional algorithms, by contrast, can only accessxt, but they processxt efficiently:6
+mt = E
+h
+f
+ 
+xt, zt
+
+| xt
+i
+. (4)
+5 Althoughhumansclearlylackcompleteinformationabout everyfactorthatpredicts yt+H,weassumethathumans
+can observe bothxt and zt to fix ideas in a simple framework.
+6 While algorithms can be fed all relevant observable variables in theory, they are likely only given a subset of
+xt in practice. For example, in our application,xt consists of real-time macroeconomic data and past median
+SPF forecasts. This technicality could be introduced into our framework without changing our conclusions. We
+abstract from this extension to maintain simplicity of our framework.
+9
+
+=== PDF PAGE 10 ===
+We, however, employ LLMs, which form expectations in a non-deterministic manner, using
+patterns learned from training data, which mainly consists of human-generated texts. To
+capture this feature, we introduce an AI-specific expectations operatorEAI(·):
+mAI
+t = EAI
+h
+f
+ 
+xt, zt
+
+| xt
+i
+. (5)
+We argue that LLMs can proxy human-formed expectations more closely than traditional al-
+gorithms, henceEHi(·) − EAI(·) < EHi(·) − E(·). However, human and AI expectations remain
+different, first and foremost because their conditional information is different ({xt, zt} versus
+only xt). To narrow the difference between human and AI-generated forecasts, we bridge the
+gap between the limited dataxt available to the algorithm and the unobservable factors con-
+sidered by human forecasters. We accomplish this by expanding the information set available
+to the AI forecaster. First, we include past median human forecasts:
+mAI
+t = EAI
+h
+f
+ 
+xt, zt
+
+| xt, ¯ht−1
+i
+, (6)
+where the lagged median human forecast¯ht−1 is defined as:
+¯ht−1 = median
+
+h1,t−1, h 2,t−1, . . . , h N,t−1
+
+= f
+ 
+xt−1, zt−1
+
++median
+
+∆1,t−1, ∆2,t−1, . . . , ∆N,t−1
+
+= f
+ 
+xt−1, zt−1
+
++ ¯∆t−1. (7)
+Since f(xt−1, zt−1) is common to all forecasters, the median essentially reflects the true past
+signal plus a median bias,¯∆t−1.
+Second, note that the human bias term is partly determined by personal characteristics of
+forecasters, such as experience, education, age, and area of expertise. Let these characteristics
+be represented by a vectorwi,t.7 Specifically, we decompose the bias as:
+∆i,t = γ
+ 
+wi,t
+
++ ei,t, (8)
+7 While most personal characteristics tend to remain constant over time, they can be time-varying, e.g., a forecaster
+obtaining an advanced degree or changing employment. We therefore include a subscriptt in the characteristic
+vector.
+10
+
+=== PDF PAGE 11 ===
+where ei,t represents the residual bias not captured bywi,t. We therefore also include these
+characteristics in the AI forecasting problem. This specification introduces an individuali
+subscript on the AI forecast, similar to the human forecast.
+Altogether, the AI expectation can then be expressed as:
+mAI
+i,t = EAI
+h
+f
+ 
+xt, zt
+
+| xt, ¯ht−1, w i,t
+i
+(9)
+and involves an approximation error given by:
+∆AI
+i,t = mAI
+i,t − f(xt, zt). (10)
+The AI forecaster has access to observed macroeconomic data, the past median human fore-
+cast, and a set of assigned personal characteristics. The lagged human median forecasts,
+although imperfect and contaminated by biases and noise, contain information aboutzt be-
+cause this information is available to humans. The model leverages these forecasts as proxies
+for the unobserved factors. The inclusion of personal characteristics helps the model learn the
+systematic patterns that vary across forecasters. This formulation emphasizes that our frame-
+work augments traditional forecasting, not by substituting human judgment with algorithms,
+but by integrating human-derived insights and judgment into the forecasting process. In this
+sense, our framework fits into the broader agenda of combining flexible statistical models with
+economically structured questions. Whited (2023) argues that reduced form and structural
+methods are complements rather than substitutes, and documents several ways to use high
+dimensional statistical models to inform and discipline structural analysis. In this spirit, we
+treattheLLMasarichreduced-formrepresentationofforecasters’expectationformationrules
+that could ultimately be embedded in structural models of the economy.
+Finally, we stress that AI forecasters are not given an advantage over humans in our frame-
+work. Onthecontrary,humanshaveaccesstomoreinformationgivenby zt thanAIforecasters,
+including the potential use of sophisticated forecasting models that help them exploit patterns
+in the data.
+3 The Survey of Professional Forecasters
+The SPF is a quarterly survey of U.S. economic forecasting experts, initially launched in 1968
+by the American Statistical Association and the National Bureau of Economic Research and
+11
+
+=== PDF PAGE 12 ===
+conductedbytheFederalReserveBankofPhiladelphiasince1990. Responsedeadlinestypically
+fall mid-quarter.8 Although the survey form has evolved over time, with eight updates from
+1999 to 2023, its core structure remains intact. The SPF plays a central role in informing policy
+makers,servesasakeybenchmarkforevaluatingforecastaccuracyinacademicresearch,andis
+the longest-running publicly available forecasting project, providing a rich dataset of forecasts
+on key macroeconomic indicators (Croushore, 1993).9
+3.1 Forecast Variables
+As of 2024, the SPF collects point forecasts for 23 economic variables at nine horizons: the
+current quarter (nowcast), one to four quarters ahead, the current year, and one to three years
+ahead. ThevariablesaresummarizedinTable1. Altogether,thesevariablescoverawiderange
+of indicators with different properties, including both growth rates and levels. In this paper,
+wefocusonthepointforecastsforthecurrentquarterandonetofourquartersahead,covering
+the period from 1999 to 2023. We exclude the years prior to 1999 because forecasters’ names
+were not publicly available before that time. Further, for our out-of-sample exercise, we focus
+on 2024. Table 3 provides descriptive statistics. The data is from the real-time macroeconomic
+data set from the Federal Reserve Bank of Philadelphia, which we format to match the data
+transformations in the SPF.10
+3.2 The SPF Panel
+SPFpanelistsaretypicallyconsideredtobeabenchmarkforattentiveagents. Theytypicallyrely
+on a mix of data analysis, quantitative models, and professional judgment to make predictions
+as part of their jobs. Most have significant experience in macroeconomic forecasting. New
+8 Complete information and documentation are available through the Federal Reserve Bank of Philadelphia (link).
+See the full schedule of deadlines and release dates here.
+9 The SPF is used as a benchmark to the Federal Reserve staff projections in the Tealbook. See, e.g., the latest
+publishedTealbookassociatedwiththeDecember2018FOMCmeetingattheBoardofGovernors’website. Asfor
+academicresearch,pleaseseeDieboldetal.(1999);GiordaniandSöderlind(2003);Engelbergetal.(2009);Manzan
+(2011); Clements (2014); Rossi and Sekhposyan (2015); Clements and Galvão (2017); Croushore and Stark (2019),
+among many.
+10 For example, percent changes are calculated per the SPF definition:
+
+Xt
+Xt−1
+4
+− 1
+
+× 100.
+12
+
+=== PDF PAGE 13 ===
+forecasters are recruited via SPF’sCall for Participantsand undergo a trial period, during which
+submissions are checked for conceptual accuracy. Panelists work in diverse environments:
+some at forecasting firms, others at banks or financial institutions; the panel also includes chief
+economists from industry trade groups and manufacturers, as well as academics specializing
+in forecasting methods.
+Although SPF panelists remain anonymous, the individual-level dataset includes each fore-
+caster’s industry classification (“financial” or “non-financial” service provider) and identifiers
+that allow researchers to track forecasts across rounds. This anonymity protects forecasters’
+professionalinterestsandencourageshonest,unbiasedforecastswithoutconcernforrepercus-
+sions (Croushore and Stark, 2019). While we have access to the forecasters’ names, they are
+not disclosed in this paper to preserve their anonymity. The SPF panel composition changes
+over time as respondents join or leave, and some may skip certain questions, resulting in an
+unbalanced panel. The average panel size fluctuates around forty participants (see Figure A.1
+in appendix).
+Forecastersusevariousmethodstoproducepredictions. Stark(2013)showsthatmostrelyon
+quantitative models but adjust for current conditions and recent trends, often supplementing
+their models with subjective beliefs. Methods also vary by forecast horizon; for instance, the
+modelforpredictingcurrent-quarterGDPmaydiffersubstantiallyfromthatusedforforecasting
+average GDP growth over five years.
+3.3 Who Are the Forecasters on the SPF Panel?
+Although SPF panelists are anonymized in published datasets, the Philadelphia Fed acknowl-
+edges most of their participants by listing their names on its website (example in Figure 1).
+Many panelists also share their participation on social media or professional platforms.
+We compile forecaster characteristics exclusively from publicly available sources (e.g., the
+PhiladelphiaFedacknowledgementsandpublicprofessionalprofiles). Weusethesecharacter-
+istics only to parameterize synthetic personas and do not attribute any simulated forecasts or
+explanations to named individuals. In the analysis, we work with anonymized identifiers and
+report results in aggregate. We also avoid inferring or imputing sensitive personal attributes;
+when a characteristic is not publicly available, we leave it missing rather than guessing.
+13
+
+=== PDF PAGE 14 ===
+WestartbycollectingforecasternamesandaffiliationsfromthePhiladelphiaFedacknowledg-
+ments. Using this information, we explore publicly available sources (e.g., personal websites,
+LinkedIn, etc.), and construct a unique dataset of individual forecaster characteristics. We cre-
+ate detailed personas for each forecaster by gathering key background information, including
+education, job titles, affiliated organizations,alma mater, degrees, and professional roles. When
+available, we also include organization locations, countries of origin, and social media pres-
+ence. For country of origin, we consider indicators like high school location, if available.11 We
+describe these characteristics in Table 2.
+Empiricalresearchshowsthatpersonalbackgroundsstronglyinfluencepeople’sbehaviorand
+beliefs. Forexample,individualswhoexperiencedtheGreatDepressionareoftenmorecautious
+with financial risk (Malmendier and Nagel, 2011), while those who experienced hyperinflation
+may avoid risky assets (Fajardo and Dantas, 2018). Salle et al. (2026) and Malmendier and
+Nagel (2016) also show that memories and personal experiences of inflation shape inflation
+expectations. Geography and institutional affiliation could also impact forecasting approaches
+(Batchelor, 2007; Hong and Kacperczyk, 2010).
+Weconditionthemodelonlyonforecastercharacteristicsthatplausiblymapintosystematic,
+interpretable differences in information sets, incentives, and forecasting styles. In practice, the
+mostconsequentialfieldsare(i)affiliation/sector(e.g.,academia,commercialbank,consulting,
+government),whichproxiesforinstitutionalobjectivesandexposuretoparticulardatasources
+and modeling traditions; (ii) job title/role, which captures the forecaster’s function (research,
+markets, policy analysis, macro strategy) and therefore the likely salience of specific variables
+and horizons; and (iii) education and training, which proxy for methodological priors and
+comfort with structural versus reduced-form reasoning. These inputs are not meant to “iden-
+tify”individualsorreproduceprivateinformation. Rather,theyprovidecoarsebutmeaningful
+variation that can generate heterogeneity in levels, disagreement, and updating, mirroring the
+factthatSPFparticipantsdifferininstitutionalconstraints,attention,andmodelingapproaches
+even when observing similar public macro data.
+Figure 2 provides an overview of the SPF panel over the past 20 years, showing a diverse
+11 Weassumethatattendinghighschoolinaparticularcountryshapesformativeperspectives,influencingforecasts.
+Most participants are American, but our data include enough variation to make the country-of-origin variable
+relevant. Special thanks to Nicole Lindsay for this idea.
+14
+
+=== PDF PAGE 15 ===
+group with varied educational backgrounds, roles, and affiliations. As Figure A.2 in the
+Appendix shows, panelist tenure varies widely, with some contributing for over 25 years and
+othersforshorterperiods,addingbothestablishedandfreshperspectives. Genderdistribution
+has seen slight improvement over time, though men remain the majority. Most panelists are
+from the USA, with some European and Asian representation. While public engagement
+remains limited, more forecasters now use social media platforms like Twitter (X) and grant
+interviews. Most panelists hold a Ph.D. in Economics or Finance; the share of Master’s degree
+holdershasremainedsteady,whileBachelor’sandMBA/MPAdegreesarelesscommon. Chief
+Economists and Economists predominate, though consultants and analysts are increasingly
+visible. Affiliations span consulting firms, universities, and asset management; consulting and
+academia remain prominent, while commercial banking has declined in favor of investment
+banking and asset management.
+Takentogether,thesefactshighlightalong-livedbutevolvingpanelofmacroeconomicexperts
+with persistent heterogeneity in training, roles, and institutional context. In the next section,
+we use these observable differences as inputs to construct synthetic forecasters that mirror the
+human SPF participants.
+4 Simulating the SPF with LLMs
+We next outline our simulation procedure. We use the information described in the previous
+sectiontoconstructpersonalizedprofilesthatmirrorhumanparticipantsandgeneratesynthetic
+forecasterpersonas. Tocloselymatchtheforecastingenvironmenthumansface,weembedeach
+AIforecasterinapromptthatincludesreal-timemacroeconomicdataandhistoricalSPFmedian
+forecasts,andhavethemgeneratepointforecastsforeachquarterbetween1999Q1and2023Q4.
+Inaddition,weextendthesimulationtoincludeanout-of-sampletestcovering2024Q1through
+2024Q4, allowing us to evaluate model performance beyond its training window.
+4.1 Models
+Werunthesimulatedsurveyusinganumberoflargelanguagemodels. Ourmainanalysisrelies
+on GPT-4o mini with a temperature of 1.0. We also conduct robustness checks with GPT-3.5,
+GPT-4, Llama-3.3-70B,andDeepSeek-V3. Thesemodelsspandifferentgenerations: GPT-3.5as
+15
+
+=== PDF PAGE 16 ===
+an older baseline, GPT-4 as a frontier model, and GPT-4o mini as a recent lightweight imple-
+mentation. Including open models (i.e., Llama and DeepSeek) also enhances the transparency
+and reproducibility of our simulation (see, e.g., Cook et al., 2025), aligning with recent calls in
+the literature to prioritize open infrastructure in scientific research using LLMs. We find the
+results to be similar across models and available upon request.
+We select GPT-4o mini as our primary model based on a series of preliminary experiments
+evaluating performance and stability. Using CPI inflation as a test case, we compared GPT-3.5,
+GPT-4, and GPT-4o under multiple temperature settings: 0 for deterministic outputs, 1.0 as
+the default balanced setting, and values above 1.5 to introduce greater variability.12 Given its
+strongperformanceanditsarchitecturalsimilaritytoGPT-4o,GPT-4ominioffersanefficientand
+reliable optionfor large-scale simulations. Ourimplementation uses anAI agent builtwith the
+OpenAIAssistantsAPItomanagetaskssuchasgeneratingforecasts,handlingquery–response
+chains, and performing additional data processing.13 Ultimately, however, this framework is
+model-agnostic. Our implementation uses an automated pipeline to generate quarter-specific
+queries and to parse responses into a standardized format consistent with the SPF.
+4.2 Prompt Design
+OurobjectiveinthepromptdesignistoelicitforecastsfromLLMsthataredirectlycomparable
+to those submitted by human SPF participants. The baseline prompt, described in Prompt 1,
+assigns the model the role of an SPF panel member making a forecast at a specific survey date.
+Each AI forecaster is instructed to report numerical forecasts for the current quarter (t) and the
+next four quarters (t + 1to t + 4) in a standardized format, and to provide a brief 1–2 sentence
+explanation of their predictions.14 The prompt explicitly emphasizes that the forecaster must
+base their judgment only on information available at that point in time and must not use data
+or events from the future. In this way, we aim to simulate a professional forecaster who uses
+an internally coherent model of the economy and a fixed information set to form expectations
+12 Temperature controls the randomness of model outputs. Higher values produce more dispersed responses.
+13 The Assistants API is designed for complex, multi-step workflows involving memory, file handling, and coordi-
+nated tool use.
+14 These instructions are implemented via the system prompt.
+16
+
+=== PDF PAGE 17 ===
+about the near-term evolution of key macroeconomic variables.
+We automate the generation of these forecast queries and collect responses using an AI
+assistant. Each query embeds a forecaster profile (education, job title, organization type, and
+related characteristics), which induces heterogeneity in the simulated panel while holding the
+informationenvironmentfixed. TomirrortheSPFprocessascloselyaspossible,wealsoprovide
+our AI forecasters with a data environment that closely matches that of human participants.
+Specifically,thepromptincludespastmedianSPFforecastsandreal-timemacroeconomicdata.
+This setup largely ensures that any differences between human and AI forecasts arise from
+differences in forecasting behavior rather than from differences in the underlying information
+set. In the next section, we evaluate how closely the behavior of AI forecasters matches that of
+the human SPF panel.
+5 Results
+This section presents our simulation results and validates them against data from human fore-
+casters. With two sets of forecasts (human and AI) for five forecasting horizons across 23
+variables, the amount of output is substantial. To keep the presentation focused, we therefore
+discuss results for selected horizons only, and focus mainly on four key variables in our dis-
+cussion: the CPI inflation rate, 3-month Treasury bill rate, unemployment rate, and real GDP
+index.15 We choose to focus on these four economic variables because they cover key aspects
+of the economy: price stability, interest rates, labor market conditions, and overall economic
+output. This provides a comprehensive test of the language model’s ability to simulate human
+forecastingbehavioracrossdifferentdimensionsofeconomicactivity. Forecastsarewinsorized
+at the median ±3 standard deviations of the realized data to exclude potential erratic LLM
+answers.16
+5.1 Comparing AI and Humans
+First, we evaluate how closely AI and human expectations are aligned. Figure 3 compares
+median expectations from AI and human forecasters over time for the one- and four-quarter
+15 The tables provide results for all variables.
+16 Winsorization only impacts the “recall” results in Table 8.
+17
+
+=== PDF PAGE 18 ===
+horizonsfortheCPIinflationrate,3-monthTreasurybillrate,unemploymentrate,andrealGDP
+index. The figure shows strong alignment between human and AI forecasters’ expectations,
+particularly for unemployment and real GDP. The largest discrepancy appears in CPI inflation,
+where AI forecasters respond more to the business cycle. Another notable difference occurs
+with the four-quarter ahead 3-month Treasury bill rate during the zero lower bound period,
+where human forecasters predict a lift-off, while AI forecasters stick to the lower bound until
+the 2015 rate-hike cycle.
+Table 4 compares the median expectations of AI and human forecasters for all variables over
+three forecast horizons: nowcast and one and four quarter(s) ahead. To relate expectations to
+realized values, the table reports mean absolute errors (MAEs) associated with expectations
+from human and AI forecasters. The table shows that AI is more accurate than humans for
+somevariables(e.g.,nominalGDPandthePCEinflationrate),butlessaccurateforothers(e.g.,
+real GDP). The differences are, however, mostly statistically insignificant.
+Thiscomparisonisbasedonaveragesacrossallsurveyquarters. Table5showssimilarresults
+forthepercentageofsurveysinwhichAIforecastersaremoreaccuratethanhumanforecasters
+(values above 50% are boldfaced). However, focusing on the best-performing AI and human
+forecasters provides tentative evidence that AI forecasters can achieve higher accuracy (see
+Table 6).
+Next, we consider the comparison of individual-level expectations. Since the survey is
+anonymized, we cannot match individual human and AI forecasters one-to-one. Instead, we
+focus on the cross-sectional distributions of expectations.
+First, we estimate forecaster fixed effects as the time-series average of deviations from the
+cross-sectional mean for each forecasteri:
+FEi,t = 1
+Ti
+TiX
+t=1
+
+mAI
+i,t − 1
+Nt
+NtX
+j=1
+mAI
+j,t
+
+ , (11)
+where Ntisthenumberofforecastersinquarter t. Figure4showsthedistributionoffixedeffects
+across the four main variables. We observe substantial cross-sectional variation: for real GDP,
+fixed effects range from−160 to +187 billion dollars (2012 dollars), with a standard deviation
+of 28.4. For CPI inflation, the standard deviation is 0.27 percentage points. This heterogeneity
+is consistent with the dispersion documented in studies of human SPF forecasters (Patton and
+Timmermann, 2010).
+18
+
+=== PDF PAGE 19 ===
+Figure 5 shows density plots of individual expectations across forecasters for four key
+episodes: 1999Q1 (earliest observation), 2008Q3 (Great Financial Crisis), 2020Q2 (COVID-19
+pandemic), and 2023Q1 (latest survey with four-quarter-ahead realizations). Each plot is cen-
+teredaroundrealizedvalues. Insomeepisodes,thedistributionsofhumanandAIexpectations
+align almost perfectly (see, e.g., the one-quarter ahead expectations for the unemployment rate
+andrealGDPin2008Q3). Inaddition,thedispersionofrealGDPexpectationsin2020Q2isun-
+usuallyhighforbothAIandhumanforecasters. Inotherepisodes,therearenotabledifferences
+(e.g.,one-quarter-aheadexpectationsforrealGDPandtheunemploymentratein1999Q1). The
+extenttowhichhumanandAIforecastdistributionsalignisthushighlydependentonthevari-
+able, forecast horizon, and quarter. We also do not see a simple pattern in which humans and
+AI are systematically more or less aligned during high-uncertainty episodes such as 2008Q3
+and 2020Q2. However, cross-sectional forecast dispersion exhibits a common pattern across
+both panels: disagreement rises with the forecast horizon, reflecting greater uncertainty about
+more distant outcomes. Table 7 reports cross-sectional standard deviations at short (h+1) and
+long (h+4) horizons. As in the SPF, disagreement in our AI panel is greater at longer horizons
+for real variables. For unemployment, the ratio of long-horizon to short-horizon dispersion is
+1.53 in the LLM panel versus 2.29 in the SPF (bothp < 0.001). For real GDP, the corresponding
+ratios are 1.40 and 2.49. However, neither panel exhibits this pattern for CPI inflation: the SPF
+actually showslessdispersion at longer horizons (σh+4/σh+1 = 0.72, p < 0.001), while the LLM
+panel shows no significant difference. This asymmetry, increasing disagreement with horizon
+for real variables but not for inflation, likely reflects anchored long-run inflation expectations,
+and the AI forecasters replicate this qualitative feature of human forecast disagreement.
+Takentogether,theseresultsareconsistentwithourinterpretationoftheLLMasanimperfect
+but informative model of expectations formation.
+5.2 Information Sets and Forecast Formation
+WehaveshownthatAIandhumanforecastersarequalitativelysimilar. OurframeworkinSec-
+tion 2 attributes these results to the AI-specific expectations operatorEAI(·), which combines
+patterns learned from the training data with the conditioning information given in the LLM
+prompt: forecaster characteristics, real-time data, and past forecasts. We next use the synthetic
+19
+
+=== PDF PAGE 20 ===
+panelasacontrolledenvironmenttostudytheroleofdifferentinformationsetsinexpectations
+formation. Professional forecasters combine several inputs including public macroeconomic
+data, prior beliefs, institutional knowledge, and information about the recent consensus. Be-
+causetheLLMenvironmentallowsustoselectivelyremovecomponentsoftheinformationset,
+we can ask which inputs are most important for approximating SPF-like expectations. This
+exercise is not intended simply as a prompt ablation. It is an empirical decomposition of the
+information sources that allow synthetic agents to approximate professional expectations. We
+evaluatetherolesoftheseinputsinshapingexpectationsbyprogressivelyremovingthemfrom
+theprompt. Werunanablationexercisecomparingseveral“stripped-down”versionsoftheAI
+forecaster to a fully informed benchmark that has access to all three information types.
+Webeginbysimulatingexpectationsfora“generic”forecasterthatomitsforecastercharacter-
+istics. Prompt 2 illustrates this setup, in which the model relies on real-time data, past median
+SPF forecasts, and its pre-trained knowledge. Next, we construct another scenario with the
+same generic forecaster but without access to real-time data, shown in Prompt 3. In this case,
+the model can only draw on past median SPF forecasts along with its pre-trained knowledge,
+therebymimickingaprofessionalforecasterwholackstimelydatareleases. Finally,weconsider
+a setup without any prompt input so that the model only relies on its training data. This setup
+is shown in Prompt 4.
+Table 8 compares the results of these variants to the baseline results using all information,
+seePrompt1. ThetablereportsMAEsasratiosofbaselineMAEs, wherevaluesofoneindicate
+performance on par with the fully informed benchmark and values above one indicate worse
+performance than the baseline. For the “generic” variant (i.e., no forecaster-specific traits but
+with real-time data and past median SPF forecasts), MAE ratios remain near one for most
+variables and horizons, suggesting only a slight loss in accuracy relative to the baseline. In
+addition, the MAE ratios are usually not statistically different from one. In the context of our
+framework, the AI forecaster loses some ability to account for systematic, forecaster-specific
+biases (the componentγ(wi,t) in the bias term) when characteristics are omitted, but it retains
+muchofitsabilitytomapaggregateinformationintoexpectationsbecauseitstillconditionson
+real-timedataandpastmedianSPFforecasts,whichapproximate ¯ht−1. Therefore,performance
+only degrades slightly when characteristics are removed.
+20
+
+=== PDF PAGE 21 ===
+In contrast, removing real-time data often pushes the ratios further above one, showing a
+clearer deterioration in how well the AI forecaster tracks realized outcomes. Eliminatingboth
+real-timedataandpastmedianSPFforecastsisassociatedwithevenhigherMAEratios,andwe
+cantypicallyrejectthattheseratiosareequaltoonewithp-valuesbelowonepercent. Forsome
+variables,thelossinperformanceisextreme. Forexample,thefour-quarter-aheadexpectations
+for real GDP are 73% worse compared with the baseline, whereas the nowcast is worse by a
+factor near six. Eliminating these pieces of information forces the AI to rely almost entirely
+on its pre-trained knowledge without current context or the valuable proxy forzt. In terms of
+theframework, thisisequivalenttoconditioningonlyonamuchmorelimitedinformationset,
+leading to a larger approximation error and thus much higher MAEs.
+The importance of past median SPF forecasts for generating forecasts reflect the persistence
+of most variables in the SPF. However, we show in Appendix D that human SPF forecasts are
+notmerelysimpleAR(1)model-impliedforecasts,andthatAIforecastsareclosertothehuman
+survey compared with AR(1) forecasts.
+Overall, the performance of the AI forecaster deteriorates progressively as more inputs are
+removed from the prompt, highlighting that information inputs play a key role in determining
+the performance of LLMs: SPF-like median expectations require common macro information
+and a consensus signal. In particular, past median SPF forecasts strongly contribute to the AI’s
+ability to reproduce human expectations and to track realizations. The critical role of lagged
+humanforecastsreflectsafundamentalfeatureofourapproach. Ontheonehand,conditioning
+on lagged human forecasts enables the LLM to access indirect signals about factors that are
+difficult to quantify (professional judgment, institutional knowledge, narrative context). On
+the other hand, this dependence implies that the current LLM framework is best suited as a
+complement to traditional surveys, valuable for exploring counterfactual scenarios and belief
+distributions, rather than as a replacement.
+5.3 Are LLMs Forecasting or Recalling?
+Inthissection,weaddressacriticalconcern: whetherourresultsreflecttemporaldatacontam-
+ination; that is, whether the LLM inadvertently uses information from after the forecast date
+that was included in its training data. Limiting large language models to use only information
+21
+
+=== PDF PAGE 22 ===
+from a specific time period is a challenging task. LLMs generate output based on learned
+patterns,whichgivestheimpressionofgeneratingcontent,eventhoughtheunderlyingknowl-
+edgecomesfromrepeatingthepatternsfrompreviouslyseendata(GurneeandTegmark,2024).
+This could be problematic in our context, as historical or future data that would not have been
+availabletohumanforecastersatagivenpointintimemightinfluencethemodel’spredictions,
+leading to what is known as “temporal leakage.”17
+To deal with this issue, we apply several mitigation strategies to limit temporal leakage and
+improve the realism of a real-time simulation. First, the models are explicitly instructed to
+focus on the data available up until the survey date, with prompts designed to emphasize
+the importance of ignoring future trends. This approach aims to condition the model to act
+as a human forecaster with limited knowledge of future events. Second, real-time data are
+segmentedtomatchtheexactinformationthatwouldhavebeenavailabletohumanforecasters
+at the time of their predictions. This ensures that LLMs are not inadvertently provided with
+future data, helping to reduce the risk of temporal leakage.
+Tofurthercheckforcontaminationbytemporalleakage,wepromptthemodelto recall,rather
+than forecast, the actual values of our macroeconomic variables for each survey quarter (see
+Prompt 5 for details). The final column in Table 8 shows the MAEs from this recall exercise as
+ratios of the baseline nowcast MAEs. The accuracy drops considerably, with MAE ratios often
+surging into double digits. For example, the LLM recalls the values of real GDP with a MAE
+that is 20 times larger than the baseline nowcasting MAE (see Table 8). This indicates that our
+results are not driven by memorization and temporal leakage.
+Next,asanadditionaldiagnosticforlook-aheadbias,weevaluatetheforecastaccuracyaround
+unexpectedeconomiceventsthatoccurredaroundsurveysubmissiondeadlines. Foreachevent,
+we compute standardized forecast errors (z-scores) comparing the forecasting performance of
+AI to its accuracy across the full sample for each variable. The analysis uses different horizons
+for different events based on the timing of when the event occurred relative to the survey
+deadline. Specifically, the nowcasting horizon is considered for events occurring just before
+the survey deadline, and the one-quarter ahead horizon is used everywhere else. Look-ahead
+17 The term “temporal leakage” is often used to describe all forms of time-related data contamination, including
+look-ahead bias.
+22
+
+=== PDF PAGE 23 ===
+bias would manifest as abnormally high forecast accuracy and highly negative z-scores for
+these unpredictable shocks. Table 9 confirms that the AI forecasts do not exhibit such patterns.
+The average z-scores across variables relevant for each type of event are positive (Panel A)
+with just one exception (the Silicon Valley Bank collapse) for which the z-score is small (-0.20).
+Thus, the results in Table 9 provide evidence against a strong form of look-ahead bias. If the
+model were using future information, its forecasts should become unusually accurate around
+unexpected events. We do not find such a pattern: errors are generally typical or larger than
+usual. This evidence is not definitive, but it suggests that the model is not simply retrieving
+realized outcomes around salient historical events. Similar results are obtained by averaging
+across all 23 survey variables in Panel B of Table 9.
+Finally, we evaluate forecast accuracy in an out-of-sample exercise on 2024 Q1:Q4 data,
+whichexcludesthetrainingdatasampleandthereforeeliminatesanyconcernsabouttemporal
+leakage by construction. Figure 6 shows forecast errors for one-quarter ahead forecasts around
+the training cut-off date for the four key variables. The figure indicates that there is no clear
+structural break in the forecast error, or in how the error of AI-generated forecasts differ from
+thehumanforecasterror,aroundthecut-offdate,suggestingthattheperformanceofthemodel
+isnotdrivenbytemporalleakage. Weobserveslightlylargerdeviationsforthe3-monthbillrate
+and real GDP in the final quarter of 2024 (which is not around the cut-off), which may be due
+to the model’s lack of access to real-time major developments—such as election-related news,
+updatesonmonetarypolicy(theFOMCannouncedacutinthefederalfundsrateinSeptember
+2024), and other current events. The findings in Figure 6 are supported by regressing absolute
+AIforecasterrorsonadummyvariablethattakesvalueoneafterthecut-offdate(October2023).
+Table 10 should be interpreted as a formal break test around the model’s knowledge cut-off.
+The post-cutoff coefficients are insignificant, indicating that AI forecast errors do not increase
+discontinuously after October 2023, the model’s knowledge cutoff. We provide additional
+tests in Appendix B. This is informative because a model relying heavily on memorized future
+outcomes should perform substantially worse once evaluated on target quarters outside its
+training window. The absence of such a break provides additional evidence against a strong
+form of temporal contamination. However, because the post-cutoff period contains only a
+limited number of survey quarters, this evidence should be viewed as complementary to the
+23
+
+=== PDF PAGE 24 ===
+recall and unexpected-event exercises.
+Table 10
+5.4 Forecast Revision Dynamics
+A central question in the expectations literature is how forecasters update beliefs in response
+to new information. Professional forecasts may reflect error correction, information rigidities,
+attention constraints, and convergence toward consensus. Our synthetic panel allows us to ask
+whether LLM-based forecasters display similar updating behavior, and where they differ from
+human professionals. Human forecasters update their beliefs gradually in response to new
+information and past forecast errors (Coibion and Gorodnichenko, 2012; Bordalo et al., 2020).
+We assess whether AI forecasters replicate the patterns of human professional forecasters by
+analyzing forecast revisions across consecutive quarters for both panels. For each forecasteri
+and surveyt, we define the forecast revision as:
+revisioni,t = forecasti,t −forecasti,t−1, (12)
+where forecastis either the human forecast,hi,t, or the AI forecast,mAI
+i,t.
+Wetesttwohypothesescentraltotheexpectationsformationliterature: (1)forecasterscorrect
+past errors, and (2) forecasters converge toward the consensus view. The first hypothesis is
+assessed by regressing revisions on the forecast error from the previous survey. A coefficient
+of one implies that forecasters fully revise their predictions in response to past errors; e.g., if
+a forecaster underestimated GDP by $100 billion, they revise upward by approximately $100
+billion in the following quarter. To test the second hypothesis, we regress forecast revisions on
+deviations from the consensus, i.e., median forecast, within each panel.
+Table 11 reports these regressions separately for the nowcasts of human SPF participants
+(Panel A) and AI forecasters (Panel B). Both human and AI forecasters exhibit significant error
+correction, but with different magnitudes. Human forecasters display near-complete error
+correction: coefficients range from 0.88 (CPI) to 0.98 (RGDP), withR2 values between 0.64 and
+0.94. AI forecasters also correct past errors, but only partially. Error correction coefficients
+range from 0.44 (CPI) to 0.65 (UNEMP), approximately 40-65% of the human response. This
+suggests that AI forecasters place less weight on realized forecast errors when updating their
+24
+
+=== PDF PAGE 25 ===
+beliefs,potentiallyreflectingstrongerpriorsfromtheirtrainingdataorlesssensitivitytorecent
+information.
+As for the consensus tracking behavior, human forecasters show statistically significant
+but economically modest convergence toward the SPF median: coefficients range from−0.30
+(TBILL) to−0.87 (UNEMP), butR2 values are uniformly low (0.004–0.14). Distance from con-
+sensus explains little of the variation in human forecast revisions, suggesting that professional
+forecasters maintain independent views rather than systematically anchoring on the panel me-
+dian. AIforecastersexhibitconsiderablystrongerconsensustracking. ForRGDP,thecoefficient
+is −1.02with R2 = 0.78: forecasterswhodeviatefromtheSPFmedianby$Xbillionrevisetheir
+forecast by approximately $X billion toward consensus. TBILL shows even stronger anchoring
+(−1.14, R2 = 0.72). CPI displays moderate consensus tracking (−0.69, R2 = 0.55), while un-
+employment shows the weakest convergence (−0.51, R2 = 0.09). Thus, the AI panel captures
+some qualitative features of updating, but it is more consensus-anchored than the human SPF.
+These results reveal a fundamental difference in how human and AI forecasters form expec-
+tations. Human forecasters behave as independent information processors: they place more
+weight on correcting past errors (learning from mistakes) but place comparatively little weight
+on the consensus view (maintaining idiosyncratic beliefs). AI forecasters exhibit the opposite
+pattern: they update more gradually in response to past errors but strongly anchor on the
+professional consensus, particularly for output and interest rate forecasts.
+This difference has important implications for interpreting our framework. The strong con-
+sensus anchoring by AI forecasters validates our ablation results in Section 5.2: removing past
+SPF forecasts significantly increases forecast errors precisely because AI forecasters treat the
+consensus as a highly informative summary of latent information used by human forecasters.
+At the same time, this anchoring behavior also means that AI forecasts may inherit biases
+present in the SPF consensus, and may be slower to deviate from consensus during periods
+of structural change when independent judgment becomes especially valuable. The variable-
+specific patterns (stronger anchoring for RGDP and TBILL than for CPI and unemployment)
+suggest that AI forecasters weight the consensus signal differently depending on the variable,
+potentiallyreflectingdifferencesinhowtheseindicatorsarediscussedintrainingdata. Weview
+this feature not as a limitation, but as an economically meaningful property of the simulation:
+25
+
+=== PDF PAGE 26 ===
+by explicitly controlling access to consensus information and historical context, the framework
+allows researchers to study when consensus anchoring improves forecast accuracy and when
+it may hinder adaptation. Overall, simulated forecasters approximate some updating behavior
+but differ systematically in ways that reveal both promise and limitations.
+5.5 Reasoning Patterns
+Surveys of professional forecasters typically provide numerical expectations but limited evi-
+dence on the reasoning behind them. A distinctive feature of LLM-based forecasting panels
+is the ability to elicit reasoning alongside numerical predictions, allowing us to study how the
+typeofreasoningchangesacrossmacroeconomicenvironments. Aftereachforecast,weprompt
+the model to provide a brief rationale, generating explanations that clarify the considerations
+underlying the resulting forecasts.
+Since2008,theEuropeanCentralBankhasconductedspecialsurveysatroughlyfive-yearin-
+tervals to better understand the processes and methodologies used by professional forecasters.
+In this section, we use evidence from these surveys to assess the extent to which the simulated
+reasoning data align with documented forecasting practices among human forecasters. Specif-
+ically, we classify each reasoning response into four categories using keyword frequency rules:
+Mechanical (references to trends, historical averages, and mean-reversion),Policy(references to
+Federal Reserve actions, fiscal or monetary policy, and institutional responses),Model (refer-
+ences to economic theory such as the Phillips curve, Okun’s law, or structural models), and
+Event (references to specific shocks, crises, or salient events such as the pandemic or financial
+crisis).18
+Following the ECB methodology (European Central Bank, 2024), we aggregate these cate-
+goriesintotwobroadertypes: model-basedreasoning(combiningModelandMechanical,asboth
+involve mathematical representations of economic relationships) andjudgment-basedreasoning
+(combiningPolicyandEvent,reflectingexperience-driveninterpretationofcurrentconditions).
+The ECB defines model-based forecasting as relying on “any mathematical representation of
+relationships between economic variables” and judgment-based forecasting as relying on “ex-
+perience and intuition” (European Central Bank, 2019).
+18 Full classification details and keyword lists are provided in Appendix C.
+26
+
+=== PDF PAGE 27 ===
+Table 12 reports the prevalence of each reasoning type across normal and crisis periods,
+showing both the detailed categories and the ECB-style aggregation. During normal periods,
+model-basedreasoningdominates(99.6%),withjudgment-basedreasoningat63.3%. However,
+duringcrisisperiods,AIforecastersshiftmarkedlytowardjudgment-basedreasoning. Themost
+dramatic shift occurs in event-driven reasoning, which rises from 19.7% in normal periods to
+82.4% during the financial crisis and 77.0% during COVID-19. Mechanical reasoning drops
+substantially (from 98.6% to 72.1–84.7%), while the inflation shock period shows a distinct
+pattern: policy-based reasoning surges to 87.3% as forecasters emphasize Federal Reserve
+tightening.
+The ECB-style aggregation reveals the broader pattern. During crises, judgment-based rea-
+soning rises sharply: from 63.3% in normal periods to 87.6% during the financial crisis, 79.9%
+duringCOVID-19,and87.7%duringtheinflationshock. Model-basedreasoningdeclinesmost
+dramatically during COVID-19 (to 72.5%), likely reflecting the unprecedented nature of the
+pandemic shock that rendered historical patterns less informative. All differences between
+crisis and normal periods are statistically significant at conventional levels (p < 0.001).
+These patterns are qualitatively consistent with evidence from special surveys of human
+professional forecasters. The ECB’s Survey of Professional Forecasters finds that “the role of
+judgment in point forecasts has increased” during “periods of economic volatility” such as
+the global financial crisis and pandemic (European Central Bank, 2024). Our results suggest
+thatAIforecasters,liketheirhumancounterparts,adapttheirreasoningapproachtoeconomic
+conditions, relying more heavily on judgment and event-specific narratives during periods of
+heightened uncertainty. While more work is needed to fully characterize and validate LLM
+reasoning, this analysis suggests that our framework could be extended to simulate not only
+forecasts but also the reasoning processes that professional forecasters employ.
+6 Conclusion
+Inthispaper,weintroduceanewframeworkformodelingexpertexpectations’formationusing
+large language models. Rather than treating the LLM primarily as a forecasting tool, we use it
+as a model of forecasters: an expectations operator that maps real-time data, lagged forecasts,
+and forecaster characteristics into survey responses.
+27
+
+=== PDF PAGE 28 ===
+Using this framework, we construct a synthetic panel of forecasters designed to mirror the
+institutionalenvironmentoftheSurveyofProfessionalForecasters. Weshowthattheresulting
+AI-generatedpanelreproducessalientfeaturesofthehumansurvey,includingmedianforecast
+levels. Importantly, while aligned in many dimensions, AI and human forecasts differ in
+systematicandinterpretablewaysthatreflectdifferencesininformationavailability,information
+processing, and updating behavior.
+Our ablation exercises clarify why this occurs. Performance improves notably when the
+LLM is augmented with lagged human forecasts, real-time data, and forecaster characteris-
+tics. Removingtheseinputssystematicallyworsensperformance,withthelargestdeterioration
+occurring when past SPF medians are excluded. Lagged human forecasts are useful because
+they capture things we cannot easily measure, like judgment, context, and institutional knowl-
+edge. By using these forecasts, the model can better mimic how people form expectations.
+We therefore view the framework not as a replacement for human survey participants, but as a
+complementarymeasurementtoolthatenablescontrolledanalysisofhowexpectationsrespond
+to alternative information environments.
+A key advantage of LLM-based panels is their flexibility. Traditional surveys cannot retroac-
+tivelymodifypanelcomposition,controlinformationavailability,orexperimentwithalternative
+question designs. LLM-based panels enable all of these counterfactual analyses with appro-
+priate context engineering. This, in turn, allows researchers to prototype new survey designs
+at minimal cost and simulate counterfactual forecast distributions for past periods under cus-
+tom information sets. More broadly, our results point to a substantive role for generative AI
+in macroeconomics: not as a forecasting oracle, but as a laboratory for studying expectations
+formation. Bycombininginstitutionalrealismwithflexiblecontextengineering,theframework
+allows researchers to analyze expectations in a disciplined and transparent way. We see this
+approach as a step toward integrating modern machine learning tools into the measurement
+of expectations in a manner that complements economic theory and existing survey-based
+methods.
+Integration of human expertise with AI-based forecaster panels, analogous to a “man+ ma-
+chine” approach in other domains, promises richer measurements of expectations and deeper
+understanding of belief formation in macroeconomic environments. The human SPF provides
+28
+
+=== PDF PAGE 29 ===
+ground truth for calibration and validation; the LLM panel provides a flexible experimental
+platform for testing hypotheses that are challenging to address with traditional surveys. This
+complementarity is the core contribution of our framework.
+Statement of use of generative AI: During the preparation of this work, the authors used
+large language models as part of the research design, as described in the paper. In particular,
+we used OpenAI models, primarily GPT-4o mini, together with robustness checks using GPT-
+3.5, GPT-4, Llama-3.3-70B, and DeepSeek-V3, to construct synthetic professional forecasters
+and generate simulated Survey of Professional Forecasters responses. The OpenAI Assistants
+API was used to automate query generation, forecast collection, and response processing. In
+addition,theauthorsusedChatGPT/OpenAItoolsforlimitedlanguageediting,proofreading,
+and improving the clarity of the manuscript. The authors reviewed, edited, validated, and
+analyzed all AI-generated output as needed and take full responsibility for the content of the
+article.
+29
+
+=== PDF PAGE 30 ===
+References
+Ajay Agrawal, Joshua Gans, and Avi Goldfarb. Prediction, judgment, and complexity: A
+theory of decision-making and artificial intelligence. InThe Economics of Artificial Intelligence:
+An Agenda, pages 89–110. University of Chicago Press, 2019. doi:
+10.7208/chicago/9780226613475.003.0003.
+Ingvild Almås, Orazio Attanasio, and Pamela Jervis. Presidential Address: Economics and
+Measurement: New Measures to Model Decision Making.Econometrica, 92(4):947–978, 2024.
+Peter Andre, Carlo Pizzinelli, Christopher Roth, and Johannes Wohlfart. Subjective Models of
+the Macroeconomy: EvidenceFrom Experts andRepresentative Samples.Review ofEconomic
+Studies, 89(6):2958–2991, 2022. doi: 10.1093/restud/rdac008.
+Andrew Ang, Geert Bekaert, and Min Wei. Do macro variables, asset markets, or surveys
+forecast inflation better?Journal of Monetary Economics, 54(4):1163–1212, 2007.
+Robert L Axtell and J Doyne Farmer. Agent-based modeling in economics and finance: Past,
+present, and future.Journal of Economic Literature, 63(1):197–287, 2025. doi:
+10.1257/jel.20221319.
+Roy Batchelor. Bias in Macroeconomic Forecasts.International Journal of Forecasting, 23(2):
+189–203, 2007.
+Jonathan Benchimol, Makram El-Shagi, and Yossi Saadon. Do Expert Experience and
+Characteristics Affect Inflation Forecasts?Journal of Economic Behavior & Organization, 201:
+205–226, 2022.
+Pedro Bordalo, Nicola Gennaioli, Yueran Ma, and Andrei Shleifer. Overreaction in
+macroeconomic expectations.American Economic Review, 110(9):2748–2782, 2020. doi:
+10.1257/aer.20181219.
+J. Leland Bybee. The Ghost in the Machine: Generating Beliefs with Large Language Models.
+Working Paper, University of Chicago Booth School of Business, 2025. URL
+https://lelandbybee.com/files/LLM.pdf. First draft February 2023; previously titled
+“Surveying Generative AI’s Economic Expectations” (SSRN 4430515, arXiv:2305.02823).
+Sean Cao, Wei Jiang, Junbo Wang, and Baozhong Yang. From man vs. machine to man+
+machine: The art and AI of stock analyses.Journal of Financial Economics, 160:103910, 2024.
+30
+
+=== PDF PAGE 31 ===
+Andrew Caplin. Data Engineering for Cognitive Economics.Journal of Economic Literature, 63
+(1):164–196, 2025. doi: 10.1257/jel.20241351.
+Ayush Chopra, Shashank Kumar, Nurullah Giray-Kuru, Ramesh Raskar, and Arnau
+Quera-Bofarull. On the Limits of Agency in Agent-based Models.arXiv preprint
+arXiv:2409.10568, 2024.
+Michael P. Clements. Forecast Uncertainty—Ex Ante and Ex Post: U.S. Inflation and Output
+Growth. Journal of Business & Economic Statistics, 32(2):206–216, 2014. doi:
+10.1080/07350015.2013.859618.
+Michael P. Clements and Ana Beatriz Galvão. Model and Survey Estimates of the Term
+Structure of US Macroeconomic Uncertainty.International Journal of Forecasting, 33(3):
+591–604, 2017. doi: 10.1016/j.ĳforecast.2017.01.004.
+OlivierCoibionandYuriyGorodnichenko. Whatcansurveyforecaststellusaboutinformation
+rigidities? Journal of Political Economy, 120(1):116–159, 2012. doi: 10.1086/665662.
+Olivier Coibion and Yuriy Gorodnichenko. Information Rigidity and the Expectations
+Formation Process: A Simple Framework and New Facts.American Economic Review, 105(8):
+2644–2678, 2015. doi: 10.1257/aer.20110306.
+Thomas R. Cook and Sophia Kazinnik. Social Group Bias in AI Finance.SSRN Working Paper
+No. 5287153, 2025. doi: 10.2139/ssrn.5287153. arXiv:2506.17490.
+Thomas R Cook, Anne Lundgaard Hansen, Sophia Kazinnik, and Peter McAdam. Under
+Pressure: Strategic Signaling in Bank Earnings Calls.Available at SSRN 5382397, 2025.
+Dean Croushore. Introducing: The Survey of Professional Forecasters.Federal Reserve Bank of
+Philadelphia Business Review, pages 3–15, November/December 1993.
+DeanCroushoreandTomStark. FiftyYearsoftheSurveyofProfessionalForecasters. Economic
+Insights, 4(4):1–11, 2019.
+Francis X. Diebold and Roberto S. Mariano. Comparing Predictive Accuracy.Journal of
+Business & Economic Statistics, 13(3):253–263, 1995. doi: 10.2307/1392185. URL
+https://www.jstor.org/stable/1392185.
+Francis X. Diebold, Anthony S. Tay, and Kenneth F. Wallis. Evaluating Density Forecasts of
+Inflation: The Survey of Professional Forecasters. In Robert F. Engle and Halbert White,
+editors,Cointegration, Causality, and Forecasting: A Festschrift in Honour of Clive W. J. Granger,
+31
+
+=== PDF PAGE 32 ===
+pages 76–90. Oxford University Press, Oxford, 1999. Also NBER Working Paper No. 6228,
+October 1997,https://doi.org/10.3386/w6228.
+Joseph Engelberg, Charles F. Manski, and Jared Williams. Comparing the Point Predictions
+and Subjective Probability Distributions of Professional Forecasters.Journal of Business &
+Economic Statistics, 27(1):30–41, 2009. doi: 10.1198/jbes.2009.0003.
+European Central Bank. Results of the third special questionnaire for participants in the ECB
+Survey of Professional Forecasters. Ecb survey report, European Central Bank, February
+2019. URL https://www.ecb.europa.eu/stats/ecb_surveys/survey_of_professional_
+forecasters/html/ecb.spf201902_specialsurvey~7275f9e7e6.en.html. Third SPF
+special survey, conducted 22 August–14 September 2018.
+European Central Bank. The ecb survey of professional forecasters: Forecast processes and
+methodologies: results of the 2023 special survey. Technical Report QB-BR-24-005-EN-N,
+European Central Bank, Frankfurt am Main, Germany, April 2024. Survey conducted on the
+occasion of the 25th anniversary of the ECB Survey of Professional Forecasters (SPF).
+José Fajardo and Manuela Dantas. Understanding the impact of severe hyperinflation
+experience on current household investment behavior.Journal of Behavioral and Experimental
+Finance, 17:60–67, 2018. doi: 10.1016/j.jbef.2017.12.008.
+Miguel Faria-e Castro and Fernando Leibovici. Artificial Intelligence and Inflation Forecasts.
+Working Paper 2023-015, Federal Reserve Bank of St. Louis, 2023.
+Anastassia Fedyk, Ali Kakhbod, Peiyao Li, and Ulrike Malmendier. AI and Perception Biases
+in Investments: An Experimental Study.Available at SSRN 4787249, 2024.
+Xavier Gabaix. A behavioral new keynesian model.American Economic Review, 110(8):
+2271–2327, 2020. doi: 10.1257/aer.20162005.
+Eric Ghysels and Jonathan H Wright. Forecasting Professional Forecasters.Journal of Business
+& Economic Statistics, 27(4):504–516, 2009.
+Paolo Giordani and Paul Söderlind. Inflation Forecast Uncertainty.European Economic Review,
+47(6):1037–1059, December 2003. doi: 10.1016/S0014-2921(02)00236-2.
+John R. Graham, Campbell R. Harvey, and Manish Jha. CFOs Meet LLMs. SSRN working
+paper, 2026.
+Wes Gurnee and Max Tegmark. Language Models Represent Space and Time. InThe Twelfth
+32
+
+=== PDF PAGE 33 ===
+International Conference on Learning Representations (ICLR), 2024. arXiv:2310.02207.
+Anne Lundgaard Hansen and Seung Jung Lee. Financial Stability Implications of Generative
+AI: Taming the Animal Spirits.arXiv preprint arXiv:2510.01451, 2025.
+Songrun He, Linying Lv, Asaf Manela, and Jimmy Wu. Chronologically Consistent Large
+Language Models.arXiv preprint arXiv:2502.21206, 2025.
+Harrison Hong and Marcin Kacperczyk. Competition and Bias.The Quarterly Journal of
+Economics, 125(4):1683–1725, 2010. doi: 10.1162/qjec.2010.125.4.1683.
+John J Horton. Large Language Models as Simulated Economic Agents: What Can We Learn
+from Homo Silicus? Working Paper 31122, National Bureau of Economic Research, 2023.
+URL https://www.nber.org/papers/w31122.
+RongHuang, KeithPilbeam, andWilliamPouliot. Aremacroeconomicforecastersoptimistsor
+pessimists? A reassessment of survey based forecasts.Journal of Economic Behavior &
+Organization, 197:706–724, 2022. doi: 10.1016/j.jebo.2022.03.012.
+MatthewO.Jackson, QiaozhuMei, StephanieW.Wang, YutongXie, WalterYuan, SethBenzell,
+Erik Brynjolfsson, Colin F. Camerer, James Evans, Brian Jabarian, Jon Kleinberg, Juanjuan
+Meng, Sendhil Mullainathan, Asuman Ozdaglar, Thomas Pfeiffer, Moshe Tennenholtz, Robb
+Willer, Diyi Yang, and Teng Ye. AI Behavioral Science.SSRN Electronic Journal, August 2025.
+URL https://ssrn.com/abstract=5395006. Working Paper.
+Sophia Kazinnik. Bank Run, Interrupted: Modeling Deposit Withdrawals with Generative AI.
+Management Science, 2026.
+Alejandro Lopez-Lira, Yuehua Tang, and Mingyin Zhu. The Memorization Problem: Can We
+Trust LLMs’ Economic Forecasts?arXiv preprint arXiv:2504.14765, 2025.
+Ulrike Malmendier and Stefan Nagel. Depression Babies: Do Macroeconomic Experiences
+Affect Risk Taking?The Quarterly Journal of Economics, 126(1):373–416, 2011. doi:
+10.1093/qje/qjq004.
+Ulrike Malmendier and Stefan Nagel. Learning from Inflation Experiences.The Quarterly
+Journal of Economics, 131(1):53–87, 2016.
+N. Gregory Mankiw and Ricardo Reis. Sticky information versus sticky prices: A proposal to
+replace the new keynesian phillips curve.Quarterly Journal of Economics, 117(4):1295–1328,
+2002. doi: 10.1162/003355302320935034.
+33
+
+=== PDF PAGE 34 ===
+N. Gregory Mankiw, Ricardo Reis, and Justin Wolfers. Disagreement about Inflation
+Expectations. NBER Macroeconomics Annual, 18:209–248, 2003. doi: 10.1086/ma.18.3585256.
+Sebastiano Manzan. Differential Interpretation in the Survey of Professional Forecasters.
+Journal of Money, Credit and Banking, 43(5):993–1017, 2011. doi:
+10.1111/j.1538-4616.2011.00404.x.
+Sebastiano Manzan. Are Professional Forecasters Bayesian?Journal of Economic Dynamics and
+Control, 123:104045, 2021. doi: 10.1016/j.jedc.2020.104045.
+Sendhil Mullainathan and Jann Spiess. Machine learning: An applied econometric approach.
+Journal of Economic Perspectives, 31(2):87–106, 2017. doi: 10.1257/jep.31.2.87.
+Scott Murray, Yusen Xia, and Houping Xiao. Charting by machines.Journal of Financial
+Economics, 153:103791, 2024.
+Qian Niu, Junyu Liu, Ziqian Bi, Pohsun Feng, Benji Peng, Keyu Chen, Ming Li, Lawrence KQ
+Yan, Yichao Zhang, Caitlyn Heqi Yin, Cheng Fei, Tianyang Wang, Yunze Wang, Silin Chen,
+Ming Liu, Ziyuan Qin, Riyang Bao, Xinyuan Song, and Zekun Jiang. Large Language
+Models and Cognitive Science: A Comprehensive Review of Similarities, Differences, and
+Challenges. arXiv preprint arXiv:2409.02387, 2024.
+Athanasios Orphanides and John C. Williams. Robust Monetary Policy Rules with Unknown
+Natural Rates.Brookings Papers on Economic Activity, 2002(2):63–145, 2002. doi:
+10.1353/eca.2003.0007.
+Athanasios Orphanides and John C. Williams. Robust Monetary Policy with Imperfect
+Knowledge. Journal of Monetary Economics, 54(5):1406–1435, 2007. doi:
+10.1016/j.jmoneco.2007.06.005.
+Andrew J. Patton and Allan Timmermann. Why Do Forecasters Disagree? Lessons from the
+Term Structure of Cross-Sectional Dispersion.Journal of Monetary Economics, 57(7):803–820,
+2010. doi: 10.1016/j.jmoneco.2010.07.001.
+Barbara Rossi and Tatevik Sekhposyan. Macroeconomic Uncertainty Indices Based on
+Nowcast and Forecast Error Distributions.American Economic Review, 105(5):650–655, 2015.
+doi: 10.1257/aer.p20151124.
+Glenn D. Rudebusch. Assessing Nominal Income Rules for Monetary Policy with Model and
+Data Uncertainty.Economic Journal, 112(479):402–432, 2002. doi: 10.1111/1468-0297.00036.
+34
+
+=== PDF PAGE 35 ===
+Isabelle Salle, Yuriy Gorodnichenko, and Olivier Coibion. Lifetime Memories of Inflation:
+Evidence from Surveys and the Lab.Journal of Political Economy Macroeconomics, 2026. doi:
+10.1086/741544. Published online March 26, 2026. Previously NBER Working Paper 31996,
+December 2023.
+Tom Stark. Realistic evaluation of real-time forecasts in the Survey of Professional Forecasters.
+Research rap special report, Federal Reserve Bank of Philadelphia, May 2010. URL
+https://www.philadelphiafed.org/-/media/frbp/assets/economy/reports/
+research-rap/2010/realistic-evaluation-of-real-time-forecasts.pdf .
+Tom Stark. SPF Panelists’ Forecasting Methods: A Note on the Aggregate Results of a
+November 2009 Special Survey. Research note, Federal Reserve Bank of Philadelphia,
+Real-Time Data Research Center, March 2013. URLhttps://www.philadelphiafed.org/-/
+media/frbp/assets/surveys-and-data/survey-of-professional-forecasters/
+spf-special-survey-on-forecast-methods.pdf.
+Gaurav Suri, Lily R. Slater, Ali Ziaee, and Morgan Nguyen. Do Large Language Models Show
+Decision Heuristics Similar to Humans? A Case Study Using GPT-3.5.Journal of
+Experimental Psychology: General, 153(4):1066–1075, 2024. doi: 10.1037/xge0001547.
+ToniMWhited. Integratingstructuraland reduced-formmethodsinempiricalfinance. Journal
+of Financial Econometrics, 21(3):597–615, 2023.
+Jing Cynthia Wu, Jin Xi, and Shihan Xie. LLM survey framework: Coverage, reasoning,
+dynamics, identification. SSRN working paper, 2025.
+Ali Zarifhonarvar. Generating inflation expectations with large language models.Journal of
+Monetary Economics, 157:103859, 2026. doi: 10.1016/j.jmoneco.2025.103859.
+35
+
+=== PDF PAGE 36 ===
+Figures
+Figure 1: Example of forecaster acknowledgments
+ThefigureshowsanexampleofacknowledgmentstoforecasterswhocontributedtorecentFederalReserveBankof
+Philadelphia surveys.
+36
+
+=== PDF PAGE 37 ===
+Figure 2: Characteristics of the SPF panel over time
+The figures show the characteristics of the AI SPF panel over time: (a) gender, (b) graduation year, (c) continent of
+origin, (d) public appearance; on next page: (e) education level, (f) education field, (g) affiliation type, and (h) job
+title.
+(a)Gender
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+Female Male Unknown (b) Graduation Year
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+−1969 1970−1989 1990−2009 2010− Unknown
+(c)Continent of Origin
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+USA Americas (excl. USA) Europe Asia Unknown (d)Public Appearance
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+Interviews Interviews + Twitter Twitter Unknown
+(Figure continues on next page)
+37
+
+=== PDF PAGE 38 ===
+Figure 2: Characteristics of the AI SPF panel over time(continued)
+(e) Education level
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+Bachelor's Master's MBA/MPA Ph.D. Unknown (f)Education field
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+Economics/Finance
+Business/Management
+Econometrics/Statistics
+Public Administration
+Law
+Unknown
+(g)Affiliation type
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+Consulting
+University
+Investment Banking
+Commercial Banking
+Asset Management
+Manufacturing
+Other
+Unknown (h) Job title
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+0.00
+0.25
+0.50
+0.75
+1.00
+2000 2005 2010 2015 2020
+Chief Economist
+Executive Role
+Economist
+Academic Role
+Consultant/Analyst
+Unknown
+38
+
+=== PDF PAGE 39 ===
+Figure 3: SPF and AI-generated median forecasts
+The figure shows the one- and four-quarter ahead median human and AI-generated SPF forecasts for the (a)-(b)
+CPI inflation rate, (c)-(d) 3-month Treasury bill rate, (e)-(f) unemployment rate, and (g)-(h) real GDP index. Shaded
+areas show NBER recession quarters.
+(a)CPI inflation rate, one quarter ahead
+−2.5%
+0%
+2.5%
+5%
+7.5%
+2000 2010 2020 (b) CPI inflation rate, four quarters ahead
+0%
+2%
+4%
+2000 2010 2020
+(c)3-month Treasury bill rate, one quarter ahead
+0%
+2%
+4%
+6%
+2000 2010 2020 (d) 3-month Treasury bill rate, four quarters ahead
+0%
+2%
+4%
+6%
+2000 2010 2020
+−3
+0
+3
+6
+9
+2000 2005 2010 2015 2020
+Human AI
+(Figure continues on next page)
+39
+
+=== PDF PAGE 40 ===
+Figure 3: SPF and AI-generated median forecasts(continued)
+(e)Unemployment rate, one quarter ahead
+0%
+5%
+10%
+2000 2010 2020 (f)Unemployment rate, four quarters ahead
+0%
+2.5%
+5%
+7.5%
+10%
+2000 2010 2020
+(g) Real GDP index, one quarter ahead
+0
+5000
+10000
+15000
+20000
+2000 2010 2020 (h) Real GDP index, four quarters ahead
+0
+5000
+10000
+15000
+20000
+2000 2010 2020
+−3
+0
+3
+6
+9
+2000 2005 2010 2015 2020
+Human AI
+40
+
+=== PDF PAGE 41 ===
+Figure 4:Distribution of Forecaster Fixed Effects
+Notes: The figure shows the distribution of forecaster-specific fixed effects for four macroeconomic variables. Fixed
+effects are calculated as the average deviation of each forecaster’s prediction from the quarterly cross-sectional
+mean. Each panel displays a histogram of fixed effects across 194 forecasters, with vertical lines indicating zero
+(red dashed) and the sample mean (black solid). RGDP and NGDP are measured in billions of 2012 dollars; CPI
+and UNEMP are measured in percentage points. Forecasters are restricted to those with at least 10 observations
+across the sample period (1999–2023).
+41
+
+=== PDF PAGE 42 ===
+Figure 5: Densities of human and AI-generated SPF individual forecast errors
+The figure shows densities centered around realized variables of human and AI-generated SPF forecasts across
+individualforecastersforfourdifferentquarters. Thedensitiesareshownforthefollowingvariablesandforecasting
+horizons: (a) CPI inflation rate one quarter ahead, (b) CPI inflation rate four quarters ahead, (c) 3-month Treasury
+bill rate one quarter ahead, (d) 3-month Treasury bill rate four quarters ahead, (e) unemployment rate one quarter
+ahead, (f) unemployment rate four quarters ahead, (g) real GDP index one quarter ahead, and (h) real GDP index
+four quarters ahead.
+(a)CPI inflation rate, one quarter ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+0 10 20 (b) CPI inflation rate, four quarters ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−10 −5 0
+(c)3-month Treasury bill rate, one quarter ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−2 −1 0 1 2 (d) 3-month Treasury bill rate, four quarters ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−2 0 2 4
+−0.050 −0.025 0.000 0.025 0.050
+Human AI
+(Figure continues on next page)
+42
+
+=== PDF PAGE 43 ===
+Figure 5: Densities of human and AI-generated SPF individual forecast errors(continued)
+(e)Unemployment rate, one quarter ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+0 5 10 15 20 (f)Unemployment rate, four quarters ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−5 0 5 10
+(g) Real GDP index, one quarter ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−1000 0 1000 2000 (h) Real GDP index, four quarters ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−3000 −2000 −1000 0 1000
+−0.050 −0.025 0.000 0.025 0.050
+Human AI
+43
+
+=== PDF PAGE 44 ===
+Figure 6: SPF and AI-generated median forecast errors around the LLM training data cut-off date
+The figure shows the errors of one-quarter human and AI-generated SPF median forecasts for the (a) CPI inflation
+rate, (b) 3-month Treasury bill rate, (c) unemployment rate, and (d) real GDP index. The dashed line indicates
+October 2023, the training data cut-off date of the LLM (GPT-4o mini).
+(a)CPI inflation rate, one quarter ahead
+−1%
+0%
+1%
+2023−01 2023−07 2024−01 2024−07 (b) 3-month Treasury bill rate, one quarter ahead
+−1%
+−0.5%
+0%
+0.5%
+1%
+2023−01 2023−07 2024−01 2024−07
+(c)Unemployment rate, one quarter ahead
+−0.4%
+−0.2%
+0%
+0.2%
+2023−01 2023−07 2024−01 2024−07 (d) Real GDP, one quarter ahead
+−4000
+−3000
+−2000
+−1000
+0
+2023−01 2023−07 2024−01 2024−07
+−3
+0
+3
+6
+9
+2000 2005 2010 2015 2020
+Human AI
+44
+
+=== PDF PAGE 45 ===
+Tables
+Table 1: Forecasting variables
+The table lists the variables for which the SPF panel provides point forecasts and their definitions.
+Variable Definition
+Section 1: U.S. Business Indicators
+NGDP Nominal Gross Domestic Product (GDP), levels, seasonally adjusted, annual rate, in billions USD.
+PGDP Gross Domestic Product (GDP) price index, chain weighted, seasonally adjusted, 2010 base year.
+CPROF Levelofnominalcorporateprofitsaftertaxexcludinginventoryvaluationadjustment(IVA)andcapital
+consumption adjustment (CCAdj). Seasonally adjusted, annual rate, in billions USD.
+UNEMP Civilian unemployment rate, levels, seasonally adjusted, percentage points.
+EMP Nonfarm payroll employment, seasonally adjusted, in thousands of jobs.
+INDPROD Industrial production index, seasonally adjusted, index, 2010 base year.
+HOUSING Housing starts, seasonally adjusted, annual rate, in millions.
+TBILL T-Bill rate, 3-month, levels, percentage points.
+BOND AAA AAA corporate bond yield, levels, percentage points.
+BOND BAA BAA corporate bond yield, levels, percentage points.
+TBOND Treasury bond rate, 10-year, levels, percentage points.
+Section 2: Real GDP and Its Components
+RGDP Real Gross Domestic Product, seasonally adjusted, annual rate, 2010 base year.
+RCONSUM Real personal consumption expenditures, seasonally adjusted, annual rate, 2010 base year.
+RNRESIN Real nonresidential fixed investment, seasonally adjusted, annual rate, 2010 base year.
+RRESINV Real residential fixed investment, seasonally adjusted, annual rate, 2010 base year.
+RFEDGOV Real federal government consumption and gross investment, seasonally adjusted, annual rate, 2010
+base year.
+RSLGOV Real state and local government consumption and gross investment, seasonally adjusted, annual rate,
+2010 base year.
+RCBI Realchangeinprivateinventories,levels,chain-weightedrealchangeinprivateinventories. Seasonally
+adjusted, annual rate, 2010 base year.
+REXPORT Real net exports of goods and services, levels, chain-weighted real net exports. Seasonally adjusted,
+annual rate, 2010 base year.
+Section 3: CPI and PCE Inflation
+CPI Headline CPI inflation rate, seasonally adjusted, annual rate, percentage points.
+CORECPI Core CPI inflation rate, seasonally adjusted, annual rate, percentage points.
+PCE PCE inflation rate, headline chain-weighted, seasonally adjusted, annual rate, percentage points.
+COREPCE Core PCE inflation rate, core chain-weighted PCE inflation rate, seasonally adjusted, annual rate,
+percentage points.
+45
+
+=== PDF PAGE 46 ===
+Table 2: Definitions of forecaster characteristics
+The table shows definitions of forecaster characteristics, including inferred gender, affiliation, education, position,
+and public media engagement. The table is based on publicly available sources and may not fully capture the
+breadth of forecaster characteristics.
+Characteristic Description
+Name Full name of the forecaster as listed in the SPF acknowledgement panel.
+Gender (inferred) Gender inferred based on publicly available information (e.g., name, social media).
+Affiliation The institution or company the forecaster is associated with (e.g., university, bank).
+Affiliation type Type of organization the forecaster works for, such as academic, financial, forecasting
+center, government, etc.
+Position in given year Theforecaster’sjobtitleorrolewhentheforecastwasmade(e.g.,professor,economist).
+Highest degree earned The highest degree the forecaster has earned (e.g., Bachelor, Master, PhD).
+Degree area/field The field of study for the forecaster’s degree (e.g., Economics, Finance).
+Graduation year Theyeartheforecastercompletedtheirhighestdegree,usedtoestimateexperienceand
+age.
+Alma mater The institution where the forecaster earned their highest degree.
+Company location The geographic location of the forecaster’s affiliated institution or company.
+Gives interviews Whether the forecaster gives public interviews or engages with media (yes/no).
+Has Twitter Whether the forecaster has a public Twitter profile (yes/no).
+46
+
+=== PDF PAGE 47 ===
+Table 3: Descriptive statistics of forecast variables
+The table shows the number of observations (N), mean, standard deviation (SD), skewness, kurtosis, median,
+minimum,maximum,andfirst-orderautocorrelationcoefficient(ACF(1))ofthedataforeachoftheforecastvariables.
+N Mean SD Skewness Kurtosis Median Min Max ACF(1)
+Section 1: US Business Indicators
+Nominal GDP (x1000) 5308 16 .03 4 .72 0 .55 −0.44 15 .01 8 .68 27 .62 0 .90
+GDP Price 5308 92 .22 13 .34 0 .41 −0.37 91 .40 70 .60 122 .85 0 .90
+Corporate Profits (x1000) 5308 1 .38 0 .57 0 .52 −0.31 1 .27 0 .49 2 .90 0 .87
+Unemployment Rate 5308 5 .75 2 .04 1 .40 2 .32 5 .00 3 .40 14 .70 0 .71
+Non-Farm Payroll (x1000) 5308 138 .61 8 .04 0 .72 −0.71 136 .21 127 .68 156 .92 0 .88
+Industrial Production 5308 110 .36 13 .76 1 .34 0 .96 106 .00 92 .50 147 .30 0 .86
+Housing Starts 5308 1 .29 0 .44 −0.13 −1.01 1 .25 0 .51 2 .11 0 .86
+Treasury Bill Rate (3M) 5308 1 .88 2 .00 0 .76 −0.91 1 .15 0 .02 6 .29 0 .83
+AAA Corp Bond Yield 5308 4 .83 1 .34 0 .25 −0.53 4 .93 2 .14 7 .78 0 .88
+BAA Corp Bond Yield 5308 5 .88 1 .42 0 .17 −0.79 6 .01 3 .24 8 .88 0 .85
+Treasury Bond Rate (10Y) 5308 3 .35 1 .37 0 .16 −0.79 3 .39 0 .62 6 .66 0 .84
+Section 2: Real GDP and Its Components
+Real GDP (x1000) 5308 14 .05 3 .78 0 .29 −1.06 13 .33 7 .68 22 .49 0 .90
+Real PCE (x1000) 5308 9 .81 2 .62 0 .27 −0.98 9 .42 5 .25 15 .49 0 .91
+Real Non-Res Fixed Inv (x1000)5308 1 .82 0 .65 0 .68 −1.01 1 .44 0 .99 3 .27 0 .90
+Real Res Fixed Inv 5308 493 .98 122 .31 0 .10 −1.27 504 .30 293 .30 734 .00 0 .86
+Real Federal C&GI (x1000) 5308 0 .97 0 .28 −0.11 −1.18 1 .04 0 .45 1 .49 0 .90
+Real State/Local C&GI (x1000)5308 1 .52 0 .37 0 .19 −1.07 1 .46 0 .85 2 .34 0 .89
+Real Change in Private Inv 5308 24 .95 69 .41 −1.12 3 .69 34 .50 −287.00 193 .20 0 .37
+Real Net Exports 5308 −610.58 285 .40 −1.43 1 .27 −533.10−1544.70−250.00 0 .86
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 5308 2 .52 3 .14 −1.14 7 .41 2 .48 −13.39 10 .73 0 .00
+Core CPI Inflation Rate 5308 2 .33 1 .49 2 .21 8 .36 2 .19 −1.09 10 .21 0 .31
+PCE Inflation Rate 5308 0 .69 7 .61 −4.05 16 .31 2 .14 −40.91 6 .91 0 .03
+Core PCE Inflation Rate 5308 −0.21 2 .95 −9.29 85 .64 0 .03 −28.31 2 .00 −0.04
+47
+
+=== PDF PAGE 48 ===
+Table 4: Forecast accuracy of human and AI-generated SPF forecasts
+Thetableshowsforecastaccuracyreportedasmeanabsoluteerrorscomputedastheaverageofabsolutedifferences
+between realized values and median human and AI-generated SPF forecasts across survey quarters. Accuracy is
+reported for different forecast horizons, with 0, 1 and 4 denoting nowcast, one quarter and four quarters ahead,
+respectively. For each forecasting horizon, the table boldfaces the lowest MAE value between the AI and human
+surveys. TheP-valcolumnreportsp-valuesandsignificancelevelsforrandomizedtestsofthestatisticalsignificance
+of the difference between AI and human MAEs. The tests are based on 10,000 random draws. Significance levels:⋆
+p-value≤0.10, ⋆⋆ p-value≤0.05, ⋆⋆⋆ p-value≤0.01.
+Horizon (quarters) 0 1 4
+AI Human P-val AI Human P-val AI Human P-val
+Section 1: US Business Indicators
+Nominal GDP 44.39 187.68 0 .00⋆⋆⋆ 152.96 178.49 0 .00⋆⋆⋆ 426.85 381.28 0.00⋆⋆⋆
+GDP Price 22.02 22.07 0 .30 22.01 22.12 0 .41 21.97 22.27 0 .62
+Corporate Profits 46.59 71.52 0 .24 98.86 101.25 0 .56 182.94 186.90 0 .70
+Unemployment Rate 0.53 0.38 0.81 0 .73 0.59 0.97 1 .05 0.94 0.69
+Non-Farm Payroll 984.75 465.16 0.06⋆ 1487.62 805.58 0.21 2867 .16 1952.10 0.27
+Industrial Production 2.33 1.64 0.18 3 .53 2.98 0.17 5.90 6.32 0 .00⋆⋆⋆
+Housing Starts 0.10 0.09 0.44 0 .13 0.12 0.24 0.21 0 .21 0.07⋆
+Treasury Bill Rate (3M) 0.47 0.26 0.95 0 .67 0.44 0.71 1 .29 1.21 0.12
+AAA Corp Bond Yield 0.41 0.28 0.99 0 .48 0.44 0.63 0.71 0.73 0 .14
+BAA Corp Bond Yield 0.46 0.30 0.03⋆⋆ 0.56 0.49 0.02⋆⋆ 0.80 0.81 0 .00⋆⋆⋆
+Treasury Bond Rate (10Y) 0.47 0.32 0.85 0 .57 0.51 0.70 0.83 0.88 0 .03⋆⋆
+Section 2: Real GDP and Its Components
+Real GDP 173.30 126.26 0.00⋆⋆⋆ 314.34 209.62 0.02⋆⋆ 650.31 570.78 0.00⋆⋆⋆
+Real PCE 61.41 90.67 0 .00⋆⋆⋆ 166.62 130.56 0.01⋆⋆⋆ 395.96 332.31 0.00⋆⋆⋆
+Real Non-Res Fixed Inv 20.51 25.91 0 .03⋆⋆ 54.78 48.91 0.06⋆ 131.69 134.24 0 .01⋆⋆⋆
+Real Res Fixed Inv 10.10 10.49 0 .78 25 .86 18.12 0.76 59 .55 54.28 0.76
+Real Federal C&GI 12.63 6.79 0.84 29 .70 19.39 0.65 57 .52 45.84 0.50
+Real State/Local C&GI 12.72 8.10 0.02⋆⋆ 31.43 24.47 0.15 78 .72 70.18 0.12
+Real Change in Private Inv 14.26 24.94 0 .49 42 .52 38.14 0.51 56 .55 49.10 0.39
+Real Net Exports 21.17 16.55 0.29 53 .99 43.31 0.26 114 .92 91.89 0.05⋆
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 2.40 1.99 0.93 2 .24 2.14 0.74 2.04 2.06 0 .87
+Core CPI Inflation Rate 0.90 0.82 0.59 0.81 0.87 0 .30 1 .02 1.00 0.37
+PCE Inflation Rate 1.93 2.49 0 .75 2.64 2.73 0 .75 3 .16 3.14 0.89
+Core PCE Inflation Rate 2.43 2.31 0.80 2 .37 2.21 0.94 2 .19 2.15 0.66
+48
+
+=== PDF PAGE 49 ===
+Table 5: Percentage survey quarters where AI is more accurate than the human SPF
+The table shows forecast accuracy in terms of the percentage of survey quarters where the AI-generated SPF has
+lower forecast errors than the human SPF (Pct). Forecast errors are computed as the differences between realized
+valuesandmedianhumanandAI-generatedSPFforecasts. Valuesarereportedfordifferentforecasthorizons,with
+0, 1 and 4 denoting nowcast, one quarter and four quarters ahead, respectively. The table boldfaces values above
+50%. The P-val column reports p-values and significance levels for randomized tests of the percentages being equal
+to 50%. The tests are based on 10,000 random draws. Significance levels:⋆ p-value≤0.10, ⋆⋆ p-value≤0.05, ⋆⋆⋆
+p-value≤0.01.
+Horizon (quarters) 0 1 4
+Pct P-val Pct P-val Pct P-val
+Section 1: US Business Indicators
+Nominal GDP 0.94 0.00⋆⋆⋆ 0.70 0.00⋆⋆⋆ 0.55 0.32
+GDP Price 0.80 0.00⋆⋆⋆ 0.86 0.00⋆⋆⋆ 0.88 0.00⋆⋆⋆
+Corporate Profits 0.64 0.01⋆⋆⋆ 0.58 0.13 0.55 0.32
+Unemployment Rate 0.33 0 .02⋆⋆ 0.37 0 .10 0 .41 0 .17
+Non-Farm Payroll 0.07 0 .00⋆⋆⋆ 0.10 0 .00⋆⋆⋆ 0.20 0 .00⋆⋆⋆
+Industrial Production 0.33 0 .00⋆⋆⋆ 0.41 0 .07⋆ 0.60 0.06⋆
+Housing Starts 0.49 0 .92 0 .45 0 .37 0.51 0.92
+Treasury Bill Rate (3M) 0.24 0 .00⋆⋆⋆ 0.28 0 .00⋆⋆⋆ 0.50 1.00
+AAA Corp Bond Yield 0.23 0 .00⋆⋆⋆ 0.46 0 .49 0.55 0.42
+BAA Corp Bond Yield 0.23 0 .00⋆⋆⋆ 0.39 0 .11 0.55 0.46
+Treasury Bond Rate (10Y) 0.34 0 .00⋆⋆⋆ 0.46 0 .51 0.57 0.20
+Section 2: Real GDP and Its Components
+Real GDP 0.63 0.01⋆⋆ 0.55 0.32 0.50 1.00
+Real PCE 0.86 0.00⋆⋆⋆ 0.51 0.92 0 .34 0 .00⋆⋆⋆
+Real Non-Res Fixed Inv 0.70 0.00⋆⋆⋆ 0.52 0.76 0.56 0.22
+Real Res Fixed Inv 0.69 0.00⋆⋆⋆ 0.39 0 .04⋆⋆ 0.43 0 .16
+Real Federal C&GI 0.76 0.00⋆⋆⋆ 0.42 0 .11 0 .36 0 .01⋆⋆⋆
+Real State/Local C&GI 0.59 0.09⋆ 0.37 0 .01⋆⋆ 0.38 0 .02⋆⋆
+Real Change in Private Inv 0.74 0.00⋆⋆⋆ 0.47 0 .62 0 .40 0 .06⋆
+Real Net Exports 0.49 0 .92 0 .44 0 .27 0 .29 0 .00⋆⋆⋆
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 0.45 0 .38 0 .48 0 .80 0.55 0.54
+Core CPI Inflation Rate 0.41 0 .19 0.62 0.16 0 .37 0 .07⋆
+PCE Inflation Rate 0.75 0.00⋆⋆⋆ 0.63 0.08⋆ 0.57 0.35
+Core PCE Inflation Rate 0.50 1.00 0 .44 0 .46 0.55 0.53
+49
+
+=== PDF PAGE 50 ===
+Table 6: Forecast accuracy of best human and AI SPF forecasters
+Thetableshowsforecastaccuracyreportedasmeanabsoluteerrorscomputedastheaverageofabsolutedifferences
+betweenrealizedvaluesandthebesthumanandAI-generatedSPFforecastsacrosssurveyquarters. Thebestforecast
+is computed from the forecaster that achieves lowest average error across survey quarters. These best forecasters
+are identified separately for each variable and horizon. Accuracy is reported for different forecast horizons, with
+0, 1 and 4 denoting nowcast, one quarter and four quarters ahead, respectively. For each forecasting horizon, the
+table boldfaces the lowest MAE value between the AI and human surveys. The P-val column reports p-values and
+significancelevelsforrandomizedtestsofthestatisticalsignificanceofthedifferencebetweenAIandhumanMAEs.
+Thetestsarebasedon10,000randomdraws. Significancelevels: ⋆ p-value≤0.10, ⋆⋆ p-value≤0.05, ⋆⋆⋆ p-value≤0.01.
+Horizon (quarters) 0 1 4
+AI Human P-val AI Human P-val AI Human P-val
+Section 1: US Business Indicators
+Nominal GDP 16.04 115.74 0 .00⋆⋆⋆ 49.00 165.42 0 .09⋆ 122.43 304.78 0 .02⋆⋆
+GDP Price 4.88 7.31 0 .05⋆⋆ 3.73 6.13 0 .04⋆⋆ 0.65 2.20 0 .05⋆⋆
+Corporate Profits 9.23 55.20 0 .02⋆⋆ 19.67 66.44 0 .06⋆ 47.47 125.77 0 .03⋆⋆
+Unemployment Rate 0.06 0 .06 0.65 0.12 0.18 0 .22 0.12 0.44 0 .10
+Non-Farm Payroll 328.08 85.00 1.00 850 .00 45.00 0.47 1971 .00 121.00 0.87
+Industrial Production 0.32 0.92 0 .37 0.58 1.23 0 .33 1.50 2.43 0 .05⋆⋆
+Housing Starts 0.03 0.04 0 .66 0.05 0.07 0 .28 0.03 0.28 0 .02⋆⋆
+Treasury Bill Rate (3M) 0.03 0.02 0.63 0 .04 0.03 0.39 0 .09 0.07 0.60
+AAA Corp Bond Yield 0.21 0.16 0.96 0.15 0.21 0 .79 0 .24 0.15 0.59
+BAA Corp Bond Yield 0.66 0.27 0.56 0 .91 0.39 0.19 0.25 0.35 0 .18
+Treasury Bond Rate (10Y) 0.09 0.15 0 .99 0.12 0.16 0 .23 0.17 0.50 0 .15
+Section 2: Real GDP and Its Components
+Real GDP 39.12 103.89 0 .04⋆⋆ 56.80 110.74 0 .03⋆⋆ 55.70 272.73 0 .01⋆⋆⋆
+Real PCE 5.80 50.58 0 .00⋆⋆⋆ 34.83 53.36 0 .14 93 .62 53.36 0.35
+Real Non-Res Fixed Inv 6.39 28.26 0 .00⋆⋆⋆ 33.66 41.69 0 .57 49.35 100.42 0 .02⋆⋆
+Real Res Fixed Inv 1.10 2.64 0 .25 7.89 13.19 0 .36 24 .71 23.87 0.12
+Real Federal C&GI 1.60 2.01 0 .96 12 .51 6.03 0.82 20 .63 13.27 0.74
+Real State/Local C&GI 4.29 5.85 0 .00⋆⋆⋆ 6.35 9.46 0 .02⋆⋆ 14.04 17.78 0 .05⋆
+Real Change in Private Inv 2.88 21.49 0 .03⋆⋆ 8.03 19.96 0 .66 17.38 36.48 0 .20
+Real Net Exports 8.54 15.16 0 .12 16 .00 10.80 0.04⋆⋆ 18.48 14.40 0.92
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 0.94 0.87 0.88 0.46 0.87 0 .71 0.32 0.34 1 .00
+Core CPI Inflation Rate 0.68 0.19 0.87 0 .70 0.25 0.88 0.38 0 .38 0.74
+PCE Inflation Rate 0.21 0.54 1 .00 0.35 2.08 0 .17 0.33 0.71 0 .73
+Core PCE Inflation Rate 1.21 1.10 0.52 1 .28 1.14 0.34 0 .70 0.59 0.42
+50
+
+=== PDF PAGE 51 ===
+Table 7: Cross-Sectional Disagreement by Forecast Horizon
+Mean cross-sectional standard deviation at short (h+1) and long (h+4) horizons. Ratio =σh+4/σh+1. Positive t-
+statistics indicate greater disagreement at longer horizons. Paired t-tests (two-sided). Sample: 1999–2023.∗∗∗p <
+0.01.
+Variable σh+1 σh+4 Ratio t-stat N
+Panel A: Human
+CPI 0.972 0.701 0.72 −6.82∗∗∗ 100
+UNEMP 0.155 0.356 2.29 20.98∗∗∗ 100
+RGDP 40.16 99.90 2.49 14.54∗∗∗ 100
+TBILL 0.126 0.363 2.88 18.11∗∗∗ 100
+Panel B: AI
+CPI 0.266 0.253 0.95 −0.64 94
+UNEMP 0.075 0.115 1.53 4.88∗∗∗ 72
+RGDP 122.3 171.0 1.40 9.14∗∗∗ 91
+TBILL 0.069 0.116 1.68 6.28∗∗∗ 73
+51
+
+=== PDF PAGE 52 ===
+Table 8: Relative accuracy of AI forecasts with fewer prompt inputs
+The table shows the accuracy of AI forecasts generated by prompts that provide less information relative to the
+accuracy of baseline AI forecasts (ratio). Forecast accuracy is computed as mean absolute errors, i.e., the average of
+absolute differences between realized values and the median human or AI-generated SPF forecasts across survey
+quarters. The“Generic”forecastusesapromptthatdoesnotprovideforecastercharacteristics,butdoesprovidereal-
+timedataandpastmedianSPFforecasts. The“Generic,w/oreal-timedata”excludesbothforecastercharacteristics
+and real-time data from the prompt. “Generic, w/o real-time data, w/o past SPF data” excludes all data from the
+promptincludingforecastercharacteristics,real-timedata,andpastmedianSPFforecasts. Finally“Recall”prompts
+the model to recall values from the training data rather than forecasting values. Values exceeding one (boldfaced)
+indicate less accuracy compared with the baseline AI forecaster seeded with forecaster characteristics, real-time
+data,andpastmedianSPFforecasts. Randomizedtestsevaluatewhethervaluesaresignificantlydifferentfromone.
+Thetestsarebasedon10,000randomdraws. Significancelevels: ⋆ p-value≤0.10, ⋆⋆ p-value≤0.05, ⋆⋆⋆ p-value≤0.01.
+Generic Generic, w/o
+real-time data
+Generic, w/o real-time
+data, w/o past SPF data
+Recall
+Horizon (quarters) 0 4 0 4 0 4 0
+Section 1: US Business Indicators
+Nominal GDP 2.21 1 .02 3 .92 0.95 6.32⋆⋆⋆ 1.16⋆⋆⋆ 89.03⋆⋆⋆
+GDP Price 0.97 1.01 0.97 1.01 0.72⋆⋆⋆ 0.77⋆⋆⋆ 1.09⋆⋆⋆
+Corporate Profits 1.74 1 .01 2 .84 1 .17 6 .20 2 .25⋆⋆⋆ 11.64
+Unemployment Rate 0.98⋆ 1.01 1 .04⋆⋆⋆ 1.04 0.66 0 .90⋆⋆⋆ 0.61
+Non-Farm Payroll 1.22 1 .01 1 .59 1 .35⋆⋆⋆ 1.35⋆ 2.57⋆⋆⋆ 10.91⋆⋆⋆
+Industrial Production 1.05 1 .00 1 .36⋆⋆⋆ 1.22 3 .66⋆⋆⋆ 1.18⋆⋆⋆ 3.13
+Housing Starts 1.04 1 .04⋆⋆ 1.24⋆⋆⋆ 1.05 1 .01 1 .60⋆⋆⋆ 10.49⋆⋆⋆
+Treasury Bill Rate (3M) 1.03 1 .01 1 .06 1 .03 0.72 0 .94⋆⋆⋆ 0.68⋆⋆⋆
+AAA Corp Bond Yield 1.04 1 .02 1 .03 1 .12 1 .97⋆⋆⋆ 0.97⋆⋆⋆ 1.65⋆⋆⋆
+BAA Corp Bond Yield 1.04 1 .05 1 .06 1 .14 1 .88 1 .00 1 .51⋆⋆⋆
+Treasury Bond Rate (10Y) 1.01 1 .01 1 .00 1 .10⋆⋆⋆ 0.71 1.02 0.55
+Section 2: Real GDP and Its Components
+Real GDP 1.39 1 .03 1 .44 1 .00 5 .96⋆⋆⋆ 1.73⋆⋆⋆ 20.15⋆⋆⋆
+Real PCE 1.21 0.98⋆ 2.33 0.96 12.06⋆⋆⋆ 2.09⋆⋆⋆ 41.67⋆⋆⋆
+Real Non-Res Fixed Inv 1.02 1 .01 2 .38⋆⋆⋆ 1.12 22 .04⋆⋆⋆ 4.29⋆⋆⋆ 35.33⋆⋆⋆
+Real Res Fixed Inv 0.87⋆⋆⋆ 1.00 2 .05 1 .06 12 .10⋆⋆⋆ 3.66⋆ 19.08⋆⋆⋆
+Real Federal C&GI 1.37 0.95 2.51⋆⋆ 1.04 20 .68⋆⋆⋆ 5.15⋆⋆⋆ 56.83⋆⋆⋆
+Real State/Local C&GI 2.60 0.95 3.46 1 .05 27 .36⋆⋆⋆ 4.72⋆⋆⋆ 48.63⋆⋆⋆
+Real Change in Private Inv 0.98 0 .96 2.59⋆⋆⋆ 0.87 3.73⋆⋆⋆ 1.29⋆⋆⋆ 7.27⋆⋆⋆
+Real Net Exports 1.00 0.95 2.28 0.93 6.62⋆⋆⋆ 1.39⋆⋆⋆ 30.44⋆⋆
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 0.90⋆⋆⋆ 1.02 0.91⋆⋆⋆ 1.02 0.89⋆⋆⋆ 1.02⋆⋆⋆ 0.85⋆
+Core CPI Inflation Rate 0.94 1.05 0.99 1.08 0.93 1.05 0.80
+PCE Inflation Rate 1.26 1 .00 1 .40 0.91 1.34 1 .00 1 .27
+Core PCE Inflation Rate 0.98 1.01 0.97⋆⋆ 1.05 0.98 1.14⋆⋆⋆ 1.05
+Average 1.21 1 .00 1 .76 1 .06 6 .08 1 .87 17 .16
+
+=== PDF PAGE 53 ===
+Table 9: AI Forecast Performance During Unexpected Events
+The table shows the performance of AI forecasters during seven unexpected events occurring immediately before
+or after the deadline of the SPF survey (days after survey deadline denoted in parenthesis after the event date).
+The table reports average Z-scores, measuring the difference between the event-period forecast error and the mean
+forecast error across the full sample, divided by the standard deviation of the full-sample forecast error. Z-scores
+near zero indicate typical forecast difficulty, while highly negative values (e.g., <-1) would indicate suspiciously
+accurate predictions suggesting look-ahead bias. The Z-scores are averaged across the relevant variables for each
+event and across all variables.
+Event Event
+Date
+Relevant Variables Average Z-Score
+Relevant
+Variables
+All
+Variables
+9/11 Attacks 2001-09-11
+(27 days)
+RGDP, UNEMP, CPI, TBILL,
+TBOND
+0.28 0.01
+Lehman Brothers Collapse 2008-09-15
+(39 days)
+RGDP, UNEMP, CPI, TBILL,
+TBOND, HOUSING
+1.49 0.49
+Flash Crash 2010-05-06
+(-5 days)
+RGDP, CPI 0.00 -0.12
+S&P Downgrade of U.S. Debt 2011-08-05
+(-3 days)
+TBILL, TBOND, RGDP 0.26 -0.06
+COVID-19 Pandemic Declaration 2020-03-11
+(29 days)
+RGDP, UNEMP, CPI,
+HOUSING, INDPROD
+1.19 0.77
+Russia-Ukraine War 2022-02-24
+(17 days)
+RGDP, CPI, TBILL, TBOND 0.72 0.29
+Silicon Valley Bank Collapse 2023-03-10
+(31 days)
+RGDP, UNEMP, TBILL, TBOND -0.20 -0.09
+53
+
+=== PDF PAGE 54 ===
+Table 10: AI Forecast Error Regressions on Knowledge Cut-Off Dummy Variable
+ThetablereportsOLSregressionsofabsoluteforecasterrorsofAIforecastersattheone-quarteraheadhorizonona
+dummyvariable, It>Oct 2023,thattakesvalueoneaftertheLLMknowledgecut-offdate(October2023). ∗∗∗p < 0.001,
+∗∗p < 0.01, ∗p < 0.05. Standard errors in parentheses.
+RGDP UNEMP CPI TBILL
+Intercept 366.06*** 0.714*** 2.135*** 0.652***
+(65.43) (0.141) (0.210) (0.076)
+It>Oct 2023 715.56* −0.539 −1.323 −0.137
+(340.01) (0.732) (1.091) (0.397)
+Observations 108 108 108 108
+R2 0.040 0.005 0.014 0.001
+Table 11: Forecast Revision Regressions: Human vs AI
+The table reports OLS regressions of forecast revisions on lagged forecast errors (Error Correction) and distance
+from SPF consensus (Consensus Tracking). Revisionit is the change in forecasteri’s nowcast fromt − 1 to t. SPF
+regressions use individual forecaster microdata from the Philadelphia Fed (1999–2023). Robust standard errors in
+parentheses. ∗∗∗p < 0.01.
+Error Correction Consensus Tracking
+RGDP CPI UNEMP TBILL RGDP CPI UNEMP TBILL
+Panel A: Human
+Lagged Errori,t−1 0.981∗∗∗ 0.881∗∗∗ 0.956∗∗∗ 0.975∗∗∗
+(0.008) (0.016) (0.007) (0.008)
+Distance from Consensusi,t−1 −0.612∗∗∗ −0.690∗∗∗ −0.868∗∗∗ −0.296∗∗∗
+(0.134) (0.035) (0.064) (0.102)
+Observations 3,437 3,452 3,615 3,309 3,437 3,452 3,615 3,309
+R2 0.941 0.636 0.911 0.922 0.015 0.140 0.072 0.004
+Panel B: AI
+Lagged Errori,t−1 0.610∗∗∗ 0.443∗∗∗ 0.647∗∗∗ 0.594∗∗∗
+(0.028) (0.018) (0.008) (0.008)
+Distance from Consensusi,t−1 −1.016∗∗∗ −0.693∗∗∗ −0.510∗∗∗ −1.143∗∗∗
+(0.004) (0.017) (0.049) (0.011)
+Observations 5,188 5,188 5,188 5,188 5,188 5,188 5,188 5,188
+R2 0.568 0.354 0.946 0.827 0.776 0.551 0.086 0.716
+54
+
+=== PDF PAGE 55 ===
+Table 12: Reasoning Categories by Economic Period
+Percentageofforecasterresponsescontainingeachreasoningtype. Categoriesarenon-exclusive. Detailedcategories:
+Mechanical (trends, historical patterns, mean-reversion); Policy (Fed actions, fiscal/monetary policy); Model (eco-
+nomic theory such as Phillips curve, Okun’s law); Event (specific shocks or crises).ECB aggregation: Following
+ECB methodology, Model-Based combines Mechanical∪ Model; Judgment-Based combines Policy∪ Event. All
+differences between crisis and normal periods are statistically significant (p < 0.001).
+Detailed Categories ECB Aggregation
+Period N Mechanical Policy Model Event Model-Based Judgment-Based
+Normal 4,626 98.6% 55.2% 86.7% 19.7% 99.6% 63.3%
+Financial Crisis 346 84.7% 34.4% 37.6% 82.4% 88.4% 87.6%
+COVID-19 204 72.1% 59.8% 26.5% 77.0% 72.5% 79.9%
+Inflation Shock 212 85.4% 87.3% 97.2% 30.2% 98.1% 87.7%
+55
+
+=== PDF PAGE 56 ===
+Prompts
+Prompt 1: Baseline Prompt
+You are a participant on a panel of Survey of Professional Forecasters.
+Your name is [name], you graduated from [alma mater] with a [education] around [graduation year].
+Today, you work as [title] at [affiliation]. It’s [affiliation type] organization.
+Your organization is based in [company_location]. You are originally from [country_origin].
+[social media status].
+We are in [date_q]. You are about to fill out the forecast form for [date_q]. Using only the
+information available to you as of [release_date], please provide your best numeric forecasts for
+the following variables: [variable_definitions].
+Do this for the following quarters: t (current quarter), t+1, t+2, t+3, t+4, and annual forecasts
+for this and next year (annual averages).
+You have the most recent real-time data on key macroeconomics variables available to you
+(from [prev_quarter]): [real_time_data].
+The forecasts made by the SPF panel during the previous quarter ([prev_quarter]) were as follows
+(for t, t+1, t+2, t+3, t+4; where t is the current quarter): [variable_forecasts_text].
+Do not incorporate any data that was not available to you beyond the current date.
+Do consider all relevant information on the broad economic conditions and current Federal Reserve
+actions (up to, but not beyond [release_date]).
+Use available information, and your professional judgement and experience.
+Your forecast is anonymous.
+For each variable, provide the forecasts as a sequence of numerical values in the following format:
+[variable_name]: t, t+1, t+2, t+3, t+4, this year’s avg, next year’s avg
+Please only provide your forecasts in this format.
+56
+
+=== PDF PAGE 57 ===
+Prompt 2: Prompt for a generic forecaster
+ThispromptisusedtogenerateAIforecastsforagenericforecaster,i.e.,withoutincludingforecastercharacteristics.
+Theinputvariablesarehighlightedinbracketsandbluetextandconsistofreal-timedata,previousforecasts,survey
+dates, and forecasting variable names.
+You are a professional economic forecaster participating in the Survey of Professional Forecasters.
+You have expertise in macroeconomic analysis and forecasting. Use your professional judgment and the
+data provided to make your forecasts.
+We are in [date_q]. You are about to fill out the forecast form for [date_q]. Using only the
+information available to you as of [release_date], please provide your best numeric forecasts for:
+[variable_definitions].
+For quarters: t (current), t+1, t+2, t+3, t+4, and annual averages for this year and next year.
+Real-time data available (from [prev_quarter]): [real_time_data].
+Previous SPF panel forecasts ([prev_quarter], for t, t+1, t+2, t+3, t+4): [variable_forecasts_text].
+Do not incorporate any data beyond [release_date]. Consider all relevant economic conditions and
+Federal Reserve actions up to [release_date].
+Format your response as: [variable_name]: t, t+1, t+2, t+3, t+4, this year’s avg, next year’s avg
+Provide only numerical values.
+57
+
+=== PDF PAGE 58 ===
+Prompt 3: Prompt for a generic forecaster and no real-time data
+ThispromptisusedtogenerateAIforecastsforagenericforecaster,i.e.,withoutincludingforecastercharacteristics.
+The input variables are highlighted in brackets and blue text and consist of previous forecasts, survey dates, and
+forecasting variable names.
+You are a professional economic forecaster participating in the Survey of Professional Forecasters.
+You have expertise in macroeconomic analysis and forecasting. Use your professional judgment and the
+data provided to make your forecasts.
+We are in [date_q]. You are about to fill out the forecast form for [date_q]. Using only the
+information available to you as of [release_date], please provide your best numeric forecasts for:
+[variable_definitions].
+For quarters: t (current), t+1, t+2, t+3, t+4, and annual averages for this year and next year.
+Previous SPF panel forecasts ([prev_quarter]): [var_forecasts_text].
+Do not incorporate any data beyond [release_date]. Consider all relevant economic conditions and
+Federal Reserve actions up to [release_date].
+Format your response as: [variable_name]: t, t+1, t+2, t+3, t+4, this year’s avg, next year’s avg
+Provide only numbers.
+58
+
+=== PDF PAGE 59 ===
+Prompt 4: Prompt for a generic forecaster and no data
+ThispromptisusedtogenerateAIforecastsforagenericforecaster,i.e.,withoutincludingforecastercharacteristics
+or any data on economic variables. The input variables are highlighted in brackets and blue text and consist of only
+survey dates, and forecasting variable names.
+You are a professional economic forecaster participating in the Survey of Professional Forecasters.
+You have expertise in macroeconomic analysis and forecasting. Use your professional judgment and the
+data provided to make your forecasts.
+We are in [date_q]. You are about to fill out the forecast form for [date_q]. Using only the
+information available to you as of [release_date], please provide your best numeric forecasts for:
+[variable_definitions].
+For quarters: t (current), t+1, t+2, t+3, t+4, and annual averages for this year and next year.
+Do not incorporate any data beyond [release_date]. Consider all relevant economic conditions and
+Federal Reserve actions up to [release_date].
+Format your response as: [variable_name]: t, t+1, t+2, t+3, t+4, this year’s avg, next year’s avg.
+Provide only numbers.
+Prompt 5: Prompt for recall task
+This prompt is used to have the model recall specific values of economic variables.
+You are a professional forecaster participating in the Survey of Professional Forecasters (SPF).
+Please provide your best guess for the requested variables.
+We are in [date_q]. What is the value for the following variables: [variable_data]
+for this quarter: [date_q]
+59
+
+=== PDF PAGE 60 ===
+Online Appendix for
+“Simulating the Survey of Professional Forecasters”
+This Internet Appendix provides additional material on the data, methodology, and some robustness
+exercises related to the main text.
+A1
+
+=== PDF PAGE 61 ===
+A Descriptive Figures
+Figure A.1: Number of forecasters in the SPF panel over time
+The figure shows the number of human and AI forecasters in the SPF panel over time. The number of human
+forecasters is averaged across variables and forecasting horizons.
+0
+10
+20
+30
+40
+50
+60
+70
+2000 2005 2010 2015 2020
+−3
+0
+3
+6
+9
+2000 2005 2010 2015 2020
+Human AI
+A2
+
+=== PDF PAGE 62 ===
+Figure A.2: Duration of participation of each forecaster individual forecaster in the SPF panel over
+time
+The figure tracks the duration of individual forecasters’ participation in the SPF panel, ranging from a few years to
+over 25 years. It shows a mix of long-term participants and those with much shorter tenures.
+2000 2010 2020
+Individual forecasters
+5 10 15 20 25
+A3
+
+=== PDF PAGE 63 ===
+B Out of Sample Results
+Tables B.13 and B.14 report MAEs for median and best forecasts, respectively, for the nowcasts
+and one- and two-quarter-ahead forecasts. At the time of writing, we cannot evaluate the
+performance of four-quarter forecasts due to lack of realized data values. The results are
+mixed: the median human forecasts often outperform AI, but the AI survey has generally
+lower forecasting errors when considering only the best AI and human forecasters. Overall, AI
+forecasters continue to perform well. We note that these conclusions are based on just a few
+quarters of observations, and it is therefore difficult to establish statistical significance due to
+lack of power.
+A4
+
+=== PDF PAGE 64 ===
+Table B.13: Out-of-sample forecast accuracy (mean absolute errors) of SPF and AI-generated SPF
+forecasts
+The table shows forecast accuracy for the out-of-sample period, 2024 Q1 - 2024 Q4. Forecast accuracy is reported as
+meanabsoluteerrors(MAEs)ofSPFandAI-generatedSPFforecastsforvariouseconomicindicatorsacrossdifferent
+forecasthorizons. Foreachforecastinghorizon,thetableboldfacesthelowestMAEvaluebetweentheAIandhuman
+surveys. TheP-valcolumnreportsp-valuesandsignificancelevelsforrandomizedtestsofthestatisticalsignificance
+of the difference between AI and human MAEs. The tests are based on 10,000 random draws. Significance levels:⋆
+p-value≤0.10, ⋆⋆ p-value≤0.05, ⋆⋆⋆ p-value≤0.01.
+Horizon (quarters) 0 1 2
+AI Human P-val AI Human P-val AI Human P-val
+Section 1: US Business Indicators
+Nominal GDP 725.96 255.92 0.03⋆⋆ 844.98 157.99 0.03⋆⋆ 789.59 573.08 0.09⋆
+GDP Price 2.64 2.62 0.38 3 .24 3.13 0.51 5 .10 5.06 0.58
+Corporate Profits 429.19 225.32 0.10 374 .94 335.66 0.24 629 .90 569.84 0.68
+Unemployment Rate 0.17 0.10 0.63 0 .19 0.18 0.01⋆⋆ 0.25 0.17 0.02⋆⋆
+Non-Farm Payroll 463.79 334.69 0.08⋆ 1051.89 530.01 1.00 3477 .57 1220.57 0.98
+Industrial Production 0.62 0.57 0.32 0.80 0.81 0 .08⋆ 1.61 0.76 0.31
+Housing Starts 0.07 0.04 0.01⋆⋆⋆ 0.11 0.06 0.01⋆⋆⋆ 0.22 0.07 0.01⋆⋆
+Treasury Bill Rate (3M) 0.45 0.19 0.58 0 .53 0.23 0.75 0 .56 0.35 0.02⋆⋆
+AAA Corp Bond Yield 0.47 0.19 0.33 0.36 0.40 0 .35 0.32 0.34 0 .92
+BAA Corp Bond Yield 0.50 0.20 0.42 0 .48 0.35 0.28 0 .35 0.29 0.77
+Treasury Bond Rate (10Y) 0.42 0.26 0.74 0.36 0.44 0 .78 0.31 0.48 0 .24
+Section 2: Real GDP and Its Components
+Real GDP 1019.93 289.94 0.01⋆⋆⋆ 1341.85 557.81 0.01⋆⋆⋆ 1643.82 1211.03 0.01⋆⋆
+Real PCE 642.02 173.32 0.01⋆⋆⋆ 789.10 304.66 0.01⋆⋆⋆ 979.04 686.76 0.01⋆⋆
+Real Non-Res Fixed Inv 57.65 40.80 0.11 115 .33 78.73 0.62 254 .91 235.59 0.63
+Real Res Fixed Inv 73.78 25.20 0.71 101 .92 53.79 0.58 124 .89 98.07 0.65
+Real Federal C&GI 43.77 14.23 0.82 46 .84 22.36 0.58 61 .48 47.24 0.16
+Real State/Local C&GI 135.51 33.40 0.01⋆⋆⋆ 157.28 58.33 0.01⋆⋆⋆ 269.73 139.59 0.01⋆⋆
+Real Change in Private Inv 30.23 21.60 0.44 47 .05 36.32 0.21 53 .89 46.01 0.73
+Real Net Exports 167.51 45.10 0.27 263 .69 129.06 0.26 172.46 195.93 0 .48
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 1.10 1.07 0.30 0.74 0.94 0 .90 0.65 0.96 0 .03⋆⋆
+Core CPI Inflation Rate 1.21 0.72 0.62 0 .92 0.71 0.38 0 .98 0.82 0.06⋆
+PCE Inflation Rate 0.68 0.72 0 .98 0 .93 0.91 0.38 0.61 0.63 0 .03⋆⋆
+Core PCE Inflation Rate 5.38 5.23 0.99 5 .05 4.89 0.35 0 .84 0.65 0.10
+A5
+
+=== PDF PAGE 65 ===
+Table B.14: Out-of-sample forecast accuracy (mean absolute errors) of best human and AI SPF fore-
+casters
+The table shows forecast accuracy for the out-of-sample period, 2024 Q1 - 2024 Q4. Forecast accuracy is reported as
+meanabsoluteerrors(MAEs)ofthebestSPFandAI-generatedSPFforecastsforvariouseconomicindicatorsacross
+different forecast horizons. The best forecast is the forecast with lowest absolute error for each variable, horizon,
+and quarter For each forecasting horizon, the table boldfaces the lowest MAE value between the AI and human
+surveys. TheP-valcolumnreportsp-valuesandsignificancelevelsforrandomizedtestsofthestatisticalsignificance
+of the difference between AI and human MAEs. The tests are based on 10,000 random draws. Significance levels:⋆
+p-value≤0.10, ⋆⋆ p-value≤0.05, ⋆⋆⋆ p-value≤0.01.
+Horizon (quarters) 0 1 2
+AI Human P-val AI Human P-val AI Human P-val
+Section 1: US Business Indicators
+Nominal GDP 0.23 308.70 0 .12 27.20 213.90 0 .25 85.45 107.12 0 .51
+GDP Price 0.00 0.70 0 .12 0.17 0.66 0 .25 0.24 0.64 0 .50
+Corporate Profits 276.12 283.06 0 .13 333.60 402.71 0 .25 456.30 457.83 0 .51
+Unemployment Rate 0.08 0.07 0.24 0 .18 0.17 0.25 0 .25 0.20 1.00
+Non-Farm Payroll 279.57 125.76 0.13 302 .94 174.59 0.25 343 .45 246.47 0.50
+Industrial Production 0.27 0.41 0 .12 0.15 0.66 0 .24 0.30 0.80 0 .49
+Housing Starts 0.03 0 .03 1.00 0.06 0.07 0 .25 0 .07 0.00 1.00
+Treasury Bill Rate (3M) 0.04 0.09 0 .50 0 .18 0.17 0.25 0 .32 0.30 0.50
+AAA Corp Bond Yield 0.03 0.33 0 .50 0.21 0.23 0 .50 0 .10 0.08 1.00
+Treasury Bond Rate (10Y) 0.15 0.14 0.87 0.23 0.32 0 .24 0 .05 0.00 1.00
+Section 2: Real GDP and Its Components
+Real GDP 0.07 118.32 0 .12 27.18 151.52 0 .25 163.80 170.62 0 .49
+Real PCE 0.00 93.56 0 .12 30.48 125.42 0 .25 94.11 118.92 0 .50
+Real Non-Res Fixed Inv 0.00 19.79 0 .12 28.95 39.50 0 .25 98 .68 89.67 0.50
+Real Res Fixed Inv 0.00 2.32 0 .13 12.47 14.12 0 .24 10 .90 9.77 0.50
+Real Federal C&GI 0.00 5.33 0 .12 3.87 5.97 0 .25 3.84 5.70 0 .50
+Real State/Local C&GI 0.00 11.50 0 .12 5 .13 2.11 0.25 19 .48 14.51 0.50
+Real Change in Private Inv 0.00 8.63 0 .75 16.52 16.61 0 .24 10.90 20.79 1 .00
+Real Net Exports 0.00 11.15 0 .13 38.52 42.52 0 .25 81 .54 78.10 0.50
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 0.93 1.00 0 .25 0.94 0.95 0 .50 1.18 1 .18 1.00
+Core CPI Inflation Rate 0.67 0.63 0.25 0.43 0.61 0 .50 0.36 0 .36 1.00
+PCE Inflation Rate 0.96 0.85 0.51 0 .80 0.68 1.00 0.24 0.63 1 .00
+Core PCE Inflation Rate 0.83 0.61 0.50 0.53 0.54 0 .51 0.00 0.08 1 .00
+A6
+
+=== PDF PAGE 66 ===
+C Reasoning Classification Details
+C.1 Keyword Lists
+Each LLM-generated reasoning response is classified using keyword-frequency rules. A re-
+sponse is tagged with a category if it contains at least one keyword from that category’s list:
+• Mechanical: “trend,” “historical,” “average,” “mean reversion,” “pattern,” “previous,”
+“past,” “typical,” “normal,” “baseline,” “extrapolat.”
+• Policy: “fed,”“federalreserve,”“monetarypolicy,”“fiscal,”“stimulus,”“ratehike,”“rate
+cut,”“tightening,”“easing,”“centralbank,”“government,”“policyresponse,”“interven-
+tion.”
+• Model: “phillips curve,” “okun,” “gdp growth,” “economic model,” “structural,” “re-
+lationship between,” “economic theory,” “multiplier,” “elasticity,” “economic indicator,”
+“leading indicator.”
+• Event-driven: “covid,” “pandemic,” “crisis,” “recession,” “shock,” “war,” “collapse,”
+“lockdown,” “unprecedented,” “disruption,” “financial crisis,” “lehman,” “subprime,”
+“outbreak,” “emergency.”
+C.2 ECB-Style Aggregation
+Following the ECB Survey of Professional Forecasters framework:
+Model-based = Model ∪Mechanical
+Judgment-based = Policy ∪Event
+C.3 Crisis Period Definitions
+• Financial Crisis: 2008 Q3 – 2009 Q4
+• COVID-19 Pandemic: 2020 Q1 – 2020 Q4
+• Inflation Shock: 2022 Q1 – 2022 Q4
+All other quarters are classified as “Normal” periods.
+A7
+
+=== PDF PAGE 67 ===
+D Simulating the SPF With an AR(1) Model
+This appendix shows forecast results generated by a simple AR(1) model on median human
+forecasts. Specifically, letting¯ht denote the median human forecast of any variable in the SPF,
+the AR(1) model takes the following form:
+¯ht = α + ρ¯ht−1 + εt, (D.13)
+where εt is independent and identically distributed according to a normal distribution with
+meanzeroandaconstantvariance. Thecoefficientsareestimatedusinganexpandingwindow,
+such that predictions for the survey at timet are based on information up until timet − 1.
+Table D.15 reports mean absolute errors of AI-generated SPF forecasts and forecasts implied
+by an AR(1) model on median human SPF forecasts, relative to the mean absolute errors
+of human SPF forecasts. The statistical significance of the difference between AI and AR(1)
+forecastsisevaluatedusingtheDieboldandMarianotest(DieboldandMariano(1995),Diebold
+et al. (1999)). The results show that human forecasters do not rely solely on AR(1) models for
+generating SPF forecasts, as the relative mean absolute error of AR(1) forecasts are generally
+different from one. In addition, the results show that AI forecasts add value beyond the AR(1)
+model,astheAIandAR(1)modelarestatisticallydifferentandtherelativemeanabsoluteerror
+is lower for AI forecasts compared with AR(1) forecasts, almost everywhere.
+A8
+
+=== PDF PAGE 68 ===
+TableD.15:Forecastaccuracy(meanabsoluteerrors)ofAI-generatedandAR(1)SPFforecastsrelative
+to human accuracy
+The table shows forecast accuracy reported as mean absolute errors of AI-generated SPF forecasts and forecasts
+implied by an AR(1) model of human SPF forecasts relative to the mean absolute errors of human SPF forecasts.
+Accuracyisreportedfordifferentforecasthorizons,with0,1and4denotingnowcast,onequarterandfourquarters
+ahead, respectively. For each forecasting horizon, the table boldfaces the lowest MAE relative value between the AI
+and AR(1) model. The P-val column reports p-values and significance levels for Diebold and Mariano 1999 tests of
+the statistical significance of the difference between AI and AR(1) forecasts. Significance levels:⋆ p-value≤0.10, ⋆⋆
+p-value≤0.05, ⋆⋆⋆ p-value≤0.01
+Horizon (quarters) 0 1 4
+AI AR(1) P-val AI AR(1) P-val AI AR(1) P-val
+Section 1: US Business Indicators
+Nominal GDP 0.24 0.83 0 .00⋆⋆⋆ 0.87 1.25 0 .00⋆⋆⋆ 1.14 1.17 0 .59
+GDP Price 1.00 1 .00 0.55 1.00 1 .00 0.53 0.99 0 .99 0.37
+Corporate Profits 0.65 1.46 0 .00⋆⋆⋆ 0.98 1.38 0 .00⋆⋆⋆ 0.98 1.14 0 .00⋆⋆⋆
+Unemployment Rate 1.41 2.00 0 .00⋆⋆⋆ 1.28 1.51 0 .00⋆⋆⋆ 1.12 1.25 0 .00⋆⋆⋆
+Non-Farm Payroll 2.13 2.99 0 .06⋆ 1.87 1.93 0 .94 1 .50 1.33 0.01⋆⋆⋆
+Industrial Production 1.43 2.23 0 .01⋆⋆⋆ 1.19 1.42 0 .01⋆⋆ 0.95 1.20 0 .00⋆⋆⋆
+Housing Starts 1.10 1.41 0 .00⋆⋆⋆ 1.08 1.13 0 .60 1.01 1.09 0 .14
+Treasury Bill Rate (3M) 1.81 2.06 0 .00⋆⋆⋆ 1.54 1.63 0 .11 1.06 1.17 0 .00⋆⋆⋆
+AAA Corp Bond Yield 1.48 1.52 0 .02⋆⋆ 1.11 1.17 0 .00⋆⋆⋆ 0.97 1.16 0 .00⋆⋆⋆
+BAA Corp Bond Yield 1.54 1.69 0 .20 1.16 1.50 0 .26 0.99 1.14 0 .03⋆⋆
+Treasury Bond Rate (10Y) 1.49 1.56 0 .04⋆⋆ 1.12 1.22 0 .00⋆⋆⋆ 0.94 1.16 0 .00⋆⋆⋆
+Section 2: Real GDP and Its Components
+Real GDP 1.37 2.10 0 .18 1.51 1.89 0 .19 1.15 1.26 0 .28
+Real PCE 0.70 1.68 0 .00⋆⋆⋆ 1.30 1.75 0 .04⋆⋆ 1.21 1.23 0 .68
+Real Non-Res Fixed Inv 0.81 2.37 0 .00⋆⋆⋆ 1.13 1.88 0 .01⋆⋆ 0.98 1.25 0 .04⋆⋆
+Real Res Fixed Inv 1.02 1.88 0 .00⋆⋆⋆ 1.43 1.77 0 .00⋆⋆⋆ 1.09 1.14 0 .15
+Real Federal C&GI 1.91 5.36 0 .05⋆ 1.56 2.58 0 .19 1.27 1.47 0 .20
+Real State/Local C&GI 1.62 3.80 0 .02⋆⋆ 1.30 1.89 0 .05⋆ 1.13 1.24 0 .22
+Real Change in Private Inv 0.57 1.50 0 .00⋆⋆⋆ 1.11 1.19 0 .54 1 .16 1.04 0.09⋆
+Real Net Exports 1.26 2.75 0 .00⋆⋆⋆ 1.27 1.57 0 .02⋆⋆ 1.26 1.20 0.24
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate 1.20 1.09 0.10 1 .05 1.01 0.26 0.99 1.01 0 .71
+Core CPI Inflation Rate 1.09 1.16 0 .79 0.92 1.04 0 .28 1.02 1.07 0 .83
+PCE Inflation Rate 0.79 1.12 0 .00⋆⋆⋆ 0.96 1.06 0 .07⋆ 1.00 1.01 0 .58
+Core PCE Inflation Rate 1.05 0.99 0.05⋆ 1.07 0.99 0.02⋆⋆ 1.02 0.98 0.14
+A9

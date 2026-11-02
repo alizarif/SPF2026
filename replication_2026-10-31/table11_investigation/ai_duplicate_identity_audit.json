@@ -1,0 +1,646 @@
+[
+  {
+    "person": "Allen Sinai",
+    "date_q": "2008-01-01T00:00:00",
+    "source_rows": [
+      110,
+      114
+    ],
+    "values": [
+      {
+        "RGDP": 11675.0,
+        "CPI": 3.5,
+        "UNEMP": 4.8,
+        "TBILL": 3.95
+      },
+      {
+        "RGDP": 11675.0,
+        "CPI": 3.5,
+        "UNEMP": 4.8,
+        "TBILL": 3.95
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Allen Sinai",
+    "date_q": "2008-04-01T00:00:00",
+    "source_rows": [
+      111,
+      115
+    ],
+    "values": [
+      {
+        "RGDP": 11693.1,
+        "CPI": 3.5,
+        "UNEMP": 4.9,
+        "TBILL": 2.4
+      },
+      {
+        "RGDP": 11693.1,
+        "CPI": 3.5,
+        "UNEMP": 4.9,
+        "TBILL": 2.4
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Allen Sinai",
+    "date_q": "2008-07-01T00:00:00",
+    "source_rows": [
+      113,
+      116
+    ],
+    "values": [
+      {
+        "RGDP": 11699.1,
+        "CPI": 4.2,
+        "UNEMP": 5.3,
+        "TBILL": 1.51
+      },
+      {
+        "RGDP": 11699.1,
+        "CPI": 4.2,
+        "UNEMP": 5.3,
+        "TBILL": 1.51
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Allen Sinai",
+    "date_q": "2008-10-01T00:00:00",
+    "source_rows": [
+      112,
+      117
+    ],
+    "values": [
+      {
+        "RGDP": 11720.0,
+        "CPI": 5.397,
+        "UNEMP": 5.9667,
+        "TBILL": 1.7848
+      },
+      {
+        "RGDP": 11720.0,
+        "CPI": 5.397,
+        "UNEMP": 5.9667,
+        "TBILL": 1.7848
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Allen Sinai",
+    "date_q": "2010-01-01T00:00:00",
+    "source_rows": [
+      122,
+      127
+    ],
+    "values": [
+      {
+        "RGDP": 13155.0,
+        "CPI": 2.67,
+        "UNEMP": 10.03,
+        "TBILL": 0.14
+      },
+      {
+        "RGDP": 13155.0,
+        "CPI": 2.67,
+        "UNEMP": 10.03,
+        "TBILL": 0.14
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Allen Sinai",
+    "date_q": "2010-04-01T00:00:00",
+    "source_rows": [
+      125,
+      126
+    ],
+    "values": [
+      {
+        "RGDP": 13254.7,
+        "CPI": 2.1,
+        "UNEMP": 9.7,
+        "TBILL": 0.1
+      },
+      {
+        "RGDP": 13254.7,
+        "CPI": 2.1,
+        "UNEMP": 9.7,
+        "TBILL": 0.1
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Allen Sinai",
+    "date_q": "2010-07-01T00:00:00",
+    "source_rows": [
+      124,
+      128
+    ],
+    "values": [
+      {
+        "RGDP": 13363.3,
+        "CPI": -0.72,
+        "UNEMP": 9.7,
+        "TBILL": 0.17
+      },
+      {
+        "RGDP": 13363.3,
+        "CPI": -0.7179,
+        "UNEMP": 9.7,
+        "TBILL": 0.17
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Allen Sinai",
+    "date_q": "2010-10-01T00:00:00",
+    "source_rows": [
+      123,
+      129
+    ],
+    "values": [
+      {
+        "RGDP": 13260.7,
+        "CPI": 1.47,
+        "UNEMP": 9.6,
+        "TBILL": 0.16
+      },
+      {
+        "RGDP": 13260.7,
+        "CPI": 1.47,
+        "UNEMP": 9.6,
+        "TBILL": 0.16
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Lea Tyler",
+    "date_q": "2008-01-01T00:00:00",
+    "source_rows": [
+      2821,
+      2822
+    ],
+    "values": [
+      {
+        "RGDP": 11677.4,
+        "CPI": 3.9,
+        "UNEMP": 4.8,
+        "TBILL": 3.95
+      },
+      {
+        "RGDP": 11677.4,
+        "CPI": 3.9,
+        "UNEMP": 4.8,
+        "TBILL": 3.95
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Lea Tyler",
+    "date_q": "2008-04-01T00:00:00",
+    "source_rows": [
+      2820,
+      2825
+    ],
+    "values": [
+      {
+        "RGDP": 11693.1,
+        "CPI": 3.5,
+        "UNEMP": 4.9,
+        "TBILL": 2.4
+      },
+      {
+        "RGDP": 11693.1,
+        "CPI": 3.5,
+        "UNEMP": 4.9,
+        "TBILL": 2.4
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Lea Tyler",
+    "date_q": "2008-07-01T00:00:00",
+    "source_rows": [
+      2818,
+      2823
+    ],
+    "values": [
+      {
+        "RGDP": 11699.1,
+        "CPI": 4.2,
+        "UNEMP": 5.3,
+        "TBILL": 1.51
+      },
+      {
+        "RGDP": 11699.1,
+        "CPI": 4.2,
+        "UNEMP": 5.3,
+        "TBILL": 1.51
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Lea Tyler",
+    "date_q": "2008-10-01T00:00:00",
+    "source_rows": [
+      2819,
+      2824
+    ],
+    "values": [
+      {
+        "RGDP": 11720.0,
+        "CPI": 5.0,
+        "UNEMP": 6.0,
+        "TBILL": 1.5
+      },
+      {
+        "RGDP": 11720.0,
+        "CPI": 5.397,
+        "UNEMP": 5.9667,
+        "TBILL": 1.7848
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Michael R. Englund",
+    "date_q": "2009-01-01T00:00:00",
+    "source_rows": [
+      3475,
+      3480
+    ],
+    "values": [
+      {
+        "RGDP": 11600.0,
+        "CPI": -2.5,
+        "UNEMP": 7.5,
+        "TBILL": 0.25
+      },
+      {
+        "RGDP": 11600.0,
+        "CPI": -5.5,
+        "UNEMP": 7.0,
+        "TBILL": 0.5
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Michael R. Englund",
+    "date_q": "2009-04-01T00:00:00",
+    "source_rows": [
+      3474,
+      3481
+    ],
+    "values": [
+      {
+        "RGDP": 11445.9,
+        "CPI": -2.72,
+        "UNEMP": 8.1,
+        "TBILL": 0.2
+      },
+      {
+        "RGDP": 11445.9,
+        "CPI": -2.37,
+        "UNEMP": 8.1,
+        "TBILL": 0.2
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Michael R. Englund",
+    "date_q": "2009-07-01T00:00:00",
+    "source_rows": [
+      3477,
+      3479
+    ],
+    "values": [
+      {
+        "RGDP": 11297.3,
+        "CPI": 1.3,
+        "UNEMP": 9.3,
+        "TBILL": 0.2
+      },
+      {
+        "RGDP": 11297.3,
+        "CPI": 1.3,
+        "UNEMP": 9.3,
+        "TBILL": 0.2
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Michael R. Englund",
+    "date_q": "2009-10-01T00:00:00",
+    "source_rows": [
+      3476,
+      3478
+    ],
+    "values": [
+      {
+        "RGDP": 12970.3,
+        "CPI": 2.8,
+        "UNEMP": 9.6,
+        "TBILL": 0.2
+      },
+      {
+        "RGDP": 12970.3,
+        "CPI": 2.8,
+        "UNEMP": 9.6,
+        "TBILL": 0.2
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Stephen Stanley",
+    "date_q": "2011-01-01T00:00:00",
+    "source_rows": [
+      4767,
+      4770
+    ],
+    "values": [
+      {
+        "RGDP": 13382.6,
+        "CPI": 1.81,
+        "UNEMP": 9.6,
+        "TBILL": 0.15
+      },
+      {
+        "RGDP": 13334.5,
+        "CPI": 1.81,
+        "UNEMP": 9.6,
+        "TBILL": 0.15
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Stephen Stanley",
+    "date_q": "2011-04-01T00:00:00",
+    "source_rows": [
+      4766,
+      4771
+    ],
+    "values": [
+      {
+        "RGDP": 13501.1324,
+        "CPI": 3.80780006,
+        "UNEMP": 8.9,
+        "TBILL": 0.1517
+      },
+      {
+        "RGDP": 13501.1324,
+        "CPI": 3.80780006,
+        "UNEMP": 8.9,
+        "TBILL": 0.1517
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Stephen Stanley",
+    "date_q": "2011-07-01T00:00:00",
+    "source_rows": [
+      4769,
+      4772
+    ],
+    "values": [
+      {
+        "RGDP": 13546.5,
+        "CPI": 3.5,
+        "UNEMP": 9.1,
+        "TBILL": 0.1
+      },
+      {
+        "RGDP": 13546.5,
+        "CPI": 3.14,
+        "UNEMP": 9.1,
+        "TBILL": 0.12
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Stephen Stanley",
+    "date_q": "2011-10-01T00:00:00",
+    "source_rows": [
+      4768,
+      4773
+    ],
+    "values": [
+      {
+        "RGDP": 13352.8,
+        "CPI": 3.06759558,
+        "UNEMP": 9.1,
+        "TBILL": 0.085
+      },
+      {
+        "RGDP": 13352.8,
+        "CPI": 3.06759558,
+        "UNEMP": 9.1,
+        "TBILL": 0.085
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Susan M. Sterne",
+    "date_q": "2021-01-01T00:00:00",
+    "source_rows": [
+      4898,
+      4904
+    ],
+    "values": [
+      {
+        "RGDP": 18780.0,
+        "CPI": 2.0,
+        "UNEMP": 6.8,
+        "TBILL": 0.1
+      },
+      {
+        "RGDP": 18780.3,
+        "CPI": 2.0082,
+        "UNEMP": 6.766667,
+        "TBILL": 0.1
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Susan M. Sterne",
+    "date_q": "2021-04-01T00:00:00",
+    "source_rows": [
+      4899,
+      4902
+    ],
+    "values": [
+      {
+        "RGDP": 18928.7724,
+        "CPI": 2.4962,
+        "UNEMP": 6.2,
+        "TBILL": 0.1
+      },
+      {
+        "RGDP": 18928.8,
+        "CPI": 2.5,
+        "UNEMP": 6.2,
+        "TBILL": 0.1
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Susan M. Sterne",
+    "date_q": "2021-07-01T00:00:00",
+    "source_rows": [
+      4900,
+      4903
+    ],
+    "values": [
+      {
+        "RGDP": 19453.5,
+        "CPI": 6.42,
+        "UNEMP": 5.9,
+        "TBILL": 0.05
+      },
+      {
+        "RGDP": 19453.5,
+        "CPI": 6.42,
+        "UNEMP": 5.9,
+        "TBILL": 0.05
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Susan M. Sterne",
+    "date_q": "2021-10-01T00:00:00",
+    "source_rows": [
+      4901,
+      4905
+    ],
+    "values": [
+      {
+        "RGDP": 19680.0,
+        "CPI": 5.3,
+        "UNEMP": 5.1,
+        "TBILL": 0.06
+      },
+      {
+        "RGDP": 19679.6,
+        "CPI": 5.25521967,
+        "UNEMP": 5.1,
+        "TBILL": 0.055
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Thomas Lam",
+    "date_q": "2018-01-01T00:00:00",
+    "source_rows": [
+      5068,
+      5072
+    ],
+    "values": [
+      {
+        "RGDP": 17266.6,
+        "CPI": 2.3,
+        "UNEMP": 4.1,
+        "TBILL": 1.15
+      },
+      {
+        "RGDP": 17272.5,
+        "CPI": 2.3,
+        "UNEMP": 4.1,
+        "TBILL": 1.15
+      }
+    ],
+    "conflicting_core_forecasts": true
+  },
+  {
+    "person": "Thomas Lam",
+    "date_q": "2018-04-01T00:00:00",
+    "source_rows": [
+      5067,
+      5073
+    ],
+    "values": [
+      {
+        "RGDP": 17401.1,
+        "CPI": 2.7,
+        "UNEMP": 4.1,
+        "TBILL": 1.46
+      },
+      {
+        "RGDP": 17401.1,
+        "CPI": 2.7,
+        "UNEMP": 4.1,
+        "TBILL": 1.46
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Thomas Lam",
+    "date_q": "2018-07-01T00:00:00",
+    "source_rows": [
+      5069,
+      5071
+    ],
+    "values": [
+      {
+        "RGDP": 17515.7121,
+        "CPI": 1.906,
+        "UNEMP": 3.9,
+        "TBILL": 1.8
+      },
+      {
+        "RGDP": 17515.7121,
+        "CPI": 1.906,
+        "UNEMP": 3.9,
+        "TBILL": 1.8
+      }
+    ],
+    "conflicting_core_forecasts": false
+  },
+  {
+    "person": "Thomas Lam",
+    "date_q": "2018-10-01T00:00:00",
+    "source_rows": [
+      5066,
+      5070
+    ],
+    "values": [
+      {
+        "RGDP": 18671.5,
+        "CPI": 2.3,
+        "UNEMP": 3.8,
+        "TBILL": 2.06
+      },
+      {
+        "RGDP": 18671.5,
+        "CPI": 2.3,
+        "UNEMP": 3.8,
+        "TBILL": 2.06
+      }
+    ],
+    "conflicting_core_forecasts": false
+  }
+]

@@ -1,0 +1,31 @@
+by explicitly controlling access to consensus information and historical context, the framework
+allows researchers to study when consensus anchoring improves forecast accuracy and when
+it may hinder adaptation. Overall, simulated forecasters approximate some updating behavior
+but differ systematically in ways that reveal both promise and limitations.
+5.5
+Reasoning Patterns
+Surveys of professional forecasters typically provide numerical expectations but limited evi-
+dence on the reasoning behind them. A distinctive feature of LLM-based forecasting panels
+is the ability to elicit reasoning alongside numerical predictions, allowing us to study how the
+type of reasoning changes across macroeconomic environments. After each forecast, we prompt
+the model to provide a brief rationale, generating explanations that clarify the considerations
+underlying the resulting forecasts.
+Since 2008, the European Central Bank has conducted special surveys at roughly five-year in-
+tervals to better understand the processes and methodologies used by professional forecasters.
+In this section, we use evidence from these surveys to assess the extent to which the simulated
+reasoning data align with documented forecasting practices among human forecasters. Specif-
+ically, we classify each reasoning response into four categories using keyword frequency rules:
+Mechanical (references to trends, historical averages, and mean-reversion), Policy (references to
+Federal Reserve actions, fiscal or monetary policy, and institutional responses), Model (refer-
+ences to economic theory such as the Phillips curve, Okun’s law, or structural models), and
+Event (references to specific shocks, crises, or salient events such as the pandemic or financial
+crisis).18
+Following the ECB methodology (European Central Bank, 2024), we aggregate these cate-
+gories into two broader types: model-based reasoning (combining Model and Mechanical, as both
+involve mathematical representations of economic relationships) and judgment-based reasoning
+(combining Policy and Event, reflecting experience-driven interpretation of current conditions).
+The ECB defines model-based forecasting as relying on “any mathematical representation of
+relationships between economic variables” and judgment-based forecasting as relying on “ex-
+perience and intuition” (European Central Bank, 2019).
+18 Full classification details and keyword lists are provided in Appendix C.
+26

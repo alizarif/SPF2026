@@ -1,0 +1,3527 @@
+[
+  {
+    "id": "Figure1",
+    "type": "figure",
+    "original_pages": [
+      36
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/Figure1.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/Figure1.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/Figure1.pdf",
+    "status": "Documentary source reused",
+    "method": "Display the original acknowledgment screenshot with explicit source identification.",
+    "checks": {
+      "source": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/latest draft/figures/forecaster_thanks.png"
+    },
+    "limitations": ""
+  },
+  {
+    "id": "Figure2",
+    "type": "figure",
+    "original_pages": [
+      37,
+      38
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/Figure2_page1.pdf",
+      "reproduced/figures/Figure2_page2.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/Figure2_page1.png",
+      "reproduced/figures/Figure2_page2.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/Figure2.pdf",
+    "status": "Recomputed; source composition differs",
+    "method": "Port of fig_characteristics_over_time.R: group participant rows by quarter and trait; proportional stacked areas in original panel order.",
+    "checks": {
+      "gender2": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "Female",
+          "Male",
+          "Unknown"
+        ],
+        "max_share_sum_error": 1.1102230246251565e-16,
+        "current_mean_quarterly_shares": {
+          "Female": 0.10156985195117801,
+          "Male": 0.8847940959035933,
+          "Unknown": 0.013636052145228584
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.1005768994186972,
+          0.8712084977511443,
+          0.02821460283015856
+        ],
+        "source_legend_order": [
+          "Female",
+          "Male",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      },
+      "cohort": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "-1969",
+          "1970-1989",
+          "1990-2009",
+          "2010-",
+          "Unknown"
+        ],
+        "max_share_sum_error": 2.220446049250313e-16,
+        "current_mean_quarterly_shares": {
+          "-1969": 0.061869688553384546,
+          "1970-1989": 0.28363760344998323,
+          "1990-2009": 0.2798492382247792,
+          "2010-": 0.047735524841726204,
+          "Unknown": 0.3269079449301268
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.061369681436239595,
+          0.28017785769745013,
+          0.27570617200290715,
+          0.05952735862681511,
+          0.323218930236588
+        ],
+        "source_legend_order": [
+          "-1969",
+          "1970-1989",
+          "1990-2009",
+          "2010-",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      },
+      "continent_origin": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "USA",
+          "Americas (excl. USA)",
+          "Europe",
+          "Asia",
+          "Unknown"
+        ],
+        "max_share_sum_error": 2.220446049250313e-16,
+        "current_mean_quarterly_shares": {
+          "USA": 0.5770552975954285,
+          "Americas (excl. USA)": 0.03403528728561124,
+          "Europe": 0.04423904904860221,
+          "Asia": 0.08203565013007028,
+          "Unknown": 0.2626347159402878
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.5733721543818234,
+          0.04099800798983297,
+          0.0399524609111957,
+          0.08614268009977695,
+          0.25953469661737094
+        ],
+        "source_legend_order": [
+          "USA",
+          "Americas (excl. USA)",
+          "Europe",
+          "Asia",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      },
+      "social_media_status2": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "Interviews only",
+          "Interviews + Twitter",
+          "Twitter only",
+          "Unknown",
+          "No public appearance"
+        ],
+        "max_share_sum_error": 2.220446049250313e-16,
+        "current_mean_quarterly_shares": {
+          "Interviews only": 0.4870702998462198,
+          "Interviews + Twitter": 0.24128093080954968,
+          "Twitter only": 0.03773059528135601,
+          "Unknown": 0.015210126219302657,
+          "No public appearance": 0.21870804784357162
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.4817281597502694,
+          0.24448907239967374,
+          0.03886574789775815,
+          0.2349170199522987
+        ],
+        "source_legend_order": [
+          "Interviews only",
+          "Interviews + Twitter",
+          "Twitter only",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      },
+      "education_level": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "Bachelor's",
+          "Master's",
+          "MBA/MPA",
+          "Ph.D.",
+          "Unknown"
+        ],
+        "max_share_sum_error": 1.1102230246251565e-16,
+        "current_mean_quarterly_shares": {
+          "Bachelor's": 0.02037629538145587,
+          "Master's": 0.21069015298690807,
+          "MBA/MPA": 0.033018003952176495,
+          "Ph.D.": 0.5951442127486126,
+          "Unknown": 0.14077133493084706
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.03332675966718884,
+          0.21090741473029628,
+          0.03768454873661736,
+          0.582950438001772,
+          0.13513083886412547
+        ],
+        "source_legend_order": [
+          "Bachelor's",
+          "Master's",
+          "MBA/MPA",
+          "Ph.D.",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      },
+      "education_field": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "Economics/Finance",
+          "Business/Management",
+          "Econometrics/Statistics",
+          "Public Administration",
+          "Law",
+          "Unknown"
+        ],
+        "max_share_sum_error": 1.1102230246251565e-16,
+        "current_mean_quarterly_shares": {
+          "Economics/Finance": 0.7456440289443182,
+          "Business/Management": 0.04294129728415832,
+          "Econometrics/Statistics": 0.009843846342741118,
+          "Public Administration": 0.022327491255294086,
+          "Law": 0.0022407850925871835,
+          "Unknown": 0.17700255108090077
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.7180845409152757,
+          0.05304053683945245,
+          0.018319724655324096,
+          0.026927711153354916,
+          0.01586142550404638,
+          0.16776606093254645
+        ],
+        "source_legend_order": [
+          "Economics/Finance",
+          "Business/Management",
+          "Econometrics/Statistics",
+          "Public Administration",
+          "Law",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      },
+      "affiliation_type2": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "Consulting",
+          "University",
+          "Investment Banking",
+          "Commercial Banking",
+          "Asset Management",
+          "Manufacturing",
+          "Other",
+          "Unknown"
+        ],
+        "max_share_sum_error": 2.220446049250313e-16,
+        "current_mean_quarterly_shares": {
+          "Consulting": 0.3051885309113256,
+          "University": 0.1630234825265979,
+          "Investment Banking": 0.13439326746284205,
+          "Commercial Banking": 0.09894181628885867,
+          "Asset Management": 0.08334207245938115,
+          "Manufacturing": 0.08420651271043901,
+          "Other": 0.11726826549532696,
+          "Unknown": 0.013636052145228584
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.30614413766258897,
+          0.1608619214044471,
+          0.12716288633758396,
+          0.09825614164376728,
+          0.08108697504752421,
+          0.08168797943036812,
+          0.11669108450421119,
+          0.028108873969509195
+        ],
+        "source_legend_order": [
+          "Consulting",
+          "University",
+          "Investment Banking",
+          "Commercial Banking",
+          "Asset Management",
+          "Manufacturing",
+          "Other",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      },
+      "title2": {
+        "quarter_count": 100,
+        "rows": 5308,
+        "categories": [
+          "Chief Economist",
+          "Executive Role",
+          "Economist",
+          "Academic Role",
+          "Consultant/Analyst",
+          "Unknown"
+        ],
+        "max_share_sum_error": 2.220446049250313e-16,
+        "current_mean_quarterly_shares": {
+          "Chief Economist": 0.3473385994213905,
+          "Executive Role": 0.14646489656954292,
+          "Economist": 0.3066805574748946,
+          "Academic Role": 0.050777755243408135,
+          "Consultant/Analyst": 0.06035401381209251,
+          "Unknown": 0.0883841774786712
+        },
+        "source_rendered_mean_area_shares_in_legend_order": [
+          0.3416977389420396,
+          0.14460703255308563,
+          0.3075140520613669,
+          0.055893214871837286,
+          0.06446349028305295,
+          0.08582447128861763
+        ],
+        "source_legend_order": [
+          "Chief Economist",
+          "Executive Role",
+          "Economist",
+          "Academic Role",
+          "Consultant/Analyst",
+          "Unknown"
+        ],
+        "comparison_note": "Source polygon areas are visual audit measures; they do not supply regenerated counts or shares."
+      }
+    },
+    "limitations": "Saved metadata differ from the final-PDF category composition (notably gender Unknown and the additional No public appearance category). Original ggstream smoothing is replaced by a Gaussian graphical smoother (2 quarters). Exact underlying shares are retained; category sets are checked, not adjusted to force agreement."
+  },
+  {
+    "id": "Figure3",
+    "type": "figure",
+    "original_pages": [
+      39,
+      40
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/Figure3_page1.pdf",
+      "reproduced/figures/Figure3_page2.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/Figure3_page1.png",
+      "reproduced/figures/Figure3_page2.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/Figure3.pdf",
+    "status": "Reproduced: numeric series match",
+    "method": "Port of fig_ts_median.R: quarterly cross-sectional AI medians and published human SPF medians, horizons 1 and 4.",
+    "checks": {
+      "CPI_1_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.005777464382560993,
+        "y_max_residual_pt": 0.00601503763226674,
+        "y_residual_fraction_span": 0.00010290911798666287,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00034455203855077166,
+          "max_axis_calibrated_residual_pt": 0.005401611328125,
+          "axis_tick_pairs": [
+            [
+              -2.5,
+              169.19000244140625
+            ],
+            [
+              0.0,
+              130.0
+            ],
+            [
+              2.5,
+              90.80999755859375
+            ],
+            [
+              5.0,
+              51.61000061035156
+            ],
+            [
+              7.5,
+              12.419998168945312
+            ]
+          ]
+        },
+        "value_min": 0.8022,
+        "value_max": 4.5309
+      },
+      "CPI_1_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.005777464382560993,
+        "y_max_residual_pt": 0.004749959945542059,
+        "y_residual_fraction_span": 3.0298908056969817e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00034455203855077166,
+          "max_axis_calibrated_residual_pt": 0.005401611328125,
+          "axis_tick_pairs": [
+            [
+              -2.5,
+              169.19000244140625
+            ],
+            [
+              0.0,
+              130.0
+            ],
+            [
+              2.5,
+              90.80999755859375
+            ],
+            [
+              5.0,
+              51.61000061035156
+            ],
+            [
+              7.5,
+              12.419998168945312
+            ]
+          ]
+        },
+        "value_min": -2.5,
+        "value_max": 7.5
+      },
+      "CPI_4_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0048519673487703585,
+        "y_max_residual_pt": 0.006649380443647601,
+        "y_residual_fraction_span": 0.00018906399743628434,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00021637026171816842,
+          "max_axis_calibrated_residual_pt": 0.00616709391286463,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.19000244140625
+            ],
+            [
+              2.0,
+              112.18000030517578
+            ],
+            [
+              4.0,
+              55.17999267578125
+            ]
+          ]
+        },
+        "value_min": 1.8,
+        "value_max": 3.0337
+      },
+      "CPI_4_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0048519673487703585,
+        "y_max_residual_pt": 0.006142711070168616,
+        "y_residual_fraction_span": 3.918294892365247e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00021637026171816842,
+          "max_axis_calibrated_residual_pt": 0.00616709391286463,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.19000244140625
+            ],
+            [
+              2.0,
+              112.18000030517578
+            ],
+            [
+              4.0,
+              55.17999267578125
+            ]
+          ]
+        },
+        "value_min": 0.0,
+        "value_max": 5.5
+      },
+      "TBILL_1_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0048519673487703585,
+        "y_max_residual_pt": 0.005538622983294772,
+        "y_residual_fraction_span": 3.56089959005326e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00023278989564823327,
+          "max_axis_calibrated_residual_pt": 0.005887605667112439,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.22999572753906
+            ],
+            [
+              2.0,
+              118.63999938964844
+            ],
+            [
+              4.0,
+              68.05999755859375
+            ],
+            [
+              6.0,
+              17.479995727539062
+            ]
+          ]
+        },
+        "value_min": 0.05,
+        "value_max": 6.2
+      },
+      "TBILL_1_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0048519673487703585,
+        "y_max_residual_pt": 0.005502793311421783,
+        "y_residual_fraction_span": 3.596362008349682e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00022518802747706346,
+          "max_axis_calibrated_residual_pt": 0.005695343017549703,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.22999572753906
+            ],
+            [
+              2.0,
+              118.63999938964844
+            ],
+            [
+              4.0,
+              68.05999755859375
+            ],
+            [
+              6.0,
+              17.479995727539062
+            ]
+          ]
+        },
+        "value_min": 0.05,
+        "value_max": 6.1
+      },
+      "TBILL_4_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0048519673487703585,
+        "y_max_residual_pt": 0.0055859264924720264,
+        "y_residual_fraction_span": 3.710839392659509e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.0002591299693158744,
+          "max_axis_calibrated_residual_pt": 0.006347777099591667,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.1999969482422
+            ],
+            [
+              2.0,
+              120.19999694824219
+            ],
+            [
+              4.0,
+              71.20999908447266
+            ],
+            [
+              6.0,
+              22.220001220703125
+            ]
+          ]
+        },
+        "value_min": 0.08,
+        "value_max": 6.225
+      },
+      "TBILL_4_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0048519673487703585,
+        "y_max_residual_pt": 0.00588743383207202,
+        "y_residual_fraction_span": 3.80276033687478e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.000234777560387478,
+          "max_axis_calibrated_residual_pt": 0.005751228332485425,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.1999969482422
+            ],
+            [
+              2.0,
+              120.19999694824219
+            ],
+            [
+              4.0,
+              71.20999908447266
+            ],
+            [
+              6.0,
+              22.220001220703125
+            ]
+          ]
+        },
+        "value_min": 0.08,
+        "value_max": 6.4
+      },
+      "UNEMP_1_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0050437904127136335,
+        "y_max_residual_pt": 0.004938355114646242,
+        "y_residual_fraction_span": 4.3167439237569556e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.0003992937084156267,
+          "max_axis_calibrated_residual_pt": 0.004837443033750333,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.22000122070312
+            ],
+            [
+              5.0,
+              108.63999938964844
+            ],
+            [
+              10.0,
+              48.07000732421875
+            ]
+          ]
+        },
+        "value_min": 3.5,
+        "value_max": 12.9425
+      },
+      "UNEMP_1_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.0050437904127136335,
+        "y_max_residual_pt": 0.005562443695637853,
+        "y_residual_fraction_span": 5.401479427377914e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00039941965797929413,
+          "max_axis_calibrated_residual_pt": 0.0048389689126366875,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.22000122070312
+            ],
+            [
+              5.0,
+              108.63999938964844
+            ],
+            [
+              10.0,
+              48.07000732421875
+            ]
+          ]
+        },
+        "value_min": 3.5,
+        "value_max": 12.0
+      },
+      "UNEMP_4_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.004898453759977883,
+        "y_max_residual_pt": 0.005152841351588222,
+        "y_residual_fraction_span": 5.035021645333746e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.0004368259018558973,
+          "max_axis_calibrated_residual_pt": 0.006990612304576871,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.25
+            ],
+            [
+              2.5,
+              129.25
+            ],
+            [
+              5.0,
+              89.23999786376953
+            ],
+            [
+              7.5,
+              49.22999572753906
+            ],
+            [
+              10.0,
+              9.220001220703125
+            ]
+          ]
+        },
+        "value_min": 3.4049,
+        "value_max": 9.8
+      },
+      "UNEMP_4_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.004898453759977883,
+        "y_max_residual_pt": 0.005223510120998753,
+        "y_residual_fraction_span": 5.532207394933802e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00042475788094442635,
+          "max_axis_calibrated_residual_pt": 0.006797485351455634,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.25
+            ],
+            [
+              2.5,
+              129.25
+            ],
+            [
+              5.0,
+              89.23999786376953
+            ],
+            [
+              7.5,
+              49.22999572753906
+            ],
+            [
+              10.0,
+              9.220001220703125
+            ]
+          ]
+        },
+        "value_min": 3.4,
+        "value_max": 9.3
+      },
+      "RGDP_1_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.005351935749729364,
+        "y_max_residual_pt": 0.005387821981514662,
+        "y_residual_fraction_span": 5.239033229937062e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 1.3275445692670473,
+          "max_axis_calibrated_residual_pt": 0.009205194772533787,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.19000244140625
+            ],
+            [
+              5000.0,
+              134.52000427246094
+            ],
+            [
+              10000.0,
+              99.8499984741211
+            ],
+            [
+              15000.0,
+              65.17999267578125
+            ],
+            [
+              20000.0,
+              30.509994506835938
+            ]
+          ]
+        },
+        "value_min": 7777.9,
+        "value_max": 22609.5246
+      },
+      "RGDP_1_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.005351935749729364,
+        "y_max_residual_pt": 0.005054187547088418,
+        "y_residual_fraction_span": 5.69485920798695e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 1.2550165960874438,
+          "max_axis_calibrated_residual_pt": 0.008702285766673867,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.19000244140625
+            ],
+            [
+              5000.0,
+              134.52000427246094
+            ],
+            [
+              10000.0,
+              99.8499984741211
+            ],
+            [
+              15000.0,
+              65.17999267578125
+            ],
+            [
+              20000.0,
+              30.509994506835938
+            ]
+          ]
+        },
+        "value_min": 7750.0,
+        "value_max": 20550.0
+      },
+      "RGDP_4_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.005351935749729364,
+        "y_max_residual_pt": 0.0053209828117388724,
+        "y_residual_fraction_span": 5.189177651872959e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.8684899408872297,
+          "max_axis_calibrated_residual_pt": 0.005955409233251885,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.19000244140625
+            ],
+            [
+              5000.0,
+              134.91000366210938
+            ],
+            [
+              10000.0,
+              100.62000274658203
+            ],
+            [
+              15000.0,
+              66.33000183105469
+            ],
+            [
+              20000.0,
+              32.05000305175781
+            ]
+          ]
+        },
+        "value_min": 7908.455,
+        "value_max": 22862.179
+      },
+      "RGDP_4_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.005351935749729364,
+        "y_max_residual_pt": 0.005350424585486735,
+        "y_residual_fraction_span": 6.057998872253488e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.816933909074578,
+          "max_axis_calibrated_residual_pt": 0.005601879211297955,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              169.19000244140625
+            ],
+            [
+              5000.0,
+              134.91000366210938
+            ],
+            [
+              10000.0,
+              100.62000274658203
+            ],
+            [
+              15000.0,
+              66.33000183105469
+            ],
+            [
+              20000.0,
+              32.05000305175781
+            ]
+          ]
+        },
+        "value_min": 7820.0,
+        "value_max": 20700.0
+      },
+      "aggregation_validation": {
+        "median_max_abs_difference_from_R_cache": 0.0,
+        "forecast_error_max_abs_difference_from_R_cache": 4.547473508864641e-13,
+        "groups": 32200,
+        "scope": "all baseline series"
+      }
+    },
+    "limitations": "Matplotlib typography and page layout differ from R/LaTeX."
+  },
+  {
+    "id": "Figure4",
+    "type": "figure",
+    "original_pages": [
+      41
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/Figure4.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/Figure4.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/Figure4.pdf",
+    "status": "Reconstructed histogram matches; caption N differs",
+    "method": "Raw baseline nowcasts, including the literal No Name Provided record. Restrict each variable to forecasters with >=10 observations BEFORE demeaning; average quarterly deviations by Name; 20 bins. Code was absent, so horizon/order were inferred and independently checked.",
+    "checks": {
+      "chosen_candidate": "h0_filter_before_demean",
+      "computed": {
+        "RGDP": {
+          "n": 121,
+          "mean": 11.481789012887877,
+          "sd": 39.005572039136524,
+          "min": -35.35450616380017,
+          "max": 148.16350307049893,
+          "histogram_counts": [
+            8,
+            26,
+            13,
+            20,
+            7,
+            9,
+            6,
+            5,
+            7,
+            4,
+            0,
+            5,
+            4,
+            3,
+            1,
+            0,
+            0,
+            1,
+            0,
+            2
+          ],
+          "histogram_bin_edges": [
+            -35.35450616380017,
+            -26.178605702085214,
+            -17.002705240370258,
+            -7.826804778655301,
+            1.3490956830596517,
+            10.524996144774605,
+            19.700896606489565,
+            28.87679706820451,
+            38.05269752991947,
+            47.22859799163443,
+            56.404498453349376,
+            65.58039891506434,
+            74.7562993767793,
+            83.93219983849424,
+            93.10810030020919,
+            102.28400076192416,
+            111.45990122363911,
+            120.63580168535405,
+            129.811702147069,
+            138.98760260878396,
+            148.16350307049893
+          ]
+        },
+        "CPI": {
+          "n": 121,
+          "mean": 0.0008637382601470219,
+          "sd": 0.08620686550900764,
+          "min": -0.26206630876977494,
+          "max": 0.38748322373022503,
+          "histogram_counts": [
+            1,
+            0,
+            0,
+            5,
+            4,
+            10,
+            17,
+            27,
+            24,
+            10,
+            12,
+            6,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "histogram_bin_edges": [
+            -0.26206630876977494,
+            -0.22958883214477493,
+            -0.19711135551977493,
+            -0.16463387889477493,
+            -0.13215640226977493,
+            -0.09967892564477493,
+            -0.06720144901977493,
+            -0.03472397239477493,
+            -0.0022464957697749255,
+            0.030230980855225076,
+            0.06270845748022508,
+            0.09518593410522508,
+            0.12766341073022508,
+            0.16014088735522508,
+            0.19261836398022508,
+            0.22509584060522508,
+            0.2575733172302251,
+            0.2900507938552251,
+            0.3225282704802251,
+            0.3550057471052251,
+            0.38748322373022503
+          ]
+        },
+        "UNEMP": {
+          "n": 121,
+          "mean": -0.0002228605676289134,
+          "sd": 0.02230240705751857,
+          "min": -0.09396616676368352,
+          "max": 0.07975507485720164,
+          "histogram_counts": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            0,
+            6,
+            19,
+            40,
+            21,
+            12,
+            7,
+            2,
+            2,
+            2,
+            1,
+            0,
+            1
+          ],
+          "histogram_bin_edges": [
+            -0.09396616676368352,
+            -0.08528010468263926,
+            -0.07659404260159501,
+            -0.06790798052055075,
+            -0.05922191843950649,
+            -0.050535856358462236,
+            -0.04184979427741797,
+            -0.03316373219637372,
+            -0.02447767011532946,
+            -0.0157916080342852,
+            -0.007105545953240949,
+            0.0015805161278033136,
+            0.010266578208847577,
+            0.018952640289891826,
+            0.02763870237093609,
+            0.03632476445198035,
+            0.0450108265330246,
+            0.05369688861406885,
+            0.062382950695113126,
+            0.07106901277615738,
+            0.07975507485720164
+          ]
+        },
+        "NGDP": {
+          "n": 121,
+          "mean": -0.8190801996211735,
+          "sd": 25.384954193757128,
+          "min": -123.435097951856,
+          "max": 73.67022364102922,
+          "histogram_counts": [
+            2,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            5,
+            7,
+            24,
+            37,
+            16,
+            12,
+            10,
+            3,
+            1,
+            0,
+            1
+          ],
+          "histogram_bin_edges": [
+            -123.435097951856,
+            -113.57983187221173,
+            -103.72456579256747,
+            -93.86929971292321,
+            -84.01403363327896,
+            -74.15876755363469,
+            -64.30350147399042,
+            -54.44823539434617,
+            -44.592969314701904,
+            -34.73770323505764,
+            -24.882437155413385,
+            -15.027171075769118,
+            -5.1719049961248516,
+            4.683361083519401,
+            14.538627163163653,
+            24.393893242807934,
+            34.249159322452186,
+            44.10442540209644,
+            53.95969148174072,
+            63.81495756138497,
+            73.67022364102922
+          ]
+        }
+      },
+      "histogram_visual_validation": {
+        "RGDP": {
+          "nonzero_bars_compared": 16,
+          "total_nonzero_bars": 16,
+          "height_residual_max_px": 0.5469676848162948,
+          "count_per_pixel": 0.023217905023454298,
+          "status": "matching_histogram_heights"
+        },
+        "CPI": {
+          "nonzero_bars_compared": 15,
+          "total_nonzero_bars": 15,
+          "height_residual_max_px": 0.5037641954828587,
+          "count_per_pixel": 0.02411180592411411,
+          "status": "matching_histogram_heights"
+        },
+        "UNEMP": {
+          "nonzero_bars_compared": 17,
+          "total_nonzero_bars": 17,
+          "height_residual_max_px": 9.094947017729282e-13,
+          "count_per_pixel": 0.03571428571428575,
+          "status": "matching_histogram_heights"
+        },
+        "NGDP": {
+          "nonzero_bars_compared": 13,
+          "total_nonzero_bars": 13,
+          "height_residual_max_px": 0.5027768703036486,
+          "count_per_pixel": 0.03303189882159967,
+          "status": "matching_histogram_heights"
+        }
+      },
+      "alternative_candidates": {
+        "h0_filter_before_demean": {
+          "RGDP": {
+            "n": 121,
+            "mean": 11.481789012887877,
+            "sd": 39.005572039136524,
+            "min": -35.35450616380017,
+            "max": 148.16350307049893,
+            "histogram_counts": [
+              8,
+              26,
+              13,
+              20,
+              7,
+              9,
+              6,
+              5,
+              7,
+              4,
+              0,
+              5,
+              4,
+              3,
+              1,
+              0,
+              0,
+              1,
+              0,
+              2
+            ],
+            "histogram_bin_edges": [
+              -35.35450616380017,
+              -26.178605702085214,
+              -17.002705240370258,
+              -7.826804778655301,
+              1.3490956830596517,
+              10.524996144774605,
+              19.700896606489565,
+              28.87679706820451,
+              38.05269752991947,
+              47.22859799163443,
+              56.404498453349376,
+              65.58039891506434,
+              74.7562993767793,
+              83.93219983849424,
+              93.10810030020919,
+              102.28400076192416,
+              111.45990122363911,
+              120.63580168535405,
+              129.811702147069,
+              138.98760260878396,
+              148.16350307049893
+            ]
+          },
+          "CPI": {
+            "n": 121,
+            "mean": 0.0008637382601470219,
+            "sd": 0.08620686550900764,
+            "min": -0.26206630876977494,
+            "max": 0.38748322373022503,
+            "histogram_counts": [
+              1,
+              0,
+              0,
+              5,
+              4,
+              10,
+              17,
+              27,
+              24,
+              10,
+              12,
+              6,
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.26206630876977494,
+              -0.22958883214477493,
+              -0.19711135551977493,
+              -0.16463387889477493,
+              -0.13215640226977493,
+              -0.09967892564477493,
+              -0.06720144901977493,
+              -0.03472397239477493,
+              -0.0022464957697749255,
+              0.030230980855225076,
+              0.06270845748022508,
+              0.09518593410522508,
+              0.12766341073022508,
+              0.16014088735522508,
+              0.19261836398022508,
+              0.22509584060522508,
+              0.2575733172302251,
+              0.2900507938552251,
+              0.3225282704802251,
+              0.3550057471052251,
+              0.38748322373022503
+            ]
+          },
+          "UNEMP": {
+            "n": 121,
+            "mean": -0.0002228605676289134,
+            "sd": 0.02230240705751857,
+            "min": -0.09396616676368352,
+            "max": 0.07975507485720164,
+            "histogram_counts": [
+              1,
+              0,
+              1,
+              1,
+              1,
+              2,
+              2,
+              0,
+              6,
+              19,
+              40,
+              21,
+              12,
+              7,
+              2,
+              2,
+              2,
+              1,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.09396616676368352,
+              -0.08528010468263926,
+              -0.07659404260159501,
+              -0.06790798052055075,
+              -0.05922191843950649,
+              -0.050535856358462236,
+              -0.04184979427741797,
+              -0.03316373219637372,
+              -0.02447767011532946,
+              -0.0157916080342852,
+              -0.007105545953240949,
+              0.0015805161278033136,
+              0.010266578208847577,
+              0.018952640289891826,
+              0.02763870237093609,
+              0.03632476445198035,
+              0.0450108265330246,
+              0.05369688861406885,
+              0.062382950695113126,
+              0.07106901277615738,
+              0.07975507485720164
+            ]
+          },
+          "NGDP": {
+            "n": 121,
+            "mean": -0.8190801996211735,
+            "sd": 25.384954193757128,
+            "min": -123.435097951856,
+            "max": 73.67022364102922,
+            "histogram_counts": [
+              2,
+              0,
+              0,
+              0,
+              0,
+              2,
+              1,
+              0,
+              0,
+              5,
+              7,
+              24,
+              37,
+              16,
+              12,
+              10,
+              3,
+              1,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -123.435097951856,
+              -113.57983187221173,
+              -103.72456579256747,
+              -93.86929971292321,
+              -84.01403363327896,
+              -74.15876755363469,
+              -64.30350147399042,
+              -54.44823539434617,
+              -44.592969314701904,
+              -34.73770323505764,
+              -24.882437155413385,
+              -15.027171075769118,
+              -5.1719049961248516,
+              4.683361083519401,
+              14.538627163163653,
+              24.393893242807934,
+              34.249159322452186,
+              44.10442540209644,
+              53.95969148174072,
+              63.81495756138497,
+              73.67022364102922
+            ]
+          }
+        },
+        "h0_filter_after_demean": {
+          "RGDP": {
+            "n": 121,
+            "mean": 6.560084266080338,
+            "sd": 40.69909836037958,
+            "min": -43.76330835198068,
+            "max": 139.10491228705828,
+            "histogram_counts": [
+              7,
+              20,
+              17,
+              18,
+              10,
+              6,
+              6,
+              7,
+              5,
+              6,
+              3,
+              4,
+              2,
+              3,
+              3,
+              1,
+              0,
+              0,
+              1,
+              2
+            ],
+            "histogram_bin_edges": [
+              -43.76330835198068,
+              -34.619897320028734,
+              -25.47648628807679,
+              -16.333075256124843,
+              -7.189664224172894,
+              1.953746807779055,
+              11.097157839730997,
+              20.240568871682953,
+              29.383979903634895,
+              38.52739093558684,
+              47.67080196753879,
+              56.814212999490735,
+              65.95762403144268,
+              75.10103506339463,
+              84.24444609534659,
+              93.38785712729852,
+              102.53126815925047,
+              111.67467919120243,
+              120.81809022315436,
+              129.96150125510633,
+              139.10491228705828
+            ]
+          },
+          "CPI": {
+            "n": 121,
+            "mean": -0.00018681026232354037,
+            "sd": 0.08615377922030237,
+            "min": -0.2701116104800713,
+            "max": 0.37943792201992865,
+            "histogram_counts": [
+              1,
+              0,
+              0,
+              5,
+              3,
+              11,
+              12,
+              21,
+              33,
+              10,
+              12,
+              6,
+              2,
+              2,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.2701116104800713,
+              -0.23763413385507132,
+              -0.20515665723007132,
+              -0.17267918060507131,
+              -0.1402017039800713,
+              -0.10772422735507131,
+              -0.07524675073007131,
+              -0.04276927410507131,
+              -0.010291797480071307,
+              0.022185679144928694,
+              0.054663155769928695,
+              0.0871406323949287,
+              0.1196181090199287,
+              0.1520955856449287,
+              0.1845730622699287,
+              0.2170505388949287,
+              0.2495280155199287,
+              0.2820054921449287,
+              0.3144829687699287,
+              0.3469604453949287,
+              0.37943792201992865
+            ]
+          },
+          "UNEMP": {
+            "n": 121,
+            "mean": 0.0011714962146241667,
+            "sd": 0.022868362820735986,
+            "min": -0.08744421524367436,
+            "max": 0.09376712517867132,
+            "histogram_counts": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              2,
+              1,
+              8,
+              20,
+              37,
+              21,
+              13,
+              6,
+              2,
+              3,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.08744421524367436,
+              -0.07838364822255708,
+              -0.06932308120143979,
+              -0.06026251418032251,
+              -0.05120194715920523,
+              -0.04214138013808795,
+              -0.03308081311697066,
+              -0.024020246095853376,
+              -0.014959679074736096,
+              -0.005899112053618816,
+              0.0031614549674984643,
+              0.012222021988615758,
+              0.02128258900973304,
+              0.03034315603085032,
+              0.03940372305196761,
+              0.04846429007308488,
+              0.05752485709420217,
+              0.06658542411531947,
+              0.07564599113643673,
+              0.08470655815755403,
+              0.09376712517867132
+            ]
+          },
+          "NGDP": {
+            "n": 121,
+            "mean": 2.3082208913538036,
+            "sd": 24.450321308259465,
+            "min": -112.88289165266212,
+            "max": 94.17887759308519,
+            "histogram_counts": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              4,
+              13,
+              42,
+              22,
+              14,
+              9,
+              8,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -112.88289165266212,
+              -102.52980319037476,
+              -92.17671472808739,
+              -81.82362626580003,
+              -71.47053780351266,
+              -61.117449341225296,
+              -50.764360878937936,
+              -40.41127241665056,
+              -30.0581839543632,
+              -19.70509549207584,
+              -9.352007029788467,
+              1.0010814324988928,
+              11.354169894786253,
+              21.707258357073613,
+              32.060346819361,
+              42.41343528164836,
+              52.76652374393572,
+              63.11961220622308,
+              73.47270066851044,
+              83.82578913079783,
+              94.17887759308519
+            ]
+          }
+        },
+        "h1_filter_before_demean": {
+          "RGDP": {
+            "n": 121,
+            "mean": 11.652015017435978,
+            "sd": 41.375336087329316,
+            "min": -37.19482561430955,
+            "max": 148.384111155033,
+            "histogram_counts": [
+              12,
+              20,
+              14,
+              22,
+              6,
+              10,
+              4,
+              2,
+              10,
+              2,
+              3,
+              1,
+              6,
+              2,
+              3,
+              1,
+              0,
+              0,
+              1,
+              2
+            ],
+            "histogram_bin_edges": [
+              -37.19482561430955,
+              -27.915878775842422,
+              -18.636931937375298,
+              -9.357985098908173,
+              -0.07903826044104534,
+              9.199908578026083,
+              18.478855416493204,
+              27.75780225496034,
+              37.03674909342746,
+              46.31569593189458,
+              55.594642770361716,
+              64.87358960882884,
+              74.15253644729596,
+              83.4314832857631,
+              92.71043012423023,
+              101.98937696269734,
+              111.26832380116447,
+              120.5472706396316,
+              129.82621747809873,
+              139.10516431656583,
+              148.384111155033
+            ]
+          },
+          "CPI": {
+            "n": 121,
+            "mean": 0.001999357377682098,
+            "sd": 0.07352377958772709,
+            "min": -0.18492392385768017,
+            "max": 0.2264470358263108,
+            "histogram_counts": [
+              1,
+              4,
+              2,
+              3,
+              4,
+              4,
+              16,
+              12,
+              11,
+              15,
+              17,
+              9,
+              6,
+              8,
+              2,
+              3,
+              3,
+              0,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.18492392385768017,
+              -0.16435537587348062,
+              -0.14378682788928107,
+              -0.12321827990508152,
+              -0.10264973192088198,
+              -0.08208118393668243,
+              -0.06151263595248288,
+              -0.04094408796828333,
+              -0.020375539984083785,
+              0.00019300800011576302,
+              0.02076155598431531,
+              0.04133010396851486,
+              0.061898651952714406,
+              0.08246719993691395,
+              0.1030357479211135,
+              0.12360429590531305,
+              0.1441728438895126,
+              0.16474139187371215,
+              0.1853099398579117,
+              0.20587848784211124,
+              0.2264470358263108
+            ]
+          },
+          "UNEMP": {
+            "n": 121,
+            "mean": 0.00021917150884081564,
+            "sd": 0.02724457113682374,
+            "min": -0.11379592277243933,
+            "max": 0.17309523075341762,
+            "histogram_counts": [
+              1,
+              0,
+              1,
+              2,
+              1,
+              2,
+              12,
+              46,
+              39,
+              8,
+              5,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.11379592277243933,
+              -0.09945136509614648,
+              -0.08510680741985363,
+              -0.0707622497435608,
+              -0.05641769206726795,
+              -0.0420731343909751,
+              -0.027728576714682263,
+              -0.013384019038389414,
+              0.0009605386379034353,
+              0.01530509631419627,
+              0.029649653990489133,
+              0.04399421166678197,
+              0.0583387693430748,
+              0.07268332701936767,
+              0.0870278846956605,
+              0.10137244237195336,
+              0.1157170000482462,
+              0.13006155772453903,
+              0.14440611540083187,
+              0.15875067307712476,
+              0.17309523075341762
+            ]
+          },
+          "NGDP": {
+            "n": 121,
+            "mean": -0.940126244570644,
+            "sd": 30.41488551655815,
+            "min": -162.43803613644104,
+            "max": 67.40141584648009,
+            "histogram_counts": [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1,
+              3,
+              7,
+              10,
+              30,
+              30,
+              13,
+              11,
+              7,
+              4,
+              1
+            ],
+            "histogram_bin_edges": [
+              -162.43803613644104,
+              -150.94606353729498,
+              -139.45409093814894,
+              -127.96211833900287,
+              -116.47014573985682,
+              -104.97817314071077,
+              -93.4862005415647,
+              -81.99422794241865,
+              -70.5022553432726,
+              -59.01028274412654,
+              -47.51831014498049,
+              -36.02633754583442,
+              -24.534364946688356,
+              -13.042392347542318,
+              -1.5504197483962514,
+              9.941552850749787,
+              21.433525449895853,
+              32.92549804904192,
+              44.41747064818796,
+              55.909443247334025,
+              67.40141584648009
+            ]
+          }
+        },
+        "h1_filter_after_demean": {
+          "RGDP": {
+            "n": 121,
+            "mean": 5.791899105275598,
+            "sd": 42.78839482900203,
+            "min": -45.38399578366846,
+            "max": 137.110557579838,
+            "histogram_counts": [
+              9,
+              16,
+              22,
+              18,
+              5,
+              9,
+              7,
+              1,
+              6,
+              7,
+              3,
+              3,
+              3,
+              4,
+              1,
+              3,
+              1,
+              0,
+              0,
+              3
+            ],
+            "histogram_bin_edges": [
+              -45.38399578366846,
+              -36.259268115493136,
+              -27.134540447317814,
+              -18.009812779142493,
+              -8.885085110967168,
+              0.23964255720815686,
+              9.364370225383475,
+              18.4890978935588,
+              27.613825561734124,
+              36.73855322990945,
+              45.863280898084774,
+              54.9880085662601,
+              64.1127362344354,
+              73.23746390261073,
+              82.36219157078605,
+              91.48691923896138,
+              100.6116469071367,
+              109.73637457531203,
+              118.86110224348735,
+              127.98582991166268,
+              137.110557579838
+            ]
+          },
+          "CPI": {
+            "n": 121,
+            "mean": 0.001655050434384462,
+            "sd": 0.07326090270697735,
+            "min": -0.18394390149517906,
+            "max": 0.22408222314633455,
+            "histogram_counts": [
+              2,
+              3,
+              2,
+              3,
+              4,
+              4,
+              15,
+              13,
+              11,
+              15,
+              17,
+              9,
+              7,
+              7,
+              2,
+              3,
+              3,
+              0,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.18394390149517906,
+              -0.16354259526310339,
+              -0.14314128903102769,
+              -0.12273998279895201,
+              -0.10233867656687634,
+              -0.08193737033480067,
+              -0.06153606410272498,
+              -0.0411347578706493,
+              -0.020733451638573624,
+              -0.0003321454064979523,
+              0.02006916082557772,
+              0.04047046705765342,
+              0.06087177328972909,
+              0.08127307952180476,
+              0.10167438575388046,
+              0.12207569198595611,
+              0.1424769982180318,
+              0.1628783044501075,
+              0.18327961068218315,
+              0.20368091691425885,
+              0.22408222314633455
+            ]
+          },
+          "UNEMP": {
+            "n": 121,
+            "mean": 0.0024129315395086935,
+            "sd": 0.02785449941034404,
+            "min": -0.10558736049763276,
+            "max": 0.18624975454623072,
+            "histogram_counts": [
+              1,
+              1,
+              1,
+              1,
+              2,
+              6,
+              31,
+              45,
+              22,
+              5,
+              3,
+              2,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.10558736049763276,
+              -0.09099550474543959,
+              -0.07640364899324642,
+              -0.06181179324105324,
+              -0.04721993748886007,
+              -0.0326280817366669,
+              -0.018036225984473714,
+              -0.003444370232280544,
+              0.011147485519912625,
+              0.02573934127210581,
+              0.040331197024298965,
+              0.05492305277649215,
+              0.06951490852868533,
+              0.08410676428087849,
+              0.09869862003307167,
+              0.11329047578526483,
+              0.127882331537458,
+              0.1424741872896512,
+              0.15706604304184438,
+              0.1716578987940375,
+              0.18624975454623072
+            ]
+          },
+          "NGDP": {
+            "n": 121,
+            "mean": 1.5965031307901019,
+            "sd": 29.214089584555612,
+            "min": -134.7858671039779,
+            "max": 81.49219768633156,
+            "histogram_counts": [
+              1,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              2,
+              5,
+              10,
+              25,
+              31,
+              13,
+              12,
+              9,
+              7,
+              1,
+              1,
+              1
+            ],
+            "histogram_bin_edges": [
+              -134.7858671039779,
+              -123.97196386446242,
+              -113.15806062494696,
+              -102.34415738543147,
+              -91.530254145916,
+              -80.71635090640054,
+              -69.90244766688505,
+              -59.088544427369584,
+              -48.274641187854115,
+              -37.46073794833865,
+              -26.646834708823178,
+              -15.832931469307695,
+              -5.019028229792212,
+              5.794875009723256,
+              16.608778249238725,
+              27.422681488754193,
+              38.23658472826966,
+              49.05048796778513,
+              59.8643912073006,
+              70.67829444681607,
+              81.49219768633156
+            ]
+          }
+        },
+        "h4_filter_before_demean": {
+          "RGDP": {
+            "n": 121,
+            "mean": 14.445741953583079,
+            "sd": 50.40592731606815,
+            "min": -53.185179912623084,
+            "max": 168.46742779527244,
+            "histogram_counts": [
+              5,
+              11,
+              24,
+              12,
+              15,
+              7,
+              6,
+              10,
+              3,
+              3,
+              6,
+              3,
+              3,
+              3,
+              4,
+              0,
+              1,
+              3,
+              1,
+              1
+            ],
+            "histogram_bin_edges": [
+              -53.185179912623084,
+              -42.102549527228305,
+              -31.019919141833533,
+              -19.93728875643876,
+              -8.854658371043982,
+              2.2279720143507973,
+              13.310602399745562,
+              24.39323278514034,
+              35.47586317053512,
+              46.5584935559299,
+              57.64112394132468,
+              68.72375432671944,
+              79.80638471211421,
+              90.889015097509,
+              101.97164548290377,
+              113.05427586829856,
+              124.13690625369333,
+              135.2195366390881,
+              146.30216702448288,
+              157.38479740987765,
+              168.46742779527244
+            ]
+          },
+          "CPI": {
+            "n": 121,
+            "mean": 0.002372179365354126,
+            "sd": 0.05455030651033494,
+            "min": -0.13931424633039002,
+            "max": 0.17257271045328407,
+            "histogram_counts": [
+              1,
+              3,
+              2,
+              2,
+              6,
+              4,
+              11,
+              18,
+              13,
+              16,
+              17,
+              11,
+              5,
+              3,
+              2,
+              2,
+              0,
+              3,
+              1,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.13931424633039002,
+              -0.12371989849120632,
+              -0.10812555065202262,
+              -0.09253120281283891,
+              -0.07693685497365521,
+              -0.06134250713447151,
+              -0.045748159295287805,
+              -0.0301538114561041,
+              -0.014559463616920398,
+              0.0010348842222633048,
+              0.016629232061447008,
+              0.03222357990063071,
+              0.047817927739814414,
+              0.06341227557899812,
+              0.07900662341818182,
+              0.09460097125736552,
+              0.11019531909654923,
+              0.1257896669357329,
+              0.14138401477491663,
+              0.15697836261410036,
+              0.17257271045328407
+            ]
+          },
+          "UNEMP": {
+            "n": 121,
+            "mean": -0.00035838938294125377,
+            "sd": 0.02456506032659514,
+            "min": -0.08611579065588515,
+            "max": 0.08197549483870033,
+            "histogram_counts": [
+              2,
+              0,
+              0,
+              0,
+              1,
+              4,
+              6,
+              8,
+              15,
+              22,
+              17,
+              23,
+              5,
+              5,
+              8,
+              3,
+              0,
+              1,
+              0,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.08611579065588515,
+              -0.07771122638115588,
+              -0.06930666210642661,
+              -0.060902097831697324,
+              -0.052497533556968054,
+              -0.044092969282238784,
+              -0.035688405007509506,
+              -0.02728384073278023,
+              -0.01887927645805096,
+              -0.010474712183321688,
+              -0.002070147908592418,
+              0.006334416366136866,
+              0.014738980640866137,
+              0.023143544915595407,
+              0.03154810919032469,
+              0.03995267346505396,
+              0.04835723773978323,
+              0.0567618020145125,
+              0.06516636628924177,
+              0.07357093056397104,
+              0.08197549483870033
+            ]
+          },
+          "NGDP": {
+            "n": 121,
+            "mean": 1.348944551316894,
+            "sd": 41.46319556431417,
+            "min": -221.29772454802378,
+            "max": 89.85196283931224,
+            "histogram_counts": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              3,
+              9,
+              16,
+              22,
+              23,
+              19,
+              12,
+              1,
+              7,
+              6
+            ],
+            "histogram_bin_edges": [
+              -221.29772454802378,
+              -205.740240178657,
+              -190.18275580929017,
+              -174.62527143992338,
+              -159.06778707055656,
+              -143.51030270118977,
+              -127.95281833182298,
+              -112.39533396245618,
+              -96.83784959308937,
+              -81.28036522372258,
+              -65.72288085435576,
+              -50.165396484988975,
+              -34.607912115622185,
+              -19.050427746255366,
+              -3.492943376888576,
+              12.064540992478243,
+              27.622025361845033,
+              43.17950973121185,
+              58.73699410057861,
+              74.29447846994543,
+              89.85196283931224
+            ]
+          }
+        },
+        "h4_filter_after_demean": {
+          "RGDP": {
+            "n": 121,
+            "mean": 5.776812163163706,
+            "sd": 51.488039801473214,
+            "min": -63.8861393449744,
+            "max": 155.0923292699991,
+            "histogram_counts": [
+              5,
+              10,
+              19,
+              18,
+              13,
+              6,
+              7,
+              10,
+              2,
+              5,
+              6,
+              4,
+              1,
+              5,
+              2,
+              2,
+              0,
+              3,
+              1,
+              2
+            ],
+            "histogram_bin_edges": [
+              -63.8861393449744,
+              -52.93721591422573,
+              -41.98829248347705,
+              -31.039369052728382,
+              -20.090445621979704,
+              -9.141522191231026,
+              1.8074012395176382,
+              12.756324670266316,
+              23.705248101014995,
+              34.65417153176367,
+              45.60309496251235,
+              56.552018393261015,
+              67.50094182400969,
+              78.44986525475838,
+              89.39878868550704,
+              100.34771211625574,
+              111.2966355470044,
+              122.24555897775306,
+              133.19448240850176,
+              144.14340583925042,
+              155.0923292699991
+            ]
+          },
+          "CPI": {
+            "n": 121,
+            "mean": -0.0027966375620074387,
+            "sd": 0.0549371755515102,
+            "min": -0.1425109522934377,
+            "max": 0.16552979133346613,
+            "histogram_counts": [
+              2,
+              3,
+              1,
+              2,
+              5,
+              6,
+              10,
+              17,
+              13,
+              19,
+              16,
+              9,
+              7,
+              1,
+              2,
+              3,
+              0,
+              3,
+              1,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.1425109522934377,
+              -0.1271089151120925,
+              -0.11170687793074731,
+              -0.09630484074940211,
+              -0.08090280356805693,
+              -0.06550076638671173,
+              -0.05009872920536654,
+              -0.034696692024021356,
+              -0.01929465484267616,
+              -0.003892617661330977,
+              0.011509419520014219,
+              0.026911456701359415,
+              0.04231349388270461,
+              0.05771553106404981,
+              0.07311756824539498,
+              0.08851960542674017,
+              0.10392164260808537,
+              0.11932367978943054,
+              0.13472571697077573,
+              0.15012775415212093,
+              0.16552979133346613
+            ]
+          },
+          "UNEMP": {
+            "n": 121,
+            "mean": 0.003019726281320853,
+            "sd": 0.02467895761645124,
+            "min": -0.0846412807241604,
+            "max": 0.08785207817524691,
+            "histogram_counts": [
+              1,
+              1,
+              0,
+              0,
+              2,
+              3,
+              5,
+              12,
+              15,
+              15,
+              23,
+              21,
+              6,
+              6,
+              6,
+              3,
+              0,
+              0,
+              1,
+              1
+            ],
+            "histogram_bin_edges": [
+              -0.0846412807241604,
+              -0.07601661277919003,
+              -0.06739194483421967,
+              -0.058767276889249306,
+              -0.05014260894427894,
+              -0.04151794099930857,
+              -0.03289327305433821,
+              -0.024268605109367847,
+              -0.01564393716439748,
+              -0.00701926921942711,
+              0.0016053987255432584,
+              0.010230066670513613,
+              0.01885473461548398,
+              0.02747940256045435,
+              0.036104070505424704,
+              0.044728738450395086,
+              0.05335340639536544,
+              0.061978074340335795,
+              0.07060274228530618,
+              0.07922741023027653,
+              0.08785207817524691
+            ]
+          },
+          "NGDP": {
+            "n": 121,
+            "mean": 2.8619782970845646,
+            "sd": 40.93330903277928,
+            "min": -214.05297733699717,
+            "max": 100.2259741841586,
+            "histogram_counts": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              5,
+              13,
+              23,
+              27,
+              18,
+              15,
+              3,
+              7,
+              4,
+              3
+            ],
+            "histogram_bin_edges": [
+              -214.05297733699717,
+              -198.33902976093938,
+              -182.6250821848816,
+              -166.91113460882383,
+              -151.197187032766,
+              -135.48323945670825,
+              -119.76929188065046,
+              -104.05534430459267,
+              -88.34139672853487,
+              -72.62744915247708,
+              -56.91350157641929,
+              -41.1995540003615,
+              -25.48560642430374,
+              -9.771658848245949,
+              5.942288727811842,
+              21.656236303869633,
+              37.370183879927424,
+              53.08413145598519,
+              68.798079032043,
+              84.51202660810077,
+              100.2259741841586
+            ]
+          }
+        }
+      },
+      "target_caption_n": 194,
+      "actual_filtered_n": 121,
+      "target_visible_means": {
+        "RGDP": 11.48,
+        "CPI": 0.0,
+        "UNEMP": 0.0,
+        "NGDP": -0.82
+      },
+      "target_prose": {
+        "RGDP_min": -160,
+        "RGDP_max": 187,
+        "RGDP_sd": 28.4,
+        "CPI_sd": 0.27
+      }
+    },
+    "limitations": "Published sample size 194 is inconsistent with 121 histogram participants after restriction. Main-text RGDP range/SD and CPI SD also differ from the recovered plotted values. No image pixels supplied generated values."
+  },
+  {
+    "id": "Figure5",
+    "type": "figure",
+    "original_pages": [
+      42,
+      43
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/Figure5_page1.pdf",
+      "reproduced/figures/Figure5_page2.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/Figure5_page1.png",
+      "reproduced/figures/Figure5_page2.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/Figure5.pdf",
+    "status": "Recomputed: density shapes agree",
+    "method": "Port of fig_densities.R: AI individual forecasts plus human SPF microdata, minus corresponding realized value. Common Gaussian KDE bandwidth is mean group nrd0.",
+    "checks": {
+      "CPI_1": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.015942546966447337,
+          "rms_height_error_fraction": 0.0010898705832436202,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 0.16243971568748938,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": -0.3090909090908798,
+            "error_sd": 0.0,
+            "min": -0.3090909090908798,
+            "max": -0.3090909090908798
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 32,
+            "error_mean": -0.8444034090908799,
+            "error_sd": 0.3836579825582222,
+            "min": -1.6090909090908798,
+            "max": -0.00909090909087995
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": 17.336773180752495,
+            "error_sd": 0.13549246826013522,
+            "min": 16.586773180752502,
+            "max": 17.3867731807525
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 45,
+            "error_mean": 16.07620206964139,
+            "error_sd": 1.4416653721591663,
+            "min": 12.286773180752501,
+            "max": 19.972273180752502
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": -3.0948551881038453,
+            "error_sd": 0.093724669780641,
+            "min": -3.65760028614306,
+            "max": -3.05760028614306
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 40,
+            "error_mean": -3.0397227861430602,
+            "error_sd": 1.1399443851678208,
+            "min": -6.45210028614306,
+            "max": -0.1434002861430601
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": 0.35644894721028614,
+            "error_sd": 0.11039346353829084,
+            "min": 0.30557175422783,
+            "max": 0.7055717542278299
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 36,
+            "error_mean": 0.6418689764500523,
+            "error_sd": 0.8301730179344239,
+            "min": -1.33332824577217,
+            "max": 2.55557175422783
+          }
+        ]
+      },
+      "CPI_4": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.0015885209980232608,
+          "rms_height_error_fraction": 0.0001544077189743898,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 0.2820944504238453,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": -2.7872037914691408,
+            "error_sd": 4.485978453382215e-16,
+            "min": -2.7872037914691403,
+            "max": -2.7872037914691403
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 30,
+            "error_mean": -3.379537124802474,
+            "error_sd": 0.5085861628647315,
+            "min": -4.58720379146914,
+            "max": -2.48720379146914
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": 0.8067855147412054,
+            "error_sd": 0.1858705167323274,
+            "min": 0.11560904415297024,
+            "max": 1.0156090441529702
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 45,
+            "error_mean": -0.055142066958141,
+            "error_sd": 1.1147598627715587,
+            "min": -4.7712909558470304,
+            "max": 2.81560904415297
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": -7.469247757941572,
+            "error_sd": 0.0756669689896354,
+            "min": -7.84767913049059,
+            "max": -7.2476791304905905
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 40,
+            "error_mean": -7.461896630490591,
+            "error_sd": 0.6175161726886603,
+            "min": -8.83957913049059,
+            "max": -6.04777913049059
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": -1.1187719298245615,
+            "error_sd": 0.39833613845343613,
+            "min": -1.5100000000000002,
+            "max": -0.20999999999999996
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 35,
+            "error_mean": -1.1785542857142859,
+            "error_sd": 0.5481791121752179,
+            "min": -2.1988000000000003,
+            "max": 0.08999999999999986
+          }
+        ]
+      },
+      "TBILL_1": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.004124582275364887,
+          "rms_height_error_fraction": 0.00032242403275339914,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 0.06648422883552232,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": 0.4099999999999993,
+            "error_sd": 5.607473066727768e-17,
+            "min": 0.40999999999999925,
+            "max": 0.40999999999999925
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 32,
+            "error_mean": -0.30656250000000035,
+            "error_sd": 0.12301611158574888,
+            "min": -0.6900000000000004,
+            "max": -0.09000000000000075
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": 1.4626470588235296,
+            "error_sd": 0.0178398888172381,
+            "min": 1.42,
+            "max": 1.4700000000000002
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 44,
+            "error_mean": 1.7545727272727272,
+            "error_sd": 0.25026875820190564,
+            "min": 1.2200000000000002,
+            "max": 2.37
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": 0.008823529411764706,
+            "error_sd": 0.023886988828525826,
+            "min": 0.0,
+            "max": 0.1
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 39,
+            "error_mean": 0.04288205128205128,
+            "error_sd": 0.11425087324737074,
+            "min": -0.123,
+            "max": 0.6
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": -1.059122807017544,
+            "error_sd": 0.1674843351070949,
+            "min": -1.2400000000000002,
+            "max": -0.8900000000000006
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 36,
+            "error_mean": -0.6872027777777779,
+            "error_sd": 0.3709076715965933,
+            "min": -1.79,
+            "max": -0.16000000000000014
+          }
+        ]
+      },
+      "TBILL_4": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.0018433448244617844,
+          "rms_height_error_fraction": 0.00020376921814536047,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 0.13367683833597566,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": -0.42,
+            "error_sd": 5.607473066727768e-17,
+            "min": -0.41999999999999993,
+            "max": -0.41999999999999993
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 30,
+            "error_mean": -1.3680000000000008,
+            "error_sd": 0.3531962431947664,
+            "min": -1.9200000000000004,
+            "max": -0.3200000000000003
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": 1.8005882352941174,
+            "error_sd": 0.07135955526895199,
+            "min": 1.63,
+            "max": 1.8299999999999998
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 43,
+            "error_mean": 2.463562790697675,
+            "error_sd": 0.7035497183579499,
+            "min": 0.6799999999999999,
+            "max": 3.7314000000000003
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": 0.18823529411764708,
+            "error_sd": 0.12393072068462994,
+            "min": 0.05,
+            "max": 0.45
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 39,
+            "error_mean": 0.2090846153846154,
+            "error_sd": 0.2662024838138517,
+            "min": -0.04,
+            "max": 1.2725
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": -0.7296491228070177,
+            "error_sd": 0.2243400234360517,
+            "min": -0.9100000000000001,
+            "max": -0.33000000000000007
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 35,
+            "error_mean": -0.8529057142857147,
+            "error_sd": 0.7162010397773457,
+            "min": -2.7600000000000002,
+            "max": -0.13000000000000078
+          }
+        ]
+      },
+      "UNEMP_1": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.004127047283525499,
+          "rms_height_error_fraction": 0.00038188596837809385,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 0.2838410918743598,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": 0.10000000000000053,
+            "error_sd": 0.0,
+            "min": 0.10000000000000053,
+            "max": 0.10000000000000053
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 33,
+            "error_mean": 0.08787878787878811,
+            "error_sd": 0.18158602602756865,
+            "min": -0.2999999999999998,
+            "max": 0.40000000000000036
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": -2.1867647058823514,
+            "error_sd": 0.03413936216694633,
+            "min": -2.1999999999999993,
+            "max": -2.0999999999999996
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 47,
+            "error_mean": -1.8000553191489355,
+            "error_sd": 0.24993545932857783,
+            "min": -2.5999999999999996,
+            "max": -1.2999999999999998
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": 4.56078431372549,
+            "error_sd": 0.9101820546182062,
+            "min": 3.0999999999999996,
+            "max": 5.6
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 42,
+            "error_mean": 6.390092857142856,
+            "error_sd": 4.247710943807601,
+            "min": 0.023600000000000065,
+            "max": 18.1
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": 0.20000000000000015,
+            "error_sd": 2.800229669535703e-17,
+            "min": 0.20000000000000018,
+            "max": 0.20000000000000018
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 36,
+            "error_mean": 0.3146833333333333,
+            "error_sd": 0.40107449076556473,
+            "min": -0.10000000000000009,
+            "max": 2.0282999999999998
+          }
+        ]
+      },
+      "UNEMP_4": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.0030232577988787944,
+          "rms_height_error_fraction": 0.0002580340593160774,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 0.286069956161548,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": 0.1999999999999997,
+            "error_sd": 2.803736533363884e-17,
+            "min": 0.19999999999999973,
+            "max": 0.19999999999999973
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 31,
+            "error_mean": 0.670967741935484,
+            "error_sd": 0.3900372190676994,
+            "min": -0.5,
+            "max": 1.3000000000000003
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": -4.55294117647059,
+            "error_sd": 0.07817047622868344,
+            "min": -4.699999999999999,
+            "max": -4.299999999999999
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 46,
+            "error_mean": -4.2438826086956505,
+            "error_sd": 0.5112204361696506,
+            "min": -5.569999999999999,
+            "max": -3.1999999999999993
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": 2.090196078431372,
+            "error_sd": 0.6363190715233307,
+            "min": 1.0999999999999996,
+            "max": 2.5999999999999996
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 42,
+            "error_mean": 3.784009523809524,
+            "error_sd": 2.919223960843981,
+            "min": -0.4325000000000001,
+            "max": 10.459999999999999
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": 0.18245614035087704,
+            "error_sd": 0.21886297655443157,
+            "min": -0.30000000000000027,
+            "max": 0.2999999999999998
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 35,
+            "error_mean": 0.6717371428571427,
+            "error_sd": 0.7026611128148369,
+            "min": -0.30000000000000027,
+            "max": 3.4212
+          }
+        ]
+      },
+      "RGDP_1": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.002621174121123381,
+          "rms_height_error_fraction": 0.00027788527247095277,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 54.16300328226203,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": 794.3999999999997,
+            "error_sd": 141.7240780026961,
+            "min": 340.39999999999964,
+            "max": 840.3999999999996
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 33,
+            "error_mean": 14.454696969696586,
+            "error_sd": 27.94936236804523,
+            "min": -75.60000000000036,
+            "max": 63.399999999999636
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": -5.047058823529048,
+            "error_sd": 17.839888817238005,
+            "min": -12.399999999999636,
+            "max": 37.600000000000364
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 47,
+            "error_mean": 47.93858085106424,
+            "error_sd": 58.43960099107777,
+            "min": -53.69709999999941,
+            "max": 214.70000000000073
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": 1740.637254901961,
+            "error_sd": 241.04348318159052,
+            "min": 697.5,
+            "max": 2197.5
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 40,
+            "error_mean": 365.20412749999986,
+            "error_sd": 502.33314420785007,
+            "min": -593.2142999999996,
+            "max": 1210.2000000000007
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": -263.4698245614028,
+            "error_sd": 190.67523259918784,
+            "min": -682.7999999999993,
+            "max": 417.2000000000007
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 37,
+            "error_mean": -33.847235135134014,
+            "error_sd": 143.7447684964747,
+            "min": -446.5099999999984,
+            "max": 244.07220000000234
+          }
+        ]
+      },
+      "RGDP_4": {
+        "source_shape_check": {
+          "status": "density_shapes_agree",
+          "curves": 8,
+          "grid_points_per_curve": 512,
+          "max_height_error_fraction": 0.002505021242232269,
+          "rms_height_error_fraction": 0.0002469793645636883,
+          "note": "Direct Gaussian evaluation versus original R FFT density implementation; vertical scaling and PDF point rounding accounted for."
+        },
+        "bandwidth": 74.41605094507068,
+        "groups": [
+          {
+            "quarter": "1999-01-01",
+            "type": "AI",
+            "n": 50,
+            "error_mean": -183.20000000000073,
+            "error_sd": 141.7240780026961,
+            "min": -637.2000000000007,
+            "max": -137.20000000000073
+          },
+          {
+            "quarter": "1999-01-01",
+            "type": "Human",
+            "n": 31,
+            "error_mean": -1132.4489354838718,
+            "error_sd": 64.21380382697345,
+            "min": -1271.2000000000007,
+            "max": -1010.8650000000007
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "AI",
+            "n": 68,
+            "error_mean": -1044.1470588235295,
+            "error_sd": 17.839888817238005,
+            "min": -1051.5,
+            "max": -1001.5
+          },
+          {
+            "quarter": "2008-07-01",
+            "type": "Human",
+            "n": 46,
+            "error_mean": -969.6828521739129,
+            "error_sd": 111.40853872745163,
+            "min": -1192.6880999999994,
+            "max": -611.5
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "AI",
+            "n": 51,
+            "error_mean": 707.7176470588221,
+            "error_sd": 458.8733004679537,
+            "min": -686.4000000000015,
+            "max": 1413.5999999999985
+          },
+          {
+            "quarter": "2020-04-01",
+            "type": "Human",
+            "n": 40,
+            "error_mean": -708.3302375000018,
+            "error_sd": 604.1079875688496,
+            "min": -2828.2336000000014,
+            "max": 188.38910000000033
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "AI",
+            "n": 57,
+            "error_mean": -2471.304912280702,
+            "error_sd": 182.9408341525713,
+            "min": -2773.0,
+            "max": -1373.0
+          },
+          {
+            "quarter": "2023-01-01",
+            "type": "Human",
+            "n": 36,
+            "error_mean": -2249.467975,
+            "error_sd": 268.9276410443643,
+            "min": -2792.4408000000003,
+            "max": -1606.8896999999997
+          }
+        ]
+      }
+    },
+    "limitations": "All 64 density curves compared against original vector paths. Gaussian KDE is evaluated directly; original R density uses FFT approximation. Detailed shape residuals are reported (roughly <=2% of peak height). No original plot points supply reproduction data."
+  },
+  {
+    "id": "Figure6",
+    "type": "figure",
+    "original_pages": [
+      44
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/Figure6.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/Figure6.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/Figure6.pdf",
+    "status": "Reproduced: numeric series match",
+    "method": "Port of fig_forecast_errors_outofsample.R with final-PDF 2023 display window. Use outofsample_data.rda including 2023 overlap; horizon 1. All eight source curves match this provenance.",
+    "checks": {
+      "CPI_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.005952151463134214,
+        "y_max_residual_pt": 0.004582955975038772,
+        "y_residual_fraction_span": 3.0228586218512676e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00020924969857527564,
+          "max_axis_calibrated_residual_pt": 0.01000213623046875,
+          "axis_tick_pairs": [
+            [
+              -1.0,
+              135.74000549316406
+            ],
+            [
+              0.0,
+              87.94000244140625
+            ],
+            [
+              1.0,
+              40.13999938964844
+            ]
+          ]
+        },
+        "value_min": -1.5919800158635402,
+        "value_max": 1.5799999999999998
+      },
+      "CPI_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.005952151463134214,
+        "y_max_residual_pt": 0.004774081823484266,
+        "y_residual_fraction_span": 3.4682757035627624e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.00020931354287645476,
+          "max_axis_calibrated_residual_pt": 0.010005187988269881,
+          "axis_tick_pairs": [
+            [
+              -1.0,
+              135.74000549316406
+            ],
+            [
+              0.0,
+              87.94000244140625
+            ],
+            [
+              1.0,
+              40.13999938964844
+            ]
+          ]
+        },
+        "value_min": -1.6999999999999997,
+        "value_max": 1.18
+      },
+      "TBILL_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.003714516219588404,
+        "y_max_residual_pt": 0.0027969940865091303,
+        "y_residual_fraction_span": 4.195910970556381e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 5.183353229490373e-05,
+          "max_axis_calibrated_residual_pt": 0.003888033447253747,
+          "axis_tick_pairs": [
+            [
+              -1.0,
+              169.19000244140625
+            ],
+            [
+              -0.5,
+              131.69000244140625
+            ],
+            [
+              0.0,
+              94.18000030517578
+            ],
+            [
+              0.5,
+              56.67999267578125
+            ],
+            [
+              1.0,
+              19.169998168945312
+            ]
+          ]
+        },
+        "value_min": -0.5387000000000004,
+        "value_max": 0.34999999999999964
+      },
+      "TBILL_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.003714516219588404,
+        "y_max_residual_pt": 0.001978189100242389,
+        "y_residual_fraction_span": 1.2618415808705112e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 5.330099606659644e-05,
+          "max_axis_calibrated_residual_pt": 0.003998107910142323,
+          "axis_tick_pairs": [
+            [
+              -1.0,
+              169.19000244140625
+            ],
+            [
+              -0.5,
+              131.69000244140625
+            ],
+            [
+              0.0,
+              94.18000030517578
+            ],
+            [
+              0.5,
+              56.67999267578125
+            ],
+            [
+              1.0,
+              19.169998168945312
+            ]
+          ]
+        },
+        "value_min": -1.0,
+        "value_max": 1.0899999999999999
+      },
+      "UNEMP_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.003714516219588404,
+        "y_max_residual_pt": 0.0032558100581638882,
+        "y_residual_fraction_span": 2.5711205343290638e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 1.6919483088809195e-05,
+          "max_axis_calibrated_residual_pt": 0.003536764144882909,
+          "axis_tick_pairs": [
+            [
+              -0.4,
+              158.74000549316406
+            ],
+            [
+              -0.2,
+              116.94000244140625
+            ],
+            [
+              0.0,
+              75.12999725341797
+            ],
+            [
+              0.2,
+              33.32000732421875
+            ]
+          ]
+        },
+        "value_min": -0.3057999999999996,
+        "value_max": 0.2999999999999998
+      },
+      "UNEMP_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.003714516219588404,
+        "y_max_residual_pt": 0.003766201002122216,
+        "y_residual_fraction_span": 2.7719151670491176e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 2.2726496725966605e-05,
+          "max_axis_calibrated_residual_pt": 0.004750633239666513,
+          "axis_tick_pairs": [
+            [
+              -0.4,
+              158.74000549316406
+            ],
+            [
+              -0.2,
+              116.94000244140625
+            ],
+            [
+              0.0,
+              75.12999725341797
+            ],
+            [
+              0.2,
+              33.32000732421875
+            ]
+          ]
+        },
+        "value_min": -0.44999999999999973,
+        "value_max": 0.20000000000000018
+      },
+      "RGDP_Human": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.004148176393755421,
+        "y_max_residual_pt": 0.002702325642417236,
+        "y_residual_fraction_span": 3.32675800903629e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.1359129844264686,
+          "max_axis_calibrated_residual_pt": 0.005415453030382267,
+          "axis_tick_pairs": [
+            [
+              -4000.0,
+              176.1300048828125
+            ],
+            [
+              -3000.0,
+              136.27999877929688
+            ],
+            [
+              -2000.0,
+              96.44000244140625
+            ],
+            [
+              -1000.0,
+              56.589996337890625
+            ],
+            [
+              0.0,
+              16.75
+            ]
+          ]
+        },
+        "value_min": -1929.9799999999996,
+        "value_max": 108.64170000000013
+      },
+      "RGDP_AI": {
+        "status": "match_at_vector_rounding",
+        "n": 8,
+        "x_max_residual_pt": 0.004148176393755421,
+        "y_max_residual_pt": 0.004633178956586548,
+        "y_residual_fraction_span": 3.003681657430501e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.12474026168047203,
+          "max_axis_calibrated_residual_pt": 0.004970275878918073,
+          "axis_tick_pairs": [
+            [
+              -4000.0,
+              176.1300048828125
+            ],
+            [
+              -3000.0,
+              136.27999877929688
+            ],
+            [
+              -2000.0,
+              96.44000244140625
+            ],
+            [
+              -1000.0,
+              56.589996337890625
+            ],
+            [
+              0.0,
+              16.75
+            ]
+          ]
+        },
+        "value_min": -3826.0,
+        "value_max": 45.29999999999927
+      },
+      "aggregation_validation": {
+        "median_max_abs_difference_from_R_cache": 0.0,
+        "forecast_error_max_abs_difference_from_R_cache": 0.0,
+        "groups": 64,
+        "scope": "four Figure6 variables at horizon1"
+      }
+    },
+    "limitations": "Archived plotting function concatenates baseline and OOS and begins in 2021; the final PDF instead matches the OOS run alone for 2023\u20132024. This provenance difference is identified by all eight numeric paths."
+  },
+  {
+    "id": "FigureA.1",
+    "type": "figure",
+    "original_pages": [
+      61
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/FigureA1.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/FigureA1.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/FigureA1.pdf",
+    "status": "Reproduced: numeric series match",
+    "method": "Port of fig_num_forecasters_over_time.R. Original workbook AI row counts; human microdata row counts by quarter/variable/horizon, then average. Later baseline vintage differs.",
+    "checks": {
+      "Human": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.004941238111200619,
+        "y_max_residual_pt": 0.0048627236082268155,
+        "y_residual_fraction_span": 5.165417080681984e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.0012299277150091825,
+          "max_axis_calibrated_residual_pt": 0.004824611118863231,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              293.29998779296875
+            ],
+            [
+              10.0,
+              254.07000732421875
+            ],
+            [
+              20.0,
+              214.85000610351562
+            ],
+            [
+              30.0,
+              175.6199951171875
+            ],
+            [
+              40.0,
+              136.38999938964844
+            ],
+            [
+              50.0,
+              97.16999816894531
+            ],
+            [
+              60.0,
+              57.94000244140625
+            ],
+            [
+              70.0,
+              18.709991455078125
+            ]
+          ]
+        },
+        "value_min": 29.0,
+        "value_max": 53.0
+      },
+      "AI": {
+        "status": "match_at_vector_rounding",
+        "n": 100,
+        "x_max_residual_pt": 0.004941238111200619,
+        "y_max_residual_pt": 0.004706095554041667,
+        "y_residual_fraction_span": 5.712668301513463e-05,
+        "axis_calibrated_values": {
+          "max_value_difference_at_pdf_precision": 0.001499830525830248,
+          "max_axis_calibrated_residual_pt": 0.005883353097146937,
+          "axis_tick_pairs": [
+            [
+              0.0,
+              293.29998779296875
+            ],
+            [
+              10.0,
+              254.07000732421875
+            ],
+            [
+              20.0,
+              214.85000610351562
+            ],
+            [
+              30.0,
+              175.6199951171875
+            ],
+            [
+              40.0,
+              136.38999938964844
+            ],
+            [
+              50.0,
+              97.16999816894531
+            ],
+            [
+              60.0,
+              57.94000244140625
+            ],
+            [
+              70.0,
+              18.709991455078125
+            ]
+          ]
+        },
+        "value_min": 44.0,
+        "value_max": 65.0
+      }
+    },
+    "limitations": ""
+  },
+  {
+    "id": "FigureA.2",
+    "type": "figure",
+    "original_pages": [
+      62
+    ],
+    "reproduced_pages": [
+      "reproduced/figures/FigureA2.pdf"
+    ],
+    "reproduced_pngs": [
+      "reproduced/figures/FigureA2.png"
+    ],
+    "reproduced_pdf": "reproduced/figures/FigureA2.pdf",
+    "status": "Partial replication: historical membership differs",
+    "method": "Restrict individual_forecasters.csv to the 193 original AI names; duration=n()/4; start=first(date_q); order descending start and duration; draw forecaster-quarter tiles.",
+    "checks": {
+      "forecasters": 193,
+      "participant_quarters": 5236,
+      "unique_participant_quarters": 5208,
+      "original_tile_records": 5232,
+      "original_unique_participant_quarters": 5208,
+      "original_row_membership_patterns_matching": 189,
+      "min_years": 1.0,
+      "max_years": 26.0,
+      "date_start": "1999-01-01T00:00:00.000000",
+      "date_end": "2023-10-01T00:00:00.000000"
+    },
+    "limitations": "Original data_wide vintage unavailable: current metadata yield 5236 records, original vector asset5232; both have5208 unique tiles. 189 of193 original forecaster membership patterns match current metadata exactly. Ordering/tie handling and gradient rendering also differ."
+  }
+]

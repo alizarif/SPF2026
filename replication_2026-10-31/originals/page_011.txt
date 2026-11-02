@@ -1,0 +1,43 @@
+where ei,t represents the residual bias not captured by wi,t. We therefore also include these
+characteristics in the AI forecasting problem.
+This specification introduces an individual i
+subscript on the AI forecast, similar to the human forecast.
+Altogether, the AI expectation can then be expressed as:
+mAI
+i,t = EAI�
+f
+�
+xt, zt
+�
+| xt, ¯ht−1, wi,t
+�
+(9)
+and involves an approximation error given by:
+∆AI
+i,t = mAI
+i,t − f(xt, zt).
+(10)
+The AI forecaster has access to observed macroeconomic data, the past median human fore-
+cast, and a set of assigned personal characteristics.
+The lagged human median forecasts,
+although imperfect and contaminated by biases and noise, contain information about zt be-
+cause this information is available to humans. The model leverages these forecasts as proxies
+for the unobserved factors. The inclusion of personal characteristics helps the model learn the
+systematic patterns that vary across forecasters. This formulation emphasizes that our frame-
+work augments traditional forecasting, not by substituting human judgment with algorithms,
+but by integrating human-derived insights and judgment into the forecasting process. In this
+sense, our framework fits into the broader agenda of combining flexible statistical models with
+economically structured questions. Whited (2023) argues that reduced form and structural
+methods are complements rather than substitutes, and documents several ways to use high
+dimensional statistical models to inform and discipline structural analysis. In this spirit, we
+treat the LLM as a rich reduced-form representation of forecasters’ expectation formation rules
+that could ultimately be embedded in structural models of the economy.
+Finally, we stress that AI forecasters are not given an advantage over humans in our frame-
+work. On the contrary, humans have access to more information given by zt than AI forecasters,
+including the potential use of sophisticated forecasting models that help them exploit patterns
+in the data.
+3
+The Survey of Professional Forecasters
+The SPF is a quarterly survey of U.S. economic forecasting experts, initially launched in 1968
+by the American Statistical Association and the National Bureau of Economic Research and
+11

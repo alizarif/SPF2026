@@ -1,0 +1,23 @@
+Table 11 investigation
+
+The published AI panel is now numerically reproduced: all 32 coefficients, standard errors, observation counts and R-squared values, plus all eight significance markers. The recovered calculation differs materially from the table's description. It uses one-quarter-ahead AI forecasts rather than nowcasts. Its “lagged error” is the current human nowcast median minus the AI's previous forecast; it does not use a realized outcome. Its consensus regressor compares the previous AI one-quarter-ahead forecast with the previous human nowcast median. The sample also includes same-quarter duplicates, gaps between surveys and the placeholder “No Name Provided.” The missing original script has not been recovered, so these findings establish an exact numerical reconstruction rather than documentary proof of the original implementation.
+
+The published human panel remains unresolved. The supplied files contain no generating code for this table. Checks of forecast columns, survey windows, missing-value rules, consecutive-quarter restrictions, realization measures and the manuscript's outlier-trimming conventions did not jointly reproduce its sample sizes and estimates. No candidate was selected merely because it was close to the printed results.
+
+The replacement calculation applies one declared method consistently to both panels: current-quarter nowcasts; observations exactly one quarter apart; the previous quarter's historical outcome as recorded in the current SPF survey; the previous quarter's official human nowcast median; OLS with an intercept; and HC1 robust standard errors. The historical outcome uses the official SPF VAR1 field. This avoids a separate alignment error in the existing R0 cache: for example, 1998Q4 GDP is assigned to the 1999Q1 target. The official SPF documentation confirms that VAR1 represents the prior-quarter historical value and VAR2 the current-quarter nowcast.
+
+For the AI sample, the placeholder name is excluded. There are 28 duplicate named person-quarter groups, of which ten have conflicting forecasts. Their forecasts are averaged within person and quarter, an explicit analysis choice. First-record, last-record and exclusion alternatives are saved for review. The replacement table has 5,059 AI observations per regression. Human counts are 3,296 for RGDP, 3,179 for CPI, 3,287 for UNEMP and 3,083 for TBILL.
+
+All 16 replacement regressions were independently verified from their saved observation-level inputs. Sixty-three of the 64 printed numeric cells differ from the published table; these are substantive method or sample changes, not rounding differences. All original research files remain unchanged. Real GDP still carries the source data's changes in base-year dollars across survey vintages; the calculation does not invent a rebasing adjustment. Changes between successive nowcasts also concern different target quarters, following the original caption's definition.
+
+Key files:
+verified_table.json — original table layout with published and recalculated cells.
+verified_estimates.json — full-precision coefficients, standard errors, N, R-squared and p-values.
+verified_regression_inputs.csv / .parquet — the observations used in every replacement regression.
+verified_evidence.json — exact method, source hashes, timing evidence and limitations.
+ai_recovered_results.json / ai_evidence.json — exact reconstruction of the published AI panel.
+human/findings.json — scope and outcome of the human-panel provenance investigation.
+duplicate_rule_sensitivity.json — alternative treatments of conflicting AI duplicates.
+
+Official field definitions: Federal Reserve Bank of Philadelphia, Survey of Professional Forecasters Documentation, pages 22, 26 and 39.
+https://www.philadelphiafed.org/-/media/frbp/assets/surveys-and-data/survey-of-professional-forecasters/spf-documentation.pdf

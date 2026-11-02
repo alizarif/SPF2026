@@ -1,0 +1,50 @@
+Figure 5: Densities of human and AI-generated SPF individual forecast errors
+The figure shows densities centered around realized variables of human and AI-generated SPF forecasts across
+individual forecasters for four different quarters. The densities are shown for the following variables and forecasting
+horizons: (a) CPI inflation rate one quarter ahead, (b) CPI inflation rate four quarters ahead, (c) 3-month Treasury
+bill rate one quarter ahead, (d) 3-month Treasury bill rate four quarters ahead, (e) unemployment rate one quarter
+ahead, (f) unemployment rate four quarters ahead, (g) real GDP index one quarter ahead, and (h) real GDP index
+four quarters ahead.
+(a) CPI inflation rate, one quarter ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+0
+10
+20
+(b) CPI inflation rate, four quarters ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−10
+−5
+0
+(c) 3-month Treasury bill rate, one quarter ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−2
+−1
+0
+1
+2
+(d) 3-month Treasury bill rate, four quarters ahead
+1999 Q1
+2008 Q3
+2020 Q2
+2023 Q1
+−2
+0
+2
+4
+−0.050
+−0.025
+0.000
+0.025
+0.050
+Human
+AI
+(Figure continues on next page)

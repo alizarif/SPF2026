@@ -1,0 +1,50 @@
+{
+  "RGDP": {
+    "intercept": 366.06319711538436,
+    "intercept_se": 65.43461914978013,
+    "post_coefficient": 715.5618028846147,
+    "post_se": 340.0082548240159,
+    "N": 108,
+    "R2": 0.04010807780213965,
+    "intercept_p": 1.7453577964153393e-07,
+    "post_p": 0.03769534008109597,
+    "distinct_quarters": 104,
+    "post_observations": 4
+  },
+  "UNEMP": {
+    "intercept": 0.7137194710415241,
+    "intercept_se": 0.14082130813261803,
+    "post_coefficient": -0.5387194710415251,
+    "post_se": 0.7317289814220206,
+    "N": 108,
+    "R2": 0.0050874933838955805,
+    "intercept_p": 1.7111670947948698e-06,
+    "post_p": 0.4632180441436142,
+    "distinct_quarters": 104,
+    "post_observations": 4
+  },
+  "CPI": {
+    "intercept": 2.135075748640868,
+    "intercept_se": 0.20999356133512967,
+    "post_coefficient": -1.322575748640871,
+    "post_se": 1.0911585524843281,
+    "N": 108,
+    "R2": 0.013670411394927418,
+    "intercept_p": 2.342636564863933e-17,
+    "post_p": 0.22817506275961313,
+    "distinct_quarters": 104,
+    "post_observations": 4
+  },
+  "TBILL": {
+    "intercept": 0.6522956730769227,
+    "intercept_se": 0.07642691411569312,
+    "post_coefficient": -0.13729567307692378,
+    "post_se": 0.3971258949422506,
+    "N": 108,
+    "R2": 0.0011263205090366046,
+    "intercept_p": 1.0905512572053353e-13,
+    "post_p": 0.7302358688049068,
+    "distinct_quarters": 104,
+    "post_observations": 4
+  }
+}

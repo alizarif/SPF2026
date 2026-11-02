@@ -1,0 +1,31 @@
+tial and persistent heterogeneity in both household and professional forecasts (e.g., Mankiw
+and Reis, 2002; Mankiw et al., 2003; Coibion and Gorodnichenko, 2015; Manzan, 2011; Gabaix,
+2020; Andre et al., 2022; Huang et al., 2022; Benchimol et al., 2022; Stark, 2013, among many
+others).
+This heterogeneity is often attributed to differences in information sets, interpretation of
+information, attention, behavioral biases, forecasting methods, and subjective models of the
+economy. We capture some of these features by explicitly mapping observed forecaster char-
+acteristics into distinct LLM-based personas, and by studying how these personas translate a
+common real-time information set into different survey responses. And, because our AI fore-
+casters provide narrative justifications for every prediction, we shed light on the “black box”
+of expectations formation. We show that the simulated forecasters exhibit substantial hetero-
+geneity in their reasoning, drawing on policy considerations, mechanical updating rules, recent
+events, and theoretical models. These findings are broadly consistent with evidence from sur-
+veys of professional forecasters, which show that forecasters combine model-based projections
+with judgment, with judgment playing a more prominent role during periods of heightened
+economic uncertainty (European Central Bank, 2024). While not a direct validation exercise,
+this consistency lends credibility to our interpretation of the synthetic panel as an informative
+model for studying professional expectations formation.
+An important and commonly cited concern with models like LLMs is temporal data contami-
+nation, which occurs when the model has been trained on information that was published after
+the forecast date, potentially biasing its predictions (e.g., Lopez-Lira et al., 2025; He et al., 2025).
+This issue is relevant for us because we interpret the LLM as approximating an SPF forecaster
+who only has access to information available at the time of the survey. If the model heavily
+relies on ex post realizations, its forecasts risk reflecting knowledge of the future rather than
+expectations formed in real time. While individual-level SPF forecasts are unlikely to appear
+in training data, the model may have access to realized macroeconomic outcomes that the SPF
+aims to predict.
+We address this concern in four ways. First, we instruct the model to use only information
+available prior to each survey deadline. However, we recognize that simply instructing the
+model to ignore post-survey information may not be sufficient to eliminate the risk of temporal
+5

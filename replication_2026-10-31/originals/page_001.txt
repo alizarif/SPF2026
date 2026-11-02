@@ -1,0 +1,41 @@
+Simulating the Survey of Professional Forecasters 1
+Anne Lundgaard Hansena, John J. Hortonb, Sophia Kazinnikc,
+Daniela Puzzellod, and Ali Zarifhonarvard
+aCorresponding author: Federal Reserve Bank of Richmond and Federal Reserve Board (anne.hansen@rich.frb.org)
+bMIT Sloan School of Management (jjhorton@mit.edu)
+cStanford HAI (kazinnik@stanford.edu)
+dIndiana University Bloomington (dpuzzell@iu.edu; alizarif@iu.edu)
+This Draft: June 2026
+First Draft: April 2024
+We develop a framework for simulating professional expectations formation using large
+language models (LLMs). Combining novel hand-collected data on Survey of Professional
+Forecasters (SPF) participant characteristics with real-time macroeconomic data and lagged
+SPF median forecasts, we prompt LLMs to generate quarterly forecasts for 23 variables over
+1999-2023. The resulting synthetic panel approximates key properties of the human survey,
+including forecast accuracy, median forecast levels, revision dynamics, and cross-sectional
+dispersion.
+Ablation exercises show that performance is largely driven by information
+conditioning: removing forecaster characteristics modestly worsens performance, whereas
+removing real-time data and especially lagged SPF medians leads to substantial error in-
+creases. Our framework offers a scalable complement to traditional surveys, enabling coun-
+terfactual analysis under alternative information sets, retrospective “as-of” forecasting, and
+rapid prototyping of survey designs.
+Keywords: Generative Artificial Intelligence; Survey of Professional Forecasters; Expecta-
+tions Formation; Simulated Economic Agents.
+JEL Codes: C53, C55, E37, C45, D84.
+1 This paper does not necessarily reflect the views of the Federal Reserve Bank of Richmond, the Board of Governors of the Federal
+Reserve System, or the Federal Reserve System. We thank Thomas Stark for his time and highly valuable input. We thank the
+Stanford Digital Economy Lab 2024, Indiana University, George Washington University, Federal Reserve Board, Stanford Data
+Science, VIMM February 2025, and AMLEDS seminar participants along with participants at the ECB Transformative Power of
+AI Conference, the Society of Government Economists 2025 Annual Conference, Workshop on Frontiers in Measurement and
+Survey Methods 2025, AI Frontiers in Finance, 2025 Imperial College London Hedge Fund Conference, Spring 2025 Midwest
+Macroeconomics Meeting, Google Economics Seminar, ECONDAT 2025, 2025 BSE Summer Forum Workshop on Theoretical and
+Experimental Macroeconomics, AI and the Future of Work at Wharton, Amazon’s Forecasting, Macroeconomics and Finance
+(FMF) seminar, Artificial Intelligence and the Macroeconomy Conference, Bank of Spain Economics of AI conference, 2026
+ESIF Economics and AI+ML Meeting, the 2026 Behavioral Macro Workshop, and NBER SI 2026 for valuable comments. We
+thank Erik Brynjolfsson, Jonathan Benchimol, Leland Bybee, Leland Crane, Michael Ehrmann (discussant), Miguel Faria-e Castro
+(discussant), Francesco Furno, Dragos Gorduza (discussant), Yuriy Gorodnichenko, Robin Horton, Seung J. Lee, Huiyu Li, Peter
+Meyer (discussant), Joan Paredes (discussant), Alexander W. Richter, Sascha Steffen, Eric Zivot, and in particular Tara Sinclair for
+valuable feedback. Last, but not least, we thank Bryson Alexander and Nicole Lindsay for excellent research assistance. All
+remaining errors are our own.
+1

@@ -1,0 +1,54 @@
+Figure 6: SPF and AI-generated median forecast errors around the LLM training data cut-off date
+The figure shows the errors of one-quarter human and AI-generated SPF median forecasts for the (a) CPI inflation
+rate, (b) 3-month Treasury bill rate, (c) unemployment rate, and (d) real GDP index. The dashed line indicates
+October 2023, the training data cut-off date of the LLM (GPT-4o mini).
+(a) CPI inflation rate, one quarter ahead
+−1%
+0%
+1%
+2023−01
+2023−07
+2024−01
+2024−07
+(b) 3-month Treasury bill rate, one quarter ahead
+−1%
+−0.5%
+0%
+0.5%
+1%
+2023−01
+2023−07
+2024−01
+2024−07
+(c) Unemployment rate, one quarter ahead
+−0.4%
+−0.2%
+0%
+0.2%
+2023−01
+2023−07
+2024−01
+2024−07
+(d) Real GDP, one quarter ahead
+−4000
+−3000
+−2000
+−1000
+0
+2023−01
+2023−07
+2024−01
+2024−07
+−3
+0
+3
+6
+9
+2000
+2005
+2010
+2015
+2020
+Human
+AI
+44

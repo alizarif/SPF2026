@@ -1,0 +1,39 @@
+\begin{tabular}{ld{3.2}d{3.2}d{1.2}ld{3.2}d{3.2}d{1.2}ld{3.2}d{3.2}d{1.2}}
+\toprule
+Horizon (quarters) & \multicolumn{3}{c}{0} && \multicolumn{3}{c}{1} && \multicolumn{3}{c}{4} \\
+ \cmidrule{2-4} \cmidrule{6-8} \cmidrule{10-12}
+& \multicolumn{1}{c}{AI} & \multicolumn{1}{c}{AR(1)} & \multicolumn{1}{c}{P-val}&& \multicolumn{1}{c}{AI} & \multicolumn{1}{c}{AR(1)} & \multicolumn{1}{c}{P-val}&& \multicolumn{1}{c}{AI} & \multicolumn{1}{c}{AR(1)} & \multicolumn{1}{c}{P-val} \\
+\midrule
+\multicolumn{11}{l}{Section 1: US Business Indicators}\\
+\midrule
+Nominal GDP & \multicolumn{1}{B{.}{.}{2,2}}{0.24} & 0.83 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.87} & 1.25 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.14} & 1.17 & 0.59 \\
+GDP Price & \multicolumn{1}{B{.}{.}{2,2}}{1.00} & \multicolumn{1}{B{.}{.}{2,2}}{1.00} & 0.55 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.00} & \multicolumn{1}{B{.}{.}{2,2}}{1.00} & 0.53 &  & \multicolumn{1}{B{.}{.}{2,2}}{0.99} & \multicolumn{1}{B{.}{.}{2,2}}{0.99} & 0.37 \\
+Corporate Profits & \multicolumn{1}{B{.}{.}{2,2}}{0.65} & 1.46 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.98} & 1.38 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.98} & 1.14 & 0.00^{\star\star\star} \\
+Unemployment Rate & \multicolumn{1}{B{.}{.}{2,2}}{1.41} & 2.00 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.28} & 1.51 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.12} & 1.25 & 0.00^{\star\star\star} \\
+Non-Farm Payroll & \multicolumn{1}{B{.}{.}{2,2}}{2.13} & 2.99 & 0.06^{\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.87} & 1.93 & 0.94 &  & 1.50 & \multicolumn{1}{B{.}{.}{2,2}}{1.33} & 0.01^{\star\star\star} \\
+Industrial Production & \multicolumn{1}{B{.}{.}{2,2}}{1.43} & 2.23 & 0.01^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.19} & 1.42 & 0.01^{\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.95} & 1.20 & 0.00^{\star\star\star} \\
+Housing Starts & \multicolumn{1}{B{.}{.}{2,2}}{1.10} & 1.41 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.08} & 1.13 & 0.60 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.01} & 1.09 & 0.14 \\
+Treasury Bill Rate (3M) & \multicolumn{1}{B{.}{.}{2,2}}{1.81} & 2.06 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.54} & 1.63 & 0.11 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.06} & 1.17 & 0.00^{\star\star\star} \\
+AAA Corp Bond Yield & \multicolumn{1}{B{.}{.}{2,2}}{1.48} & 1.52 & 0.02^{\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.11} & 1.17 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.97} & 1.16 & 0.00^{\star\star\star} \\
+BAA Corp Bond Yield & \multicolumn{1}{B{.}{.}{2,2}}{1.54} & 1.69 & 0.20 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.16} & 1.50 & 0.26 &  & \multicolumn{1}{B{.}{.}{2,2}}{0.99} & 1.14 & 0.03^{\star\star} \\
+Treasury Bond Rate (10Y) & \multicolumn{1}{B{.}{.}{2,2}}{1.49} & 1.56 & 0.04^{\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.12} & 1.22 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.94} & 1.16 & 0.00^{\star\star\star} \\
+\midrule
+\multicolumn{11}{l}{Section 2: Real GDP and Its Components}\\
+\midrule
+Real GDP & \multicolumn{1}{B{.}{.}{2,2}}{1.37} & 2.10 & 0.18 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.51} & 1.89 & 0.19 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.15} & 1.26 & 0.28 \\
+Real PCE & \multicolumn{1}{B{.}{.}{2,2}}{0.70} & 1.68 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.30} & 1.75 & 0.04^{\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.21} & 1.23 & 0.68 \\
+Real Non-Res Fixed Inv & \multicolumn{1}{B{.}{.}{2,2}}{0.81} & 2.37 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.13} & 1.88 & 0.01^{\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.98} & 1.25 & 0.04^{\star\star} \\
+Real Res Fixed Inv & \multicolumn{1}{B{.}{.}{2,2}}{1.02} & 1.88 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.43} & 1.77 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.09} & 1.14 & 0.15 \\
+Real Federal C\&GI & \multicolumn{1}{B{.}{.}{2,2}}{1.91} & 5.36 & 0.05^{\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.56} & 2.58 & 0.19 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.27} & 1.47 & 0.20 \\
+Real State/Local C\&GI & \multicolumn{1}{B{.}{.}{2,2}}{1.62} & 3.80 & 0.02^{\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.30} & 1.89 & 0.05^{\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.13} & 1.24 & 0.22 \\
+Real Change in Private Inv & \multicolumn{1}{B{.}{.}{2,2}}{0.57} & 1.50 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.11} & 1.19 & 0.54 &  & 1.16 & \multicolumn{1}{B{.}{.}{2,2}}{1.04} & 0.09^{\star} \\
+Real Net Exports & \multicolumn{1}{B{.}{.}{2,2}}{1.26} & 2.75 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.27} & 1.57 & 0.02^{\star\star} &  & 1.26 & \multicolumn{1}{B{.}{.}{2,2}}{1.20} & 0.24 \\
+\midrule
+\multicolumn{11}{l}{Section 3: CPI and PCE Inflation}\\
+\midrule
+CPI Inflation Rate & 1.20 & \multicolumn{1}{B{.}{.}{2,2}}{1.09} & 0.10 &  & 1.05 & \multicolumn{1}{B{.}{.}{2,2}}{1.01} & 0.26 &  & \multicolumn{1}{B{.}{.}{2,2}}{0.99} & 1.01 & 0.71 \\
+Core CPI Inflation Rate & \multicolumn{1}{B{.}{.}{2,2}}{1.09} & 1.16 & 0.79 &  & \multicolumn{1}{B{.}{.}{2,2}}{0.92} & 1.04 & 0.28 &  & \multicolumn{1}{B{.}{.}{2,2}}{1.02} & 1.07 & 0.83 \\
+PCE Inflation Rate & \multicolumn{1}{B{.}{.}{2,2}}{0.79} & 1.12 & 0.00^{\star\star\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{0.96} & 1.06 & 0.07^{\star} &  & \multicolumn{1}{B{.}{.}{2,2}}{1.00} & 1.01 & 0.58 \\
+Core PCE Inflation Rate & 1.05 & \multicolumn{1}{B{.}{.}{2,2}}{0.99} & 0.05^{\star} &  & 1.07 & \multicolumn{1}{B{.}{.}{2,2}}{0.99} & 0.02^{\star\star} &  & 1.02 & \multicolumn{1}{B{.}{.}{2,2}}{0.98} & 0.14 \\
+\bottomrule
+\end{tabular}

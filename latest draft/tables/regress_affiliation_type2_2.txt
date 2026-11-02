@@ -1,0 +1,26 @@
+\begin{tabular}{ld{1.2}d{1.2}d{1.2}d{1.2}}
+\toprule
+& \multicolumn{1}{c}{CPI Inflation Rate} & \multicolumn{1}{c}{Treasury Bill Rate (3M)} & \multicolumn{1}{c}{Real GDP} & \multicolumn{1}{c}{Unemployment Rate } \\ \midrule
+Intercept                                   & 2.17^{***} & 0.84^{***} & 346.95^{***} & 0.47^{***} \\
+& (0.11)  & (0.04)  & (26.96)   & (0.07)  \\
+Commercial Banking & 0.22    & -0.15^{**} & -14.11    & 0.25^{**}  \\
+& (0.15)  & (0.06)  & (36.48)   & (0.09)  \\
+Consulting         & 0.10    & -0.15^{**} & -30.86    & 0.23^{**}  \\
+& (0.13)  & (0.05)  & (30.38)   & (0.07)  \\
+Investment Banking & 0.06    & -0.13^{*}  & -89.77^{**}  & 0.19^{*}   \\
+& (0.15)  & (0.05)  & (34.62)   & (0.08)  \\
+Manufacturing      & 0.08    & -0.07   & -57.83    & 0.10    \\
+& (0.16)  & (0.06)  & (38.09)   & (0.09)  \\
+Other              & 0.08    & 0.02    & -26.40    & 0.12    \\
+& (0.15)  & (0.05)  & (35.14)   & (0.09)  \\
+University         & 0.11    & -0.09^{+}  & -1.76     & 0.38^{***} \\
+& (0.14)  & (0.05)  & (33.20)   & (0.08)  \\
+Unknown            & 0.24    & -0.11   & -127.20^{+}  & -0.10   \\
+& (0.30)  & (0.11)  & (71.34)   & (0.17)  \\
+\midrule
+Time FE & \multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y} \\
+Num.Obs.                                      & \multicolumn{1}{c}{5184}    & \multicolumn{1}{c}{5185}    & \multicolumn{1}{c}{5184}      & \multicolumn{1}{c}{5177}    \\
+R2 Adj.                                       & -0.00  & 0.00   & 0.00     & 0.01   \\
+\bottomrule
+\multicolumn{5}{r}{\rule{0pt}{1em}+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001}
+\end{tabular}

@@ -1,0 +1,482 @@
+[
+  {
+    "row": "Nominal GDP",
+    "column": "h2 AI",
+    "value": 934.475,
+    "repr": "934.475",
+    "display": "934.48",
+    "published": "85.45"
+  },
+  {
+    "row": "Nominal GDP",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.51"
+  },
+  {
+    "row": "GDP Price",
+    "column": "h0 p",
+    "value": 0.375,
+    "repr": "0.375",
+    "display": "0.38",
+    "published": "0.12"
+  },
+  {
+    "row": "GDP Price",
+    "column": "h2 p",
+    "value": 0.625,
+    "repr": "0.625",
+    "display": "0.62",
+    "published": "0.50"
+  },
+  {
+    "row": "Corporate Profits",
+    "column": "h0 AI",
+    "value": 513.825,
+    "repr": "513.825",
+    "display": "513.82",
+    "published": "276.12"
+  },
+  {
+    "row": "Corporate Profits",
+    "column": "h0 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.13"
+  },
+  {
+    "row": "Unemployment Rate",
+    "column": "h0 AI",
+    "value": 0.075,
+    "repr": "0.075",
+    "display": "0.08",
+    "published": "0.08"
+  },
+  {
+    "row": "Non-Farm Payroll",
+    "column": "h0 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.13"
+  },
+  {
+    "row": "Non-Farm Payroll",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Industrial Production",
+    "column": "h0 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.12"
+  },
+  {
+    "row": "Housing Starts",
+    "column": "h1 p",
+    "value": 0.375,
+    "repr": "0.375",
+    "display": "0.38",
+    "published": "0.25"
+  },
+  {
+    "row": "Treasury Bill Rate (3M)",
+    "column": "h0 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "Treasury Bill Rate (3M)",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "AAA Corp Bond Yield",
+    "column": "h0 Human",
+    "value": 0.005,
+    "repr": "0.005",
+    "display": "0.00",
+    "published": "0.33"
+  },
+  {
+    "row": "AAA Corp Bond Yield",
+    "column": "h0 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "AAA Corp Bond Yield",
+    "column": "h1 AI",
+    "value": 0.175,
+    "repr": "0.175",
+    "display": "0.18",
+    "published": "0.21"
+  },
+  {
+    "row": "AAA Corp Bond Yield",
+    "column": "h2 AI",
+    "value": 0.285,
+    "repr": "0.285",
+    "display": "0.28",
+    "published": "0.10"
+  },
+  {
+    "row": "AAA Corp Bond Yield",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "1.00"
+  },
+  {
+    "row": "Treasury Bond Rate (10Y)",
+    "column": "h1 Human",
+    "value": 0.045,
+    "repr": "0.045",
+    "display": "0.04",
+    "published": "0.32"
+  },
+  {
+    "row": "Treasury Bond Rate (10Y)",
+    "column": "h2 Human",
+    "value": 0.035,
+    "repr": "0.035",
+    "display": "0.04",
+    "published": "0.00"
+  },
+  {
+    "row": "Real GDP",
+    "column": "h0 AI",
+    "value": 596.675,
+    "repr": "596.675",
+    "display": "596.68",
+    "published": "0.07"
+  },
+  {
+    "row": "Real GDP",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Real GDP",
+    "column": "h2 AI",
+    "value": 763.325,
+    "repr": "763.325",
+    "display": "763.32",
+    "published": "163.80"
+  },
+  {
+    "row": "Real GDP",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.49"
+  },
+  {
+    "row": "Real PCE",
+    "column": "h0 AI",
+    "value": 423.045,
+    "repr": "423.045",
+    "display": "423.04",
+    "published": "0.00"
+  },
+  {
+    "row": "Real PCE",
+    "column": "h0 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.12"
+  },
+  {
+    "row": "Real PCE",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Real PCE",
+    "column": "h2 AI",
+    "value": 575.485,
+    "repr": "575.485",
+    "display": "575.48",
+    "published": "94.11"
+  },
+  {
+    "row": "Real Non-Res Fixed Inv",
+    "column": "h1 AI",
+    "value": 38.075,
+    "repr": "38.075",
+    "display": "38.08",
+    "published": "28.95"
+  },
+  {
+    "row": "Real Non-Res Fixed Inv",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Real Non-Res Fixed Inv",
+    "column": "h2 AI",
+    "value": 89.775,
+    "repr": "89.775",
+    "display": "89.78",
+    "published": "98.68"
+  },
+  {
+    "row": "Real Non-Res Fixed Inv",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "Real Res Fixed Inv",
+    "column": "h0 AI",
+    "value": 3.825,
+    "repr": "3.825",
+    "display": "3.82",
+    "published": "0.00"
+  },
+  {
+    "row": "Real Res Fixed Inv",
+    "column": "h1 AI",
+    "value": 11.075,
+    "repr": "11.075",
+    "display": "11.08",
+    "published": "12.47"
+  },
+  {
+    "row": "Real Res Fixed Inv",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.24"
+  },
+  {
+    "row": "Real Res Fixed Inv",
+    "column": "h2 AI",
+    "value": 22.175,
+    "repr": "22.175",
+    "display": "22.18",
+    "published": "10.90"
+  },
+  {
+    "row": "Real Res Fixed Inv",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "Real Federal C&GI",
+    "column": "h1 AI",
+    "value": 3.265,
+    "repr": "3.265",
+    "display": "3.26",
+    "published": "3.87"
+  },
+  {
+    "row": "Real Federal C&GI",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Real State/Local C&GI",
+    "column": "h0 AI",
+    "value": 14.525,
+    "repr": "14.525",
+    "display": "14.52",
+    "published": "0.00"
+  },
+  {
+    "row": "Real State/Local C&GI",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Real State/Local C&GI",
+    "column": "h2 AI",
+    "value": 28.825,
+    "repr": "28.825",
+    "display": "28.82",
+    "published": "19.48"
+  },
+  {
+    "row": "Real State/Local C&GI",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "Real Change in Private Inv",
+    "column": "h1 AI",
+    "value": 8.525,
+    "repr": "8.525",
+    "display": "8.52",
+    "published": "16.52"
+  },
+  {
+    "row": "Real Change in Private Inv",
+    "column": "h1 p",
+    "value": 0.875,
+    "repr": "0.875",
+    "display": "0.88",
+    "published": "0.24"
+  },
+  {
+    "row": "Real Change in Private Inv",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "1.00"
+  },
+  {
+    "row": "Real Net Exports",
+    "column": "h0 AI",
+    "value": 69.275,
+    "repr": "69.275",
+    "display": "69.28",
+    "published": "0.00"
+  },
+  {
+    "row": "Real Net Exports",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Real Net Exports",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "CPI Inflation Rate",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.50"
+  },
+  {
+    "row": "CPI Inflation Rate",
+    "column": "h2 AI",
+    "value": 0.545,
+    "repr": "0.545",
+    "display": "0.54",
+    "published": "1.18"
+  },
+  {
+    "row": "CPI Inflation Rate",
+    "column": "h2 p",
+    "value": 0.375,
+    "repr": "0.375",
+    "display": "0.38",
+    "published": "1.00"
+  },
+  {
+    "row": "Core CPI Inflation Rate",
+    "column": "h0 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.25"
+  },
+  {
+    "row": "Core CPI Inflation Rate",
+    "column": "h2 AI",
+    "value": 0.215,
+    "repr": "0.215",
+    "display": "0.22",
+    "published": "0.36"
+  },
+  {
+    "row": "Core CPI Inflation Rate",
+    "column": "h2 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "1.00"
+  },
+  {
+    "row": "PCE Inflation Rate",
+    "column": "h2 AI",
+    "value": 0.185,
+    "repr": "0.185",
+    "display": "0.18",
+    "published": "0.24"
+  },
+  {
+    "row": "Core PCE Inflation Rate",
+    "column": "h0 Human",
+    "value": 0.075,
+    "repr": "0.075",
+    "display": "0.08",
+    "published": "0.61"
+  },
+  {
+    "row": "Core PCE Inflation Rate",
+    "column": "h1 p",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.51"
+  },
+  {
+    "row": "Core PCE Inflation Rate",
+    "column": "h2 AI",
+    "value": 0.095,
+    "repr": "0.095",
+    "display": "0.10",
+    "published": "0.00"
+  },
+  {
+    "row": "Core PCE Inflation Rate",
+    "column": "h2 Human",
+    "value": 0.125,
+    "repr": "0.125",
+    "display": "0.12",
+    "published": "0.08"
+  }
+]

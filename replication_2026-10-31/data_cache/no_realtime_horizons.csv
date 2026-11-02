@@ -1,0 +1,4 @@
+label,id_human_output,id_human,id_ai_output,id_ai,id_realized,id
+Current quarter,2,H0,t,A0,R0,0
+One quarter ahead,3,H1,t+1,A1,R1,1
+Four quarters ahead,6,H4,t+4,A4,R4,4

@@ -1,0 +1,62 @@
+Table 9: AI Forecast Performance During Unexpected Events
+The table shows the performance of AI forecasters during seven unexpected events occurring immediately before
+or after the deadline of the SPF survey (days after survey deadline denoted in parenthesis after the event date).
+The table reports average Z-scores, measuring the difference between the event-period forecast error and the mean
+forecast error across the full sample, divided by the standard deviation of the full-sample forecast error. Z-scores
+near zero indicate typical forecast difficulty, while highly negative values (e.g., <-1) would indicate suspiciously
+accurate predictions suggesting look-ahead bias. The Z-scores are averaged across the relevant variables for each
+event and across all variables.
+Event
+Event
+Date
+Relevant Variables
+Average Z-Score
+Relevant
+Variables
+All
+Variables
+9/11 Attacks
+2001-09-11
+(27 days)
+RGDP, UNEMP, CPI, TBILL,
+TBOND
+0.28
+0.01
+Lehman Brothers Collapse
+2008-09-15
+(39 days)
+RGDP, UNEMP, CPI, TBILL,
+TBOND, HOUSING
+1.49
+0.49
+Flash Crash
+2010-05-06
+(-5 days)
+RGDP, CPI
+0.00
+-0.12
+S&P Downgrade of U.S. Debt
+2011-08-05
+(-3 days)
+TBILL, TBOND, RGDP
+0.26
+-0.06
+COVID-19 Pandemic Declaration
+2020-03-11
+(29 days)
+RGDP, UNEMP, CPI,
+HOUSING, INDPROD
+1.19
+0.77
+Russia-Ukraine War
+2022-02-24
+(17 days)
+RGDP, CPI, TBILL, TBOND
+0.72
+0.29
+Silicon Valley Bank Collapse
+2023-03-10
+(31 days)
+RGDP, UNEMP, TBILL, TBOND
+-0.20
+-0.09

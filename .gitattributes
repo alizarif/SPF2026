@@ -1,0 +1,11 @@
+# Preserve exact source bytes so the published provenance hashes remain valid.
+* -text
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.xlsx binary
+*.rda binary
+*.RData binary
+*.parquet binary
+*.numbers binary

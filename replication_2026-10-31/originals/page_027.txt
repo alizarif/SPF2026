@@ -1,0 +1,31 @@
+Table 12 reports the prevalence of each reasoning type across normal and crisis periods,
+showing both the detailed categories and the ECB-style aggregation. During normal periods,
+model-based reasoning dominates (99.6%), with judgment-based reasoning at 63.3%. However,
+during crisis periods, AI forecasters shift markedly toward judgment-based reasoning. The most
+dramatic shift occurs in event-driven reasoning, which rises from 19.7% in normal periods to
+82.4% during the financial crisis and 77.0% during COVID-19. Mechanical reasoning drops
+substantially (from 98.6% to 72.1–84.7%), while the inflation shock period shows a distinct
+pattern: policy-based reasoning surges to 87.3% as forecasters emphasize Federal Reserve
+tightening.
+The ECB-style aggregation reveals the broader pattern. During crises, judgment-based rea-
+soning rises sharply: from 63.3% in normal periods to 87.6% during the financial crisis, 79.9%
+during COVID-19, and 87.7% during the inflation shock. Model-based reasoning declines most
+dramatically during COVID-19 (to 72.5%), likely reflecting the unprecedented nature of the
+pandemic shock that rendered historical patterns less informative. All differences between
+crisis and normal periods are statistically significant at conventional levels (p < 0.001).
+These patterns are qualitatively consistent with evidence from special surveys of human
+professional forecasters. The ECB’s Survey of Professional Forecasters finds that “the role of
+judgment in point forecasts has increased” during “periods of economic volatility” such as
+the global financial crisis and pandemic (European Central Bank, 2024). Our results suggest
+that AI forecasters, like their human counterparts, adapt their reasoning approach to economic
+conditions, relying more heavily on judgment and event-specific narratives during periods of
+heightened uncertainty. While more work is needed to fully characterize and validate LLM
+reasoning, this analysis suggests that our framework could be extended to simulate not only
+forecasts but also the reasoning processes that professional forecasters employ.
+6
+Conclusion
+In this paper, we introduce a new framework for modeling expert expectations’ formation using
+large language models. Rather than treating the LLM primarily as a forecasting tool, we use it
+as a model of forecasters: an expectations operator that maps real-time data, lagged forecasts,
+and forecaster characteristics into survey responses.
+27

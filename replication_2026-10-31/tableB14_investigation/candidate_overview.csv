@@ -1,0 +1,17 @@
+candidate,point_matches,ai_matches,human_matches
+old quarter_min median origins2024,30,10,20
+old quarter_min median targets2024,70,19,51
+old quarter_min quarter_min origins2024,10,10,0
+old quarter_min quarter_min targets2024,19,19,0
+old best_name median origins2024,37,21,16
+old best_name median targets2024,92,52,40
+old best_name quarter_min origins2024,21,21,0
+old best_name quarter_min targets2024,52,52,0
+current quarter_min median origins2024,22,2,20
+current quarter_min median targets2024,54,3,51
+current quarter_min quarter_min origins2024,2,2,0
+current quarter_min quarter_min targets2024,3,3,0
+current best_name median origins2024,21,2,19
+current best_name median targets2024,52,2,50
+current best_name quarter_min origins2024,2,2,0
+current best_name quarter_min targets2024,2,2,0

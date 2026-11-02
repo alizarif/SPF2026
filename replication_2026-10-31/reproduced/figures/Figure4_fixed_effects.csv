@@ -1,0 +1,485 @@
+Name,fixed_effect,n,quarters,variable,candidate
+Albert M. Wojnilower,-12.34911280003085,28,28,RGDP,h0_filter_before_demean
+Allan R. Leslie,-28.235665286378875,64,64,RGDP,h0_filter_before_demean
+Allen Sinai,-3.00689545204105,64,56,RGDP,h0_filter_before_demean
+Andrew Hodge,0.41348850929747033,12,12,RGDP,h0_filter_before_demean
+Anthony Metz,-30.741477516181114,40,40,RGDP,h0_filter_before_demean
+"Ardavan Mobasheri, CFA",70.45481440294625,20,20,RGDP,h0_filter_before_demean
+Arun Raha,127.85222896633786,24,24,RGDP,h0_filter_before_demean
+Ben Meiselman,9.239521686338321,12,12,RGDP,h0_filter_before_demean
+Brendon Ogmundson,-2.6931826114204873,48,48,RGDP,h0_filter_before_demean
+Brian A. Bethune,-0.02014815291067862,16,16,RGDP,h0_filter_before_demean
+Brian P. O'Connor,-5.644397022113935,24,24,RGDP,h0_filter_before_demean
+Bruce Steinberg,-3.082023152910722,16,16,RGDP,h0_filter_before_demean
+Charles Steindel,11.80127417871773,52,52,RGDP,h0_filter_before_demean
+"Chris Rupkey, CFA",48.37454643177157,40,40,RGDP,h0_filter_before_demean
+Chris Varvares,-4.973740512841232,28,28,RGDP,h0_filter_before_demean
+"Christine Chmura, Ph.D.",-2.274144203833684,68,68,RGDP,h0_filter_before_demean
+"Constantine G. Soras, Ph.D.",-15.267913287051583,84,84,RGDP,h0_filter_before_demean
+Daniil Manaenkov,20.353891047281362,44,44,RGDP,h0_filter_before_demean
+David Berson,-17.296615267470365,36,36,RGDP,h0_filter_before_demean
+David Crowe,20.799693441853897,28,28,RGDP,h0_filter_before_demean
+David F. Seiders,-22.303306163800222,40,40,RGDP,h0_filter_before_demean
+David H. Resler,-24.911740149054683,52,52,RGDP,h0_filter_before_demean
+"David M. Blitzer, Ph.D.",-4.050844824035797,12,12,RGDP,h0_filter_before_demean
+David Rosenberg,-20.900349004393167,24,24,RGDP,h0_filter_before_demean
+David Sloan,86.74161200584012,12,12,RGDP,h0_filter_before_demean
+Dean Maki,-20.943726244937853,40,40,RGDP,h0_filter_before_demean
+Dick Rippe,2.081571842630789,12,12,RGDP,h0_filter_before_demean
+Doug Duncan,47.482614908483356,12,12,RGDP,h0_filter_before_demean
+Dr. Irwin Kellner,-21.690006163800263,40,40,RGDP,h0_filter_before_demean
+Edward F. McKelvey,-24.202178656566083,52,52,RGDP,h0_filter_before_demean
+Edward Sullivan,98.76156796798368,20,20,RGDP,h0_filter_before_demean
+Ellen Zentner,-9.733267529354748,64,64,RGDP,h0_filter_before_demean
+Ethan Harris,71.83481440294626,20,20,RGDP,h0_filter_before_demean
+Frederick L. Joutz,-7.633498859729343,76,76,RGDP,h0_filter_before_demean
+Gabriel Ehrlich,5.951083584077423,32,32,RGDP,h0_filter_before_demean
+Gary A. Wagner,81.96968268263527,32,32,RGDP,h0_filter_before_demean
+"Gary L. Ciminero, CFA",-21.541129554896262,100,100,RGDP,h0_filter_before_demean
+Gary Thayer,69.37085590648148,20,20,RGDP,h0_filter_before_demean
+Gerard F. Fuda,-24.1834736070198,44,44,RGDP,h0_filter_before_demean
+Gregory Daco,28.13690357498409,36,36,RGDP,h0_filter_before_demean
+Herbert E. Neil,140.58856471381523,24,24,RGDP,h0_filter_before_demean
+J.D. Foster,28.964581507325722,12,12,RGDP,h0_filter_before_demean
+Jack Kleinhenz,-0.31724345094829687,64,64,RGDP,h0_filter_before_demean
+James Glassman,-19.16034792728628,88,88,RGDP,h0_filter_before_demean
+James M. Goldberg,-1.9003834032809663,20,20,RGDP,h0_filter_before_demean
+James P. Meil,-31.150362811881042,60,60,RGDP,h0_filter_before_demean
+James Sweeney,-12.701435725340032,28,28,RGDP,h0_filter_before_demean
+Jan Hatzius,41.941054683644985,44,44,RGDP,h0_filter_before_demean
+Janet Wolfe,-35.35450616380017,40,40,RGDP,h0_filter_before_demean
+Jason Prole,44.697055384582804,12,12,RGDP,h0_filter_before_demean
+Jay Brinkmann,148.16350307049893,12,12,RGDP,h0_filter_before_demean
+Jay Bryson,68.88758177510697,24,24,RGDP,h0_filter_before_demean
+Jay N. Woodworth,-28.221558242321603,56,56,RGDP,h0_filter_before_demean
+Joan Crary,-23.42085616380018,40,40,RGDP,h0_filter_before_demean
+Joel I. Brest,-5.841938688780526,24,24,RGDP,h0_filter_before_demean
+Joel L. Naroff,-28.799529554896264,100,100,RGDP,h0_filter_before_demean
+John Lonski,-23.859323183375736,92,92,RGDP,h0_filter_before_demean
+John Ryding,7.804948241816874,12,12,RGDP,h0_filter_before_demean
+John Silvia,-6.007158374164853,44,44,RGDP,h0_filter_before_demean
+Joseph Carson,-12.056107677175456,24,24,RGDP,h0_filter_before_demean
+Joseph Liro,-13.09436102369916,28,28,RGDP,h0_filter_before_demean
+Joseph T. Abate,1.9384494129748417,20,20,RGDP,h0_filter_before_demean
+Julian Silk,82.61803432073809,12,12,RGDP,h0_filter_before_demean
+Keith Hembre,18.339344638947598,48,48,RGDP,h0_filter_before_demean
+Kurt E. Karl,-25.70724752803582,56,56,RGDP,h0_filter_before_demean
+L. Douglas Lee,-14.033778011738498,60,60,RGDP,h0_filter_before_demean
+Larry Filer,-8.524591019705289,12,12,RGDP,h0_filter_before_demean
+Lea Tyler,-31.530857641551332,60,56,RGDP,h0_filter_before_demean
+Lewis Alexander,29.392620045793592,32,32,RGDP,h0_filter_before_demean
+Louis Crandall,46.50030549726591,24,24,RGDP,h0_filter_before_demean
+Luca Noto,19.13291130765335,44,44,RGDP,h0_filter_before_demean
+Maira Trimble,-0.7310016300428401,32,32,RGDP,h0_filter_before_demean
+"Mark Nielson, Ph.D.",-5.499158965750364,60,60,RGDP,h0_filter_before_demean
+Mark Zandi,-18.2955275548963,100,100,RGDP,h0_filter_before_demean
+Martin A. Regalia,-23.906580219494053,56,56,RGDP,h0_filter_before_demean
+Matthew Hall,86.69826928249238,12,12,RGDP,h0_filter_before_demean
+Maureen Allyn,0.8566551759642304,12,12,RGDP,h0_filter_before_demean
+Michael Brown,25.4674248301284,20,20,RGDP,h0_filter_before_demean
+Michael Cosgrove,-25.876434228602324,28,28,RGDP,h0_filter_before_demean
+Michael Gapen,19.04955845466002,20,20,RGDP,h0_filter_before_demean
+Michael Moran,-15.654591693873398,72,72,RGDP,h0_filter_before_demean
+Michael P. Niemira,-14.3594876472812,56,56,RGDP,h0_filter_before_demean
+Michael R. Englund,-20.140654304293147,104,100,RGDP,h0_filter_before_demean
+Nathaniel Curtis,83.38242717389112,20,20,RGDP,h0_filter_before_demean
+Nathaniel Karp,12.179435318988483,60,60,RGDP,h0_filter_before_demean
+Neal Soss,-25.172370492031032,44,44,RGDP,h0_filter_before_demean
+No Name Provided,-6.805505302287936,78,67,RGDP,h0_filter_before_demean
+"Perc Pineda, Ph.D.",20.218790859088813,16,16,RGDP,h0_filter_before_demean
+Peter Bernstein,24.30797741091787,44,44,RGDP,h0_filter_before_demean
+Peter Hooper,83.95368710342613,44,44,RGDP,h0_filter_before_demean
+Peter Jaquette,-24.9003854074773,32,32,RGDP,h0_filter_before_demean
+Philip Rothman,12.262897914629516,56,56,RGDP,h0_filter_before_demean
+R. Anthony Metz,-3.898889669418986,40,40,RGDP,h0_filter_before_demean
+Rajeev Dhawan,-17.219533392898484,92,92,RGDP,h0_filter_before_demean
+Ralph M. Monaco,34.7536648301284,20,20,RGDP,h0_filter_before_demean
+Richard J. DeKaser,-18.775580100282298,32,32,RGDP,h0_filter_before_demean
+Richard Yamarone,14.58415784324084,68,68,RGDP,h0_filter_before_demean
+Robert J. Barbera,-9.543205617880153,76,76,RGDP,h0_filter_before_demean
+Robert McNab,42.43705677510692,24,24,RGDP,h0_filter_before_demean
+Robert O. Welk,1.6899051759642134,12,12,RGDP,h0_filter_before_demean
+Sacha Gelfer,54.7164751949896,28,28,RGDP,h0_filter_before_demean
+Sam Kahan,37.600815777009664,40,40,RGDP,h0_filter_before_demean
+Saul Hymans,-30.15086526747023,36,36,RGDP,h0_filter_before_demean
+Scott Anderson,19.659228384852184,64,64,RGDP,h0_filter_before_demean
+"Sean M. Snaith, Ph.D.",-24.08741429638672,72,72,RGDP,h0_filter_before_demean
+Shawn Dubravac,44.02339087150282,24,24,RGDP,h0_filter_before_demean
+Stanley F. Duobinis,-3.0508834032810226,20,20,RGDP,h0_filter_before_demean
+Stephen Gallagher,-19.36046040747732,32,32,RGDP,h0_filter_before_demean
+Stephen Stanley,-14.269287553967274,80,76,RGDP,h0_filter_before_demean
+Susan M. Sterne,-21.038603944364223,100,96,RGDP,h0_filter_before_demean
+Tara M. Sinclair,6.485621007171233,32,32,RGDP,h0_filter_before_demean
+Tereza Ranosova,42.6018982287851,12,12,RGDP,h0_filter_before_demean
+Thomas Kevin Swift,-18.22859782410291,68,68,RGDP,h0_filter_before_demean
+Thomas Lam,18.42793001483473,72,68,RGDP,h0_filter_before_demean
+Timothy Gill,67.0922043747504,16,16,RGDP,h0_filter_before_demean
+Tom Porcelli,51.32530898029457,12,12,RGDP,h0_filter_before_demean
+Walter Kemmsies,35.31390253502472,48,48,RGDP,h0_filter_before_demean
+Wayne Best,39.62380483012821,20,20,RGDP,h0_filter_before_demean
+William B. Hummer,-23.47600234964466,48,48,RGDP,h0_filter_before_demean
+"Xiaobing Shuai, Ph.D.",-15.993316092800068,80,80,RGDP,h0_filter_before_demean
+Yaniv Konchitchki,79.78962205124935,12,12,RGDP,h0_filter_before_demean
+Albert M. Wojnilower,-0.012588914982012478,28,28,CPI,h0_filter_before_demean
+Allan R. Leslie,-0.01727725356983535,64,64,CPI,h0_filter_before_demean
+Allen Sinai,-0.07827241230316535,64,56,CPI,h0_filter_before_demean
+Andrew Hodge,0.011821395854145897,12,12,CPI,h0_filter_before_demean
+Anthony Metz,0.023769019202059666,40,40,CPI,h0_filter_before_demean
+"Ardavan Mobasheri, CFA",-0.028651155002412672,20,20,CPI,h0_filter_before_demean
+Arun Raha,-0.008224083053007569,24,24,CPI,h0_filter_before_demean
+Ben Meiselman,-0.04742232075511902,12,12,CPI,h0_filter_before_demean
+Brendon Ogmundson,0.04782310696107022,48,48,CPI,h0_filter_before_demean
+Brian A. Bethune,-0.036889767062878956,16,16,CPI,h0_filter_before_demean
+Brian P. O'Connor,0.02826530482509801,24,24,CPI,h0_filter_before_demean
+Bruce Steinberg,-0.036889767062878956,16,16,CPI,h0_filter_before_demean
+Charles Steindel,-0.005618442387894542,52,52,CPI,h0_filter_before_demean
+"Chris Rupkey, CFA",-0.05631507322012839,40,40,CPI,h0_filter_before_demean
+Chris Varvares,-0.04696571400886392,28,28,CPI,h0_filter_before_demean
+"Christine Chmura, Ph.D.",0.07750987438882735,68,68,CPI,h0_filter_before_demean
+"Constantine G. Soras, Ph.D.",0.014936063042322286,84,84,CPI,h0_filter_before_demean
+Daniil Manaenkov,0.03758708447701167,44,44,CPI,h0_filter_before_demean
+David Berson,-0.09997872220652629,36,36,CPI,h0_filter_before_demean
+David Crowe,0.08602076627328903,28,28,CPI,h0_filter_before_demean
+David F. Seiders,0.12409636047566483,40,40,CPI,h0_filter_before_demean
+David H. Resler,0.005662991725914805,52,52,CPI,h0_filter_before_demean
+"David M. Blitzer, Ph.D.",0.02098806252081255,12,12,CPI,h0_filter_before_demean
+David Rosenberg,-0.15262740099863933,24,24,CPI,h0_filter_before_demean
+David Sloan,0.061394996346866536,12,12,CPI,h0_filter_before_demean
+Dean Maki,0.008885706993204614,40,40,CPI,h0_filter_before_demean
+Dick Rippe,0.02098806252081255,12,12,CPI,h0_filter_before_demean
+Doug Duncan,0.38748322373022503,12,12,CPI,h0_filter_before_demean
+Dr. Irwin Kellner,0.009372756575664793,40,40,CPI,h0_filter_before_demean
+Edward F. McKelvey,0.029326494411037393,52,52,CPI,h0_filter_before_demean
+Edward Sullivan,-0.1532828770669627,20,20,CPI,h0_filter_before_demean
+Ellen Zentner,0.04166876552960573,64,64,CPI,h0_filter_before_demean
+Ethan Harris,0.09187907349758735,20,20,CPI,h0_filter_before_demean
+Frederick L. Joutz,-0.008352890894520003,76,76,CPI,h0_filter_before_demean
+Gabriel Ehrlich,0.09540576496333217,32,32,CPI,h0_filter_before_demean
+Gary A. Wagner,-0.019426866373439343,32,32,CPI,h0_filter_before_demean
+"Gary L. Ciminero, CFA",-0.009452388764946858,100,100,CPI,h0_filter_before_demean
+Gary Thayer,-0.06260233961929973,20,20,CPI,h0_filter_before_demean
+Gerard F. Fuda,-0.06380694557470755,44,44,CPI,h0_filter_before_demean
+Gregory Daco,-0.08042016238744425,36,36,CPI,h0_filter_before_demean
+Herbert E. Neil,0.21397304819664156,24,24,CPI,h0_filter_before_demean
+J.D. Foster,0.081812561649202,12,12,CPI,h0_filter_before_demean
+Jack Kleinhenz,0.0998368362429902,64,64,CPI,h0_filter_before_demean
+James Glassman,-0.013594590258459488,88,88,CPI,h0_filter_before_demean
+James M. Goldberg,-0.04226248001220793,20,20,CPI,h0_filter_before_demean
+James P. Meil,-0.0657182087026962,60,60,CPI,h0_filter_before_demean
+James Sweeney,0.05173112464063363,28,28,CPI,h0_filter_before_demean
+Jan Hatzius,0.0086315706133753,44,44,CPI,h0_filter_before_demean
+Janet Wolfe,-0.008426139524335163,40,40,CPI,h0_filter_before_demean
+Jason Prole,0.29747096446456683,12,12,CPI,h0_filter_before_demean
+Jay Brinkmann,-0.1090465499074353,12,12,CPI,h0_filter_before_demean
+Jay Bryson,-0.01234538870682477,24,24,CPI,h0_filter_before_demean
+Jay N. Woodworth,-0.027762189705057134,56,56,CPI,h0_filter_before_demean
+Joan Crary,-0.02865359202433518,40,40,CPI,h0_filter_before_demean
+Joel I. Brest,-0.007420355341568624,24,24,CPI,h0_filter_before_demean
+Joel L. Naroff,0.012305745535053165,100,100,CPI,h0_filter_before_demean
+John Lonski,-0.04950454527642598,92,92,CPI,h0_filter_before_demean
+John Ryding,-0.26206630876977494,12,12,CPI,h0_filter_before_demean
+John Silvia,0.047992764259183064,44,44,CPI,h0_filter_before_demean
+Joseph Carson,-0.1346944168386051,24,24,CPI,h0_filter_before_demean
+Joseph Liro,0.023385698884887236,28,28,CPI,h0_filter_before_demean
+Joseph T. Abate,0.06285094444076515,20,20,CPI,h0_filter_before_demean
+Julian Silk,-0.15752436178975493,12,12,CPI,h0_filter_before_demean
+Keith Hembre,-0.02321844970796837,48,48,CPI,h0_filter_before_demean
+Kurt E. Karl,0.12197052447351431,56,56,CPI,h0_filter_before_demean
+L. Douglas Lee,-0.04224281029569012,60,60,CPI,h0_filter_before_demean
+Larry Filer,-0.007242801644705588,12,12,CPI,h0_filter_before_demean
+Lea Tyler,-0.04634133101702768,60,56,CPI,h0_filter_before_demean
+Lewis Alexander,-0.010995547705821535,32,32,CPI,h0_filter_before_demean
+Louis Crandall,0.17820770488566007,24,24,CPI,h0_filter_before_demean
+Luca Noto,-0.03736703732036239,44,44,CPI,h0_filter_before_demean
+Maira Trimble,0.01784691040893403,32,32,CPI,h0_filter_before_demean
+"Mark Nielson, Ph.D.",0.040773097313554975,60,60,CPI,h0_filter_before_demean
+Mark Zandi,0.03724979017505315,100,100,CPI,h0_filter_before_demean
+Martin A. Regalia,-0.0424317635994833,56,56,CPI,h0_filter_before_demean
+Matthew Hall,-0.08613515098650965,12,12,CPI,h0_filter_before_demean
+Maureen Allyn,-0.012345270812520773,12,12,CPI,h0_filter_before_demean
+Michael Brown,-0.08127849404818974,20,20,CPI,h0_filter_before_demean
+Michael Cosgrove,-0.004570079624869605,28,28,CPI,h0_filter_before_demean
+Michael Gapen,0.08300241462652047,20,20,CPI,h0_filter_before_demean
+Michael Moran,0.02066857948352881,72,72,CPI,h0_filter_before_demean
+Michael P. Niemira,0.0016485962819949515,56,56,CPI,h0_filter_before_demean
+Michael R. Englund,-0.0457394137577732,104,100,CPI,h0_filter_before_demean
+Nathaniel Curtis,-0.12056648720238461,20,20,CPI,h0_filter_before_demean
+Nathaniel Karp,-0.009090846365810468,60,60,CPI,h0_filter_before_demean
+Neal Soss,0.12627241551991666,44,44,CPI,h0_filter_before_demean
+No Name Provided,-0.027524484475333785,78,67,CPI,h0_filter_before_demean
+"Perc Pineda, Ph.D.",0.08103781059027305,16,16,CPI,h0_filter_before_demean
+Peter Bernstein,0.01371057538610258,44,44,CPI,h0_filter_before_demean
+Peter Hooper,-0.01206419200432689,44,44,CPI,h0_filter_before_demean
+Peter Jaquette,0.0715302001473265,32,32,CPI,h0_filter_before_demean
+Philip Rothman,-0.00999664484299202,56,56,CPI,h0_filter_before_demean
+R. Anthony Metz,0.07457469649167717,40,40,CPI,h0_filter_before_demean
+Rajeev Dhawan,0.0424616911322245,92,92,CPI,h0_filter_before_demean
+Ralph M. Monaco,-0.002499296548189722,20,20,CPI,h0_filter_before_demean
+Richard J. DeKaser,0.15802322511518543,32,32,CPI,h0_filter_before_demean
+Richard Yamarone,-0.0229604962087054,68,68,CPI,h0_filter_before_demean
+Robert J. Barbera,0.011988833048723202,76,76,CPI,h0_filter_before_demean
+Robert McNab,0.03746003254317525,24,24,CPI,h0_filter_before_demean
+Robert O. Welk,0.012654729187479211,12,12,CPI,h0_filter_before_demean
+Sacha Gelfer,-0.12757074359273027,28,28,CPI,h0_filter_before_demean
+Sam Kahan,-0.02165328104750938,40,40,CPI,h0_filter_before_demean
+Saul Hymans,0.023809627793473724,36,36,CPI,h0_filter_before_demean
+Scott Anderson,-0.0960574482600686,64,64,CPI,h0_filter_before_demean
+"Sean M. Snaith, Ph.D.",0.010464822189657537,72,72,CPI,h0_filter_before_demean
+Shawn Dubravac,0.12371134863638227,24,24,CPI,h0_filter_before_demean
+Stanley F. Duobinis,0.017614727787792085,20,20,CPI,h0_filter_before_demean
+Stephen Gallagher,0.01943229670982652,32,32,CPI,h0_filter_before_demean
+Stephen Stanley,0.07028780304251345,80,76,CPI,h0_filter_before_demean
+Susan M. Sterne,-0.08952343756625618,100,96,CPI,h0_filter_before_demean
+Tara M. Sinclair,-0.06650940702060588,32,32,CPI,h0_filter_before_demean
+Tereza Ranosova,-0.15941972162037654,12,12,CPI,h0_filter_before_demean
+Thomas Kevin Swift,0.09225086270845102,68,68,CPI,h0_filter_before_demean
+Thomas Lam,-0.09166592639839738,72,68,CPI,h0_filter_before_demean
+Timothy Gill,-0.08884771255466489,16,16,CPI,h0_filter_before_demean
+Tom Porcelli,-0.09681616664470556,12,12,CPI,h0_filter_before_demean
+Walter Kemmsies,-0.03257001900668369,48,48,CPI,h0_filter_before_demean
+Wayne Best,-0.048084296548189756,20,20,CPI,h0_filter_before_demean
+William B. Hummer,0.08344186045157982,48,48,CPI,h0_filter_before_demean
+"Xiaobing Shuai, Ph.D.",-0.09291743177813161,80,80,CPI,h0_filter_before_demean
+Yaniv Konchitchki,0.007871834464566962,12,12,CPI,h0_filter_before_demean
+Albert M. Wojnilower,0.001966440259629681,28,28,UNEMP,h0_filter_before_demean
+Allan R. Leslie,-0.003583657526039369,64,64,UNEMP,h0_filter_before_demean
+Allen Sinai,-0.014838688711359002,64,56,UNEMP,h0_filter_before_demean
+Andrew Hodge,0.0003354284604285181,12,12,UNEMP,h0_filter_before_demean
+Anthony Metz,-0.006954398400197848,40,40,UNEMP,h0_filter_before_demean
+"Ardavan Mobasheri, CFA",-0.010032152825831942,20,20,UNEMP,h0_filter_before_demean
+Arun Raha,-0.002390603013498823,24,24,UNEMP,h0_filter_before_demean
+Ben Meiselman,-0.013642918677442642,12,12,UNEMP,h0_filter_before_demean
+Brendon Ogmundson,0.019427291848518446,48,48,UNEMP,h0_filter_before_demean
+Brian A. Bethune,-0.0014926147011902757,16,16,UNEMP,h0_filter_before_demean
+Brian P. O'Connor,0.001529840476061491,24,24,UNEMP,h0_filter_before_demean
+Bruce Steinberg,-0.0014926147011902757,16,16,UNEMP,h0_filter_before_demean
+Charles Steindel,-0.05039783038366076,52,52,UNEMP,h0_filter_before_demean
+"Chris Rupkey, CFA",0.020287305376952326,40,40,UNEMP,h0_filter_before_demean
+Chris Varvares,0.003972368938302694,28,28,UNEMP,h0_filter_before_demean
+"Christine Chmura, Ph.D.",0.012627145305642273,68,68,UNEMP,h0_filter_before_demean
+"Constantine G. Soras, Ph.D.",0.00311708891162392,84,84,UNEMP,h0_filter_before_demean
+Daniil Manaenkov,0.021908953120461663,44,44,UNEMP,h0_filter_before_demean
+David Berson,0.0005609910596339813,36,36,UNEMP,h0_filter_before_demean
+David Crowe,0.0457193972431336,28,28,UNEMP,h0_filter_before_demean
+David F. Seiders,0.0013238661844398258,40,40,UNEMP,h0_filter_before_demean
+David H. Resler,-0.008582913094883007,52,52,UNEMP,h0_filter_before_demean
+"David M. Blitzer, Ph.D.",0.0003354284604285181,12,12,UNEMP,h0_filter_before_demean
+David Rosenberg,-0.000965146558473462,24,24,UNEMP,h0_filter_before_demean
+David Sloan,-0.05334810203279424,12,12,UNEMP,h0_filter_before_demean
+Dean Maki,-0.01248675632729992,40,40,UNEMP,h0_filter_before_demean
+Dick Rippe,0.0003354284604285181,12,12,UNEMP,h0_filter_before_demean
+Doug Duncan,-0.013043374439887678,12,12,UNEMP,h0_filter_before_demean
+Dr. Irwin Kellner,0.0013238661844398258,40,40,UNEMP,h0_filter_before_demean
+Edward F. McKelvey,0.006623779811569466,52,52,UNEMP,h0_filter_before_demean
+Edward Sullivan,0.0005647134801455511,20,20,UNEMP,h0_filter_before_demean
+Ellen Zentner,0.0015369988903536566,64,64,UNEMP,h0_filter_before_demean
+Ethan Harris,0.0201328471741681,20,20,UNEMP,h0_filter_before_demean
+Frederick L. Joutz,-0.007358205848071331,76,76,UNEMP,h0_filter_before_demean
+Gabriel Ehrlich,-0.05977972535171357,32,32,UNEMP,h0_filter_before_demean
+Gary A. Wagner,0.03117840504467574,32,32,UNEMP,h0_filter_before_demean
+"Gary L. Ciminero, CFA",-0.003831204410695026,100,100,UNEMP,h0_filter_before_demean
+Gary Thayer,0.009726319038876241,20,20,UNEMP,h0_filter_before_demean
+Gerard F. Fuda,-0.006238508459778408,44,44,UNEMP,h0_filter_before_demean
+Gregory Daco,-0.0017571348986244277,36,36,UNEMP,h0_filter_before_demean
+Herbert E. Neil,0.043887627052230406,24,24,UNEMP,h0_filter_before_demean
+J.D. Foster,-0.008632906331763501,12,12,UNEMP,h0_filter_before_demean
+Jack Kleinhenz,0.006929531123356002,64,64,UNEMP,h0_filter_before_demean
+James Glassman,0.0069642547432426875,88,88,UNEMP,h0_filter_before_demean
+James M. Goldberg,9.162252476211386e-05,20,20,UNEMP,h0_filter_before_demean
+James P. Meil,0.00756149190812212,60,60,UNEMP,h0_filter_before_demean
+James Sweeney,-0.0036359678622757763,28,28,UNEMP,h0_filter_before_demean
+Jan Hatzius,0.009863498575007113,44,44,UNEMP,h0_filter_before_demean
+Janet Wolfe,-0.00025863381556017194,40,40,UNEMP,h0_filter_before_demean
+Jason Prole,-0.011410492373072087,12,12,UNEMP,h0_filter_before_demean
+Jay Brinkmann,-0.0152440782721636,12,12,UNEMP,h0_filter_before_demean
+Jay Bryson,0.015693694363597004,24,24,UNEMP,h0_filter_before_demean
+Jay N. Woodworth,-0.0016157210423181395,56,56,UNEMP,h0_filter_before_demean
+Joan Crary,0.0005738661844398197,40,40,UNEMP,h0_filter_before_demean
+Joel I. Brest,0.001529840476061491,24,24,UNEMP,h0_filter_before_demean
+Joel L. Naroff,-0.014531204410695024,100,100,UNEMP,h0_filter_before_demean
+John Lonski,0.011987269187822858,92,92,UNEMP,h0_filter_before_demean
+John Ryding,-0.0155433744398877,12,12,UNEMP,h0_filter_before_demean
+John Silvia,0.013841595819485115,44,44,UNEMP,h0_filter_before_demean
+Joseph Carson,-0.017060393022692317,24,24,UNEMP,h0_filter_before_demean
+Joseph Liro,0.007818910923301812,28,28,UNEMP,h0_filter_before_demean
+Joseph T. Abate,0.0158587768310841,20,20,UNEMP,h0_filter_before_demean
+Julian Silk,-0.00850880665766988,12,12,UNEMP,h0_filter_before_demean
+Keith Hembre,-0.01857136184842857,48,48,UNEMP,h0_filter_before_demean
+Kurt E. Karl,0.0014795111005389946,56,56,UNEMP,h0_filter_before_demean
+L. Douglas Lee,0.0033480100054952646,60,60,UNEMP,h0_filter_before_demean
+Larry Filer,-0.021883286384140794,12,12,UNEMP,h0_filter_before_demean
+Lea Tyler,-0.0013498068189841117,60,56,UNEMP,h0_filter_before_demean
+Lewis Alexander,0.004301651430536804,32,32,UNEMP,h0_filter_before_demean
+Louis Crandall,0.003784477103968379,24,24,UNEMP,h0_filter_before_demean
+Luca Noto,0.016197891274030606,44,44,UNEMP,h0_filter_before_demean
+Maira Trimble,0.02304202349087904,32,32,UNEMP,h0_filter_before_demean
+"Mark Nielson, Ph.D.",-0.005248635795818571,60,60,UNEMP,h0_filter_before_demean
+Mark Zandi,0.01613579558930496,100,100,UNEMP,h0_filter_before_demean
+Martin A. Regalia,0.018853082654646247,56,56,UNEMP,h0_filter_before_demean
+Matthew Hall,-0.0008045709537377229,12,12,UNEMP,h0_filter_before_demean
+Maureen Allyn,0.0003354284604285181,12,12,UNEMP,h0_filter_before_demean
+Michael Brown,-0.09396616676368352,20,20,UNEMP,h0_filter_before_demean
+Michael Cosgrove,0.003037868831058261,28,28,UNEMP,h0_filter_before_demean
+Michael Gapen,-0.008152457328914519,20,20,UNEMP,h0_filter_before_demean
+Michael Moran,0.005989923591890767,72,72,UNEMP,h0_filter_before_demean
+Michael P. Niemira,-0.00412846797219473,56,56,UNEMP,h0_filter_before_demean
+Michael R. Englund,-0.02074297558343601,104,100,UNEMP,h0_filter_before_demean
+Nathaniel Curtis,0.0048689136286993225,20,20,UNEMP,h0_filter_before_demean
+Nathaniel Karp,0.02240436653157978,60,60,UNEMP,h0_filter_before_demean
+Neal Soss,-0.009398145482730526,44,44,UNEMP,h0_filter_before_demean
+No Name Provided,-0.004031823009870765,78,67,UNEMP,h0_filter_before_demean
+"Perc Pineda, Ph.D.",0.06058436169845674,16,16,UNEMP,h0_filter_before_demean
+Peter Bernstein,-0.01074029687953833,44,44,UNEMP,h0_filter_before_demean
+Peter Hooper,-0.0010261337905406983,44,44,UNEMP,h0_filter_before_demean
+Peter Jaquette,-0.01418323593110285,32,32,UNEMP,h0_filter_before_demean
+Philip Rothman,-0.03384867980070092,56,56,UNEMP,h0_filter_before_demean
+R. Anthony Metz,0.016329751111079194,40,40,UNEMP,h0_filter_before_demean
+Rajeev Dhawan,0.01054535433938629,92,92,UNEMP,h0_filter_before_demean
+Ralph M. Monaco,0.04120218323631639,20,20,UNEMP,h0_filter_before_demean
+Richard J. DeKaser,0.0057264902397072825,32,32,UNEMP,h0_filter_before_demean
+Richard Yamarone,-0.0032647062974660544,68,68,UNEMP,h0_filter_before_demean
+Robert J. Barbera,0.0030718866776976847,76,76,UNEMP,h0_filter_before_demean
+Robert McNab,-0.07056047230306962,24,24,UNEMP,h0_filter_before_demean
+Robert O. Welk,0.0003354284604285181,12,12,UNEMP,h0_filter_before_demean
+Sacha Gelfer,0.03151630289474493,28,28,UNEMP,h0_filter_before_demean
+Sam Kahan,-0.046287373789714356,40,40,UNEMP,h0_filter_before_demean
+Saul Hymans,0.0013943243929673216,36,36,UNEMP,h0_filter_before_demean
+Scott Anderson,-0.0056956018018593235,64,64,UNEMP,h0_filter_before_demean
+"Sean M. Snaith, Ph.D.",0.005070853926987757,72,72,UNEMP,h0_filter_before_demean
+Shawn Dubravac,0.0005622431808543308,24,24,UNEMP,h0_filter_before_demean
+Stanley F. Duobinis,-0.0014083774752378987,20,20,UNEMP,h0_filter_before_demean
+Stephen Gallagher,0.008629264068897136,32,32,UNEMP,h0_filter_before_demean
+Stephen Stanley,0.019675002485322203,80,76,UNEMP,h0_filter_before_demean
+Susan M. Sterne,-0.020098942457612626,100,96,UNEMP,h0_filter_before_demean
+Tara M. Sinclair,-0.006986418416509599,32,32,UNEMP,h0_filter_before_demean
+Tereza Ranosova,0.07975507485720164,12,12,UNEMP,h0_filter_before_demean
+Thomas Kevin Swift,0.0137554855428253,68,68,UNEMP,h0_filter_before_demean
+Thomas Lam,0.011091767378732052,72,68,UNEMP,h0_filter_before_demean
+Timothy Gill,-0.014276007080151365,16,16,UNEMP,h0_filter_before_demean
+Tom Porcelli,-0.02188328638414072,12,12,UNEMP,h0_filter_before_demean
+Walter Kemmsies,-0.04178210814857536,48,48,UNEMP,h0_filter_before_demean
+Wayne Best,0.047368833236316375,20,20,UNEMP,h0_filter_before_demean
+William B. Hummer,-0.006238192939982086,48,48,UNEMP,h0_filter_before_demean
+"Xiaobing Shuai, Ph.D.",0.009355588855440689,80,80,UNEMP,h0_filter_before_demean
+Yaniv Konchitchki,-0.008635492373072115,12,12,UNEMP,h0_filter_before_demean
+Albert M. Wojnilower,-4.699890986279635,28,28,NGDP,h0_filter_before_demean
+Allan R. Leslie,-0.9403513938031836,64,64,NGDP,h0_filter_before_demean
+Allen Sinai,0.5409564676001537,64,56,NGDP,h0_filter_before_demean
+Andrew Hodge,1.035486881539479,12,12,NGDP,h0_filter_before_demean
+Anthony Metz,-10.909431130819167,40,40,NGDP,h0_filter_before_demean
+"Ardavan Mobasheri, CFA",21.240805530993384,20,20,NGDP,h0_filter_before_demean
+Arun Raha,-12.385017780830443,24,24,NGDP,h0_filter_before_demean
+Ben Meiselman,-20.06084946799274,12,12,NGDP,h0_filter_before_demean
+Brendon Ogmundson,-13.037383322997357,48,48,NGDP,h0_filter_before_demean
+Brian A. Bethune,0.966150044875576,16,16,NGDP,h0_filter_before_demean
+Brian P. O'Connor,1.8358820528036024,24,24,NGDP,h0_filter_before_demean
+Bruce Steinberg,0.9724000448755987,16,16,NGDP,h0_filter_before_demean
+Charles Steindel,9.304788398510377,52,52,NGDP,h0_filter_before_demean
+"Chris Rupkey, CFA",-24.230455225692047,40,40,NGDP,h0_filter_before_demean
+Chris Varvares,-71.08799617682845,28,28,NGDP,h0_filter_before_demean
+"Christine Chmura, Ph.D.",21.845874253106345,68,68,NGDP,h0_filter_before_demean
+"Constantine G. Soras, Ph.D.",-14.359200162091708,84,84,NGDP,h0_filter_before_demean
+Daniil Manaenkov,-14.48303018352962,44,44,NGDP,h0_filter_before_demean
+David Berson,-3.461255367496253,36,36,NGDP,h0_filter_before_demean
+David Crowe,1.656515986292886,28,28,NGDP,h0_filter_before_demean
+David F. Seiders,-3.4187067538235625,40,40,NGDP,h0_filter_before_demean
+David H. Resler,3.8190436464754454,52,52,NGDP,h0_filter_before_demean
+"David M. Blitzer, Ph.D.",1.0438202148728426,12,12,NGDP,h0_filter_before_demean
+David Rosenberg,-7.621111286289609,24,24,NGDP,h0_filter_before_demean
+David Sloan,-34.60903245732243,12,12,NGDP,h0_filter_before_demean
+Dean Maki,9.8189085382327,40,40,NGDP,h0_filter_before_demean
+Dick Rippe,2.702153548206146,12,12,NGDP,h0_filter_before_demean
+Doug Duncan,31.611136458570552,12,12,NGDP,h0_filter_before_demean
+Dr. Irwin Kellner,-2.1787067538235534,40,40,NGDP,h0_filter_before_demean
+Edward F. McKelvey,-4.597077138104361,52,52,NGDP,h0_filter_before_demean
+Edward Sullivan,-55.7271148281543,20,20,NGDP,h0_filter_before_demean
+Ellen Zentner,6.866737855831303,64,64,NGDP,h0_filter_before_demean
+Ethan Harris,13.295805530993402,20,20,NGDP,h0_filter_before_demean
+Frederick L. Joutz,17.96644200597917,76,76,NGDP,h0_filter_before_demean
+Gabriel Ehrlich,25.110106620357442,32,32,NGDP,h0_filter_before_demean
+Gary A. Wagner,-123.435097951856,32,32,NGDP,h0_filter_before_demean
+"Gary L. Ciminero, CFA",10.985575893146942,100,100,NGDP,h0_filter_before_demean
+Gary Thayer,26.50635405373896,20,20,NGDP,h0_filter_before_demean
+Gerard F. Fuda,-2.6664713804812807,44,44,NGDP,h0_filter_before_demean
+Gregory Daco,26.375635066691203,36,36,NGDP,h0_filter_before_demean
+Herbert E. Neil,13.56516878774058,24,24,NGDP,h0_filter_before_demean
+J.D. Foster,3.8470949764520506,12,12,NGDP,h0_filter_before_demean
+Jack Kleinhenz,-14.597612772741172,64,64,NGDP,h0_filter_before_demean
+James Glassman,7.5185425765479605,88,88,NGDP,h0_filter_before_demean
+James M. Goldberg,0.9088724168527733,20,20,NGDP,h0_filter_before_demean
+James P. Meil,-5.6116632815952165,60,60,NGDP,h0_filter_before_demean
+James Sweeney,30.502026613741823,28,28,NGDP,h0_filter_before_demean
+Jan Hatzius,-5.542121092620577,44,44,NGDP,h0_filter_before_demean
+Janet Wolfe,-13.263706753823545,40,40,NGDP,h0_filter_before_demean
+Jason Prole,-17.38879601485981,12,12,NGDP,h0_filter_before_demean
+Jay Brinkmann,35.201148818501984,12,12,NGDP,h0_filter_before_demean
+Jay Bryson,-16.49707199441612,24,24,NGDP,h0_filter_before_demean
+Jay N. Woodworth,-1.531947903749954,56,56,NGDP,h0_filter_before_demean
+Joan Crary,-4.566206753823553,40,40,NGDP,h0_filter_before_demean
+Joel I. Brest,1.7442153861369813,24,24,NGDP,h0_filter_before_demean
+Joel L. Naroff,3.4715758931469645,100,100,NGDP,h0_filter_before_demean
+John Lonski,6.040584562944411,92,92,NGDP,h0_filter_before_demean
+John Ryding,30.544469791903946,12,12,NGDP,h0_filter_before_demean
+John Silvia,-10.826155066426963,44,44,NGDP,h0_filter_before_demean
+Joseph Carson,15.406142638536267,24,24,NGDP,h0_filter_before_demean
+Joseph Liro,-6.559789740407723,28,28,NGDP,h0_filter_before_demean
+Joseph T. Abate,-8.834385123750327,20,20,NGDP,h0_filter_before_demean
+Julian Silk,34.47072312190736,12,12,NGDP,h0_filter_before_demean
+Keith Hembre,0.6100267743394928,48,48,NGDP,h0_filter_before_demean
+Kurt E. Karl,-1.5355193323213956,56,56,NGDP,h0_filter_before_demean
+L. Douglas Lee,3.5728806965157673,60,60,NGDP,h0_filter_before_demean
+Larry Filer,-68.73338675213715,12,12,NGDP,h0_filter_before_demean
+Lea Tyler,-1.8322026588845801,60,56,NGDP,h0_filter_before_demean
+Lewis Alexander,28.931632003219136,32,32,NGDP,h0_filter_before_demean
+Louis Crandall,-10.023578541511597,24,24,NGDP,h0_filter_before_demean
+Luca Noto,5.616011600239744,44,44,NGDP,h0_filter_before_demean
+Maira Trimble,-29.616455879642672,32,32,NGDP,h0_filter_before_demean
+"Mark Nielson, Ph.D.",-10.32127975118965,60,60,NGDP,h0_filter_before_demean
+Mark Zandi,-6.958424106852999,100,100,NGDP,h0_filter_before_demean
+Martin A. Regalia,-3.948065448485977,56,56,NGDP,h0_filter_before_demean
+Matthew Hall,24.393605006104583,12,12,NGDP,h0_filter_before_demean
+Maureen Allyn,1.035486881539479,12,12,NGDP,h0_filter_before_demean
+Michael Brown,44.18791360670057,20,20,NGDP,h0_filter_before_demean
+Michael Cosgrove,-17.810605271993932,28,28,NGDP,h0_filter_before_demean
+Michael Gapen,-5.659174986918151,20,20,NGDP,h0_filter_before_demean
+Michael Moran,16.614302130288024,72,72,NGDP,h0_filter_before_demean
+Michael P. Niemira,6.12529432453672,56,56,NGDP,h0_filter_before_demean
+Michael R. Englund,6.1161646031390635,104,100,NGDP,h0_filter_before_demean
+Nathaniel Curtis,15.393819989534041,20,20,NGDP,h0_filter_before_demean
+Nathaniel Karp,-8.248398068701741,60,60,NGDP,h0_filter_before_demean
+Neal Soss,8.056204731726625,44,44,NGDP,h0_filter_before_demean
+No Name Provided,-4.681554852240459,78,67,NGDP,h0_filter_before_demean
+"Perc Pineda, Ph.D.",73.67022364102922,16,16,NGDP,h0_filter_before_demean
+Peter Bernstein,26.880606180106664,44,44,NGDP,h0_filter_before_demean
+Peter Hooper,7.816265338098509,44,44,NGDP,h0_filter_before_demean
+Peter Jaquette,11.807804628834845,32,32,NGDP,h0_filter_before_demean
+Philip Rothman,16.65682732242632,56,56,NGDP,h0_filter_before_demean
+R. Anthony Metz,-33.37106534473969,40,40,NGDP,h0_filter_before_demean
+Rajeev Dhawan,-6.588884175792037,92,92,NGDP,h0_filter_before_demean
+Ralph M. Monaco,-26.482086393299323,20,20,NGDP,h0_filter_before_demean
+Richard J. DeKaser,-2.427600113765834,32,32,NGDP,h0_filter_before_demean
+Richard Yamarone,2.761920406190176,68,68,NGDP,h0_filter_before_demean
+Robert J. Barbera,25.614426579571166,76,76,NGDP,h0_filter_before_demean
+Robert McNab,21.39876133891721,24,24,NGDP,h0_filter_before_demean
+Robert O. Welk,1.035486881539479,12,12,NGDP,h0_filter_before_demean
+Sacha Gelfer,-6.140784741569405,28,28,NGDP,h0_filter_before_demean
+Sam Kahan,29.95700013145065,40,40,NGDP,h0_filter_before_demean
+Saul Hymans,-13.655699811940698,36,36,NGDP,h0_filter_before_demean
+Scott Anderson,20.753065016810865,64,64,NGDP,h0_filter_before_demean
+"Sean M. Snaith, Ph.D.",-2.6730655945795863,72,72,NGDP,h0_filter_before_demean
+Shawn Dubravac,15.321058180589716,24,24,NGDP,h0_filter_before_demean
+Stanley F. Duobinis,0.8988724168527369,20,20,NGDP,h0_filter_before_demean
+Stephen Gallagher,6.810929628834799,32,32,NGDP,h0_filter_before_demean
+Stephen Stanley,-4.848252296577198,80,76,NGDP,h0_filter_before_demean
+Susan M. Sterne,11.312475798392898,100,96,NGDP,h0_filter_before_demean
+Tara M. Sinclair,-8.750283468729378,32,32,NGDP,h0_filter_before_demean
+Tereza Ranosova,-119.02859070085015,12,12,NGDP,h0_filter_before_demean
+Thomas Kevin Swift,-21.58021039476524,68,68,NGDP,h0_filter_before_demean
+Thomas Lam,-6.002180451128222,72,68,NGDP,h0_filter_before_demean
+Timothy Gill,-1.1296910096584725,16,16,NGDP,h0_filter_before_demean
+Tom Porcelli,39.01661324786286,12,12,NGDP,h0_filter_before_demean
+Walter Kemmsies,19.810516777314888,48,48,NGDP,h0_filter_before_demean
+Wayne Best,-26.482086393299323,20,20,NGDP,h0_filter_before_demean
+William B. Hummer,-1.0789876543300732,48,48,NGDP,h0_filter_before_demean
+"Xiaobing Shuai, Ph.D.",-13.881498237779443,80,80,NGDP,h0_filter_before_demean
+Yaniv Konchitchki,-17.38879601485981,12,12,NGDP,h0_filter_before_demean

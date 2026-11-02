@@ -1,0 +1,546 @@
+[
+  {
+    "id": "F1",
+    "title": "Example of forecaster acknowledgments",
+    "kind": "figure",
+    "original_pages": "36",
+    "status": "Source reproduced",
+    "evidence": "Original acknowledgment image reused from manuscript asset.",
+    "limitations": "Documentary image; not a newly calculated research result.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure1.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Display the original acknowledgment screenshot with explicit source identification."
+    ]
+  },
+  {
+    "id": "F2",
+    "title": "Characteristics of the SPF panel over time",
+    "kind": "figure",
+    "original_pages": "37, 38",
+    "status": "Partial reproduction",
+    "evidence": "Eight trait distributions recomputed for 100 quarters.",
+    "limitations": "Available metadata differ from the final figure; stream smoothing also differs.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure2_page1.png",
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure2_page2.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_characteristics_over_time.R",
+    "method_notes": [
+      "Port of fig_characteristics_over_time.R: group participant rows by quarter and trait; proportional stacked areas in original panel order.",
+      "Saved metadata differ from the final-PDF category composition (notably gender Unknown and the additional No public appearance category). Original ggstream smoothing is replaced by a Gaussian graphical smoother (2 quarters). Exact underlying shares are retained; category sets are checked, not adjusted to force agreement."
+    ]
+  },
+  {
+    "id": "F3",
+    "title": "SPF and AI-generated median forecasts",
+    "kind": "figure",
+    "original_pages": "39, 40",
+    "status": "Numerical match",
+    "evidence": "All 16 plotted forecast series agree at PDF coordinate rounding.",
+    "limitations": "Independent medians recomputed; typography and layout differ.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure3_page1.png",
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure3_page2.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_ts_median.R; /Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_human_ai_lgd.R",
+    "method_notes": [
+      "Port of fig_ts_median.R: quarterly cross-sectional AI medians and published human SPF medians, horizons 1 and 4.",
+      "Matplotlib typography and page layout differ from R/LaTeX."
+    ]
+  },
+  {
+    "id": "F4",
+    "title": "Distribution of Forecaster Fixed Effects",
+    "kind": "figure",
+    "original_pages": "41",
+    "status": "Match with caveat",
+    "evidence": "Histogram bars and visible means recovered from raw nowcasts.",
+    "limitations": "Filtering before demeaning yields 121 forecasters; caption states 194. Generating code was absent.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure4.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Raw baseline nowcasts, including the literal No Name Provided record. Restrict each variable to forecasters with >=10 observations BEFORE demeaning; average quarterly deviations by Name; 20 bins. Code was absent, so horizon/order were inferred and independently checked.",
+      "Published sample size 194 is inconsistent with 121 histogram participants after restriction. Main-text RGDP range/SD and CPI SD also differ from the recovered plotted values. No image pixels supplied generated values."
+    ]
+  },
+  {
+    "id": "F5",
+    "title": "Densities of human and AI-generated SPF individual forecast errors",
+    "kind": "figure",
+    "original_pages": "42, 43",
+    "status": "Close reproduction",
+    "evidence": "All 64 density curves agree closely with original vector shapes.",
+    "limitations": "Direct Gaussian KDE replaces R FFT density evaluation; peak-height residuals are reported.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure5_page1.png",
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure5_page2.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_densities.R",
+    "method_notes": [
+      "Port of fig_densities.R: AI individual forecasts plus human SPF microdata, minus corresponding realized value. Common Gaussian KDE bandwidth is mean group nrd0.",
+      "All 64 density curves compared against original vector paths. Gaussian KDE is evaluated directly; original R density uses FFT approximation. Detailed shape residuals are reported (roughly <=2% of peak height). No original plot points supply reproduction data."
+    ]
+  },
+  {
+    "id": "F6",
+    "title": "SPF and AI-generated median forecast errors around the LLM training data cut-off date",
+    "kind": "figure",
+    "original_pages": "44",
+    "status": "Numerical match",
+    "evidence": "All 8 plotted error series agree at PDF coordinate rounding.",
+    "limitations": "The figure uses the OOS file for 2023-2024, including its overlapping 2023 observations.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/Figure6.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_forecast_errors_outofsample.R; /Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_human_ai_lgd.R",
+    "method_notes": [
+      "Port of fig_forecast_errors_outofsample.R with final-PDF 2023 display window. Use outofsample_data.rda including 2023 overlap; horizon 1. All eight source curves match this provenance.",
+      "Archived plotting function concatenates baseline and OOS and begins in 2021; the final PDF instead matches the OOS run alone for 2023\u20132024. This provenance difference is identified by all eight numeric paths."
+    ]
+  },
+  {
+    "id": "T1",
+    "title": "Forecasting variables",
+    "kind": "table",
+    "original_pages": "45",
+    "status": "Source reproduced",
+    "evidence": "All 23 variable definitions rebuilt from manuscript source.",
+    "limitations": "Definitions are documentary content, not estimated quantities.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T1_replicated.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Definitions rebuilt from supplied TeX/text source, not independently estimated."
+    ]
+  },
+  {
+    "id": "T2",
+    "title": "Definitions of forecaster characteristics",
+    "kind": "table",
+    "original_pages": "46",
+    "status": "Source reproduced",
+    "evidence": "All 12 characteristic definitions rebuilt from source text.",
+    "limitations": "Definitions are documentary content, not estimated quantities.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T2_replicated.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Definitions rebuilt from supplied TeX/text source, not independently estimated."
+    ]
+  },
+  {
+    "id": "T3",
+    "title": "Descriptive statistics of forecast variables",
+    "kind": "table",
+    "original_pages": "47",
+    "status": "Numerical match",
+    "evidence": "All 207 printed numeric cells match.",
+    "limitations": "N=5,308 repeats realizations across forecasters; ACF uses stored row order rather than a unique quarterly series.",
+    "point_match": 207,
+    "point_total": 207,
+    "p_rounded_match": 0,
+    "p_mc_compatible": 0,
+    "p_total": 0,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T3_replicated.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_descriptive_stats.R",
+    "method_notes": [
+      "Faithful port of tab_descriptive_stats.R. Realizations repeat once per AI panel row (N=5,308), not once per quarter. ACF follows stored row order; e1071 type-3 moments are used. Series marked x1000 are divided by 1,000."
+    ]
+  },
+  {
+    "id": "T4",
+    "title": "Forecast accuracy of human and AI-generated SPF forecasts",
+    "kind": "table",
+    "original_pages": "48",
+    "status": "Partial reproduction",
+    "evidence": "Most MAEs match; many reported p-values do not.",
+    "limitations": "Code weights quarters by panel size and tests signed mean errors, although the caption describes MAE differences.",
+    "point_match": 133,
+    "point_total": 138,
+    "p_rounded_match": 9,
+    "p_mc_compatible": 13,
+    "p_total": 69,
+    "stars_match": 43,
+    "stars_total": 69,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T4_replicated.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_forecast_accuracy.R; /Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/randomization_test.R",
+    "method_notes": [
+      "Supplied code: MAEs weighted by AI panel row counts through a duplicate join; randomization tests use signed mean errors, although the paper describes MAE tests. 10,000 draws, seed 20261031."
+    ]
+  },
+  {
+    "id": "T5",
+    "title": "Percentage survey quarters where AI is more accurate than the human SPF",
+    "kind": "table",
+    "original_pages": "49",
+    "status": "Partial reproduction",
+    "evidence": "Most accuracy shares and randomization p-values match.",
+    "limitations": "Two displayed shares differ. Code counts ties as AI wins and reports fractions rather than 0-100 percentages.",
+    "point_match": 67,
+    "point_total": 69,
+    "p_rounded_match": 58,
+    "p_mc_compatible": 67,
+    "p_total": 69,
+    "stars_match": 69,
+    "stars_total": 69,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T5_replicated.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_num_quarters_AI_more_accurate.R",
+    "method_notes": [
+      "Shares count ties as AI wins, following the supplied R code; fractions are displayed (0.50 = 50%). Tests use 10,000 label swaps, seed 20261031."
+    ]
+  },
+  {
+    "id": "T6",
+    "title": "Forecast accuracy of best human and AI SPF forecasters",
+    "kind": "table",
+    "original_pages": "50",
+    "status": "Partial reproduction",
+    "evidence": "All 138 MAEs match; one p-value exceeds the Monte Carlo comparison tolerance.",
+    "limitations": "Code compares the best AI persona with the human MEDIAN on its quarters; the caption refers to the best human.",
+    "point_match": 138,
+    "point_total": 138,
+    "p_rounded_match": 51,
+    "p_mc_compatible": 68,
+    "p_total": 69,
+    "stars_match": 67,
+    "stars_total": 69,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T6_replicated.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_forecast_accuracy_best_forecasters.R",
+    "method_notes": [
+      "Supplied code selects best AI persona across time, then compares the human MEDIAN on that persona\u2019s quarters; it does not select the best human. Selection uses duplicate-join weights. Positional randomization is ported from R."
+    ]
+  },
+  {
+    "id": "T7",
+    "title": "Cross-Sectional Disagreement by Forecast Horizon",
+    "kind": "table",
+    "original_pages": "51",
+    "status": "Match with caveat",
+    "evidence": "All 40 displayed numeric cells match.",
+    "limitations": "Human horizons are actually 0/3; AI horizons are 1/4. Both panels are labeled 1/4 in the paper.",
+    "point_match": 40,
+    "point_total": 40,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": 8,
+    "stars_total": 8,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/Table_7.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Computed from raw forecasts, 1999\u20132023. Sample standard deviations (ddof=1); only quarters with positive SD at both horizons are retained. Paired two-sided t-tests compare long minus short SD; *** p<0.01. All 40 displayed numeric cells match the PDF. Indexing discrepancy: matching the printed Human panel requires current-quarter and three-quarter-ahead forecasts (SPF columns 2 and 5); the AI panel uses one- and four-quarter-ahead forecasts. The PDF labels both panels h+1/h+4."
+    ]
+  },
+  {
+    "id": "T8",
+    "title": "Relative accuracy of AI forecasts with fewer prompt inputs",
+    "kind": "table",
+    "original_pages": "52",
+    "status": "Partial reproduction",
+    "evidence": "All 168 ratios, including averages, match; significance patterns differ.",
+    "limitations": "Code randomizes AI/Human within each ablation using signed means, not baseline/ablation MAE differences.",
+    "point_match": 168,
+    "point_total": 168,
+    "p_rounded_match": 0,
+    "p_mc_compatible": 0,
+    "p_total": 0,
+    "stars_match": 119,
+    "stars_total": 161,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T8_replicated.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_forecast_accuracy_generic.R; /Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_forecast_accuracy_recall.R",
+    "method_notes": [
+      "Ratios follow supplied code (unweighted quarterly MAEs). Stars use its signed-mean test and swap AI/Human within each ablation, not baseline/ablation labels. Recall cache combines older recall data with later BAA values."
+    ]
+  },
+  {
+    "id": "T9",
+    "title": "AI Forecast Performance During Unexpected Events",
+    "kind": "table",
+    "original_pages": "53",
+    "status": "Match with caveat",
+    "evidence": "All 14 event Z-scores match.",
+    "limitations": "Uses h0 for Flash Crash and h1 for other events, including the pre-deadline S&P downgrade; SD is of signed errors.",
+    "point_match": 14,
+    "point_total": 14,
+    "p_rounded_match": 0,
+    "p_mc_compatible": null,
+    "p_total": 0,
+    "stars_match": 0,
+    "stars_total": 0,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T9.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Recomputed from supplied median AI forecast errors, 1999-2023. Z = (absolute event error - mean absolute error) / SD of signed error, separately by variable and horizon. Relevant-variable and all-variable scores are arithmetic means.",
+      "Event dates and days after the survey deadline are documentary metadata from manuscript Table 9. Deadline offsets have not been independently validated: the supplied deadline cache identifies months, not exact days. Negative offsets indicate events before the deadline.",
+      "The matching calculation uses h=0 for the Flash Crash and h=1 for every other event. The S&P downgrade therefore uses h=1 even though it preceded its survey deadline; applying the stated pre-deadline nowcast rule instead produces 0.38 for its relevant-variable score."
+    ]
+  },
+  {
+    "id": "T10",
+    "title": "AI Forecast Error Regressions on Knowledge Cut-Off Dummy Variable",
+    "kind": "table",
+    "original_pages": "54",
+    "status": "Match with caveat",
+    "evidence": "All 24 displayed coefficients, SEs, counts and R-squared values match.",
+    "limitations": "The 108 observations include duplicate 2023 quarters; there are 104 distinct quarters.",
+    "point_match": 24,
+    "point_total": 24,
+    "p_rounded_match": 0,
+    "p_mc_compatible": null,
+    "p_total": 0,
+    "stars_match": 8,
+    "stars_total": 8,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T10.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "OLS with intercept and a dummy for survey dates after October 31, 2023; one-quarter-ahead absolute AI median errors. Conventional OLS standard errors. Significance: * p<.05; ** p<.01; *** p<.001.",
+      "Exact reproduction requires concatenating the 100-quarter baseline and 8-quarter OOS files, including duplicate 2023 survey quarters: 108 observations but 104 distinct quarters. The four post-cutoff observations are 2024Q1-Q4."
+    ]
+  },
+  {
+    "id": "T11",
+    "title": "Forecast Revision Regressions: Human vs AI",
+    "kind": "table",
+    "original_pages": "54",
+    "status": "Not reproduced",
+    "evidence": "Only AI observation counts match among the 64 numeric cells.",
+    "limitations": "Original calculation code is missing. Several plausible lag/consensus definitions fail to reproduce the published estimates.",
+    "point_match": 8,
+    "point_total": 64,
+    "p_rounded_match": 0,
+    "p_mc_compatible": null,
+    "p_total": 0,
+    "stars_match": 15,
+    "stars_total": 16,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T11.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "The original computation script is absent. This reconstruction uses supplied nowcasts: revision = forecast(t) - previous available forecast; lagged error = previous realization - previous forecast; consensus deviation = previous forecast - previous human SPF median. OLS includes an intercept and HC1 standard errors. Recalculated significance: *** p<0.01, following the original table. AI uses all raw responses, including the placeholder name, while human IDs come from supplied SPF microdata.",
+      "Published coefficients, standard errors, human observation counts and most R\u00b2 values are not reproduced. AI N=5,188 is reproduced. Gaps and duplicate name-quarter observations are retained as supplied and counted in the numeric audit. The body says within-panel consensus whereas the caption says SPF consensus; the alternative within-panel estimates are also retained in the numeric file and do not reproduce the target. Alternate lag, realization-vintage and legacy-input checks did not identify the published estimator. This is an explicitly qualified reconstruction, not a confirmed replication."
+    ]
+  },
+  {
+    "id": "T12",
+    "title": "Reasoning Categories by Economic Period",
+    "kind": "table",
+    "original_pages": "55",
+    "status": "Numerical match",
+    "evidence": "All 28 counts and percentages match.",
+    "limitations": "Requires all 5,388 raw responses, including 80 placeholder-name rows excluded from the main cleaned panel.",
+    "point_match": 28,
+    "point_total": 28,
+    "p_rounded_match": 0,
+    "p_mc_compatible": null,
+    "p_total": 0,
+    "stars_match": 0,
+    "stars_total": 0,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T12.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Recomputed using all 5,388 source reasoning responses, including the 80 rows named \"No Name Provided\". Nonexclusive case-insensitive substring matches use the exact Appendix C keyword lists. Model-based = Mechanical OR Model; Judgment-based = Policy OR Event.",
+      "Financial Crisis: 2008Q3-2009Q4; COVID-19: 2020Q1-Q4; Inflation Shock: 2022Q1-Q4; otherwise Normal. Counts and all percentages match the final paper at its printed precision."
+    ]
+  },
+  {
+    "id": "FA1",
+    "title": "Number of forecasters in the SPF panel over time",
+    "kind": "figure",
+    "original_pages": "61",
+    "status": "Numerical match",
+    "evidence": "Both 100-quarter count series match at PDF coordinate rounding.",
+    "limitations": "AI counts require the older baseline workbook, not the current baseline used by most tables.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/FigureA1.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_num_forecasters_over_time.R; /Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_human_ai_lgd.R",
+    "method_notes": [
+      "Port of fig_num_forecasters_over_time.R. Original workbook AI row counts; human microdata row counts by quarter/variable/horizon, then average. Later baseline vintage differs."
+    ]
+  },
+  {
+    "id": "FA2",
+    "title": "Duration of participation of each forecaster individual forecaster in the SPF panel over time",
+    "kind": "figure",
+    "original_pages": "62",
+    "status": "Partial reproduction",
+    "evidence": "189 of 193 membership patterns match; both have 5,208 unique tiles.",
+    "limitations": "Current metadata contain 5,236 records versus 5,232 in the original plotted asset.",
+    "point_match": null,
+    "point_total": null,
+    "p_rounded_match": null,
+    "p_mc_compatible": null,
+    "p_total": null,
+    "stars_match": null,
+    "stars_total": null,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/figures/FigureA2.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/fig_participation_over_time.R",
+    "method_notes": [
+      "Restrict individual_forecasters.csv to the 193 original AI names; duration=n()/4; start=first(date_q); order descending start and duration; draw forecaster-quarter tiles.",
+      "Original data_wide vintage unavailable: current metadata yield 5236 records, original vector asset5232; both have5208 unique tiles. 189 of193 original forecaster membership patterns match current metadata exactly. Ordering/tie handling and gradient rendering also differ."
+    ]
+  },
+  {
+    "id": "TB13",
+    "title": "Out-of-sample forecast accuracy (mean absolute errors) of SPF and AI-generated SPF forecasts",
+    "kind": "table",
+    "original_pages": "64",
+    "status": "Match with caveat",
+    "evidence": "All 138 MAEs match; all 69 p-values are compatible with Monte Carlo variation.",
+    "limitations": "Uses 2023-2024 and h0/1/4, unlike printed labels. Saved h4 errors are unclipped where current preparation code clips; raw preprocessing is not fully reproduced.",
+    "point_match": 138,
+    "point_total": 138,
+    "p_rounded_match": 40,
+    "p_mc_compatible": 69,
+    "p_total": 69,
+    "stars_match": 68,
+    "stars_total": 69,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/TB13_replicated.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_forecast_accuracy_outofsample.R",
+    "method_notes": [
+      "Saved OOS errors use 2023Q1\u20132024Q4 and horizons 0/1/4; printed labels say 2024 and 0/1/2. Saved h4 errors are unclipped where current prepare_data.R would clip, so raw preprocessing is not fully reproduced. A 2024-only diagnostic is saved."
+    ]
+  },
+  {
+    "id": "TB14",
+    "title": "Out-of-sample forecast accuracy (mean absolute errors) of best human and AI SPF fore- casters",
+    "kind": "table",
+    "original_pages": "65",
+    "status": "Partial reproduction",
+    "evidence": "Historical source reconstruction matches only part of the table.",
+    "limitations": "Older AI data and 2024 target cutoff improve agreement; best AI is compared with human median. Current-data caption method also saved.",
+    "point_match": 70,
+    "point_total": 132,
+    "p_rounded_match": 18,
+    "p_mc_compatible": 30,
+    "p_total": 66,
+    "stars_match": 66,
+    "stars_total": 66,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/TB14_replicated.png"
+    ],
+    "source_scripts": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/Simulating_SPF_processing/functions/tab_forecast_accuracy_best_outofsample.R",
+    "method_notes": [
+      "Historical reconstruction: older 492-row AI workbook, best AI per quarter versus HUMAN MEDIAN, evaluation targets through 2024Q4 (4/3/2 quarters). This differs from the caption\u2019s best-human rule. The current-data/caption-method diagnostic is also saved; remaining mismatches are retained."
+    ]
+  },
+  {
+    "id": "TD15",
+    "title": "Forecast accuracy (mean absolute errors) of AI-generated and AR(1) SPF forecasts relative to human accuracy",
+    "kind": "table",
+    "original_pages": "68",
+    "status": "Match with caveat",
+    "evidence": "All 138 ratios, 69 p-values and 69 star patterns match.",
+    "limitations": "Reconstructed AR(1) begins with two lagged pairs; DM test uses absolute loss and test horizon 1 for every forecast horizon.",
+    "point_match": 138,
+    "point_total": 138,
+    "p_rounded_match": 69,
+    "p_mc_compatible": null,
+    "p_total": 69,
+    "stars_match": 69,
+    "stars_total": 69,
+    "reproduced_paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/TD15.png"
+    ],
+    "source_scripts": "",
+    "method_notes": [
+      "Reconstructed with expanding OLS AR(1) models fitted separately to median human forecasts at each horizon, using only past survey observations from the baseline. Minimum training sample: two lagged pairs; rank-deficient fits are omitted. Ratios use the human MAE over its available sample; AI is restricted to dates with a human forecast, while AR(1) has fewer initial observations.",
+      "Diebold-Mariano tests use absolute losses (power=1), Harvey small-sample adjustment, two-sided t reference, and test horizon h=1 for all three forecast horizons. All 138 ratios and 69 p-values match to two decimals; significance stars are separately checked."
+    ]
+  }
+]

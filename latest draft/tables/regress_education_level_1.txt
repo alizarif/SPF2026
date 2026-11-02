@@ -1,0 +1,20 @@
+\begin{tabular}{ld{1.2}d{1.2}d{1.2}d{1.2}}
+\toprule
+& \multicolumn{1}{c}{CPI Inflation Rate} & \multicolumn{1}{c}{Treasury Bill Rate (3M)} & \multicolumn{1}{c}{Real GDP} & \multicolumn{1}{c}{Unemployment Rate } \\ \midrule
+Intercept                       & 2.52^{***} & 0.68^{***} & 167.36^{***} & 0.44^{***} \\
+& (0.24)  & (0.06)  & (39.64)   & (0.13)  \\
+Master's & -0.11   & -0.17^{**} & 24.73     & 0.11    \\
+& (0.25)  & (0.07)  & (41.52)   & (0.14)  \\
+MBA/MPA  & -0.56^{+}  & -0.04   & 108.38^{*}   & 0.09    \\
+& (0.31)  & (0.08)  & (50.81)   & (0.17)  \\
+Ph.D.    & -0.13   & -0.17^{**} & 15.92     & 0.11    \\
+& (0.25)  & (0.06)  & (40.33)   & (0.13)  \\
+Unknown  & -0.24   & -0.05   & -8.47     & 0.00    \\
+& (0.26)  & (0.07)  & (42.53)   & (0.14)  \\
+\midrule
+Time FE & \multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y} \\
+Num.Obs.                          & \multicolumn{1}{c}{5183}    & \multicolumn{1}{c}{5183}    & \multicolumn{1}{c}{5182}      & \multicolumn{1}{c}{5175}    \\
+R2 Adj.                           & 0.00   & 0.01   & 0.00     & 0.00   \\
+\bottomrule
+\multicolumn{5}{r}{\rule{0pt}{1em}+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001}
+\end{tabular}

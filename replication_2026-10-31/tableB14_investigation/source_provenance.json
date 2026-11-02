@@ -1,0 +1,18 @@
+{
+  "sha256": {
+    "Simulating_SPF_processing/data/merged_results_spf_format_oos.xlsx": "c0542a9c5442ed8c5e555536300710b707e38f9ab7463c21c056e6f33ae69a0d",
+    "Simulating_SPF_processing/data/merged_file_outofsample_2024_SPF6_cleaned.xlsx": "9bf7cea25380f2f431906de9ce6d2de232adf90c4900bdd39ca124922cc75bec",
+    "Simulating_SPF_processing/data/SPFmicrodata.xlsx": "099f718cbd369babe81f9325583c7eb6068b88b5c75ccddc8c9b696c7f7dfc42",
+    "Simulating_SPF_processing/data/SPF_full_ts.csv": "9eda090eb144f57b066475d8f54855adb146c7e3fee655c16aa6a7e5f65e03ad",
+    "Simulating_SPF_processing/data/realized_post2023q4.csv": "a7d5c2907d0816c4164d37d7e3d0ec824cedde51a77c6d331099c0f7cd1fc482",
+    "Simulating_SPF_processing/data/realized_post2023q4.numbers": "aecddfa86f7effec7706a763f29cff98a41642eadb9d8ec990c47229616c8990",
+    "Simulating_SPF_processing/functions/prepare_data.R": "9d860e8f2655d90ffd561ab5a889caa898323396b0263853c9b7e33a16960d8f",
+    "Simulating_SPF_processing/functions/tab_forecast_accuracy_best_outofsample.R": "8da7ea2de33569821678e055e729d10b2799ae92cd180b39ca6cbb6e37a7ad6a",
+    "Simulating_SPF_processing/functions/tab_forecast_accuracy_outofsample.R": "04b3d177d94eab6e55d0f7c89393f9d22b10b592254ab919cfcdb8a4073069f1",
+    "Simulating_SPF_processing/functions/randomization_test.R": "85befc693f3a655b89c75698c48d8a1be67f6833326ac33a42fb9a968269cc5f",
+    "Simulating_SPF_processing/tables_figures_all.R": "92d1d8e67b5c4a545815bc51d54b4250ddd5b6ba749ea5e3b9d36830f2547247",
+    "Simulating_SPF_processing/tables/forecast_accuracy_best_forecasters_oos.txt": "eb352e6e626055dac209061a19f9da9abb5721a052d4ddeb5fbf522adaedff30",
+    "latest draft/tables/forecast_accuracy_best_forecasters_oos.txt": "eb352e6e626055dac209061a19f9da9abb5721a052d4ddeb5fbf522adaedff30"
+  },
+  "all_source_files_unchanged": true
+}

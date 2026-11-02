@@ -1,0 +1,33 @@
+recall and unexpected-event exercises.
+Table 10
+5.4
+Forecast Revision Dynamics
+A central question in the expectations literature is how forecasters update beliefs in response
+to new information. Professional forecasts may reflect error correction, information rigidities,
+attention constraints, and convergence toward consensus. Our synthetic panel allows us to ask
+whether LLM-based forecasters display similar updating behavior, and where they differ from
+human professionals. Human forecasters update their beliefs gradually in response to new
+information and past forecast errors (Coibion and Gorodnichenko, 2012; Bordalo et al., 2020).
+We assess whether AI forecasters replicate the patterns of human professional forecasters by
+analyzing forecast revisions across consecutive quarters for both panels. For each forecaster i
+and survey t, we define the forecast revision as:
+revisioni,t = forecasti,t − forecasti,t−1,
+(12)
+where forecast is either the human forecast, hi,t, or the AI forecast, mAI
+i,t.
+We test two hypotheses central to the expectations formation literature: (1) forecasters correct
+past errors, and (2) forecasters converge toward the consensus view. The first hypothesis is
+assessed by regressing revisions on the forecast error from the previous survey. A coefficient
+of one implies that forecasters fully revise their predictions in response to past errors; e.g., if
+a forecaster underestimated GDP by $100 billion, they revise upward by approximately $100
+billion in the following quarter. To test the second hypothesis, we regress forecast revisions on
+deviations from the consensus, i.e., median forecast, within each panel.
+Table 11 reports these regressions separately for the nowcasts of human SPF participants
+(Panel A) and AI forecasters (Panel B). Both human and AI forecasters exhibit significant error
+correction, but with different magnitudes.
+Human forecasters display near-complete error
+correction: coefficients range from 0.88 (CPI) to 0.98 (RGDP), with R2 values between 0.64 and
+0.94. AI forecasters also correct past errors, but only partially. Error correction coefficients
+range from 0.44 (CPI) to 0.65 (UNEMP), approximately 40-65% of the human response. This
+suggests that AI forecasters place less weight on realized forecast errors when updating their
+24

@@ -1,0 +1,59 @@
+Table 1: Forecasting variables
+The table lists the variables for which the SPF panel provides point forecasts and their definitions.
+Variable
+Definition
+Section 1: U.S. Business Indicators
+NGDP
+Nominal Gross Domestic Product (GDP), levels, seasonally adjusted, annual rate, in billions USD.
+PGDP
+Gross Domestic Product (GDP) price index, chain weighted, seasonally adjusted, 2010 base year.
+CPROF
+Level of nominal corporate profits after tax excluding inventory valuation adjustment (IVA) and capital
+consumption adjustment (CCAdj). Seasonally adjusted, annual rate, in billions USD.
+UNEMP
+Civilian unemployment rate, levels, seasonally adjusted, percentage points.
+EMP
+Nonfarm payroll employment, seasonally adjusted, in thousands of jobs.
+INDPROD
+Industrial production index, seasonally adjusted, index, 2010 base year.
+HOUSING
+Housing starts, seasonally adjusted, annual rate, in millions.
+TBILL
+T-Bill rate, 3-month, levels, percentage points.
+BOND AAA
+AAA corporate bond yield, levels, percentage points.
+BOND BAA
+BAA corporate bond yield, levels, percentage points.
+TBOND
+Treasury bond rate, 10-year, levels, percentage points.
+Section 2: Real GDP and Its Components
+RGDP
+Real Gross Domestic Product, seasonally adjusted, annual rate, 2010 base year.
+RCONSUM
+Real personal consumption expenditures, seasonally adjusted, annual rate, 2010 base year.
+RNRESIN
+Real nonresidential fixed investment, seasonally adjusted, annual rate, 2010 base year.
+RRESINV
+Real residential fixed investment, seasonally adjusted, annual rate, 2010 base year.
+RFEDGOV
+Real federal government consumption and gross investment, seasonally adjusted, annual rate, 2010
+base year.
+RSLGOV
+Real state and local government consumption and gross investment, seasonally adjusted, annual rate,
+2010 base year.
+RCBI
+Real change in private inventories, levels, chain-weighted real change in private inventories. Seasonally
+adjusted, annual rate, 2010 base year.
+REXPORT
+Real net exports of goods and services, levels, chain-weighted real net exports. Seasonally adjusted,
+annual rate, 2010 base year.
+Section 3: CPI and PCE Inflation
+CPI
+Headline CPI inflation rate, seasonally adjusted, annual rate, percentage points.
+CORECPI
+Core CPI inflation rate, seasonally adjusted, annual rate, percentage points.
+PCE
+PCE inflation rate, headline chain-weighted, seasonally adjusted, annual rate, percentage points.
+COREPCE
+Core PCE inflation rate, core chain-weighted PCE inflation rate, seasonally adjusted, annual rate,
+percentage points.

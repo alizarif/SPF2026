@@ -1,0 +1,36 @@
+{
+  "policy": "Embedded credential literals replaced by environment-variable lookup only in copied reference R files. Original workspace files unchanged. No secret values are recorded.",
+  "files": [
+    {
+      "file": "Simulating_SPF_processing/functions/prepare_data.R",
+      "lines": [
+        363
+      ],
+      "original_sha256": "9ffd06e07c3a316ab7c84dac3f2855bc91175a53ba0934a7c97df820e1d8ce49",
+      "packaged_sha256": "9d860e8f2655d90ffd561ab5a889caa898323396b0263853c9b7e33a16960d8f"
+    },
+    {
+      "file": "Simulating_SPF_processing/tables_figures_WSJ.R",
+      "lines": [
+        50
+      ],
+      "original_sha256": "b925081ed57adc0ff13126a8dd6a375bd4471391e39d454a7455b32487e3bec6",
+      "packaged_sha256": "6a2b20b81cd39148037fcb69c1c980e8a57267f977f2728d8fa00cd6863c75e0"
+    },
+    {
+      "file": "Simulating_SPF_processing/tables_figures_all_CPI.R",
+      "lines": [
+        114
+      ],
+      "original_sha256": "a81a18d98d87059cc12a2601ca17a4aebd75bcc9092f4ae513987f423023fb62",
+      "packaged_sha256": "4d4ecb81e9714250ad89cd81ea935434f7dfa2abef27f4dd39d5e258ee93d08a"
+    }
+  ],
+  "omitted_archives": [
+    {
+      "file": "Simulating_SPF_processing/generic_output.RData",
+      "original_sha256": "e4cca60e63c9f6e63d397e280e200121d61e1a0293a20169c24760911d4f36c4",
+      "replacement_manifest": "replication_2026-10-31/data_cache/archived_generic_objects.json"
+    }
+  ]
+}

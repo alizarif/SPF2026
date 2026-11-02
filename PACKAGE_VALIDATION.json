@@ -1,0 +1,70 @@
+{
+  "validation_date": "2026-11-02",
+  "python": "3.11",
+  "workflows": {
+    "verify": "passed, including after cache rebuild",
+    "tables": "passed",
+    "legacy": "passed",
+    "rebuild_cache": "passed"
+  },
+  "updated_table11_b14_recomputed_from_packaged_inputs": true,
+  "verified_numeric_cells": 1709,
+  "table11_regressions_verified": 16,
+  "table_b14_quarterly_minima_verified": 261,
+  "table_b14_tests_verified": 66,
+  "canonical_pdf": {
+    "path": "replication_2026-10-31/output/pdf/tables_verified_results.pdf",
+    "pages": 15,
+    "all_pages_pixel_identical_to_reviewed_original": true,
+    "sha256": "585e45f677374fb8e402aebe773940148cb0424a4927af3a13ebbe7d1d4fcebe",
+    "red_numeric_annotations": 421,
+    "red_header_annotations": 1,
+    "blue_rounding_only_annotations": 0
+  },
+  "legacy_report": {
+    "pages": 60,
+    "text_identical_pages": 60,
+    "image_payloads_identical_pages": 60,
+    "render_identical_pages": 60,
+    "image_count_original": 55,
+    "image_count_packaged": 55,
+    "original_pdf_sha256": "339e2eb37b301c8dae20b36bae09fdda22f31fec39b2e255136ab08e82fedc3f",
+    "package_pdf_sha256": "cb1b3c331848466897b1276aa6d972897dbda2b59e19284a35180de814a6c282",
+    "poppler_rendered_pages": 60,
+    "poppler_exit_code": 0,
+    "poppler_messages": [
+      {
+        "message": "",
+        "count": 1024
+      },
+      {
+        "message": "Fontconfig error: No writable cache directories",
+        "count": 1024
+      },
+      {
+        "message": "\t/Users/ec2-user/work/codex-native-deps/019e749a-1b9d-4d7d-9e1e-26f1c533bed8/poppler/prefix/var/cache/fontconfig",
+        "count": 1024
+      },
+      {
+        "message": "\t/Users/alizarif/.cache/fontconfig",
+        "count": 1024
+      },
+      {
+        "message": "Fontconfig error: Cannot load default config file: File not found",
+        "count": 1
+      }
+    ]
+  },
+  "cache_comparison_with_reviewed_original": {
+    "parquet_files_compared": 31,
+    "differences": []
+  },
+  "source_reconciliation": "All compared numeric source columns match. Recall BAA values are separately reconciled to the later recall workbook, as documented in data_cache/raw_reconciliation.json.",
+  "publication_review": {
+    "text_files_checked": 459,
+    "credential_matches": 0,
+    "six_r_inputs_unchanged_from_prior_full_scan": true,
+    "files_above_100_mb": 0
+  },
+  "interpretation": "Workflow success verifies the packaged calculations and artifacts. It does not mean all published values or all original methods were recovered; see README.md and the investigation findings."
+}

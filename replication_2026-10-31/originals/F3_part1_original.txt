@@ -1,0 +1,49 @@
+Figure 3: SPF and AI-generated median forecasts
+The figure shows the one- and four-quarter ahead median human and AI-generated SPF forecasts for the (a)-(b)
+CPI inflation rate, (c)-(d) 3-month Treasury bill rate, (e)-(f) unemployment rate, and (g)-(h) real GDP index. Shaded
+areas show NBER recession quarters.
+(a) CPI inflation rate, one quarter ahead
+−2.5%
+0%
+2.5%
+5%
+7.5%
+2000
+2010
+2020
+(b) CPI inflation rate, four quarters ahead
+0%
+2%
+4%
+2000
+2010
+2020
+(c) 3-month Treasury bill rate, one quarter ahead
+0%
+2%
+4%
+6%
+2000
+2010
+2020
+(d) 3-month Treasury bill rate, four quarters ahead
+0%
+2%
+4%
+6%
+2000
+2010
+2020
+−3
+0
+3
+6
+9
+2000
+2005
+2010
+2015
+2020
+Human
+AI
+(Figure continues on next page)

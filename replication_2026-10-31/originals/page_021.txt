@@ -1,0 +1,31 @@
+In contrast, removing real-time data often pushes the ratios further above one, showing a
+clearer deterioration in how well the AI forecaster tracks realized outcomes. Eliminating both
+real-time data and past median SPF forecasts is associated with even higher MAE ratios, and we
+can typically reject that these ratios are equal to one with p-values below one percent. For some
+variables, the loss in performance is extreme. For example, the four-quarter-ahead expectations
+for real GDP are 73% worse compared with the baseline, whereas the nowcast is worse by a
+factor near six. Eliminating these pieces of information forces the AI to rely almost entirely
+on its pre-trained knowledge without current context or the valuable proxy for zt. In terms of
+the framework, this is equivalent to conditioning only on a much more limited information set,
+leading to a larger approximation error and thus much higher MAEs.
+The importance of past median SPF forecasts for generating forecasts reflect the persistence
+of most variables in the SPF. However, we show in Appendix D that human SPF forecasts are
+not merely simple AR(1) model-implied forecasts, and that AI forecasts are closer to the human
+survey compared with AR(1) forecasts.
+Overall, the performance of the AI forecaster deteriorates progressively as more inputs are
+removed from the prompt, highlighting that information inputs play a key role in determining
+the performance of LLMs: SPF-like median expectations require common macro information
+and a consensus signal. In particular, past median SPF forecasts strongly contribute to the AI’s
+ability to reproduce human expectations and to track realizations. The critical role of lagged
+human forecasts reflects a fundamental feature of our approach. On the one hand, conditioning
+on lagged human forecasts enables the LLM to access indirect signals about factors that are
+difficult to quantify (professional judgment, institutional knowledge, narrative context). On
+the other hand, this dependence implies that the current LLM framework is best suited as a
+complement to traditional surveys, valuable for exploring counterfactual scenarios and belief
+distributions, rather than as a replacement.
+5.3
+Are LLMs Forecasting or Recalling?
+In this section, we address a critical concern: whether our results reflect temporal data contam-
+ination; that is, whether the LLM inadvertently uses information from after the forecast date
+that was included in its training data. Limiting large language models to use only information
+21

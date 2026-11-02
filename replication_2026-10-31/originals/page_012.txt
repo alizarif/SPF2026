@@ -1,0 +1,39 @@
+conducted by the Federal Reserve Bank of Philadelphia since 1990. Response deadlines typically
+fall mid-quarter.8 Although the survey form has evolved over time, with eight updates from
+1999 to 2023, its core structure remains intact. The SPF plays a central role in informing policy
+makers, serves as a key benchmark for evaluating forecast accuracy in academic research, and is
+the longest-running publicly available forecasting project, providing a rich dataset of forecasts
+on key macroeconomic indicators (Croushore, 1993).9
+3.1
+Forecast Variables
+As of 2024, the SPF collects point forecasts for 23 economic variables at nine horizons: the
+current quarter (nowcast), one to four quarters ahead, the current year, and one to three years
+ahead. The variables are summarized in Table 1. Altogether, these variables cover a wide range
+of indicators with different properties, including both growth rates and levels. In this paper,
+we focus on the point forecasts for the current quarter and one to four quarters ahead, covering
+the period from 1999 to 2023. We exclude the years prior to 1999 because forecasters’ names
+were not publicly available before that time. Further, for our out-of-sample exercise, we focus
+on 2024. Table 3 provides descriptive statistics. The data is from the real-time macroeconomic
+data set from the Federal Reserve Bank of Philadelphia, which we format to match the data
+transformations in the SPF.10
+3.2
+The SPF Panel
+SPF panelists are typically considered to be a benchmark for attentive agents. They typically rely
+on a mix of data analysis, quantitative models, and professional judgment to make predictions
+as part of their jobs. Most have significant experience in macroeconomic forecasting. New
+8 Complete information and documentation are available through the Federal Reserve Bank of Philadelphia (link).
+See the full schedule of deadlines and release dates here.
+9 The SPF is used as a benchmark to the Federal Reserve staff projections in the Tealbook. See, e.g., the latest
+published Tealbook associated with the December 2018 FOMC meeting at the Board of Governors’ website. As for
+academic research, please see Diebold et al. (1999); Giordani and Söderlind (2003); Engelberg et al. (2009); Manzan
+(2011); Clements (2014); Rossi and Sekhposyan (2015); Clements and Galvão (2017); Croushore and Stark (2019),
+among many.
+10 For example, percent changes are calculated per the SPF definition:
+��
+Xt
+Xt−1
+�4
+− 1
+�
+× 100.
+12

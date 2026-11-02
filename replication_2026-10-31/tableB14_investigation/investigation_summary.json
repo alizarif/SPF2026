@@ -1,0 +1,24 @@
+{
+  "primary_method": "Caption-accurate recalculation using current raw data and exact paired MAE tests",
+  "table": "B.14",
+  "horizons": [
+    0,
+    1,
+    2
+  ],
+  "quarter_records": 264,
+  "eligible_quarter_records": 261,
+  "tests": 66,
+  "sample_sizes": {
+    "2": 1,
+    "3": 1,
+    "4": 64
+  },
+  "minimum_exact_p": 0.125,
+  "mismatching_printed_cells": 189,
+  "numeric_cells": 198,
+  "historical_ai_mae_matches_out_of66": 63,
+  "historical_human_raw_mae_matches_out_of66": 62,
+  "historical_human_clipped_mae_matches_out_of66": 62,
+  "all_source_files_unchanged": true
+}

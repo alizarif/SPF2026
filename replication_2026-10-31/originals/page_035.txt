@@ -1,0 +1,23 @@
+Isabelle Salle, Yuriy Gorodnichenko, and Olivier Coibion. Lifetime Memories of Inflation:
+Evidence from Surveys and the Lab. Journal of Political Economy Macroeconomics, 2026. doi:
+10.1086/741544. Published online March 26, 2026. Previously NBER Working Paper 31996,
+December 2023.
+Tom Stark. Realistic evaluation of real-time forecasts in the Survey of Professional Forecasters.
+Research rap special report, Federal Reserve Bank of Philadelphia, May 2010. URL
+https://www.philadelphiafed.org/-/media/frbp/assets/economy/reports/
+research-rap/2010/realistic-evaluation-of-real-time-forecasts.pdf.
+Tom Stark. SPF Panelists’ Forecasting Methods: A Note on the Aggregate Results of a
+November 2009 Special Survey. Research note, Federal Reserve Bank of Philadelphia,
+Real-Time Data Research Center, March 2013. URL https://www.philadelphiafed.org/-/
+media/frbp/assets/surveys-and-data/survey-of-professional-forecasters/
+spf-special-survey-on-forecast-methods.pdf.
+Gaurav Suri, Lily R. Slater, Ali Ziaee, and Morgan Nguyen. Do Large Language Models Show
+Decision Heuristics Similar to Humans? A Case Study Using GPT-3.5. Journal of
+Experimental Psychology: General, 153(4):1066–1075, 2024. doi: 10.1037/xge0001547.
+Toni M Whited. Integrating structural and reduced-form methods in empirical finance. Journal
+of Financial Econometrics, 21(3):597–615, 2023.
+Jing Cynthia Wu, Jin Xi, and Shihan Xie. LLM survey framework: Coverage, reasoning,
+dynamics, identification. SSRN working paper, 2025.
+Ali Zarifhonarvar. Generating inflation expectations with large language models. Journal of
+Monetary Economics, 157:103859, 2026. doi: 10.1016/j.jmoneco.2025.103859.
+35

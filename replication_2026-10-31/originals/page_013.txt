@@ -1,0 +1,32 @@
+forecasters are recruited via SPF’s Call for Participants and undergo a trial period, during which
+submissions are checked for conceptual accuracy.
+Panelists work in diverse environments:
+some at forecasting firms, others at banks or financial institutions; the panel also includes chief
+economists from industry trade groups and manufacturers, as well as academics specializing
+in forecasting methods.
+Although SPF panelists remain anonymous, the individual-level dataset includes each fore-
+caster’s industry classification (“financial” or “non-financial” service provider) and identifiers
+that allow researchers to track forecasts across rounds. This anonymity protects forecasters’
+professional interests and encourages honest, unbiased forecasts without concern for repercus-
+sions (Croushore and Stark, 2019). While we have access to the forecasters’ names, they are
+not disclosed in this paper to preserve their anonymity. The SPF panel composition changes
+over time as respondents join or leave, and some may skip certain questions, resulting in an
+unbalanced panel. The average panel size fluctuates around forty participants (see Figure A.1
+in appendix).
+Forecasters use various methods to produce predictions. Stark (2013) shows that most rely on
+quantitative models but adjust for current conditions and recent trends, often supplementing
+their models with subjective beliefs. Methods also vary by forecast horizon; for instance, the
+model for predicting current-quarter GDP may differ substantially from that used for forecasting
+average GDP growth over five years.
+3.3
+Who Are the Forecasters on the SPF Panel?
+Although SPF panelists are anonymized in published datasets, the Philadelphia Fed acknowl-
+edges most of their participants by listing their names on its website (example in Figure 1).
+Many panelists also share their participation on social media or professional platforms.
+We compile forecaster characteristics exclusively from publicly available sources (e.g., the
+Philadelphia Fed acknowledgements and public professional profiles). We use these character-
+istics only to parameterize synthetic personas and do not attribute any simulated forecasts or
+explanations to named individuals. In the analysis, we work with anonymized identifiers and
+report results in aggregate. We also avoid inferring or imputing sensitive personal attributes;
+when a characteristic is not publicly available, we leave it missing rather than guessing.
+13

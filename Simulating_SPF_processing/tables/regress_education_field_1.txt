@@ -1,0 +1,22 @@
+\begin{tabular}{ld{1.2}d{1.2}d{1.2}d{1.2}}
+\toprule
+& \multicolumn{1}{c}{CPI Inflation Rate} & \multicolumn{1}{c}{Treasury Bill Rate (3M)} & \multicolumn{1}{c}{Real GDP} & \multicolumn{1}{c}{Unemployment Rate } \\ \midrule
+Intercept                                      & 2.38^{***} & 1.15^{***} & 0.01^{***} & 0.09^{***} \\
+& (0.36)  & (0.14)  & (0.00)  & (0.01)  \\
+Econometrics/Statistics & -0.85   & -0.16   & 0.00    & -0.03   \\
+& (0.85)  & (0.34)  & (0.00)  & (0.02)  \\
+Economics/Finance       & -0.07   & -0.10   & 0.00    & -0.01   \\
+& (0.37)  & (0.15)  & (0.00)  & (0.01)  \\
+Law                     & -1.64   & -0.89   & 0.02^{*}   & -0.03   \\
+& (1.63)  & (0.65)  & (0.01)  & (0.04)  \\
+Public Administration   & 0.28    & -0.09   & 0.00    & -0.04^{**} \\
+& (0.64)  & (0.25)  & (0.00)  & (0.01)  \\
+Unknown                 & -0.65   & -0.28^{+}  & 0.00    & -0.02^{**} \\
+& (0.41)  & (0.16)  & (0.00)  & (0.01)  \\
+\midrule
+Time FE & \multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y} \\
+Num.Obs.                                         & \multicolumn{1}{c}{5137}    & \multicolumn{1}{c}{5183}    & \multicolumn{1}{c}{5182}    & \multicolumn{1}{c}{5175}    \\
+R2 Adj.                                          & 0.00   & 0.00   & 0.00   & 0.00   \\
+\bottomrule
+\multicolumn{5}{r}{\rule{0pt}{1em}+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001}
+\end{tabular}

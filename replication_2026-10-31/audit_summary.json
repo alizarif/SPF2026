@@ -1,0 +1,18 @@
+{
+  "items": 23,
+  "figures": 8,
+  "tables": 15,
+  "statuses": {
+    "Source reproduced": 3,
+    "Partial reproduction": 7,
+    "Numerical match": 5,
+    "Match with caveat": 6,
+    "Close reproduction": 1,
+    "Not reproduced": 1
+  },
+  "point_total": 1298,
+  "point_match": 1173,
+  "p_total": 411,
+  "p_rounded_match": 245,
+  "cells_in_audit": 2305
+}

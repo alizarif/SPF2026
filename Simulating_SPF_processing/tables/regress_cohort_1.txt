@@ -1,0 +1,20 @@
+\begin{tabular}{ld{1.2}d{1.2}d{1.2}d{1.2}}
+\toprule
+& \multicolumn{1}{c}{CPI Inflation Rate} & \multicolumn{1}{c}{Treasury Bill Rate (3M)} & \multicolumn{1}{c}{Real GDP} & \multicolumn{1}{c}{Unemployment Rate } \\ \midrule
+Intercept             & 1.65^{***} & 0.79^{***} & 0.01^{***} & 0.06^{***} \\
+& (0.31)  & (0.12)  & (0.00)  & (0.01)  \\
+1970-1989 & 0.56    & 0.26^{+}   & 0.00    & 0.01^{+}   \\
+& (0.34)  & (0.14)  & (0.00)  & (0.01)  \\
+1990-2009 & 0.82^{*}   & 0.34^{*}   & 0.00    & 0.02^{**}  \\
+& (0.34)  & (0.14)  & (0.00)  & (0.01)  \\
+2010-     & 0.71    & 0.20    & 0.00^{+}   & 0.04^{***} \\
+& (0.47)  & (0.19)  & (0.00)  & (0.01)  \\
+Unknown   & 0.41    & 0.18    & 0.00    & 0.01    \\
+& (0.34)  & (0.13)  & (0.00)  & (0.01)  \\
+\midrule
+Time FE & \multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y} \\
+Num.Obs.                & \multicolumn{1}{c}{5137}    & \multicolumn{1}{c}{5183}    & \multicolumn{1}{c}{5182}    & \multicolumn{1}{c}{5175}    \\
+R2 Adj.                 & 0.00   & 0.00   & 0.00   & 0.00   \\
+\bottomrule
+\multicolumn{5}{r}{\rule{0pt}{1em}+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001}
+\end{tabular}

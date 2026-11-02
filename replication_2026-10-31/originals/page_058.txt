@@ -1,0 +1,17 @@
+Prompt 3: Prompt for a generic forecaster and no real-time data
+This prompt is used to generate AI forecasts for a generic forecaster, i.e., without including forecaster characteristics.
+The input variables are highlighted in brackets and blue text and consist of previous forecasts, survey dates, and
+forecasting variable names.
+You are a professional economic forecaster participating in the Survey of Professional Forecasters.
+You have expertise in macroeconomic analysis and forecasting. Use your professional judgment and the
+data provided to make your forecasts.
+We are in [date_q]. You are about to fill out the forecast form for [date_q]. Using only the
+information available to you as of [release_date], please provide your best numeric forecasts for:
+[variable_definitions].
+For quarters: t (current), t+1, t+2, t+3, t+4, and annual averages for this year and next year.
+Previous SPF panel forecasts ([prev_quarter]): [var_forecasts_text].
+Do not incorporate any data beyond [release_date]. Consider all relevant economic conditions and
+Federal Reserve actions up to [release_date].
+Format your response as: [variable_name]: t, t+1, t+2, t+3, t+4, this year’s avg, next year’s avg
+Provide only numbers.
+58

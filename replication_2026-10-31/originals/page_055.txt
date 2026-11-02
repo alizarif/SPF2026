@@ -1,0 +1,49 @@
+Table 12: Reasoning Categories by Economic Period
+Percentage of forecaster responses containing each reasoning type. Categories are non-exclusive. Detailed categories:
+Mechanical (trends, historical patterns, mean-reversion); Policy (Fed actions, fiscal/monetary policy); Model (eco-
+nomic theory such as Phillips curve, Okun’s law); Event (specific shocks or crises). ECB aggregation: Following
+ECB methodology, Model-Based combines Mechanical ∪ Model; Judgment-Based combines Policy ∪ Event. All
+differences between crisis and normal periods are statistically significant (p < 0.001).
+Detailed Categories
+ECB Aggregation
+Period
+N
+Mechanical
+Policy
+Model
+Event
+Model-Based
+Judgment-Based
+Normal
+4,626
+98.6%
+55.2%
+86.7%
+19.7%
+99.6%
+63.3%
+Financial Crisis
+346
+84.7%
+34.4%
+37.6%
+82.4%
+88.4%
+87.6%
+COVID-19
+204
+72.1%
+59.8%
+26.5%
+77.0%
+72.5%
+79.9%
+Inflation Shock
+212
+85.4%
+87.3%
+97.2%
+30.2%
+98.1%
+87.7%
+55

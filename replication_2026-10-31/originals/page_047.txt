@@ -1,0 +1,241 @@
+Table 3: Descriptive statistics of forecast variables
+The table shows the number of observations (N), mean, standard deviation (SD), skewness, kurtosis, median,
+minimum, maximum, and first-order autocorrelation coefficient (ACF(1)) of the data for each of the forecast variables.
+N
+Mean
+SD
+Skewness
+Kurtosis
+Median
+Min
+Max
+ACF(1)
+Section 1: US Business Indicators
+Nominal GDP (x1000)
+5308
+16.03
+4.72
+0.55
+−0.44
+15.01
+8.68
+27.62
+0.90
+GDP Price
+5308
+92.22
+13.34
+0.41
+−0.37
+91.40
+70.60
+122.85
+0.90
+Corporate Profits (x1000)
+5308
+1.38
+0.57
+0.52
+−0.31
+1.27
+0.49
+2.90
+0.87
+Unemployment Rate
+5308
+5.75
+2.04
+1.40
+2.32
+5.00
+3.40
+14.70
+0.71
+Non-Farm Payroll (x1000)
+5308
+138.61
+8.04
+0.72
+−0.71
+136.21
+127.68
+156.92
+0.88
+Industrial Production
+5308
+110.36
+13.76
+1.34
+0.96
+106.00
+92.50
+147.30
+0.86
+Housing Starts
+5308
+1.29
+0.44
+−0.13
+−1.01
+1.25
+0.51
+2.11
+0.86
+Treasury Bill Rate (3M)
+5308
+1.88
+2.00
+0.76
+−0.91
+1.15
+0.02
+6.29
+0.83
+AAA Corp Bond Yield
+5308
+4.83
+1.34
+0.25
+−0.53
+4.93
+2.14
+7.78
+0.88
+BAA Corp Bond Yield
+5308
+5.88
+1.42
+0.17
+−0.79
+6.01
+3.24
+8.88
+0.85
+Treasury Bond Rate (10Y)
+5308
+3.35
+1.37
+0.16
+−0.79
+3.39
+0.62
+6.66
+0.84
+Section 2: Real GDP and Its Components
+Real GDP (x1000)
+5308
+14.05
+3.78
+0.29
+−1.06
+13.33
+7.68
+22.49
+0.90
+Real PCE (x1000)
+5308
+9.81
+2.62
+0.27
+−0.98
+9.42
+5.25
+15.49
+0.91
+Real Non-Res Fixed Inv (x1000) 5308
+1.82
+0.65
+0.68
+−1.01
+1.44
+0.99
+3.27
+0.90
+Real Res Fixed Inv
+5308
+493.98
+122.31
+0.10
+−1.27
+504.30
+293.30
+734.00
+0.86
+Real Federal C&GI (x1000)
+5308
+0.97
+0.28
+−0.11
+−1.18
+1.04
+0.45
+1.49
+0.90
+Real State/Local C&GI (x1000) 5308
+1.52
+0.37
+0.19
+−1.07
+1.46
+0.85
+2.34
+0.89
+Real Change in Private Inv
+5308
+24.95
+69.41
+−1.12
+3.69
+34.50 −287.00
+193.20
+0.37
+Real Net Exports
+5308
+−610.58
+285.40
+−1.43
+1.27
+−533.10−1544.70−250.00
+0.86
+Section 3: CPI and PCE Inflation
+CPI Inflation Rate
+5308
+2.52
+3.14
+−1.14
+7.41
+2.48
+−13.39
+10.73
+0.00
+Core CPI Inflation Rate
+5308
+2.33
+1.49
+2.21
+8.36
+2.19
+−1.09
+10.21
+0.31
+PCE Inflation Rate
+5308
+0.69
+7.61
+−4.05
+16.31
+2.14
+−40.91
+6.91
+0.03
+Core PCE Inflation Rate
+5308
+−0.21
+2.95
+−9.29
+85.64
+0.03
+−28.31
+2.00
+−0.04
+47

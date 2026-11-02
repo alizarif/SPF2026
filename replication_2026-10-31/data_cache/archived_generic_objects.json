@@ -1,0 +1,35 @@
+{
+  "source": "Simulating_SPF_processing/generic_output.RData",
+  "original_sha256": "e4cca60e63c9f6e63d397e280e200121d61e1a0293a20169c24760911d4f36c4",
+  "selection_reason": "Only these tabular objects are required for the T8 archival rounding audit. Full serialized workspace omitted because it retained a credential. Values unchanged; no source R code executed.",
+  "objects": {
+    "accuracy_generic_no_data": {
+      "path": "data_cache/archived_generic_accuracy_generic_no_data.parquet",
+      "rows": 23,
+      "columns": [
+        "variable_longname",
+        "0",
+        "4"
+      ],
+      "sha256": "cfdf6ea27c8e7f93b1aa2eec430aa17ad26ef8775d69d57a9ff1efdc13ad55bd"
+    },
+    "tests": {
+      "path": "data_cache/archived_generic_tests.parquet",
+      "rows": 23,
+      "columns": [
+        "variable_longname",
+        "generic_0",
+        "generic_4",
+        "empty1",
+        "generic_no_realtime_0",
+        "generic_no_realtime_4",
+        "empty2",
+        "generic_no_data_0",
+        "generic_no_data_4",
+        "empty3",
+        "generic_recall_0"
+      ],
+      "sha256": "cfeabe74c40df3fd726772f33cf0fe94b244be31556670c35c38ef889a0967a1"
+    }
+  }
+}

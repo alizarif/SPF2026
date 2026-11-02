@@ -1,0 +1,20 @@
+\begin{tabular}{ld{1.2}d{1.2}d{1.2}d{1.2}}
+\toprule
+& \multicolumn{1}{c}{CPI Inflation Rate} & \multicolumn{1}{c}{Treasury Bill Rate (3M)} & \multicolumn{1}{c}{Real GDP} & \multicolumn{1}{c}{Unemployment Rate } \\ \midrule
+Intercept                                          & 1.93^{***} & 1.62^{***} & 0.02^{***} & 0.10^{***} \\
+& (0.13)  & (0.08)  & (0.00)  & (0.00)  \\
+Interviews only      & 0.19    & 0.03    & 0.00^{+}   & -0.01^{+}  \\
+& (0.16)  & (0.10)  & (0.00)  & (0.00)  \\
+No public appearance & -0.10   & -0.21^{+}  & 0.00    & -0.01   \\
+& (0.19)  & (0.12)  & (0.00)  & (0.01)  \\
+Twitter only         & -0.26   & 0.16    & 0.00    & 0.00    \\
+& (0.35)  & (0.23)  & (0.00)  & (0.01)  \\
+Unknown              & -0.45   & -0.41   & 0.00    & -0.05^{**} \\
+& (0.53)  & (0.34)  & (0.00)  & (0.02)  \\
+\midrule
+Time FE & \multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y}&\multicolumn{1}{c}{Y} \\
+Num.Obs.                                             & \multicolumn{1}{c}{5138}    & \multicolumn{1}{c}{5185}    & \multicolumn{1}{c}{5184}    & \multicolumn{1}{c}{5177}    \\
+R2 Adj.                                              & 0.00   & 0.00   & 0.00   & 0.00   \\
+\bottomrule
+\multicolumn{5}{r}{\rule{0pt}{1em}+ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001}
+\end{tabular}

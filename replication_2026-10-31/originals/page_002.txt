@@ -1,0 +1,32 @@
+1
+Introduction
+Expectations are a central object in monetary economics. They shape policy transmission, disci-
+pline models of information rigidity, and provide real-time measures of beliefs about inflation,
+output, and interest rates. Recognizing this, economists and policymakers rely on surveys as
+a measurement tool to capture expectations about future economic variables and conditions
+(e.g., Rudebusch, 2002; Orphanides and Williams, 2002, 2007; Patton and Timmermann, 2010;
+Manzan, 2011, 2021; Almås et al., 2024; Caplin, 2025). However, traditional surveys face inherent
+limitations.
+Surveys are costly to administer, constraining both sampling frequency and sample size.
+They lack flexibility, e.g., it is difficult to revise existing questions or add new ones, and new
+questions lack historical responses, limiting their value for time series analysis. Beyond that,
+most macroeconomic surveys solicit numeric answers with little insight into the reasoning
+behind them. Finally, surveys depend heavily on institutional infrastructure and funding, the
+stability of which has come under stress in recent years. These limitations have prompted
+calls for methodological innovation (Caplin, 2025). At the same time, a growing literature is
+exploring whether LLMs can serve as useful models of human behavior and expectations, and
+whether they can become a valuable new research tool in economics (e.g., see Jackson et al.,
+2025). Although recent studies suggest that LLMs can reproduce aspects of human decision-
+making and expectations, we still know relatively little about which dimensions of behavior
+they capture well, where they systematically differ from humans, and for which applications
+they are most useful. We contribute to this emerging literature by focusing on professional
+macroeconomic forecasters, using the Survey of Professional Forecasters (SPF) as a laboratory
+for evaluating the promise and limitations of LLM-based synthetic agents, and show that they
+can help mitigate some of these limitations.
+We develop a framework that uses LLMs to simulate individual participants in the SPF.
+Because LLMs are trained on large-scale text data, they can capture systematic patterns in how
+people describe, interpret, and justify decisions, which can be leveraged to approximate human
+reasoning in structured tasks (Suri et al., 2024; Niu et al., 2024). Recent work further shows
+that LLMs can reproduce behavioral patterns of economic agents in experimental contexts (e.g.,
+Horton, 2023; Hansen and Lee, 2025; Kazinnik, 2026; Zarifhonarvar, 2026). In our setting, this
+2

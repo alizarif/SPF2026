@@ -1,0 +1,24 @@
+SPF.template.name,variable,variable_real_time_data,variable_AI_output,Units,variable_longname,variable_realized
+Nominal GDP,NGDP,gdp_n,Nominal GDP,Billions USD,Nominal GDP,NGDP_R
+GDP Price Index (Chain),PGDP,,GDP Price Index,Index,GDP Price,PGDP_R
+Corporate Prof After Tax,CPROF,prof_at_n,Corporate Profit After Tax,Billions USD,Corporate Profits,CPROF_R
+Civilian Unemp Rate,UNEMP,uer,Civilian Unemployment Rate,Percentage Points,Unemployment Rate,UNEMP_R
+Nonfarm Payroll Employment,EMP,employ,Nonfarm Payroll Employment,Thousands,Non-Farm Payroll,EMP_R
+Industrial Prod Index,INDPROD,indust_prod,Industrial Production Index,Index,Industrial Production,INDPROD_R
+Housing Starts,HOUSING,hstarts,Housing Starts,Millions,Housing Starts,HOUSING_R
+"T-Bill Rate, 3-month",TBILL,GS3M,"T-Bill Rate, 3-month",Percentage Points,Treasury Bill Rate (3M),TBILL_R
+Moody's AAA Corp Bond Yield,BOND,AAA,AAA Corp Bond Yield,Percentage Points,AAA Corp Bond Yield,BOND_R
+Moody's BAA Corp Bond Yield,BAABOND,BAA,BAA Corp Bond Yield,Percentage Points,BAA Corp Bond Yield,BAABOND_R
+"Treasury Bond Rate, 10-year",TBOND,GS10,"Treasury Bond Rate, 10-year",Percentage Points,Treasury Bond Rate (10Y),TBOND_R
+Real GDP,RGDP,gdp,Real GDP,Index,Real GDP,RGDP_R
+Real Personal Cons Expenditures,RCONSUM,PCE_real,Real Personal Consumption Expenditures,Index,Real PCE,RCONSUM_R
+Real Nonres Fixed Investment,RNRESIN,priv_inv_nonres,Real Nonresidential Fixed Investment,Index,Real Non-Res Fixed Inv,RNRESIN_R
+Real Res Fixed Investment,RRESINV,priv_inv_res,Real Residential Fixed Investment,Index,Real Res Fixed Inv,RRESINV_R
+Real Fed Government C & GI,RFEDGOV,federal_consumption,Real Federal Govt Consumption & Gross Investment,Index,Real Federal C&GI,RFEDGOV_R
+Real State & Local C & GI,RSLGOV,local_consumption,Real State & Local Govt Consumption & Gross Investment,Index,Real State/Local C&GI,RSLGOV_R
+Real Change in Private Inventories,RCBI,ch_priv_invest,Real Change in Private Inventories,Index,Real Change in Private Inv,RCBI_R
+Real Net Exports of Goods & Services,REXPORT,net_exports,Real Net Exports of Goods & Services,Index,Real Net Exports,REXPORT_R
+CPI Inflation Rate,CPI,cpi_pct,CPI Inflation Rate,Percentage Points,CPI Inflation Rate,CPI_R
+Core CPI Inflation Rate,CORECPI,cpicore_pct,Core CPI Inflation Rate,Percentage Points,Core CPI Inflation Rate,CORECPI_R
+PCE Inflation Rate,PCE,pce_pct,PCE Inflation Rate,Percentage Points,PCE Inflation Rate,PCE_R
+Core PCE Inflation Rate,COREPCE,corepce_pct,Core PCE Inflation Rate,Percentage Points,Core PCE Inflation Rate,COREPCE_R

@@ -1,0 +1,14 @@
+ground truth for calibration and validation; the LLM panel provides a flexible experimental
+platform for testing hypotheses that are challenging to address with traditional surveys. This
+complementarity is the core contribution of our framework.
+Statement of use of generative AI: During the preparation of this work, the authors used
+large language models as part of the research design, as described in the paper. In particular,
+we used OpenAI models, primarily GPT-4o mini, together with robustness checks using GPT-
+3.5, GPT-4, Llama-3.3-70B, and DeepSeek-V3, to construct synthetic professional forecasters
+and generate simulated Survey of Professional Forecasters responses. The OpenAI Assistants
+API was used to automate query generation, forecast collection, and response processing. In
+addition, the authors used ChatGPT/OpenAI tools for limited language editing, proofreading,
+and improving the clarity of the manuscript. The authors reviewed, edited, validated, and
+analyzed all AI-generated output as needed and take full responsibility for the content of the
+article.
+29

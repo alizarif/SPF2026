@@ -1,0 +1,30 @@
+References
+Ajay Agrawal, Joshua Gans, and Avi Goldfarb. Prediction, judgment, and complexity: A
+theory of decision-making and artificial intelligence. In The Economics of Artificial Intelligence:
+An Agenda, pages 89–110. University of Chicago Press, 2019. doi:
+10.7208/chicago/9780226613475.003.0003.
+Ingvild Almås, Orazio Attanasio, and Pamela Jervis. Presidential Address: Economics and
+Measurement: New Measures to Model Decision Making. Econometrica, 92(4):947–978, 2024.
+Peter Andre, Carlo Pizzinelli, Christopher Roth, and Johannes Wohlfart. Subjective Models of
+the Macroeconomy: Evidence From Experts and Representative Samples. Review of Economic
+Studies, 89(6):2958–2991, 2022. doi: 10.1093/restud/rdac008.
+Andrew Ang, Geert Bekaert, and Min Wei. Do macro variables, asset markets, or surveys
+forecast inflation better? Journal of Monetary Economics, 54(4):1163–1212, 2007.
+Robert L Axtell and J Doyne Farmer. Agent-based modeling in economics and finance: Past,
+present, and future. Journal of Economic Literature, 63(1):197–287, 2025. doi:
+10.1257/jel.20221319.
+Roy Batchelor. Bias in Macroeconomic Forecasts. International Journal of Forecasting, 23(2):
+189–203, 2007.
+Jonathan Benchimol, Makram El-Shagi, and Yossi Saadon. Do Expert Experience and
+Characteristics Affect Inflation Forecasts? Journal of Economic Behavior & Organization, 201:
+205–226, 2022.
+Pedro Bordalo, Nicola Gennaioli, Yueran Ma, and Andrei Shleifer. Overreaction in
+macroeconomic expectations. American Economic Review, 110(9):2748–2782, 2020. doi:
+10.1257/aer.20181219.
+J. Leland Bybee. The Ghost in the Machine: Generating Beliefs with Large Language Models.
+Working Paper, University of Chicago Booth School of Business, 2025. URL
+https://lelandbybee.com/files/LLM.pdf. First draft February 2023; previously titled
+“Surveying Generative AI’s Economic Expectations” (SSRN 4430515, arXiv:2305.02823).
+Sean Cao, Wei Jiang, Junbo Wang, and Baozhong Yang. From man vs. machine to man+
+machine: The art and AI of stock analyses. Journal of Financial Economics, 160:103910, 2024.
+30

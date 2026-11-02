@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\begin{document}
+
+\section*{Story} 
+\begin{itemize}
+    \item What? Can agentic AI be used to replicate the Survey of Professional Forecasters?
+    \item Why? If AI agents can mimic human forecasters, we can use simulated surveys to understand what shapes expectations, extend survey questions and frequency, etc. If not, we expect that the AI agent survey might prove useful, as algorithms can better exploit the information in the data given to them than humans (Sendhil). 
+    \item How? We replicate the survey design of the SPF as closely as possible. Emphasize that we do not give AI an advantage - same input as humans.
+    \item Results: \emph{See the_story.tex}
+    \begin{enumerate}
+        \item AI agents are not humans (Table 4), although they do share similarities (Figures 6-7).
+        \item AI is often more accurate than humans (Table 5-7).
+        \item This is remarkable: We are comparing to \textit{professional} forecasters - not households. The AI forecast accuracy is a lower bound (we could likely improve by giving AI access to model-processed data, optimizing the AI agent for the task in the spirit of Horton and Benjamin, etc?). Also underscore that we are not giving AI an advantage in the way we are setting up the survey.
+        \item The accuracy of AI requires SPF-specific information to perform well (especially past median forecasts, but also human characteristics and real-time data) (Table 8). AI is thus not good on its own, it needs human input.
+        \item Temporal Leakage? AI does not recall and tentative evidence shows that it also works well out-of-sample (Table 8-10).
+    \end{enumerate}
+    \item Implications: Policy makers can use AI agents (when seeded with information) in addition to humans.
+\end{itemize}
+
+
+\section*{Tables}
+We might need a general section in the beginning of describing our results, where we make clear that:
+\begin{itemize}
+    \item We focus on four key variables (CPI Inflation Rate, Treasury Bill Rate (3M), Unemployment Rate, and Real GDP) which are particularly relevant for policy and emphasized in the quarterly published SPF results.
+    \item AI-generated forecasts are winsorized by 3 standard deviations. 
+    \item Emphasizing that we can't match individual-level human and AI forecasts.
+    \item How we test the outcomes (randomization tests and a reference to this (\url{https://www.tandfonline.com/doi/full/10.1080/01621459.2023.2199814}, see also original reference to Fisher (1935) therein))
+    \item Other points?
+\end{itemize}
+
+\begin{itemize}
+    \item Table 1 - no change compared to previous draft
+    \item Table 2 - no change compared to previous draft (twitter -> x)
+    \item Table 3: Descriptive stats
+        \begin{itemize}
+            \item Table shows key descriptive stats of all variables in the survey.
+            \item Survey generates forecasts for variables that are very different - some are growth rates, some are levels; means vary a lot; some are restricted to positive domain (Housing Starts) while some can be negative (inflation rates); some have high variability (PCE Inflation Rate - actually inflation rates in general), others less (Industrial Production); some are thin tailed (Real GDP) while others are fat tailed (Core PCE Inflation Rate); some are highly persistent (Nominal GDP - autocorrelation coefficient of 0.84) while others are not (CPI Inflation Rate - autocorrelation coefficient of 0.01). 
+            \item Heterogeneity across variables may present a challenge for AI when given in one prompt?
+        \end{itemize}
+    \item Table 4: Testing moments of distributions of human vs AI forecasts
+        \begin{itemize}
+            \item Panel (a): Nowcast. Panel (b): four-quarter-ahead horizon. Numbers are difference in moments, stars indicate significance as evaluated using randomization tests.
+            \item For most variables, human- and AI-generated surveys are significantly different across most moments. A few exceptions: 
+            \begin{itemize}
+                \item The median nowcast of the Unemployment Rate is not statistically different across human and AI survey. The other moments are significantly different in a statistical sense, but the differences are small comparing to the descriptive statistics. 
+                \item Same for Core PCE Inflation Rate. But, at the four-quarter-ahead horizon, the human- and AI-generated median forecasts for Core PCE Inflation are significantly different.
+                \item Reverse pattern for other inflation rates, i.e., different at median nowcast but not different at the four-quarter-ahead horizon.
+            \end{itemize}
+            \item Thus, AI cannot quantitatively mimic/replace human forecasters.
+            \item But, many of the differences are not economically different. Point out CPI Inflation Rate, Treasury Bill Rate (3M), Unemployment Rate, Real GDP (200 median difference, but the median of the data is 13000). 
+            \item For these four emphasized variables, Figure 6 shows time-series plots of median AI and human forecasts, underscoring that the forecasts are similar. Discuss the differences (AI more variable than human for CPI, human predict lift-off from zero-lower bound for interest rate whereas AI does not, humans predict higher unemployment rate during crises than AI). 
+            \item Also, Figure 7 show density plots for these four variables in normal and crisis times. In some cases they are very similar, in others, big differences. The periods where they are different do not always align with uncertain periods - it looks like there is no pattern really.
+            \item Finally, note huge differences (in magnitude, relative to descriptive stats) for Real PCE.  
+        \end{itemize}
+    \item Table 5
+        \begin{itemize}
+            \item Table reports forecast accuracy as MAEs for human and AI for three horizons (0,1,4) with p-values from randomization tests testing if the median human- and AI-generated forecasts are significantly different on average (note to ourselves: this is different from the randomization tests of moments testing if different moments are different). Boldface value with lowest error.
+            \item AI is often more accurate than humans - this is most evident (number of variables where this is true and in terms of statistical significance) for the long forecasting horizon. 
+            \item Touch upon the four key variables: CPI inflation: human and AI are economically similar, and which is the best forecaster varies by horizon (similar for all inflation rates). Treasury Bill Rate: Human better at nowcast and one-quarter ahead, AI better four quarters ahead. Unemployment and real GDP: AI better at all horizons and the diff is statistically signficant. 
+        \end{itemize}
+    \item Table 6
+        \begin{itemize}
+            \item Table 5 considers the average forecast error. To get a more complete picture of potential variations across quarters, we look at the number of quarters where AI is more accurate. 
+            \item Table reports the percentage of quarters where AI is more accurate than human SPF for three horizons (0,1,4) with p-values from randomization tests testing if percentages are significantly different from 50\%. Boldface value above 50\%.
+            \item Most variables and horizons, AI is most accurate for more than half of the quarters (and this is statistically significant).
+            \item Again, discuss results for our four key variables.
+            \item Also, discuss Real PCE as an exception. 
+        \end{itemize}
+    \item Table 7
+        \begin{itemize}
+            \item To conclude discussion on forecast accuracy, we also compare the best performing human and AI forecasters.
+            \item For each survey (human, AI) best forecasters are chosen as the ones that have the lowest absolute forecast errors on average across all quarters.
+            \item Table reports forecast accuracy as MAEs for the best human and AI for three horizons (0,1,4) with p-values from randomization tests testing if the median human- and AI-generated forecasts are significantly different on average. Boldface value with lowest error.
+            \item Using some or all of our four key variables, mention how much better the best AI and humans are compared to Table 5 (e.g. unemployment rate, AI MAE for four-quarter ahead was 0.91 across all forecasters, but just 0.08 for best forecast - the human equivalent drops from 0.94 to 0.15).
+            \item Now, AI outperforms humans almost across the board (even for Real PCE which was crazy in the other tables). Differences are not statistically significant because of lack of power in these tests (power is low because we only have quarters for which the best forecasters participate in the sample - this varies between 4 and 20 quarters) but they are economically different. 
+            \item Mention exceptions: Mainly Non-Farm Payroll and Core CPI.
+        \end{itemize}
+    \item Table 8
+        \begin{itemize}
+            \item The table shows how the accuracy of AI-generated forecasts changes as a function of the information in the prompt. Reported values are MAEs relative to MAEs obtained with baseline prompt. Boldfaced values are above one. P-values are from randomization tests testing if the values exceed one. \emph{We may want to re-name the blocks in the table - the difference ``Generic w/o real-time data'' and ``Generic w/o any data'' is not immediately clear. Let me think about this..}
+            \item First comment on the average results: More information in the prompt is associated with lower forecast errors - this holds for all horizons. Especially median forecast seems to be important, particularly at the nowcast. also, it is important to prompt the model as a forecast exercise, rather than asking it to recall values / the model is not recalling.
+            \item Comment on a few results for individual variables - focus on the four key variables. 
+            \item For recall, maybe mention that here winsorizing the results were key. Without doing so, results were crazy..
+        \end{itemize}
+    \item Table 9/10 - out-of-sample analysis
+        \begin{itemize}
+            \item Same structure as Table 5/7
+            \item Emphasize that we don't have data points to statistically evaluate the forecast accuracy of AI vs human.
+        \end{itemize}
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,33 @@
+group with varied educational backgrounds, roles, and affiliations.
+As Figure A.2 in the
+Appendix shows, panelist tenure varies widely, with some contributing for over 25 years and
+others for shorter periods, adding both established and fresh perspectives. Gender distribution
+has seen slight improvement over time, though men remain the majority. Most panelists are
+from the USA, with some European and Asian representation.
+While public engagement
+remains limited, more forecasters now use social media platforms like Twitter (X) and grant
+interviews. Most panelists hold a Ph.D. in Economics or Finance; the share of Master’s degree
+holders has remained steady, while Bachelor’s and MBA/MPA degrees are less common. Chief
+Economists and Economists predominate, though consultants and analysts are increasingly
+visible. Affiliations span consulting firms, universities, and asset management; consulting and
+academia remain prominent, while commercial banking has declined in favor of investment
+banking and asset management.
+Taken together, these facts highlight a long-lived but evolving panel of macroeconomic experts
+with persistent heterogeneity in training, roles, and institutional context. In the next section,
+we use these observable differences as inputs to construct synthetic forecasters that mirror the
+human SPF participants.
+4
+Simulating the SPF with LLMs
+We next outline our simulation procedure. We use the information described in the previous
+section to construct personalized profiles that mirror human participants and generate synthetic
+forecaster personas. To closely match the forecasting environment humans face, we embed each
+AI forecaster in a prompt that includes real-time macroeconomic data and historical SPF median
+forecasts, and have them generate point forecasts for each quarter between 1999Q1 and 2023Q4.
+In addition, we extend the simulation to include an out-of-sample test covering 2024Q1 through
+2024Q4, allowing us to evaluate model performance beyond its training window.
+4.1
+Models
+We run the simulated survey using a number of large language models. Our main analysis relies
+on GPT-4o mini with a temperature of 1.0. We also conduct robustness checks with GPT-3.5,
+GPT-4, Llama-3.3-70B, and DeepSeek-V3. These models span different generations: GPT-3.5 as
+15

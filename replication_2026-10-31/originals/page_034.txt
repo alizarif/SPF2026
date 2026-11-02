@@ -1,0 +1,31 @@
+N. Gregory Mankiw, Ricardo Reis, and Justin Wolfers. Disagreement about Inflation
+Expectations. NBER Macroeconomics Annual, 18:209–248, 2003. doi: 10.1086/ma.18.3585256.
+Sebastiano Manzan. Differential Interpretation in the Survey of Professional Forecasters.
+Journal of Money, Credit and Banking, 43(5):993–1017, 2011. doi:
+10.1111/j.1538-4616.2011.00404.x.
+Sebastiano Manzan. Are Professional Forecasters Bayesian? Journal of Economic Dynamics and
+Control, 123:104045, 2021. doi: 10.1016/j.jedc.2020.104045.
+Sendhil Mullainathan and Jann Spiess. Machine learning: An applied econometric approach.
+Journal of Economic Perspectives, 31(2):87–106, 2017. doi: 10.1257/jep.31.2.87.
+Scott Murray, Yusen Xia, and Houping Xiao. Charting by machines. Journal of Financial
+Economics, 153:103791, 2024.
+Qian Niu, Junyu Liu, Ziqian Bi, Pohsun Feng, Benji Peng, Keyu Chen, Ming Li, Lawrence KQ
+Yan, Yichao Zhang, Caitlyn Heqi Yin, Cheng Fei, Tianyang Wang, Yunze Wang, Silin Chen,
+Ming Liu, Ziyuan Qin, Riyang Bao, Xinyuan Song, and Zekun Jiang. Large Language
+Models and Cognitive Science: A Comprehensive Review of Similarities, Differences, and
+Challenges. arXiv preprint arXiv:2409.02387, 2024.
+Athanasios Orphanides and John C. Williams. Robust Monetary Policy Rules with Unknown
+Natural Rates. Brookings Papers on Economic Activity, 2002(2):63–145, 2002. doi:
+10.1353/eca.2003.0007.
+Athanasios Orphanides and John C. Williams. Robust Monetary Policy with Imperfect
+Knowledge. Journal of Monetary Economics, 54(5):1406–1435, 2007. doi:
+10.1016/j.jmoneco.2007.06.005.
+Andrew J. Patton and Allan Timmermann. Why Do Forecasters Disagree? Lessons from the
+Term Structure of Cross-Sectional Dispersion. Journal of Monetary Economics, 57(7):803–820,
+2010. doi: 10.1016/j.jmoneco.2010.07.001.
+Barbara Rossi and Tatevik Sekhposyan. Macroeconomic Uncertainty Indices Based on
+Nowcast and Forecast Error Distributions. American Economic Review, 105(5):650–655, 2015.
+doi: 10.1257/aer.p20151124.
+Glenn D. Rudebusch. Assessing Nominal Income Rules for Monetary Policy with Model and
+Data Uncertainty. Economic Journal, 112(479):402–432, 2002. doi: 10.1111/1468-0297.00036.
+34

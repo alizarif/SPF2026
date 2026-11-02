@@ -1,0 +1,28 @@
+\begin{tabular}{ld{3.2}d{3.2}}
+\toprule
+& \multicolumn{1}{c}{Recall} & \multicolumn{1}{c}{Nowcast}\\
+\midrule
+Nominal GDP & 2017.44 & \multicolumn{1}{B{.}{.}{2,2}}{1.49} \\
+GDP Price & 39.62 & \multicolumn{1}{B{.}{.}{2,2}}{25.71} \\
+Corporate Profits & 47.16 & \multicolumn{1}{B{.}{.}{2,2}}{6.91} \\
+Unemployment Rate & 4.70 & \multicolumn{1}{B{.}{.}{2,2}}{4.40} \\
+Non-Farm Payroll & 1097.83 & \multicolumn{1}{B{.}{.}{2,2}}{0.18} \\
+Industrial Production & 15.51 & \multicolumn{1}{B{.}{.}{2,2}}{0.48} \\
+Housing Starts & 2303510.64 & \multicolumn{1}{B{.}{.}{2,2}}{4.38} \\
+Treasury Bill Rate (3M) & \multicolumn{1}{B{.}{.}{2,2}}{31.33} & 54.11 \\
+AAA Corp Bond Yield & 14.12 & \multicolumn{1}{B{.}{.}{2,2}}{4.16} \\
+Treasury Bond Rate (10Y) & \multicolumn{1}{B{.}{.}{2,2}}{8.61} & 13.76 \\
+Real GDP & 2148.38 & \multicolumn{1}{B{.}{.}{2,2}}{0.60} \\
+Real PCE & 2157.98 & \multicolumn{1}{B{.}{.}{2,2}}{15.92} \\
+Real Non-Res Fixed Inv & 1932.33 & \multicolumn{1}{B{.}{.}{2,2}}{1.27} \\
+Real Res Fixed Inv & 5376.60 & \multicolumn{1}{B{.}{.}{2,2}}{2.03} \\
+Real Federal C\&GI & 7967.66 & \multicolumn{1}{B{.}{.}{2,2}}{1.04} \\
+Real State/Local C\&GI & 2772.79 & \multicolumn{1}{B{.}{.}{2,2}}{0.63} \\
+Real Change in Private Inv & 11646.09 & \multicolumn{1}{B{.}{.}{2,2}}{139.27} \\
+Real Net Exports & 2394.60 & \multicolumn{1}{B{.}{.}{2,2}}{4.79} \\
+CPI Inflation Rate & \multicolumn{1}{B{.}{.}{2,2}}{177.00} & 184.45 \\
+Core CPI Inflation Rate & 47.55 & \multicolumn{1}{B{.}{.}{2,2}}{40.26} \\
+PCE Inflation Rate & 82.42 & \multicolumn{1}{B{.}{.}{2,2}}{79.55} \\
+Core PCE Inflation Rate & 5111.42 & \multicolumn{1}{B{.}{.}{2,2}}{4793.90} \\
+\bottomrule
+\end{tabular}

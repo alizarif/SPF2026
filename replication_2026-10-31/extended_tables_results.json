@@ -1,0 +1,141 @@
+{
+  "T9": {
+    "id": "T9",
+    "paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T9.png"
+    ],
+    "png_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T9.png",
+    "numeric_json": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T9_numeric.json",
+    "status": "Reproduced with documented method clarification",
+    "notes": [
+      "Recomputed from supplied median AI forecast errors, 1999-2023. Z = (absolute event error - mean absolute error) / SD of signed error, separately by variable and horizon. Relevant-variable and all-variable scores are arithmetic means.",
+      "Event dates and days after the survey deadline are documentary metadata from manuscript Table 9. Deadline offsets have not been independently validated: the supplied deadline cache identifies months, not exact days. Negative offsets indicate events before the deadline.",
+      "The matching calculation uses h=0 for the Flash Crash and h=1 for every other event. The S&P downgrade therefore uses h=1 even though it preceded its survey deadline; applying the stated pre-deadline nowcast rule instead produces 0.38 for its relevant-variable score."
+    ],
+    "counts": {
+      "point_total": 14,
+      "point_match": 14,
+      "p_total": 0,
+      "p_rounded_match": 0,
+      "p_mc_compatible": null,
+      "star_total": 0,
+      "star_match": 0
+    },
+    "method_script": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/scripts/replicate_extended_tables.py",
+    "source_files": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/baseline_ts.parquet"
+    ],
+    "cell_audit_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/extended_cell_audit.json"
+  },
+  "T10": {
+    "id": "T10",
+    "paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T10.png"
+    ],
+    "png_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T10.png",
+    "numeric_json": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T10_numeric.json",
+    "status": "Reproduced; overlapping sample documented",
+    "notes": [
+      "OLS with intercept and a dummy for survey dates after October 31, 2023; one-quarter-ahead absolute AI median errors. Conventional OLS standard errors. Significance: * p<.05; ** p<.01; *** p<.001.",
+      "Exact reproduction requires concatenating the 100-quarter baseline and 8-quarter OOS files, including duplicate 2023 survey quarters: 108 observations but 104 distinct quarters. The four post-cutoff observations are 2024Q1-Q4."
+    ],
+    "counts": {
+      "point_total": 24,
+      "point_match": 24,
+      "p_total": 0,
+      "p_rounded_match": 0,
+      "p_mc_compatible": null,
+      "star_total": 8,
+      "star_match": 8
+    },
+    "method_script": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/scripts/replicate_extended_tables.py",
+    "source_files": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/baseline_ts.parquet",
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/oos_ts.parquet"
+    ],
+    "cell_audit_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/extended_cell_audit.json"
+  },
+  "T12": {
+    "id": "T12",
+    "paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T12.png"
+    ],
+    "png_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T12.png",
+    "numeric_json": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T12_numeric.json",
+    "status": "Reproduced",
+    "notes": [
+      "Recomputed using all 5,388 source reasoning responses, including the 80 rows named \"No Name Provided\". Nonexclusive case-insensitive substring matches use the exact Appendix C keyword lists. Model-based = Mechanical OR Model; Judgment-based = Policy OR Event.",
+      "Financial Crisis: 2008Q3-2009Q4; COVID-19: 2020Q1-Q4; Inflation Shock: 2022Q1-Q4; otherwise Normal. Counts and all percentages match the final paper at its printed precision."
+    ],
+    "counts": {
+      "point_total": 28,
+      "point_match": 28,
+      "p_total": 0,
+      "p_rounded_match": 0,
+      "p_mc_compatible": null,
+      "star_total": 0,
+      "star_match": 0
+    },
+    "method_script": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/scripts/replicate_extended_tables.py",
+    "source_files": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/baseline_reasoning.parquet"
+    ],
+    "cell_audit_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/extended_cell_audit.json"
+  },
+  "TD15": {
+    "id": "TD15",
+    "paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/TD15.png"
+    ],
+    "png_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/TD15.png",
+    "numeric_json": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/TD15_numeric.json",
+    "status": "Reproduced",
+    "notes": [
+      "Reconstructed with expanding OLS AR(1) models fitted separately to median human forecasts at each horizon, using only past survey observations from the baseline. Minimum training sample: two lagged pairs; rank-deficient fits are omitted. Ratios use the human MAE over its available sample; AI is restricted to dates with a human forecast, while AR(1) has fewer initial observations.",
+      "Diebold-Mariano tests use absolute losses (power=1), Harvey small-sample adjustment, two-sided t reference, and test horizon h=1 for all three forecast horizons. All 138 ratios and 69 p-values match to two decimals; significance stars are separately checked."
+    ],
+    "counts": {
+      "point_total": 138,
+      "point_match": 138,
+      "p_total": 69,
+      "p_rounded_match": 69,
+      "p_mc_compatible": null,
+      "star_total": 69,
+      "star_match": 69
+    },
+    "method_script": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/scripts/replicate_extended_tables.py",
+    "source_files": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/baseline_ts.parquet"
+    ],
+    "cell_audit_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/extended_cell_audit.json"
+  },
+  "T11": {
+    "id": "T11",
+    "paths": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T11.png"
+    ],
+    "png_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T11.png",
+    "numeric_json": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/reproduced/tables/T11_numeric.json",
+    "status": "Not reproduced; estimator/sample provenance unresolved",
+    "notes": [
+      "The original computation script is absent. This reconstruction uses supplied nowcasts: revision = forecast(t) - previous available forecast; lagged error = previous realization - previous forecast; consensus deviation = previous forecast - previous human SPF median. OLS includes an intercept and HC1 standard errors. Recalculated significance: *** p<0.01, following the original table. AI uses all raw responses, including the placeholder name, while human IDs come from supplied SPF microdata.",
+      "Published coefficients, standard errors, human observation counts and most R² values are not reproduced. AI N=5,188 is reproduced. Gaps and duplicate name-quarter observations are retained as supplied and counted in the numeric audit. The body says within-panel consensus whereas the caption says SPF consensus; the alternative within-panel estimates are also retained in the numeric file and do not reproduce the target. Alternate lag, realization-vintage and legacy-input checks did not identify the published estimator. This is an explicitly qualified reconstruction, not a confirmed replication."
+    ],
+    "counts": {
+      "point_total": 64,
+      "point_match": 8,
+      "p_total": 0,
+      "p_rounded_match": 0,
+      "p_mc_compatible": null,
+      "star_total": 16,
+      "star_match": 15
+    },
+    "method_script": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/scripts/replicate_extended_tables.py",
+    "source_files": [
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/baseline_raw_forecasts.parquet",
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/baseline_microdata.parquet",
+      "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/data_cache/baseline_wide.parquet"
+    ],
+    "cell_audit_path": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov/predictable-forecasters-replication/replication_2026-10-31/extended_cell_audit.json"
+  }
+}

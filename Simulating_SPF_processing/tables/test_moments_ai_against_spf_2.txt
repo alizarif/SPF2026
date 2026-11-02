@@ -1,0 +1,36 @@
+\begin{tabular}{lld{2.5}d{2.5}d{2.5}d{2.5}d{2.5}d{2.5}}
+\toprule
+& \multicolumn{1}{c}{ Median } & \multicolumn{1}{c}{ P25 } & \multicolumn{1}{c}{ P75 } & \multicolumn{1}{c}{ Mean } & \multicolumn{1}{c}{ SD } & \multicolumn{1}{c}{ Skewness } & \multicolumn{1}{c}{ Kurtosis} \\
+\midrule
+\multicolumn{7}{l}{Section 1: US Business Indicators}\\
+\midrule
+Nominal GDP & 1.00 & 1.00 & 0.01^{\star\star} & 0.53 & 0.00^{\star\star\star} & 0.07^{\star} & 0.35\\
+GDP Price & 0.18 & 0.59 & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.02^{\star\star} & 0.32\\
+Corporate Profits & 0.01^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.08^{\star} & 0.06^{\star} & 0.47 & 0.93\\
+Unemployment Rate & 0.56 & 0.01^{\star\star} & 0.47 & 0.19 & 0.01^{\star\star\star} & 0.75 & 0.89\\
+Non-Farm Payroll & 0.14 & 0.05^{\star\star} & 0.64 & 0.27 & 0.00^{\star\star\star} & 0.95 & 0.89\\
+Industrial Production & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.46 & 0.00^{\star\star\star} & 0.74\\
+Housing Starts & 0.02^{\star\star} & 0.00^{\star\star\star} & 0.03^{\star\star} & 0.00^{\star\star\star} & 0.27 & 0.02^{\star\star} & 0.20\\
+Treasury Bill Rate (3M) & 0.41 & 0.06^{\star} & 0.94 & 0.91 & 0.01^{\star\star\star} & 0.25 & 0.85\\
+AAA Corp Bond Yield & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.88\\
+Treasury Bond Rate (10Y) & 0.20 & 0.00^{\star\star\star} & 0.21 & 0.17 & 0.02^{\star\star} & 0.16 & 0.07^{\star}\\
+\midrule
+\multicolumn{7}{l}{Section 2: Real GDP and Its Components}\\
+\midrule
+Real GDP & 0.39 & 0.01^{\star\star\star} & 0.01^{\star\star\star} & 0.07^{\star} & 0.89 & 0.77 & 0.11\\
+Real PCE & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.78 & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.95\\
+Real Non-Res Fixed Inv & 0.69 & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.04^{\star\star} & 0.35\\
+Real Res Fixed Inv & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.50 & 0.64 & 0.28\\
+Real Federal C\&GI & 0.68 & 0.00^{\star\star\star} & 0.82 & 0.42 & 0.01^{\star\star} & 0.56 & 0.40\\
+Real State/Local C\&GI & 0.95 & 0.06^{\star} & 0.03^{\star\star} & 0.54 & 0.01^{\star\star} & 0.71 & 0.99\\
+Real Change in Private Inv & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.74 & 0.00^{\star\star\star} & 0.47\\
+Real Net Exports & 0.06^{\star} & 0.00^{\star\star\star} & 0.45 & 0.00^{\star\star\star} & 0.52 & 0.07^{\star} & 0.72\\
+\midrule
+\multicolumn{7}{l}{Section 3: CPI and PCE Inflation}\\
+\midrule
+CPI Inflation Rate & 0.10 & 0.09^{\star} & 0.76 & 0.32 & 0.01^{\star\star} & 0.18 & 0.92\\
+Core CPI Inflation Rate & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.79\\
+PCE Inflation Rate & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.66 & 0.35 & 0.06^{\star} & 0.58 & 0.13\\
+Core PCE Inflation Rate & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.00^{\star\star\star} & 0.86 & 0.04^{\star\star} & 0.03^{\star\star}\\
+\bottomrule
+\end{tabular}

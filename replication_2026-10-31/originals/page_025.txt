@@ -1,0 +1,31 @@
+beliefs, potentially reflecting stronger priors from their training data or less sensitivity to recent
+information.
+As for the consensus tracking behavior, human forecasters show statistically significant
+but economically modest convergence toward the SPF median: coefficients range from −0.30
+(TBILL) to −0.87 (UNEMP), but R2 values are uniformly low (0.004–0.14). Distance from con-
+sensus explains little of the variation in human forecast revisions, suggesting that professional
+forecasters maintain independent views rather than systematically anchoring on the panel me-
+dian. AI forecasters exhibit considerably stronger consensus tracking. For RGDP, the coefficient
+is −1.02 with R2 = 0.78: forecasters who deviate from the SPF median by $X billion revise their
+forecast by approximately $X billion toward consensus. TBILL shows even stronger anchoring
+(−1.14, R2 = 0.72). CPI displays moderate consensus tracking (−0.69, R2 = 0.55), while un-
+employment shows the weakest convergence (−0.51, R2 = 0.09). Thus, the AI panel captures
+some qualitative features of updating, but it is more consensus-anchored than the human SPF.
+These results reveal a fundamental difference in how human and AI forecasters form expec-
+tations. Human forecasters behave as independent information processors: they place more
+weight on correcting past errors (learning from mistakes) but place comparatively little weight
+on the consensus view (maintaining idiosyncratic beliefs). AI forecasters exhibit the opposite
+pattern: they update more gradually in response to past errors but strongly anchor on the
+professional consensus, particularly for output and interest rate forecasts.
+This difference has important implications for interpreting our framework. The strong con-
+sensus anchoring by AI forecasters validates our ablation results in Section 5.2: removing past
+SPF forecasts significantly increases forecast errors precisely because AI forecasters treat the
+consensus as a highly informative summary of latent information used by human forecasters.
+At the same time, this anchoring behavior also means that AI forecasts may inherit biases
+present in the SPF consensus, and may be slower to deviate from consensus during periods
+of structural change when independent judgment becomes especially valuable. The variable-
+specific patterns (stronger anchoring for RGDP and TBILL than for CPI and unemployment)
+suggest that AI forecasters weight the consensus signal differently depending on the variable,
+potentially reflecting differences in how these indicators are discussed in training data. We view
+this feature not as a limitation, but as an economically meaningful property of the simulation:
+25

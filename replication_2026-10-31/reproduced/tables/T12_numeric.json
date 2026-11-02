@@ -1,0 +1,100 @@
+{
+  "keywords": {
+    "Mechanical": [
+      "trend",
+      "historical",
+      "average",
+      "mean reversion",
+      "pattern",
+      "previous",
+      "past",
+      "typical",
+      "normal",
+      "baseline",
+      "extrapolat"
+    ],
+    "Policy": [
+      "fed",
+      "federal reserve",
+      "monetary policy",
+      "fiscal",
+      "stimulus",
+      "rate hike",
+      "rate cut",
+      "tightening",
+      "easing",
+      "central bank",
+      "government",
+      "policy response",
+      "intervention"
+    ],
+    "Model": [
+      "phillips curve",
+      "okun",
+      "gdp growth",
+      "economic model",
+      "structural",
+      "relationship between",
+      "economic theory",
+      "multiplier",
+      "elasticity",
+      "economic indicator",
+      "leading indicator"
+    ],
+    "Event": [
+      "covid",
+      "pandemic",
+      "crisis",
+      "recession",
+      "shock",
+      "war",
+      "collapse",
+      "lockdown",
+      "unprecedented",
+      "disruption",
+      "financial crisis",
+      "lehman",
+      "subprime",
+      "outbreak",
+      "emergency"
+    ]
+  },
+  "statistics": {
+    "Normal": {
+      "N": 4626,
+      "Mechanical": 98.61651534803286,
+      "Policy": 55.20968439256377,
+      "Model": 86.72719412019023,
+      "Event": 19.671422395157805,
+      "Model-based": 99.63251188932122,
+      "Judgment-based": 63.31603977518374
+    },
+    "Financial Crisis": {
+      "N": 346,
+      "Mechanical": 84.6820809248555,
+      "Policy": 34.39306358381503,
+      "Model": 37.57225433526011,
+      "Event": 82.36994219653178,
+      "Model-based": 88.4393063583815,
+      "Judgment-based": 87.57225433526011
+    },
+    "COVID-19": {
+      "N": 204,
+      "Mechanical": 72.05882352941177,
+      "Policy": 59.80392156862745,
+      "Model": 26.47058823529412,
+      "Event": 76.9607843137255,
+      "Model-based": 72.54901960784314,
+      "Judgment-based": 79.90196078431373
+    },
+    "Inflation Shock": {
+      "N": 212,
+      "Mechanical": 85.37735849056604,
+      "Policy": 87.26415094339622,
+      "Model": 97.16981132075472,
+      "Event": 30.18867924528302,
+      "Model-based": 98.11320754716981,
+      "Judgment-based": 87.73584905660378
+    }
+  }
+}

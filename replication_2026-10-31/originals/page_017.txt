@@ -1,0 +1,32 @@
+about the near-term evolution of key macroeconomic variables.
+We automate the generation of these forecast queries and collect responses using an AI
+assistant. Each query embeds a forecaster profile (education, job title, organization type, and
+related characteristics), which induces heterogeneity in the simulated panel while holding the
+information environment fixed. To mirror the SPF process as closely as possible, we also provide
+our AI forecasters with a data environment that closely matches that of human participants.
+Specifically, the prompt includes past median SPF forecasts and real-time macroeconomic data.
+This setup largely ensures that any differences between human and AI forecasts arise from
+differences in forecasting behavior rather than from differences in the underlying information
+set. In the next section, we evaluate how closely the behavior of AI forecasters matches that of
+the human SPF panel.
+5
+Results
+This section presents our simulation results and validates them against data from human fore-
+casters.
+With two sets of forecasts (human and AI) for five forecasting horizons across 23
+variables, the amount of output is substantial. To keep the presentation focused, we therefore
+discuss results for selected horizons only, and focus mainly on four key variables in our dis-
+cussion: the CPI inflation rate, 3-month Treasury bill rate, unemployment rate, and real GDP
+index.15 We choose to focus on these four economic variables because they cover key aspects
+of the economy: price stability, interest rates, labor market conditions, and overall economic
+output. This provides a comprehensive test of the language model’s ability to simulate human
+forecasting behavior across different dimensions of economic activity. Forecasts are winsorized
+at the median ±3 standard deviations of the realized data to exclude potential erratic LLM
+answers.16
+5.1
+Comparing AI and Humans
+First, we evaluate how closely AI and human expectations are aligned. Figure 3 compares
+median expectations from AI and human forecasters over time for the one- and four-quarter
+15 The tables provide results for all variables.
+16 Winsorization only impacts the “recall” results in Table 8.
+17

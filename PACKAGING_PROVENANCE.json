@@ -1,0 +1,33 @@
+{
+  "package_date": "2026-11-02",
+  "source_project": "/Users/alizarif/Downloads/Folders/Research In Progress/SPF Nov",
+  "private_research_repository": false,
+  "individual_forecasters_derivative": {
+    "source": "Simulating_SPF_processing/data/individual_forecasters.csv",
+    "source_sha256": "9710a4a111f889d9bc9c1eb4a15c78b59bd3eb1eecfbef6459f989fe3adc6289",
+    "retained_columns": [
+      "Name",
+      "date_q"
+    ],
+    "rows": 5432,
+    "reason": "Figure A.2 uses only these columns; unused wide input columns are omitted."
+  },
+  "source_reference_code": "Copied R reference code is reviewed and credentials redacted before commit; original project files are untouched.",
+  "omitted": [
+    ".DS_Store",
+    "__pycache__",
+    "runtime_cache",
+    "node_modules",
+    "workbook_qa",
+    "replication_package.zip",
+    "*.inspect.ndjson",
+    "credential-bearing Simulating_SPF_processing/generic_output.RData (required objects retained as credential-free Parquet extracts)"
+  ],
+  "additional_pdf": "tables_replicated.pdf is a separate 13-page derivative supplied after the verified 15-page artifact; retain without transferring the 15-page validation.",
+  "destination": "https://github.com/alizarif/SPF2026",
+  "visibility": "public",
+  "underlying_data_publication": "Explicitly authorized by the user on 2026-11-02",
+  "reviewed_original_canonical_pdf_sha256": "2eef733aefbbd704bd702dc46e30a905af3450078f5c2a103b9f373dbfbde3f7",
+  "packaged_canonical_pdf_sha256": "585e45f677374fb8e402aebe773940148cb0424a4927af3a13ebbe7d1d4fcebe",
+  "canonical_pdf_rebuild_note": "The packaged PDF was regenerated from included inputs. All 15 rendered pages are pixel-identical to the reviewed original; PDF metadata and byte hashes differ."
+}
