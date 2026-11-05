@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Recompute all 15 tables and rebuild the report in one command."""
+"""Rebuild the tables, or use --responses for distribution tests and plots."""
+import argparse
 import csv
 import os
 from pathlib import Path
@@ -17,6 +18,13 @@ from report import build_tables, render
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--responses', action='store_true',
+                        help='Build distribution tests and AI/human median and SD plots.')
+    args = parser.parse_args()
+    if args.responses:
+        from response_analysis import run_response_analysis
+        return run_response_analysis()
     print('Calculating all statistical tables from the main data...', flush=True)
     cells = core_tables() + additional_tables() + investigated_tables()
     keys = [(cell['item'], cell['row'], cell['column']) for cell in cells]
