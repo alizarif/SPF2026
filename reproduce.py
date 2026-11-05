@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rebuild the tables, or use --responses for distribution tests and plots."""
+"""Rebuild tables, response comparisons, or the distribution review plots."""
 import argparse
 import csv
 import os
@@ -19,9 +19,15 @@ from report import build_tables, render
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--responses', action='store_true',
-                        help='Build distribution tests and AI/human median and SD plots.')
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument('--responses', action='store_true',
+                      help='Build distribution tests and AI/human median and SD plots.')
+    mode.add_argument('--distributions', action='store_true',
+                      help='Build the six original distribution pages with common scales.')
     args = parser.parse_args()
+    if args.distributions:
+        from distribution_plots import run_distribution_plots
+        return run_distribution_plots()
     if args.responses:
         from response_analysis import run_response_analysis
         return run_response_analysis()
